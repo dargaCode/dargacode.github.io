@@ -1,9 +1,25 @@
 
 /*GENERAL*/
 
+* {
+/*  margin: 0;
+  padding: 0;*/
+}
+
+body {
+  font-family: "Arimo", "Helvetica", sans-serif;
+  line-height: 1.5;
+  color: #a6623f;
+  color: #c07b59;
+}
+
 .container {
   max-width: 700px;
   margin: 0 auto;
+}
+
+a {
+  color: #144442;
 }
 
 /*HEADINGS*/
@@ -18,32 +34,54 @@
   padding: 0;
 }
 
-/*NAVIGATION*/
+h1, h2 {
+  font-family: "Arimo", "Helvetica", sans-serif;
+}
 
+h2 {
+  color: #732d0d;
+  margin-top: 2em;
+  margin-bottom: 0;
+
+}
+
+h3 {
+  color: #823c1c;
+  margin-top: 1.5em;
+  margin-bottom: 0;
+}
+
+/*NAVIGATION*/
 
 
 /*ABOUT*/
 
-
+.about {
+/*  min-height: 500px;*/
+}
 
 /*SKILLS*/
 
-
+.skills {
+/*  min-height: 500px;*/
+}
 
 /*PROJECTS*/
 
-
+.projects {
+/*  min-height: 500px;*/
+}
 
 /*RESUME*/
 
-
+.resume {
+/*  min-height: 500px;*/
+}
 
 /*CONTACT*/
 
-
-
-/*JAVASCRIPT*/
-
-
+.contact {
+/*  min-height: 500px;*/
+}
 
 /*MEDIA QUERIES*/
