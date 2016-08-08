@@ -8,7 +8,15 @@
 
 /*HEADINGS*/
 
-
+/*used by headings that are needed for document outline but not for visually browsing the site*/
+.invisible-but-outline-readable {
+  color: red; /*call attention if hiding isn't working*/
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
 
 /*NAVIGATION*/
 
