@@ -1,9 +1,9 @@
 
 /*GENERAL*/
 
-* {
-/*  margin: 0;
-  padding: 0;*/
+*, *:before, *:after {
+  box-sizing: border-box;
+  color: inherit;
 }
 
 body {
@@ -57,10 +57,8 @@ h3 {
 nav {
   color: #a8e0f0;
   background: #444C48;
-  padding: 15px 0;
-  position: fixed;
   width: 100%;
-  height: 25px;
+  position: fixed;
 }
 
 nav a {
@@ -69,7 +67,8 @@ nav a {
 }
 
 nav .logo {
-
+  float: left;
+  padding: 15px 0;
 }
 
 nav .logo:hover {
@@ -78,8 +77,6 @@ nav .logo:hover {
 
 nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   float: right;
   /*Remove spaces between inline-block children*/
   font-size: 0;
@@ -89,7 +86,6 @@ nav ul li {
   display: inline-block;
   /*Override 0-size text in ul*/
   font-size: 1rem;
-  margin: -15px 0 0;
   padding: 15px 10px;
 }
 
