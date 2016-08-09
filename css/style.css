@@ -9,8 +9,9 @@
 body {
   font-family: "Arimo", "Helvetica", sans-serif;
   line-height: 1.5;
-  color: #a6623f;
   color: #c07b59;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -53,11 +54,59 @@ h3 {
 
 /*NAVIGATION*/
 
+nav {
+  color: #a8e0f0;
+  background: #444C48;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  height: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav .logo {
+
+}
+
+nav .logo:hover {
+  color: #d4dcd8;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+  /*Remove spaces between inline-block children*/
+  font-size: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  /*Override 0-size text in ul*/
+  font-size: 1rem;
+  margin: -15px 0 0;
+  padding: 15px 10px;
+}
+
+nav ul li:hover {
+  color: #d4dcd8;
+  background: #242C28;
+}
 
 /*ABOUT*/
 
 .about {
+
 /*  min-height: 500px;*/
+}
+
+.about .container {
+  padding-top: 70px;
 }
 
 /*SKILLS*/
