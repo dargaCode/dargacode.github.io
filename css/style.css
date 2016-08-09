@@ -6,12 +6,21 @@
   padding: 0;*/
 }
 
+html {
+  /*stop "over-scrolling" in Chrome*/
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   font-family: "Arimo", "Helvetica", sans-serif;
   line-height: 1.5;
   color: #c07b59;
   margin: 0;
   padding: 0;
+  /*stop "over-scrolling" in Chrome*/
+  height: 100%;
+  overflow: auto;
 }
 
 .container {
