@@ -96,12 +96,32 @@ nav ul li:hover {
 /*ABOUT*/
 
 .about {
+  font-family: "Roboto", sans-serif;
+  background-image: url("../img/mountains-grey.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
+  min-height: 600px;
+  height: 100vh;
+  color: white;
+  font-size: 20px;
+}
 
-/*  min-height: 500px;*/
+.about .overlay {
+  background: #1C7889;
+  opacity: 0.85;
+  min-height: 600px;
+  height: 100vh;
 }
 
 .about .container {
-  padding-top: 70px;
+  background: none;
+  padding: 205px 0 0;
+}
+
+.about a {
+  color: #F29A47;
 }
 
 /*SKILLS*/
