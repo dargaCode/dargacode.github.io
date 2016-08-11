@@ -44,6 +44,11 @@ a:hover {
   text-decoration: underline;
 }
 
+footer {
+  text-align: center;
+  padding-top: 5px;
+}
+
 /*HEADINGS*/
 
 /*used by headings that are needed for HTML5 document outline but not for visually browsing the site*/
@@ -137,6 +142,7 @@ nav ul li:hover {
   height: 100vh;
   color: white;
   font-size: 20px;
+  position: relative;
 }
 
 .about .overlay {
@@ -148,11 +154,20 @@ nav ul li:hover {
 
 .about .container {
   background: none;
-  padding: 205px 0 0;
+  padding: 225px 0 0;
 }
 
 .about a {
   color: #F29A47;
+}
+
+.about footer {
+  display: block;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  text-align: center;
 }
 
 /*SKILLS*/
