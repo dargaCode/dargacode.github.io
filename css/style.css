@@ -25,7 +25,7 @@ a {
 
 /*HEADINGS*/
 
-/*used by headings that are needed for document outline but not for visually browsing the site*/
+/*used by headings that are needed for HTML5 document outline but not for visually browsing the site*/
 .invisible-but-outline-readable {
   color: red; /*call attention if hiding isn't working*/
   width: 0;
@@ -35,7 +35,7 @@ a {
   padding: 0;
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Arimo", "Helvetica", sans-serif;
 }
 
@@ -43,7 +43,6 @@ h2 {
   color: #732d0d;
   margin-top: 2em;
   margin-bottom: 0;
-
 }
 
 h3 {
@@ -108,25 +107,25 @@ nav ul li:hover {
 /*SKILLS*/
 
 .skills {
-/*  min-height: 500px;*/
+
 }
 
 /*PROJECTS*/
 
 .projects {
-/*  min-height: 500px;*/
+
 }
 
 /*RESUME*/
 
 .resume {
-/*  min-height: 500px;*/
+
 }
 
 /*CONTACT*/
 
 .contact {
-/*  min-height: 500px;*/
+
 }
 
 /*MEDIA QUERIES*/
