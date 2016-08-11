@@ -10,6 +10,7 @@ body {
   font-family: "Arimo", "Helvetica", sans-serif;
   line-height: 1.5;
   color: #c07b59;
+  background: #444C48;
   margin: 0;
   padding: 0;
 }
@@ -19,8 +20,28 @@ body {
   margin: 0 auto;
 }
 
+.content-section {
+  background: #144442;
+  background: #0A5C6B;
+  background: #AE5B0C;
+  background: #3b332b;
+  overflow: hidden; /*No margin collapse w/children*/
+}
+
+.content-section .container {
+  background: white;
+  padding: 40px 30px 0;
+  overflow: hidden; /*No margin collapse w/children*/
+}
+
 a {
   color: #144442;
+  color: #0A5C6B;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /*HEADINGS*/
