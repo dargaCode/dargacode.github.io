@@ -146,8 +146,8 @@ nav ul li:hover {
 }
 
 .about .overlay {
-  background: #1C7889;
-  opacity: 0.85;
+  /*background: #1C7889;*/
+  background: rgba(28,120,137,0.85);
   min-height: 600px;
   height: 100vh;
 }
