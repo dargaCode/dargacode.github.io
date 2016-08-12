@@ -27,16 +27,19 @@ let durationObject = {
     daysPerUnit: DAYS_PER_YEAR,
     count: null,
     string: 'year',
+    html: '',
   },
   month: {
     daysPerUnit: DAYS_PER_MONTH,
     count: null,
     string: 'month',
+    html: '',
   },
   day: {
     daysPerUnit: 1,
     count: null,
     string: 'day',
+    html: '',
   },
 };
 
@@ -59,9 +62,15 @@ function updateUnitStrings() {
   }
 }
 
+function updateUnitHtmlStrings() {
+  for (let unit in durationObject) {
+    durationObject[unit].html = getHtmlString(unit);
+  }
+}
+
 function renderFinalDuration() {
-  const durationString = generateFinalDuration();
-  DurationSpan.innerText = durationString;
+  const durationHtml = generateFinalDuration();
+  DurationSpan.innerText = durationHtml;
 }
 
 // HELPER FUNCTIONS
@@ -82,18 +91,19 @@ function pluralizeWord(unit) {
   return unit + 's';
 }
 
+function getHtmlString(unit) {
+  const count = durationObject[unit].count;
+  const string = durationObject[unit].string;
+
+  return `${count} ${string}`;
+}
+
 function generateFinalDuration() {
-  const yearCount = durationObject.year.count;
-  const monthCount = durationObject.day.count;
-  const dayCount = durationObject.day.count;
-  const yearString = durationObject.year.string;
-  const monthString = durationObject.month.string;
-  const dayString = durationObject.day.string;
+  const yearHtml = durationObject.year.html;
+  const monthHtml = durationObject.month.html;
+  const dayHtml = durationObject.day.html;
 
-  const durationString = yearString + ', ' + monthString + ', and ' + dayString;
-
-  return durationString;
-
+  return `${yearHtml}, ${monthHtml}, and ${dayHtml}`;
 }
 
 // MAIN
@@ -102,4 +112,5 @@ console.log('starting days', remainingDays);
 
 updateUnitCounts();
 updateUnitStrings();
+updateUnitHtmlStrings();
 renderFinalDuration();
