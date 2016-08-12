@@ -42,7 +42,7 @@ let durationObject = {
 
 // FUNCTIONS
 
-function generateUnitCounts() {
+function updateUnitCounts() {
   for (let unit in durationObject) {
     const daysPerUnit = durationObject[unit].daysPerUnit;
     const unitCount = Math.floor(remainingDays / daysPerUnit);
@@ -53,30 +53,42 @@ function generateUnitCounts() {
   }
 }
 
-function getDurationString(unit) {
-  const unitString = durationObject[unit].string;
-  console.log('unit', unit, getPluralizedUnit(unitString));
-  return getPluralizedUnit(unitString);
+function updateUnitStrings() {
+  for (let unit in durationObject) {
+    durationObject[unit].string = getDurationString(unit);
+  }
 }
 
-function getPluralizedUnit(unit) {
+function getDurationString(unit) {
+  const unitString = durationObject[unit].string;
+  console.log('unit', unit, getPluralUnitString(unitString));
+  return getPluralUnitString(unitString);
+}
+
+function getPluralUnitString(unit) {
   const count = durationObject[unit].count;
+  unit = count === 1 ? unit : pluralizeWord(unit);
+  return unit;
+}
+
+function pluralizeWord(unit) {
   // only works for simplest type of plurals, but that's fine for generating y/m/d duration.
-  const pluralizedUnit = count === 1 ? unit : unit + 's';
-  return pluralizedUnit;
+  return unit + 's';
 }
 
 // MAIN
 
 console.log('starting days', remainingDays);
 
-const yearString = getDurationString('year');
-const monthString = getDurationString('month');
-const dayString = getDurationString('day');
+updateUnitCounts();
+updateUnitStrings();
+
+const yearString = durationObject.year.string;
+const monthString = durationObject.month.string;
+const dayString = durationObject.day.string;
 
 const durationString = yearString + ', ' + monthString + ', and ' + dayString;
 
-generateUnitCounts();
 
 DurationSpan.innerText = durationString;
 
