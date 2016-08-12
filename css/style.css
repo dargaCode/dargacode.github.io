@@ -99,14 +99,14 @@ nav a:hover {
   text-decoration: none;
 }
 
-nav .logo {
+.nav-logo {
   float: left;
   padding: 15px 0;
   color: #F29A47;
   font-weight: 700;
 }
 
-nav .logo:hover {
+.nav-logo:hover {
   color: #d4dcd8;
 }
 
@@ -166,7 +166,6 @@ nav ul li a:hover {
 }
 
 .about footer {
-  display: block;
   position: absolute;
   bottom: 5px;
   left: 0;
