@@ -151,14 +151,52 @@ nav ul li a:hover {
 
 .about .overlay {
   /*background: #1C7889;*/
-  background: rgba(28,120,137,0.85);
+  background: rgba(28,120,137,0.82);
   min-height: 600px;
   height: 100vh;
 }
 
 .about .container {
   background: none;
-  padding: 225px 0 0;
+  padding: 300px 0 0;
+}
+
+.about p {
+  text-align: right;
+  line-height: 1.55;
+}
+
+.about-logo {
+  color: white;
+  color: #F29A47;
+  color: #f1f4f2;
+  font-weight: 700;
+  font-size: 3em;
+  line-height: 1em;
+}
+
+.about-logo .darga {
+  color: #F29A47;
+  color: white;
+  color: #d4dcd8;
+  color: #e3e8e6;
+  color: #f1f4f2;
+  color: #F29A47;
+}
+
+.about-logo .developer {
+  color: #444C48;
+  color: #024A58;
+  color: #444C48;
+  color: #242C28;
+  color: #27252d;
+  color: #25272d;
+  font-weight: 500;
+  font-size: 0.6em;
+  float: right;
+  position: relative;
+  top: 8px;
+  right: 2px;
 }
 
 .about a {
@@ -167,9 +205,13 @@ nav ul li a:hover {
 
 .about footer {
   position: absolute;
-  bottom: 5px;
+  bottom: 0;
   left: 0;
   width: 100%;
+}
+
+.about footer p {
+  margin: 15px;
   text-align: center;
 }
 
