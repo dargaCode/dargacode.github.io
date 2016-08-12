@@ -159,12 +159,12 @@ nav ul li a:hover {
 
 .about .container {
   background: none;
-  padding: 300px 0 0;
+  padding: 280px 0 0;
 }
 
 .about p {
   text-align: right;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 .about-logo {
@@ -198,6 +198,16 @@ nav ul li a:hover {
   position: relative;
   top: 8px;
   right: 2px;
+}
+
+.about #study-duration span {
+  color: #F29A47;
+  color: #f5b070;
+  /*color: #f7bd88;*/
+  /*color: #F09F52;*/
+  /*color: #FFBD7F;*/
+  font-size: 1.2em;
+  font-weight: 700;
 }
 
 .about a {
