@@ -70,7 +70,7 @@ function updateUnitHtmlStrings() {
 
 function renderFinalDuration() {
   const durationHtml = generateFinalDuration();
-  DurationSpan.innerText = durationHtml;
+  DurationSpan.innerHTML = durationHtml;
 }
 
 // HELPER FUNCTIONS
@@ -95,7 +95,7 @@ function getHtmlString(unit) {
   const count = durationObject[unit].count;
   const string = durationObject[unit].string;
 
-  return `${count} ${string}`;
+  return `<span>${count}</span> ${string}`;
 }
 
 function generateFinalDuration() {
