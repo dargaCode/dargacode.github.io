@@ -24,19 +24,19 @@ let remainingDays = TOTAL_ELAPSED_DAYS;
 
 let durationObject = {
   year: {
+    daysPerUnit: DAYS_PER_YEAR,
     count: null,
     string: 'year',
-    daysPerUnit: DAYS_PER_YEAR,
   },
   month: {
+    daysPerUnit: DAYS_PER_MONTH,
     count: null,
     string: 'month',
-    daysPerUnit: DAYS_PER_MONTH,
   },
   day: {
+    daysPerUnit: 1,
     count: null,
     string: 'day',
-    daysPerUnit: 1,
   },
 };
 
@@ -47,7 +47,7 @@ function updateUnitCounts() {
     const daysPerUnit = durationObject[unit].daysPerUnit;
     const unitCount = Math.floor(remainingDays / daysPerUnit);
     const remainder = TOTAL_ELAPSED_DAYS % daysPerUnit;
-    console.log(unit, unitCount, remainder);
+    console.log(unit, 'count', unitCount, 'remainder', remainder);
     durationObject[unit].count =unitCount
     remainingDays = remainder;
   }
@@ -59,9 +59,15 @@ function updateUnitStrings() {
   }
 }
 
+function renderFinalDuration() {
+  const durationString = generateFinalDuration();
+  DurationSpan.innerText = durationString;
+}
+
+// HELPER FUNCTIONS
+
 function getDurationString(unit) {
   const unitString = durationObject[unit].string;
-  console.log('unit', unit, getPluralUnitString(unitString));
   return getPluralUnitString(unitString);
 }
 
@@ -76,20 +82,24 @@ function pluralizeWord(unit) {
   return unit + 's';
 }
 
+function generateFinalDuration() {
+  const yearCount = durationObject.year.count;
+  const monthCount = durationObject.day.count;
+  const dayCount = durationObject.day.count;
+  const yearString = durationObject.year.string;
+  const monthString = durationObject.month.string;
+  const dayString = durationObject.day.string;
+
+  const durationString = yearString + ', ' + monthString + ', and ' + dayString;
+
+  return durationString;
+
+}
+
 // MAIN
 
 console.log('starting days', remainingDays);
 
 updateUnitCounts();
 updateUnitStrings();
-
-const yearString = durationObject.year.string;
-const monthString = durationObject.month.string;
-const dayString = durationObject.day.string;
-
-const durationString = yearString + ', ' + monthString + ', and ' + dayString;
-
-
-DurationSpan.innerText = durationString;
-
-
+renderFinalDuration();
