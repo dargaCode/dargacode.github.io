@@ -20,23 +20,38 @@ const DurationSpan = document.querySelector('#study-duration');
 
 // VARIABLES
 
+let remainingDays = TOTAL_ELAPSED_DAYS;
+
 let durationObject = {
-  remainingDays: null,
   year: {
     count: null,
     string: 'year',
+    daysPerUnit: DAYS_PER_YEAR,
   },
   month: {
     count: null,
     string: 'month',
+    daysPerUnit: DAYS_PER_MONTH,
   },
   day: {
     count: null,
     string: 'day',
+    daysPerUnit: 1,
   },
 };
 
 // FUNCTIONS
+
+function generateUnitCounts() {
+  for (let unit in durationObject) {
+    const daysPerUnit = durationObject[unit].daysPerUnit;
+    const unitCount = Math.floor(remainingDays / daysPerUnit);
+    const remainder = TOTAL_ELAPSED_DAYS % daysPerUnit;
+    console.log(unit, unitCount, remainder);
+    durationObject[unit].count =unitCount
+    remainingDays = remainder;
+  }
+}
 
 function getDurationString(unit) {
   const unitString = durationObject[unit].string;
@@ -46,39 +61,14 @@ function getDurationString(unit) {
 
 function getPluralizedUnit(unit) {
   const count = durationObject[unit].count;
-  // only works for simplest plural type
+  // only works for simplest type of plurals, but that's fine for generating y/m/d duration.
   const pluralizedUnit = count === 1 ? unit : unit + 's';
   return pluralizedUnit;
 }
 
 // MAIN
 
-//get elapsed years
-durationObject.remainingDays = TOTAL_ELAPSED_DAYS;
-console.log('starting days', durationObject.remainingDays);
-const elapsedYears = Math.floor(durationObject.remainingDays / DAYS_PER_YEAR);
-durationObject.year.count = elapsedYears;
-
-
-// get year remainder
-console.log('elapsed years', elapsedYears);
-durationObject.remainingDays = durationObject.remainingDays % DAYS_PER_YEAR;
-console.log('days after years', durationObject.remainingDays);
-
-
-//get elapsed months
-const elapsedMonths = Math.floor(durationObject.remainingDays / DAYS_PER_MONTH);
-durationObject.month.count = elapsedMonths;
-
-console.log('elapsed months', elapsedMonths);
-
-//get month remainder
-// round down to leave 0 days when a month rolls over
-durationObject.remainingDays = Math.floor(durationObject.remainingDays % DAYS_PER_MONTH);
-
-
-durationObject.day.count = durationObject.remainingDays;
-console.log('elapsedDays', durationObject.remainingDays);
+console.log('starting days', remainingDays);
 
 const yearString = getDurationString('year');
 const monthString = getDurationString('month');
@@ -86,7 +76,7 @@ const dayString = getDurationString('day');
 
 const durationString = yearString + ', ' + monthString + ', and ' + dayString;
 
-
+generateUnitCounts();
 
 DurationSpan.innerText = durationString;
 
