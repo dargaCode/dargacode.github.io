@@ -121,10 +121,14 @@ nav ul li {
   display: inline-block;
   /*Override 0-size text in ul*/
   font-size: 1rem;
+}
+
+nav ul li a {
+  display: inline-block;
   padding: 15px 10px;
 }
 
-nav ul li:hover {
+nav ul li a:hover {
   color: #F29A47;
   background: #242C28;
 }
