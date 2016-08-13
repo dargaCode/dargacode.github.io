@@ -250,4 +250,26 @@ nav ul li a:hover {
 
 }
 
+.contact .container {
+  padding-bottom: 25px;
+}
+
+/*FOOTER*/
+
+.page-footer {
+  background: #3b332b;
+  overflow: hidden; /*No margin collapse w/children*/
+  text-align: center;
+}
+
+.page-footer a {
+  /*color: #d4dcd8;*/
+  color: #1C7889;
+  text-decoration: none;
+}
+
+.page-footer a:hover {
+  color: #d4dcd8;
+}
+
 /*MEDIA QUERIES*/
