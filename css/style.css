@@ -34,6 +34,11 @@ body {
   overflow: hidden; /*No margin collapse w/children*/
 }
 
+.content-section footer {
+  text-align: center;
+  padding-top: 5px;
+}
+
 a {
   color: #144442;
   color: #0A5C6B;
@@ -42,11 +47,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-footer {
-  text-align: center;
-  padding-top: 5px;
 }
 
 /*HEADINGS*/
