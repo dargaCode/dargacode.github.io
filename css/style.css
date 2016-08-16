@@ -37,7 +37,7 @@ body {
 
 .content-section .container {
   background: white;
-  padding: 40px 30px 0;
+  padding: 40px 35px 0;
   overflow: hidden; /*No margin collapse w/children*/
 }
 
