@@ -259,6 +259,10 @@ nav ul li a:hover {
 
 }
 
+.projects time {
+  font-size: 0.85em;
+}
+
 /*RESUME*/
 
 .resume {
