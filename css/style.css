@@ -253,6 +253,11 @@ nav ul li a:hover {
 
 }
 
+.skills .project-count {
+  color: #a1a9aa;
+  font-size: 0.9em;
+}
+
 /*PROJECTS*/
 
 .projects {
