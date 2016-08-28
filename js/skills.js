@@ -20,6 +20,8 @@ function getSortedSkills(sortHelper) {
 
 function addSkillsToDom(skillsArray) {
   for (let skill of skillsArray) {
+    const pluralProject = pluralizeProjects(skill);
+
     const skillCardArticle = document.createElement('article');
     skillCardArticle.classList.add('skill-card');
 
@@ -36,7 +38,7 @@ function addSkillsToDom(skillsArray) {
 
     const skillCountParagraph = document.createElement('p');
     skillCountParagraph.classList.add('skill-project-count');
-    skillCountParagraph.innerText = `${skill.projectCount} Projects`;
+    skillCountParagraph.innerText = `${skill.projectCount} ${pluralProject}`;
 
     skillCardArticle.appendChild(skillTypeParagraph);
     skillCardArticle.appendChild(skillIcon);
@@ -77,6 +79,11 @@ function sortByType(a, b) {
       return 0;
     }
   }
+}
+
+function pluralizeProjects(skillObj) {
+  const projectCount = skillObj.projectCount;
+  return projectCount === 1 ? 'Project' : 'Projects';
 }
 
 // MAIN
