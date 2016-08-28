@@ -253,6 +253,10 @@ nav ul li a:hover {
 
 }
 
+.skills .skill-name {
+  font-weight: 900;
+}
+
 .skills .project-count {
   color: #a1a9aa;
   font-size: 0.9em;
