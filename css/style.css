@@ -302,20 +302,40 @@ nav ul li a:hover {
   display: inline-block;
   margin-bottom: 5px;
   font-size: 60px;
-  /*color: #F29A47;*/
-  /*color: #F09F52;*/
+  color: #F29A47;
+  color: #F09F52;
   color: #B56212;
   color: #ee7c11;
   color: #d76f0f;
+  /*this one is nice:*/
   color: #e77f1f;
+
   /*color: #bf630d;*/
   /*color: #8f4a0a;*/
   /*color: #773e08;*/
+
+  /*trying some blues*/
+  /*color: #1C7889;*/
+  /*color: #2395a9;*/
+  /*color: #1a707f;*/
+  /*color: #008299;*/
 }
 
 .skill-name {
   font-size: 18px;
   margin: 0;
+  color: #F29A47;
+  color: #F09F52;
+  color: #B56212;
+  color: #ee7c11;
+  color: #da7212;
+  /*color: #e77f1f;*/
+
+  /*trying some blues*/
+  color: #1C7889;
+  color: #2395a9;
+  color: #1a707f;
+  /*color: #008299;*/
 }
 
 .skill-project-count {
