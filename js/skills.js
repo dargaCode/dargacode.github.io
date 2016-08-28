@@ -19,14 +19,31 @@ function getSortedSkills(sortHelper) {
 }
 
 function addSkillsToDom(skillsArray) {
-
   for (let skill of skillsArray) {
+    const skillCardArticle = document.createElement('article');
+    skillCardArticle.classList.add('skill-card');
 
-    const skillElement = document.createElement('li');
+    const skillTypeParagraph = document.createElement('p');
+    skillTypeParagraph.classList.add('skill-type');
+    skillTypeParagraph.innerText = skill.type;
 
-    skillElement.innerHTML = `${skill.type} - <span class="skill-name">${skill.name}</span> <span class="project-count">(${skill.projectCount} projects)</span>`;
+    const skillIcon = document.createElement('i');
+    skillIcon.classList.add(skill.iconClass);
 
-    skillParent.appendChild(skillElement);
+    const skillNameHeading = document.createElement('h3');
+    skillNameHeading.classList.add('skill-name');
+    skillNameHeading.innerText = skill.name;
+
+    const skillCountParagraph = document.createElement('p');
+    skillCountParagraph.classList.add('skill-project-count');
+    skillCountParagraph.innerText = `${skill.projectCount} Projects`;
+
+    skillCardArticle.appendChild(skillTypeParagraph);
+    skillCardArticle.appendChild(skillIcon);
+    skillCardArticle.appendChild(skillNameHeading);
+    skillCardArticle.appendChild(skillCountParagraph);
+
+    skillParent.appendChild(skillCardArticle);
   }
 }
 
