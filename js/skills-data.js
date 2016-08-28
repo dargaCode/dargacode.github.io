@@ -105,11 +105,5 @@ const CONSTANTS = {
       "iconClass": "devicon-nodejs-plain",
       "type": "Environment"
     },
-    {
-      "name": "NPM",
-      "projectCount": 7,
-      "iconClass": "devicon-javascript-plain",
-      "type": "Tool"
-    }
   ],
 }
