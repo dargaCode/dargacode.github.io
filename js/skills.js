@@ -1,5 +1,5 @@
 
-'use strict' //enable 'let'
+'use strict'; //enable 'let'
 
 //anonymouse module
 (function() {
@@ -23,32 +23,7 @@
 
   function addSkillsToDom(skillsArray) {
     for (let skill of skillsArray) {
-      const pluralProject = pluralizeProjects(skill);
-
-      const skillCardArticle = document.createElement('article');
-      skillCardArticle.classList.add('skill-card');
-
-      const skillTypeParagraph = document.createElement('p');
-      skillTypeParagraph.classList.add('skill-type');
-      skillTypeParagraph.innerText = skill.type;
-
-      const skillIcon = document.createElement('i');
-      skillIcon.classList.add(skill.iconClass);
-
-      const skillNameHeading = document.createElement('h3');
-      skillNameHeading.classList.add('skill-name');
-      skillNameHeading.innerText = skill.name;
-
-      const skillCountParagraph = document.createElement('p');
-      skillCountParagraph.classList.add('skill-project-count');
-      skillCountParagraph.innerText = `${skill.projectCount} ${pluralProject}`;
-
-      skillCardArticle.appendChild(skillTypeParagraph);
-      skillCardArticle.appendChild(skillIcon);
-      skillCardArticle.appendChild(skillNameHeading);
-      skillCardArticle.appendChild(skillCountParagraph);
-
-      skillParent.appendChild(skillCardArticle);
+      generateSkillElements(skill);
     }
   }
 
@@ -84,9 +59,54 @@
     }
   }
 
-  function pluralizeProjects(skillObj) {
-    const projectCount = skillObj.projectCount;
+  function generateSkillElements(skill) {
+    const skillCard = generateSkillCard();
+
+    skillCard.appendChild(generateSkillType(skill));
+    skillCard.appendChild(generateSkillIcon(skill));
+    skillCard.appendChild(generateSkillName(skill));
+    skillCard.appendChild(generateSkillCount(skill));
+
+    skillParent.appendChild(skillCard);
+  }
+
+  function pluralizeProjects(skillObject) {
+    const projectCount = skillObject.projectCount;
     return projectCount === 1 ? 'Project' : 'Projects';
+  }
+
+  function generateSkillCard() {
+    const skillCardArticle = document.createElement('article');
+    skillCardArticle.classList.add('skill-card');
+    return skillCardArticle;
+  }
+
+  function generateSkillType(skillObject) {
+    const skillTypeParagraph = document.createElement('p');
+    skillTypeParagraph.classList.add('skill-type');
+    skillTypeParagraph.innerText = skillObject.type;
+    return skillTypeParagraph;
+  }
+
+  function generateSkillIcon(skillObject) {
+    const skillIcon = document.createElement('i');
+    skillIcon.classList.add(skillObject.iconClass);
+    return skillIcon;
+  }
+
+  function generateSkillName(skillObject) {
+    const skillNameHeading = document.createElement('h3');
+    skillNameHeading.classList.add('skill-name');
+    skillNameHeading.innerText = skillObject.name;
+    return skillNameHeading;
+  }
+
+  function generateSkillCount(skillObject) {
+    const pluralProject = pluralizeProjects(skillObject);
+    const skillCountParagraph = document.createElement('p');
+    skillCountParagraph.classList.add('skill-project-count');
+    skillCountParagraph.innerText = `${skillObject.projectCount} ${pluralProject}`;
+    return skillCountParagraph;
   }
 
   // MAIN
