@@ -1,14 +1,18 @@
 
-const CONSTANTS = {
-  CATEGORY_ORDER: [
+'use strict' //enable 'let'
+
+const CONSTANTS = (function() {
+
+  const CATEGORY_ORDER = [
     "Language",
     "Environment",
     "Framework",
     "Library",
     "Database",
     "Tool"
-  ],
-  SKILLS: [
+  ];
+
+  const SKILLS = [
     {
       "name": "Bootstrap",
       "projectCount": 5,
@@ -105,5 +109,12 @@ const CONSTANTS = {
       "iconClass": "devicon-nodejs-plain",
       "type": "Environment"
     },
-  ],
-}
+  ];
+
+  // "revealing" module
+  return {
+    CATEGORY_ORDER: CATEGORY_ORDER,
+    SKILLS: SKILLS
+  }
+
+}());
