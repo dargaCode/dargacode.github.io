@@ -20,7 +20,7 @@ body {
 }
 
 .container {
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -37,7 +37,7 @@ body {
 
 .content-section .container {
   background: white;
-  padding: 40px 35px 0;
+  padding: 10px 35px 0;
   overflow: hidden; /*No margin collapse w/children*/
 }
 
@@ -81,6 +81,7 @@ h2 {
   color: #1b2e32;
   margin-top: 2em;
   margin-bottom: 0;
+  font-size: 40px;
 }
 
 h3 {
@@ -192,7 +193,7 @@ nav ul li a:hover {
   color: #F29A47;
   color: #f1f4f2;
   font-weight: 700;
-  font-size: 3em;
+  font-size: 3.05em;
   line-height: 1em;
 }
 
@@ -214,7 +215,7 @@ nav ul li a:hover {
   color: #22292a;
   color: #1b2e32;
   font-weight: 500;
-  font-size: 0.6em;
+  font-size: 0.62em;
   float: right;
   position: relative;
   top: 8px;
@@ -250,16 +251,75 @@ nav ul li a:hover {
 /*SKILLS*/
 
 .skills {
+  background: #766BBE;
+  background: #024A58;
+}
+
+.skills .container {
+  padding: 30px 0 120px;
+  max-width: 960px;
+  background: none;
 
 }
 
-.skills .skill-name {
-  font-weight: 900;
+.skills h2 {
+  color: white;
+  color: #eef5f7;
+  margin-bottom: 5px;
 }
 
-.skills .project-count {
+.skills .skill-list {
+  /*Remove spaces between inline-block children*/
+  font-size: 0;
+}
+
+.skills .skill-card {
+  display: inline-block;
+  width: 120px;
+  padding: 15px 0;
+  text-align: center;
+  /*Override 0-size text in ul*/
+  font-size: 16px;
+  background: white;
+  background: #FFBD7F;
+  background: #58A0AE;
+  background: #ddebee;
+  background: #eef5f7;
+  border: 1px solid #2d4c53;
+}
+
+.skill-card p {
+  margin: 0;
+}
+
+.skill-card .skill-type {
+  font-size: 16px;
+  margin-bottom: 5px;
   color: #a1a9aa;
-  font-size: 0.9em;
+}
+
+.skill-card i {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 60px;
+  /*color: #F29A47;*/
+  /*color: #F09F52;*/
+  color: #B56212;
+  color: #ee7c11;
+  color: #d76f0f;
+  color: #e77f1f;
+  /*color: #bf630d;*/
+  /*color: #8f4a0a;*/
+  /*color: #773e08;*/
+}
+
+.skill-name {
+  font-size: 18px;
+  margin: 0;
+}
+
+.skill-project-count {
+  font-size: 14px;
 }
 
 /*PROJECTS*/
