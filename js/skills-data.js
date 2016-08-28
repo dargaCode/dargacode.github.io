@@ -34,7 +34,7 @@ const CONSTANTS = {
       "type": "Language"
     },
     {
-      "name": "Embedded JavaScript",
+      "name": "EJS",
       "projectCount": 7,
       "iconClass": "devicon-javascript-plain",
       "type": "Language"
@@ -48,7 +48,7 @@ const CONSTANTS = {
     {
       "name": "Git",
       "projectCount": 53,
-      "iconClass": "devicon-git",
+      "iconClass": "devicon-git-plain",
       "type": "Tool"
     },
     {
