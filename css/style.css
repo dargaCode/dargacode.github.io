@@ -118,10 +118,6 @@ nav {
   z-index: 1; /*not affected by the about overlay*/
 }
 
-nav .container {
-  max-width: 960px;
-}
-
 nav a {
   text-decoration: none;
   color: inherit;
