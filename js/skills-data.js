@@ -33,7 +33,7 @@ const CONSTANTS = (function() {
     },
     {
       "name": "CSS",
-      "projectCount": 34,
+      "projectCount": 35,
       "iconClass": "devicon-css3-plain",
       "type": "Language"
     },
@@ -51,7 +51,7 @@ const CONSTANTS = (function() {
     },
     {
       "name": "Git",
-      "projectCount": 54,
+      "projectCount": 55,
       "iconClass": "devicon-git-plain",
       "type": "Tool"
     },
@@ -69,13 +69,13 @@ const CONSTANTS = (function() {
     },
     {
       "name": "HTML",
-      "projectCount": 34,
+      "projectCount": 35,
       "iconClass": "devicon-html5-plain",
       "type": "Language"
     },
     {
       "name": "JavaScript",
-      "projectCount": 38,
+      "projectCount": 39,
       "iconClass": "devicon-javascript-plain",
       "type": "Language"
     },
@@ -87,7 +87,7 @@ const CONSTANTS = (function() {
     },
     {
       "name": "Linux Shell",
-      "projectCount": 54,
+      "projectCount": 55,
       "iconClass": "devicon-linux-plain",
       "type": "Tool"
     },
