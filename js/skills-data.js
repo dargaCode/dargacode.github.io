@@ -15,7 +15,7 @@ const CONSTANTS = (function() {
   const SKILLS = [
     {
       "name": "Bootstrap",
-      "projectCount": 5,
+      "projectCount": 3,
       "iconClass": "devicon-bootstrap-plain",
       "type": "Library"
     },
@@ -33,25 +33,25 @@ const CONSTANTS = (function() {
     },
     {
       "name": "CSS",
-      "projectCount": 35,
+      "projectCount": 21,
       "iconClass": "devicon-css3-plain",
       "type": "Language"
     },
     {
       "name": "EJS",
-      "projectCount": 7,
+      "projectCount": 6,
       "iconClass": "icon-custom-ejs",
       "type": "Language"
     },
     {
       "name": "Express.js",
-      "projectCount": 7,
+      "projectCount": 6,
       "iconClass": "icon-custom-express",
       "type": "Framework"
     },
     {
       "name": "Git",
-      "projectCount": 55,
+      "projectCount": 57,
       "iconClass": "devicon-git-plain",
       "type": "Tool"
     },
@@ -63,19 +63,19 @@ const CONSTANTS = (function() {
     },
     {
       "name": "Heroku",
-      "projectCount": 7,
+      "projectCount": 6,
       "iconClass": "devicon-heroku-plain",
       "type": "Tool"
     },
     {
       "name": "HTML",
-      "projectCount": 35,
+      "projectCount": 22,
       "iconClass": "devicon-html5-plain",
       "type": "Language"
     },
     {
       "name": "JavaScript",
-      "projectCount": 39,
+      "projectCount": 24,
       "iconClass": "devicon-javascript-plain",
       "type": "Language"
     },
@@ -87,7 +87,7 @@ const CONSTANTS = (function() {
     },
     {
       "name": "Linux Shell",
-      "projectCount": 55,
+      "projectCount": 53,
       "iconClass": "devicon-linux-plain",
       "type": "Tool"
     },
