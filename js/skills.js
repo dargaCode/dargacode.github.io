@@ -6,19 +6,44 @@
 
   // CONSTANTS
 
+  const SORT_HELPERS = {
+    'skill name': sortByName,
+    'skill type': sortByType,
+    'project count': sortByProjectCount,
+  };
+
   // crappy fake Require for now
   const CATEGORY_ORDER = CONSTANTS.CATEGORY_ORDER;
   const SKILLS = CONSTANTS.SKILLS;
 
+  const sortSelect = document.querySelector('.skills select');
   const skillParent = document.querySelector('.skills .skill-list');
 
   // VARIABLES
 
+  // EVENTS
+
+  sortSelect.addEventListener('change', updateSkills);
 
   // FUNCTIONS
 
+  function updateSkills() {
+    const sortType = sortSelect.value.toLowerCase();
+    const sortHelper = SORT_HELPERS[sortType];
+    const sortedSkills = getSortedSkills(sortHelper);
+
+    clearSkillsFromDom();
+    addSkillsToDom(sortedSkills);
+  }
+
   function getSortedSkills(sortHelper) {
     return SKILLS.sort(sortHelper);
+  }
+
+  function clearSkillsFromDom() {
+    while (skillParent.firstChild) {
+      skillParent.removeChild(skillParent.firstChild);
+    }
   }
 
   function addSkillsToDom(skillsArray) {
@@ -29,8 +54,19 @@
 
   // HELPERS
 
-  function sortByProjectNum(a, b) {
-    return b.projectCount - a.projectCount;
+  function sortByName(a, b) {
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+
+    if (nameA < nameB) {
+      return -1;
+    }
+    else if (nameB < nameA) {
+      return 1;
+    }
+    else {
+      return 0;
+    }
   }
 
   function sortByType(a, b) {
@@ -57,6 +93,10 @@
         return 0;
       }
     }
+  }
+
+  function sortByProjectCount(a, b) {
+    return b.projectCount - a.projectCount;
   }
 
   function generateSkillElements(skill) {
@@ -111,8 +151,6 @@
 
   // MAIN
 
-  const sortedSkills = getSortedSkills(sortByType);
-
-  addSkillsToDom(sortedSkills);
+  updateSkills();
 
 }())
