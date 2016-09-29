@@ -284,6 +284,14 @@ nav ul li a:hover {
   margin-bottom: 5px;
 }
 
+.skills form {
+  margin-bottom: 10px;
+}
+
+.skills label {
+  color: white;
+}
+
 .skills .skill-list {
   /*Remove spaces between inline-block children*/
   font-size: 0;
