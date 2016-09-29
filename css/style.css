@@ -278,18 +278,45 @@ nav ul li a:hover {
 
 }
 
+.skills header {
+  margin-top: 80px;
+  position: relative;
+  /*Relative for dropdown positioning*/
+}
+
 .skills h2 {
+  display: inline-block;
+  margin: 0 0 5px;
   color: white;
   color: #eef5f7;
-  margin-bottom: 5px;
 }
 
 .skills form {
-  margin-bottom: 10px;
+  position: absolute;
+  right: 0;
+  bottom: 18px;
 }
 
 .skills label {
-  color: white;
+  color: #eef5f7;
+  font-size: 1.2em;
+  position: relative;
+  top: 2px;
+}
+
+.skills select {
+  width: 150px;
+  margin-left: 8px;
+  font-size: 1.05em;
+  font-weight: 500;
+  border: 3px solid orange;
+  border-radius: 0;
+  color: #1a707f;
+  background: #eef5f7;
+}
+
+.skills select:focus {
+  outline: none;
 }
 
 .skills .skill-list {
