@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'custom-icons';
-  src:  url('../fonts/custom-icons.eot?970tbl');
-  src:  url('../fonts/custom-icons.eot?970tbl#iefix') format('embedded-opentype'),
-    url('../fonts/custom-icons.ttf?970tbl') format('truetype'),
-    url('../fonts/custom-icons.woff?970tbl') format('woff'),
-    url('../fonts/custom-icons.svg?970tbl#custom-icons') format('svg');
+  src:  url('../fonts/custom-icons.eot?lxz4qx');
+  src:  url('../fonts/custom-icons.eot?lxz4qx#iefix') format('embedded-opentype'),
+    url('../fonts/custom-icons.ttf?lxz4qx') format('truetype'),
+    url('../fonts/custom-icons.woff?lxz4qx') format('woff'),
+    url('../fonts/custom-icons.svg?lxz4qx#custom-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,10 +24,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-custom-ejs:before {
+.icon-envelope:before {
+  content: "\e3";
+}
+.icon-ejs-logo:before {
   content: "\e1";
 }
-.icon-custom-express:before {
+.icon-express-logo:before {
   content: "\e2";
 }
-

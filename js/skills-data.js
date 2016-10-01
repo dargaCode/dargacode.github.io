@@ -40,13 +40,13 @@ const CONSTANTS = (function() {
     {
       "name": "EJS",
       "projectCount": 6,
-      "iconClass": "icon-custom-ejs",
+      "iconClass": "icon-ejs-logo",
       "type": "Language"
     },
     {
       "name": "Express.js",
       "projectCount": 6,
-      "iconClass": "icon-custom-express",
+      "iconClass": "icon-express-logo",
       "type": "Framework"
     },
     {
