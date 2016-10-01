@@ -32,11 +32,13 @@ body {
   background: #024A58;
   background: #265259;
   background: #2d4d53;
+  background: #024A58;
   overflow: hidden; /*No margin collapse w/children*/
 }
 
 .content-section .container {
   background: white;
+  background: #eef5f7;
   padding: 10px 35px 0;
   overflow: hidden; /*No margin collapse w/children*/
 }
@@ -53,6 +55,7 @@ a {
   color: #f09947;
   color: #e19956;
   /*color: #e69951;*/
+  color: #e77f1f;
   text-decoration: none;
 }
 
@@ -272,14 +275,13 @@ nav ul li a:hover {
 }
 
 .skills .container {
-  padding: 30px 0 120px;
+  padding: 110px 0 120px;
   max-width: 960px;
   background: none;
 
 }
 
 .skills header {
-  margin-top: 80px;
   position: relative;
   /*Relative for dropdown positioning*/
 }
@@ -425,6 +427,7 @@ nav ul li a:hover {
 .page-footer {
   background: #3b332b;
   background: #2d4d53;
+  background: #024A58;
   overflow: hidden; /*No margin collapse w/children*/
   text-align: center;
 }
