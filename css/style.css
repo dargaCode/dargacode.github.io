@@ -397,12 +397,22 @@ nav ul li a:hover {
 
 /*PROJECTS*/
 
+.project-spacer {
+  height: 100px;
+  background: #1C7889;
+}
+
 .projects {
-  padding-bottom: 70px;
+  padding-bottom: 100px;
+  background: #1C7889;
 }
 
 .projects .container {
   padding-bottom: 50px;
+}
+
+.projects h2 {
+  /*margin-top: 50px;*/
 }
 
 .projects time {
