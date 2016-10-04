@@ -15,6 +15,10 @@ body {
   color: #2d4c53;
   background: #444C48;
   background: #49575a;
+  /*darker*/
+  background: #455154;
+  background: #394446;
+  /*background: #414648;*/
   margin: 0;
   padding: 0;
 }
@@ -116,6 +120,7 @@ nav {
   color: #c7d0d1;
   background: #444C48;
   background: #49575a;
+  background: #455154;
   width: 100%;
   position: fixed;
   z-index: 1; /*not affected by the about overlay*/
@@ -529,6 +534,8 @@ nav ul li a:hover {
   background: #3b332b;
   background: #2d4d53;
   background: #024A58;
+  /*match body*/
+  background: none;
   overflow: hidden; /*No margin collapse w/children*/
   text-align: center;
 }
