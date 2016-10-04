@@ -424,7 +424,17 @@ nav ul li a:hover {
 
 .resume {
   height: 383px;
-  background: #1C7889;
+  background-image: url("../img/forest-grey.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.resume .overlay {
+  background: rgba(2,74,88,0.82);
+  background: rgba(2,63,75,0.82);
+  height: inherit;
 }
 
 .resume .container {
@@ -458,7 +468,6 @@ nav ul li a:hover {
 .resume .button:hover {
   color: #e77f1f;
   background: #eef5f7;
-  background: white;
   text-decoration: none;
 }
 
