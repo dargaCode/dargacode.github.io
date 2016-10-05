@@ -455,18 +455,18 @@ nav ul li a:hover {
 
 .resume .buttons {
   text-align: center;
+  font-size: 0;
 }
 
 .resume .button {
   display: inline-block;
-  /*max-width: 180px;*/
-  text-align: left;
-  font-size: 1.1em;
-  line-height: 1.4em;
-  font-weight: 500;
-  margin: 0 20px;
-  padding: 10px 22px;
+  width: 164px;
+  margin: 0 14px;
+  padding: 10px 21px;
+  /*orange*/
   color: #eef5f7;
+  /*dark navbar grey*/
+  /*color: #455154;*/
   background: #e77f1f;
 }
 
@@ -479,7 +479,14 @@ nav ul li a:hover {
 .resume i {
   float: left;
   font-size: 47px;
-  margin-right: 15px;
+}
+
+.resume span {
+  float: right;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.4em;
+  font-weight: 500;
 }
 
 /*CONTACT*/
@@ -495,6 +502,7 @@ nav ul li a:hover {
   text-align: center;
   height: inherit;
   padding: 30px 0;
+  font-size: 0;
 }
 
 .contact h2 {
@@ -534,8 +542,10 @@ nav ul li a:hover {
   background: #3b332b;
   background: #2d4d53;
   background: #024A58;
-  /*match body*/
+  /*match nav*/
   background: none;
+  /*darker than nav*/
+  /*background: #455154;*/
   overflow: hidden; /*No margin collapse w/children*/
   text-align: center;
 }
