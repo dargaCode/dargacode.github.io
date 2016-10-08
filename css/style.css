@@ -430,6 +430,7 @@ nav ul li a:hover {
 .resume {
   height: 410px;
   background-image: url("../img/forest-grey.jpg");
+  background-image: url("../img/ocean-grey.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: scroll;
@@ -437,8 +438,11 @@ nav ul li a:hover {
 }
 
 .resume .overlay {
+  /*light blue*/
+  background: rgba(28,120,137,0.82);
+  /*darker blue*/
   background: rgba(2,74,88,0.82);
-  background: rgba(2,63,75,0.82);
+  background: rgba(2,63,75,0.70);
   height: inherit;
 }
 
