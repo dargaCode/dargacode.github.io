@@ -6,6 +6,10 @@
 
   // CONSTANTS
 
+  const MONTHS = [
+    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+  ];
+
   // crappy fake Require for now
   const PROJECTS = CONSTANTS.PROJECTS;
 
@@ -28,6 +32,8 @@
     const projectCard = generateProjectCard(project);
 
     projectCard.appendChild(generateNameHeading(project));
+    projectCard.appendChild(generateTypeSpan(project));
+    projectCard.appendChild(generateTime(project));
     projectCard.appendChild(generateDescriptionParagraph(project));
     projectCard.appendChild(generateProjectLinksUl(project));
 
@@ -50,6 +56,47 @@
 
     return projectHeading;
   }
+
+  function generateTypeSpan(project) {
+    const typeSpan = document.createElement('span');
+    typeSpan.innerText = project.type;
+
+    return typeSpan;
+  }
+
+  function generateTime(project) {
+    const time = document.createElement('time');
+    const year = project.date.getFullYear();
+    const monthNum = project.date.getMonth();
+    const month = MONTHS[monthNum];
+
+    time.dateTime = formatDateTimeString(project.date);
+    time.innerText = ` - ${month} ${year}`;
+
+    return time;
+  }
+
+  function formatDateTimeString(projectDate) {
+    const year = projectDate.getFullYear();
+    // getMonth is zero-indexed, but getDate is not
+    const monthNum = projectDate.getMonth() + 1;
+    const dateNum = projectDate.getDate();
+
+    const month = getTwoDigitNumberString(monthNum);
+    const date = getTwoDigitNumberString(dateNum);
+
+    return `${year}-${month}-${date}`;
+  }
+
+  function getTwoDigitNumberString(num) {
+    let result = num.toString();
+
+    if (num < 10 ) {
+      result = '0' + result;
+    }
+
+    return result;
+  };
 
   function generateDescriptionParagraph(project) {
     const projectParagraph = document.createElement('p');
