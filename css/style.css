@@ -425,6 +425,12 @@ nav ul li a:hover {
   font-size: 0.9em;
 }
 
+.projects img {
+  display: block;
+  width: 300px;
+  margin: 20px 0;
+}
+
 /*RESUME*/
 
 .resume {
