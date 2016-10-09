@@ -165,7 +165,7 @@ const CONSTANTS = (function() {
     {
       'name': 'Recursive Nth Fibonacci',
       'type': 'Command Line',
-      'description': 'Description Text for Recursive Nth Fiboacci',
+      'description': 'Description Text for Recursive Nth Fibonacci',
       'languages': [],
       'date': new Date('Oct 5 2015'),
       'imageUrl': 'https://camo.githubusercontent.com/27bfe090283b6a721da2e90a86e04949f331df4f/687474703a2f2f34312e6d656469612e74756d626c722e636f6d2f34366232656131343036656164396331633766306431393936643961663263612f74756d626c725f696e6c696e655f6e76727865786a733465317476633568695f313238302e706e67',
