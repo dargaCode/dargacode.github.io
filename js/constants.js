@@ -183,7 +183,7 @@ const CONSTANTS = (function() {
       'livePageUrl': 'http://dargacode.github.io/CodecademyBoltNetworkLayout/',
     },
     {
-      'name': 'Recursive Nth Fiboacci',
+      'name': 'Recursive Nth Fibonacci',
       'type': 'Command Line',
       'description': 'Recursive Nth Fiboacci Description Text',
       'languages': [],
