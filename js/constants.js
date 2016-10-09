@@ -163,26 +163,6 @@ const CONSTANTS = (function() {
       'livePageUrl': 'http://dargacode.github.io/UdemyColorMatchGame/',
     },
     {
-      'name': 'Newsroom Layout',
-      'type': 'CSS Mockup',
-      'description': 'Description Text for Newsroom Layout',
-      'languages': [],
-      'date': new Date('Feb 11 2016'),
-      'imageUrl': 'https://camo.githubusercontent.com/478a191b50dcbc310946c62cbd787d66fc2032bd/687474703a2f2f34302e6d656469612e74756d626c722e636f6d2f62653930346339646537613231656465636538313938376633626233373038622f74756d626c725f696e6c696e655f6f326466777170543042317476633568695f313238302e706e67',
-      'gitHubUrl': 'https://github.com/dargaCode/CodecademyNewsroomLayout',
-      'livePageUrl': 'http://dargacode.github.io/CodecademyNewsroomLayout/',
-    },
-    {
-      'name': 'Bolt Network Layout',
-      'type': 'CSS Mockup',
-      'description': 'Description Text for Bolt Network Layout',
-      'languages': [],
-      'date': new Date('Feb 3 2016'),
-      'imageUrl': 'https://camo.githubusercontent.com/5ce16747ce527082351d884a955983947435b27a/687474703a2f2f34302e6d656469612e74756d626c722e636f6d2f38643730306537336164376164333164396133306139636134633434306234362f74756d626c725f696e6c696e655f6f317972347052643557317476633568695f313238302e706e67',
-      'gitHubUrl': 'https://github.com/dargaCode/CodecademyBoltNetworkLayout',
-      'livePageUrl': 'http://dargacode.github.io/CodecademyBoltNetworkLayout/',
-    },
-    {
       'name': 'Recursive Nth Fibonacci',
       'type': 'Command Line',
       'description': 'Description Text for Recursive Nth Fiboacci',
@@ -211,16 +191,6 @@ const CONSTANTS = (function() {
       'imageUrl': 'https://camo.githubusercontent.com/c049398e2ec40c62ba600b7899cb7d7d40aea88f/687474703a2f2f34302e6d656469612e74756d626c722e636f6d2f61326130346236336434326166343938663464363662616534303939623064632f74756d626c725f696e6c696e655f6e7364616b7854474368317476633568695f313238302e706e67',
       'gitHubUrl': 'https://github.com/dargaCode/KhanBookShelf',
       'livePageUrl': 'http://dargacode.github.io/KhanBookShelf',
-    },
-    {
-      'name': 'Interactive Thunder Storm',
-      'type': 'Front-End',
-      'description': 'Description Text for Interactive Thunder Storm',
-      'languages': [],
-      'date': new Date('Jun 27 2015'),
-      'imageUrl': 'https://camo.githubusercontent.com/b264e2afc6c76324fb8313835ec7678ba6dd41bd/687474703a2f2f34302e6d656469612e74756d626c722e636f6d2f30323236333361343330346234326437643663316331336364623230376638382f74756d626c725f696e6c696e655f6e716d70773931514457317476633568695f313238302e706e67',
-      'gitHubUrl': 'https://github.com/dargaCode/KhanThunderStorm',
-      'livePageUrl': 'http://dargacode.github.io/KhanThunderStorm',
     },
   ];
 
