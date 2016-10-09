@@ -27,8 +27,8 @@
   function generateProjectElements(project) {
     const projectCard = generateProjectCard(project);
 
-    projectCard.appendChild(generateProjectHeading(project));
-    projectCard.appendChild(generateProjectDescription(project));
+    projectCard.appendChild(generateNameHeading(project));
+    projectCard.appendChild(generateDescriptionParagraph(project));
     projectCard.appendChild(generateProjectLinksUl(project));
 
     projectParent.appendChild(projectCard);
@@ -44,14 +44,14 @@
     return projectArticle;
   }
 
-  function generateProjectHeading(project) {
+  function generateNameHeading(project) {
     const projectHeading = document.createElement('h3');
     projectHeading.innerText = project.name;
 
     return projectHeading;
   }
 
-  function generateProjectDescription(project) {
+  function generateDescriptionParagraph(project) {
     const projectParagraph = document.createElement('p');
     projectParagraph.innerText = project.description;
 
