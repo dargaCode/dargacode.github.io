@@ -406,15 +406,22 @@ nav ul li a:hover {
 }
 
 .projects .container {
+  max-width: 960px;
   padding: 115px 0 120px;
   background: none;
+  /*Remove spaces between inline-block children*/
+  font-size: 0;
 }
 
 .projects .project-card {
-  width: 100%;
-  padding: 10px 35px 20px;
-  margin-bottom: 6px;
+  display: inline-block;
+  width: 480px;
+  height: 650px;
+  padding: 10px 40px 20px;
+  /*Override 0-size text in container*/
+  font-size: 1rem;
   background: #eef5f7;
+  border: 2px solid #1C7889;
   overflow: hidden; /*No margin collapse with children*/
 }
 
@@ -431,7 +438,14 @@ nav ul li a:hover {
 .projects img {
   display: block;
   width: 300px;
+  height: 250px;
   margin: 20px 0;
+}
+
+.projects .tags {
+  /*color: #a1a9aa;*/
+  font-weight: 700;
+  font-size: 0.95em;
 }
 
 /*RESUME*/
