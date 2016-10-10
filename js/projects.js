@@ -35,6 +35,7 @@
     projectCard.appendChild(generateTypeSpan(project));
     projectCard.appendChild(generateTime(project));
     projectCard.appendChild(generateImage(project));
+    projectCard.appendChild(generateTagSpan(project));
     projectCard.appendChild(generateDescriptionParagraph(project));
     projectCard.appendChild(generateProjectLinksUl(project));
 
@@ -104,6 +105,15 @@
     image.src = project.imageUrl;
 
     return image;
+  }
+
+  function generateTagSpan(project) {
+    const tagSpan = document.createElement('span');
+    const spanContents = project.tags.join(', ');
+    tagSpan.innerText = spanContents;
+    tagSpan.classList.add('tags');
+
+    return tagSpan;
   }
 
   function generateDescriptionParagraph(project) {
