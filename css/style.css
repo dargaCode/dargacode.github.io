@@ -279,13 +279,14 @@ nav ul li a:hover {
 }
 
 .skills .container {
-  padding: 115px 0 120px;
+  padding: 130px 0 160px;
   max-width: 960px;
   background: none;
 
 }
 
 .skills header {
+  margin-bottom: 10px;
   position: relative;
   /*Relative for dropdown positioning*/
 }
@@ -407,7 +408,7 @@ nav ul li a:hover {
 
 .projects .container {
   max-width: 960px;
-  padding: 80px 0 120px;
+  padding: 80px 0 140px;
   background: none;
   /*Remove spaces between inline-block children*/
   font-size: 0;
@@ -416,7 +417,7 @@ nav ul li a:hover {
 .projects .project-card {
   display: inline-block;
   width: 480px;
-  height: 620px;
+  height: 618px;
   padding: 10px 40px 20px;
   /*Override 0-size text in container*/
   font-size: 1rem;
