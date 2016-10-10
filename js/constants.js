@@ -123,16 +123,6 @@ const CONSTANTS = (function() {
       'livePageUrl': null,
     },
     {
-      'name': 'Secret Page',
-      'type': 'Back-End',
-      'description': 'Description Text for Secret Page',
-      'languages': [],
-      'date': new Date('Jun 29 2016'),
-      'imageUrl': 'https://camo.githubusercontent.com/12a55c7743265d5442d6d7260df4f51da1d01339/687474703a2f2f36362e6d656469612e74756d626c722e636f6d2f30363533303861363333666534646637353464303837396338346237666230392f74756d626c725f696e6c696e655f6f616a3978644e456442317476633568695f313238302e706e67',
-      'gitHubUrl': 'https://github.com/dargaCode/UdemySecretPage',
-      'livePageUrl': 'https://darga-secret-page.herokuapp.com/',
-    },
-    {
       'name': 'RESTful Blog',
       'type': 'Back-End',
       'description': 'Description Text for RESTful Blog',
@@ -161,16 +151,6 @@ const CONSTANTS = (function() {
       'imageUrl': 'https://camo.githubusercontent.com/3abec81cdb15e51fb0f378bab84f9833873524a9/687474703a2f2f34312e6d656469612e74756d626c722e636f6d2f62383834613639626566643236303466323839336432343636613831626631612f74756d626c725f696e6c696e655f6f35386f63314d584970317476633568695f313238302e706e67',
       'gitHubUrl': 'https://github.com/dargaCode/UdemyColorMatchGame',
       'livePageUrl': 'http://dargacode.github.io/UdemyColorMatchGame/',
-    },
-    {
-      'name': 'Recursive Nth Fibonacci',
-      'type': 'Command Line',
-      'description': 'Description Text for Recursive Nth Fibonacci',
-      'languages': [],
-      'date': new Date('Oct 5 2015'),
-      'imageUrl': 'https://camo.githubusercontent.com/27bfe090283b6a721da2e90a86e04949f331df4f/687474703a2f2f34312e6d656469612e74756d626c722e636f6d2f34366232656131343036656164396331633766306431393936643961663263612f74756d626c725f696e6c696e655f6e76727865786a733465317476633568695f313238302e706e67',
-      'gitHubUrl': 'https://github.com/dargaCode/RecursiveNthFibonacci',
-      'livePageUrl': null,
     },
     {
       'name': 'Animated Insertion Sort',
