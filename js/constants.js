@@ -166,7 +166,7 @@ const CONSTANTS = (function() {
       'name': 'Drag and Drop Book Shelf',
       'type': 'Front-End',
       'tags': ['JavaScript', 'Canvas', 'Processing.js', 'OOP',],
-      'description': 'Originally written in Khan Academy, this old project is a personal favorite. I expanded the simple assignment ("Create an array of book objects") to include a drag-and-drop interface using a hierarchy of nine classes.',
+      'description': 'Originally written in Khan Academy, this old project is a personal favorite. I expanded the simple assignment ("Create an array of book objects") to include a drag and drop interface using a hierarchy of nine classes.',
       'date': new Date('Jul 31 2015'),
       'imageUrl': 'https://camo.githubusercontent.com/c049398e2ec40c62ba600b7899cb7d7d40aea88f/687474703a2f2f34302e6d656469612e74756d626c722e636f6d2f61326130346236336434326166343938663464363662616534303939623064632f74756d626c725f696e6c696e655f6e7364616b7854474368317476633568695f313238302e706e67',
       'gitHubUrl': 'https://github.com/dargaCode/KhanBookShelf',
