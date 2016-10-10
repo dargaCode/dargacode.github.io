@@ -407,7 +407,7 @@ nav ul li a:hover {
 
 .projects .container {
   max-width: 960px;
-  padding: 115px 0 120px;
+  padding: 80px 0 120px;
   background: none;
   /*Remove spaces between inline-block children*/
   font-size: 0;
@@ -416,7 +416,7 @@ nav ul li a:hover {
 .projects .project-card {
   display: inline-block;
   width: 480px;
-  height: 650px;
+  height: 620px;
   padding: 10px 40px 20px;
   /*Override 0-size text in container*/
   font-size: 1rem;
@@ -426,7 +426,7 @@ nav ul li a:hover {
 }
 
 .projects h2 {
-  margin: 0 0 5px;
+  margin: 0 0 15px;
   color: #eef5f7;
 }
 
