@@ -17,6 +17,9 @@
 
   const GITHUB_LINK_TEXT = 'GitHub Repository';
   const LIVE_PAGE_LINK_TEXT = 'Live Webpage';
+  const TAGS_CLASS = 'tags';
+  const GITHUB_LINK_CLASS = 'github-link';
+  const LIVE_PAGE_LINK_CLASS = 'live-page-link';
 
   // VARIABLES
 
@@ -113,7 +116,7 @@
     const tagSpan = document.createElement('span');
     const spanContents = project.tags.join(', ');
     tagSpan.innerText = spanContents;
-    tagSpan.classList.add('tags');
+    tagSpan.classList.add(TAGS_CLASS);
 
     return tagSpan;
   }
@@ -128,7 +131,7 @@
   function generateGitHubLink(project) {
     const url = project.gitHubUrl;
     const text = GITHUB_LINK_TEXT;
-    const className = 'github-link';
+    const className = GITHUB_LINK_CLASS;
 
     return generateAnchor(url, text, className);
   }
@@ -136,7 +139,7 @@
   function generateLivePageLink(project) {
     const url = project.livePageUrl;
     const text = LIVE_PAGE_LINK_TEXT;
-    const className = 'live-page-link';
+    const className = LIVE_PAGE_LINK_CLASS;
 
     return generateAnchor(url, text, className);
   }
