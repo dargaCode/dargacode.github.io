@@ -37,11 +37,13 @@
     projectCard.appendChild(generateImage(project));
     projectCard.appendChild(generateTagSpan(project));
     projectCard.appendChild(generateDescriptionParagraph(project));
-    projectCard.appendChild(generateProjectLinksUl(project));
+    projectCard.appendChild(generateGitHubLink(project));
+    if (project.livePageUrl) {
+      projectCard.appendChild(generateLivePageLink(project));
+    }
 
     projectParent.appendChild(projectCard);
   }
-
 
   // HELPERS
 
@@ -123,34 +125,28 @@
     return projectParagraph;
   }
 
-  function generateProjectLinksUl(project) {
-    const projectLinksUl = document.createElement('ul');
+  function generateGitHubLink(project) {
+    const url = project.gitHubUrl;
+    const text = GITHUB_LINK_TEXT;
+    const className = 'github-link';
 
-    const gitHubUrl = project.gitHubUrl;
-    const livePageUrl = project.livePageUrl;
-
-    projectLinksUl.appendChild(generateLinkLi(gitHubUrl, GITHUB_LINK_TEXT));
-
-    if (livePageUrl) {
-      projectLinksUl.appendChild(generateLinkLi(livePageUrl, LIVE_PAGE_LINK_TEXT));
-    }
-
-    return projectLinksUl;
+    return generateAnchor(url, text, className);
   }
 
-  function generateLinkLi(url, urlText) {
-    const listItem = document.createElement('li');
+  function generateLivePageLink(project) {
+    const url = project.livePageUrl;
+    const text = LIVE_PAGE_LINK_TEXT;
+    const className = 'live-page-link';
 
-    listItem.appendChild(generateAnchor(url, urlText));
-
-    return listItem;
+    return generateAnchor(url, text, className);
   }
 
-  function generateAnchor(url, urlText) {
-   const anchor = document.createElement('a');
+  function generateAnchor(url, urlText, className) {
+    const anchor = document.createElement('a');
 
     anchor.href = url;
     anchor.innerText = urlText;
+    anchor.classList.add(className);
 
     return anchor;
   }

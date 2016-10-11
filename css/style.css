@@ -448,6 +448,10 @@ nav ul li a:hover {
   font-size: 0.95em;
 }
 
+.projects a {
+  display: block;
+}
+
 /*RESUME*/
 
 .resume {
