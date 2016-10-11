@@ -1,7 +1,7 @@
 # dargaCode Portfolio Site
 <strong>Language: HTML/CSS/JS</strong>
 
-I'm working on this site very gradually, and using it to learn/incorporate best practices for HTML/CSS/JS. That said, I am also trying to keep things very vanilla and not install any frameworks etc. 
+I'm working on this site very gradually, and using it to learn/incorporate best practices for HTML/CSS/JS. That said, I also want to keep things very vanilla and avoid installing frameworks etc.
 
 **To-Do:**
 * Responsiveness
