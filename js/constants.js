@@ -116,7 +116,7 @@ const CONSTANTS = (function() {
       'name': 'Apartment Description Highlights',
       'type': 'Back-End',
       'tags': ['JavaScript', 'Node.js',],
-      'description': 'Given a long apartment description and a search string, generate a highlight snippet of only relevant phrases. Uses an array of dictionary objects to map categories to relevant keywords.',
+      'description': 'Given a long description of an apartment and a query string, generates a highlight snippet made from only relevant phrases. Uses an array of dictionary objects to map categories to relevant keywords.',
       'date': new Date('Sep 16 2016'),
       'imageUrl': './img/project-thumbnails/apartment.jpg',
       'gitHubUrl': 'https://github.com/dargaCode/ApartmentDescriptionHighlights',
