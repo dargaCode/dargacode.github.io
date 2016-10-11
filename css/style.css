@@ -279,7 +279,7 @@ nav ul li a:hover {
 }
 
 .skills .container {
-  padding: 130px 0 160px;
+  padding: 110px 0 160px;
   max-width: 960px;
   background: none;
 
@@ -408,22 +408,10 @@ nav ul li a:hover {
 
 .projects .container {
   max-width: 960px;
-  padding: 80px 0 140px;
+  padding: 110px 0 160px;
   background: none;
   /*Remove spaces between inline-block children*/
   font-size: 0;
-}
-
-.projects .project-card {
-  display: inline-block;
-  width: 480px;
-  height: 618px;
-  padding: 10px 40px 20px;
-  /*Override 0-size text in container*/
-  font-size: 1rem;
-  background: #eef5f7;
-  border: 2px solid #1C7889;
-  overflow: hidden; /*No margin collapse with children*/
 }
 
 .projects h2 {
@@ -431,25 +419,59 @@ nav ul li a:hover {
   color: #eef5f7;
 }
 
-.projects time {
-  color: #a1a9aa;
-  font-size: 0.9em;
+.projects .project-card {
+  display: inline-block;
+  width: 480px;
+  /*height: 618px;*/
+  padding: 0 40px 25px;
+  /*Override 0-size text in container*/
+  text-align: center;
+  font-size: 1rem;
+  background: #eef5f7;
+  border: 2px solid #1C7889;
+  overflow: hidden; /*No margin collapse with children*/
 }
 
-.projects img {
+.project-card h3 {
+  font-size: 1.5em;
+  color: #1a707f;
+}
+
+.project-card .type-span {
+  font-size: 0.95em;
+}
+
+.project-card time {
+  color: #a1a9aa;
+  font-size: 0.95em;
+}
+
+.project-card img {
   display: block;
   width: 100%;
   margin: 20px 0;
 }
 
-.projects .tags {
-  /*color: #a1a9aa;*/
+.project-card .tags-span {
+  color: #1a707f;
   font-weight: 700;
   font-size: 0.95em;
 }
 
-.projects a {
-  display: block;
+.project-card p {
+  font-size: 0.95em;
+}
+
+.project-card .github-link {
+  /*background-color: red;*/
+  /*position: absolute;*/
+  float: left;
+  /*bottom: 0;*/
+}
+
+.project-card .live-page-link {
+  /*background-color: blue;*/
+  float: right;
 }
 
 /*RESUME*/
