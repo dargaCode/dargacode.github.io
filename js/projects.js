@@ -17,7 +17,8 @@
 
   const GITHUB_LINK_TEXT = 'GitHub Repository';
   const LIVE_PAGE_LINK_TEXT = 'Live Webpage';
-  const TAGS_CLASS = 'tags';
+  const TAGS_CLASS = 'tags-span';
+  const TYPE_CLASS = 'type-span';
   const GITHUB_LINK_CLASS = 'github-link';
   const LIVE_PAGE_LINK_CLASS = 'live-page-link';
 
@@ -67,6 +68,7 @@
   function generateTypeSpan(project) {
     const typeSpan = document.createElement('span');
     typeSpan.innerText = project.type;
+    typeSpan.classList.add(TYPE_CLASS);
 
     return typeSpan;
   }
