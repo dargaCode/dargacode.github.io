@@ -3,7 +3,7 @@
 
 const CONSTANTS = (function() {
 
-  const CATEGORY_ORDER = [
+  const SKILL_TYPE_ORDER = [
     'Language',
     'Environment',
     'Framework',
@@ -176,7 +176,7 @@ const CONSTANTS = (function() {
 
   // 'revealing' module
   return {
-    CATEGORY_ORDER: CATEGORY_ORDER,
+    SKILL_TYPE_ORDER: SKILL_TYPE_ORDER,
     SKILLS: SKILLS,
     PROJECTS: PROJECTS,
   }

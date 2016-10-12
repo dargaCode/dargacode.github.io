@@ -13,7 +13,7 @@
   };
 
   // crappy fake Require for now
-  const CATEGORY_ORDER = CONSTANTS.CATEGORY_ORDER;
+  const SKILL_TYPE_ORDER = CONSTANTS.SKILL_TYPE_ORDER;
   const SKILLS = CONSTANTS.SKILLS;
 
   const sortSelect = document.querySelector('.skills select');
@@ -28,16 +28,18 @@
   // FUNCTIONS
 
   function updateSkills() {
-    const sortType = sortSelect.value.toLowerCase();
-    const sortHelper = SORT_HELPERS[sortType];
-    const sortedSkills = getSortedSkills(sortHelper);
+    const sortedSkills = getSortedSkills();
 
     clearSkillsFromDom();
     addSkillsToDom(sortedSkills);
   }
 
-  function getSortedSkills(sortHelper) {
-    return SKILLS.sort(sortHelper);
+  function getSortedSkills() {
+    const sortType = sortSelect.value.toLowerCase();
+    const sortHelper = SORT_HELPERS[sortType];
+    const processedSkills = processSkillAttributes(SKILLS);
+
+    return processedSkills.sort(sortHelper);
   }
 
   function clearSkillsFromDom() {
@@ -54,14 +56,23 @@
 
   // HELPERS
 
-  function sortByName(a, b) {
-    const nameA = a.name.toLowerCase();
-    const nameB = b.name.toLowerCase();
+  // add more attributes to the skills objects to help with sorting. More efficient to do it once instead of inside the comparators.
+  function processSkillAttributes(skillsArray) {
+    return skillsArray.map(function(skill) {
+      // add numerical value for sorting by type (types aren't in alphabetical order, but importance)
+      skill.typeOrder = SKILL_TYPE_ORDER.indexOf(skill.type);
+      // make lowercase skills like jQuery sort properly
+      skill.nameLower = skill.name.toLowerCase();
 
-    if (nameA < nameB) {
+      return skill;
+    })
+  }
+
+  function sortByName(a, b) {
+    if (a.nameLower < b.nameLower) {
       return -1;
     }
-    else if (nameB < nameA) {
+    else if (b.nameLower < a.nameLower) {
       return 1;
     }
     else {
@@ -70,22 +81,15 @@
   }
 
   function sortByType(a, b) {
-    const orderA = CATEGORY_ORDER.indexOf(a.type);
-    const orderB = CATEGORY_ORDER.indexOf(b.type);
-
-    // make lowercase skills like jQuery sort properly
-    const nameA = a.name.toLowerCase();
-    const nameB = b.name.toLowerCase();
-
     let result;
 
     switch(true) {
       // // sort by category order first
-      case (orderA < orderB): {
+      case (a.typeOrder < b.typeOrder): {
         result = -1;
         break;
       }
-      case (orderB < orderA): {
+      case (b.typeOrder < a.typeOrder): {
         result = 1;
         break;
       }
@@ -99,11 +103,11 @@
         break;
       }
       // same project count, sort by skill name
-      case (nameA < nameB): {
+      case (a.nameLower < b.nameLower): {
         result = -1;
         break;
       }
-      case (nameB < nameA): {
+      case (b.nameLower < a.nameLower): {
         result = 1;
         break;
       }
