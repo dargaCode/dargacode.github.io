@@ -6,7 +6,8 @@
 
   // CONSTANTS
 
-  const SORT_HELPERS = {
+  // match up the text values from the sorting dropdown with a sort helper function
+  const COMPARATORS = {
     'skill name': sortByName,
     'skill type': sortByType,
     'project count': sortByProjectCount,
@@ -36,10 +37,10 @@
 
   function getSortedSkills() {
     const sortType = sortSelect.value.toLowerCase();
-    const sortHelper = SORT_HELPERS[sortType];
+    const comparator = COMPARATORS[sortType];
     const processedSkills = processSkillAttributes(SKILLS);
 
-    return processedSkills.sort(sortHelper);
+    return processedSkills.sort(comparator);
   }
 
   function clearSkillsFromDom() {
@@ -54,7 +55,7 @@
     }
   }
 
-  // HELPERS
+  // COMPARATORS
 
   // add more attributes to the skills objects to help with sorting. More efficient to do it once instead of inside the comparators.
   function processSkillAttributes(skillsArray) {
@@ -124,6 +125,8 @@
   function sortByProjectCount(a, b) {
     return b.projectCount - a.projectCount;
   }
+
+  // HELPERS
 
   function generateSkillElements(skill) {
     const skillCard = generateSkillCard();
