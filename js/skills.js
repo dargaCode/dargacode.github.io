@@ -70,29 +70,51 @@
   }
 
   function sortByType(a, b) {
-    a.order = CATEGORY_ORDER.indexOf(a.type);
-    b.order = CATEGORY_ORDER.indexOf(b.type);
+    const orderA = CATEGORY_ORDER.indexOf(a.type);
+    const orderB = CATEGORY_ORDER.indexOf(b.type);
 
-    if (a.order < b.order) {
-      return -1;
-    }
-    else if (b.order < a.order) {
-      return 1;
-    }
-    /* same type, so sort by name instead (to preserve alphabetical order within types) */
-    else {
-      return b.projectCount - a.projectCount;
+    // make lowercase skills like jQuery sort properly
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
 
-      if (a.name < b.name) {
-        return -1;
+    let result;
+
+    switch(true) {
+      // // sort by category order first
+      case (orderA < orderB): {
+        result = -1;
+        break;
       }
-      else if (b.name < a.name) {
-        return 1;
+      case (orderB < orderA): {
+        result = 1;
+        break;
       }
-      else {
-        return 0;
+      // same category, sort by descending project count
+      case (a.projectCount > b.projectCount): {
+        result = -1;
+        break;
+      }
+      case (b.projectCount > a.projectCount): {
+        result = 1;
+        break;
+      }
+      // same project count, sort by skill name
+      case (nameA < nameB): {
+        result = -1;
+        break;
+      }
+      case (nameB < nameA): {
+        result = 1;
+        break;
+      }
+      // should not happen
+      default: {
+        console.log('Duplicate Skill!');
+        result = 0;
       }
     }
+
+    return result;
   }
 
   function sortByProjectCount(a, b) {
