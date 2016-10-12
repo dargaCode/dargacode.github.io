@@ -1,6 +1,4 @@
 
-'use strict'; //enable 'let'
-
 //anonymous module
 (function() {
 
@@ -27,7 +25,7 @@
   // FUNCTIONS
 
   function addProjectsToDom(projects) {
-    for (let project of projects) {
+    for (var project of projects) {
       generateProjectElements(project);
     }
   }
@@ -98,7 +96,7 @@
   }
 
   function getTwoDigitNumberString(num) {
-    let result = num.toString();
+    var result = num.toString();
 
     if (num < 10 ) {
       result = '0' + result;

@@ -1,6 +1,4 @@
 
-'use strict'; //enable 'let'
-
 //anonymouse module
 (function() {
 
@@ -50,7 +48,7 @@
   }
 
   function addSkillsToDom(skillsArray) {
-    for (let skill of skillsArray) {
+    for (var skill of skillsArray) {
       generateSkillElements(skill);
     }
   }
@@ -82,7 +80,7 @@
   }
 
   function sortByType(a, b) {
-    let result;
+    var result;
 
     switch(true) {
       // // sort by category order first

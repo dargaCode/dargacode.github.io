@@ -1,4 +1,3 @@
-'use strict'; // enable 'let'
 
 // anonymous module, since no surfaced values
 (function() {
@@ -23,9 +22,9 @@
 
   // VARIABLES
 
-  let remainingDays = TOTAL_ELAPSED_DAYS;
+  var remainingDays = TOTAL_ELAPSED_DAYS;
 
-  let durationObject = {
+  var durationObject = {
     year: {
       daysPerUnit: DAYS_PER_YEAR,
       count: null,
@@ -49,7 +48,7 @@
   // FUNCTIONS
 
   function updateUnitCounts() {
-    for (let unit in durationObject) {
+    for (var unit in durationObject) {
       const daysPerUnit = durationObject[unit].daysPerUnit;
       const unitCount = Math.floor(remainingDays / daysPerUnit);
       const remainder = TOTAL_ELAPSED_DAYS % daysPerUnit;
@@ -60,13 +59,13 @@
   }
 
   function updateUnitStrings() {
-    for (let unit in durationObject) {
+    for (var unit in durationObject) {
       durationObject[unit].string = getDurationString(unit);
     }
   }
 
   function updateUnitHtmlStrings() {
-    for (let unit in durationObject) {
+    for (var unit in durationObject) {
       durationObject[unit].html = getHtmlString(unit);
     }
   }

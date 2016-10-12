@@ -1,6 +1,4 @@
 
-'use strict' //enable 'let'
-
 const CONSTANTS = (function() {
 
   const SKILL_TYPE_ORDER = [
