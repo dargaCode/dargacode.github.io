@@ -263,12 +263,34 @@ nav ul li a:hover {
   position: absolute;
   bottom: 0;
   left: 0;
+  height: 80px;
   width: 100%;
 }
 
-.about footer p {
-  margin: 15px;
+.about footer a {
+  display: block;
+  height: 100%;
+  padding-top: 5px;
   text-align: center;
+  /*Hide link text*/
+  font-size: 0;
+  color: #a1a9aa;
+}
+
+.about footer a i {
+  /*Cancel out hidden text from parent*/
+  font-size: 3.5rem;
+}
+
+.about footer a:hover{
+  padding-top: 0;
+  color: #eef5f7;
+  color: #d97d26;
+}
+
+.about footer a:hover i {
+  /*Have to set fontsize here and not the anchor, so the original link text will stay hidden*/
+  font-size: 4rem;
 }
 
 /*SKILLS*/
@@ -547,21 +569,21 @@ nav ul li a:hover {
 .contact {
   background: none;
   color: #eef5f7;
-  height: 290px;
+  height: 275px;
 }
 
 .contact .container {
   background: none;
   text-align: center;
   height: inherit;
-  padding: 30px 0;
+  padding: 22px 0 0;
   font-size: 0;
 }
 
 .contact h2 {
   color: inherit;
   margin-top: 40px;
-  margin-bottom: 30px;
+  margin-bottom: 33px;
   text-align: left;
 }
 
@@ -601,9 +623,18 @@ nav ul li a:hover {
   /*background: #455154;*/
   overflow: hidden; /*No margin collapse w/children*/
   text-align: center;
+  height: 70px;
 }
 
 .page-footer a {
+  display: inline-block;
+  margin: 4px 0 0;
+  /*Slightly wider hover 'hitbox'*/
+  padding: 0 10px;
+  text-align: center;
+  text-decoration: none;
+  /*Hide link text*/
+  font-size: 0;
   color: #d4dcd8;
   color: #1C7889;
   color: #f09947;
@@ -615,14 +646,23 @@ nav ul li a:hover {
   color: #abb9ba;
   color: #9dadaf;
   color: #a1a9aa;
-
   /*color: #d27d2d;*/
-  text-decoration: none;
+}
+
+.page-footer a i {
+  /*Cancel out hidden text from parent*/
+  font-size: 3rem;
 }
 
 .page-footer a:hover {
+  margin-top: 0px;
   color: #d4dcd8;
   color: #d97d26;
+}
+
+.page-footer a:hover i {
+  /*Have to set fontsize here and not the anchor, so the original link text will stay hidden*/
+  font-size: 3.5rem;
 }
 
 /*MEDIA QUERIES*/
