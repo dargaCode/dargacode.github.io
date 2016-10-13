@@ -106,8 +106,10 @@
   };
 
   function generateImage(project) {
+    const altText = `Project screenshot for ${project.name}`;
     const image = document.createElement('img');
     image.src = project.imageUrl;
+    image.alt = altText;
 
     return image;
   }
