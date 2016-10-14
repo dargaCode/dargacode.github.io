@@ -5,10 +5,10 @@ I'm working on this site very gradually, and using it to learn/incorporate best 
 
 **To-Do:**
 * Responsiveness
-* Mobile Support
-* Improved accessibility 
-* Custom 404 page/Favicon
-* A few more small JS features. 
+* Mobile support
+* Improved accessibility
+* Custom 404 page
+* A few more small JS features.
 * Bundled/minified code
 * Analytics
 * SEO
