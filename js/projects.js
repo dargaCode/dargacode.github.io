@@ -36,7 +36,7 @@
     projectCard.appendChild(generateNameHeading(project));
     projectCard.appendChild(generateTypeSpan(project));
     projectCard.appendChild(generateTime(project));
-    projectCard.appendChild(generateImage(project));
+    projectCard.appendChild(generateLinkedScreenshot(project));
     projectCard.appendChild(generateTagSpan(project));
     projectCard.appendChild(generateDescriptionParagraph(project));
     projectCard.appendChild(generateGitHubLink(project));
@@ -105,13 +105,46 @@
     return result;
   };
 
-  function generateImage(project) {
-    const altText = `Project screenshot for ${project.name}`;
-    const image = document.createElement('img');
-    image.src = project.imageUrl;
-    image.alt = altText;
+  function generateLinkedScreenshot(project) {
+    const screenshotLink = generateScreenshotLink(project);
+    const screenshot = generateScreenshot(project);
+    screenshotLink.appendChild(screenshot);
 
-    return image;
+    return screenshotLink;
+  }
+
+  function generateScreenshotLink(project) {
+    let screenshotLink;
+    let screenshotLinkUrl = project.gitHubUrl;
+
+    if (project.livePageUrl) {
+      screenshotLinkUrl = project.livePageUrl;
+    }
+    screenshotLink = generateAnchor(screenshotLinkUrl);
+
+    return screenshotLink;
+  }
+
+  function generateAnchor(url, urlText, className) {
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    if (urlText) {
+      anchor.innerText = urlText;
+    }
+    if (className) {
+      anchor.classList.add(className);
+    }
+
+    return anchor;
+  }
+
+  function generateScreenshot(project) {
+    const altText = `Project screenshot for ${project.name}`;
+    const screenshot = document.createElement('img');
+    screenshot.src = project.imageUrl;
+    screenshot.alt = altText;
+
+    return screenshot;
   }
 
   function generateTagSpan(project) {
@@ -144,16 +177,6 @@
     const className = LIVE_PAGE_LINK_CLASS;
 
     return generateAnchor(url, text, className);
-  }
-
-  function generateAnchor(url, urlText, className) {
-    const anchor = document.createElement('a');
-
-    anchor.href = url;
-    anchor.innerText = urlText;
-    anchor.classList.add(className);
-
-    return anchor;
   }
 
   // MAIN
