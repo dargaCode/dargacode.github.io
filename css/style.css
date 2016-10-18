@@ -454,6 +454,10 @@ nav ul li a:hover {
   overflow: hidden; /*No margin collapse with children*/
 }
 
+.project-card .header-link:hover {
+  text-decoration: none;
+}
+
 .project-card h3 {
   font-size: 1.5em;
   color: #1a707f;

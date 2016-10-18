@@ -15,6 +15,7 @@
 
   const GITHUB_LINK_TEXT = 'GitHub Repository';
   const LIVE_PAGE_LINK_TEXT = 'Live Webpage';
+  const HEADING_LINK_CLASS = 'header-link';
   const TAGS_CLASS = 'tags-span';
   const TYPE_CLASS = 'type-span';
   const GITHUB_LINK_CLASS = 'github-link';
@@ -39,7 +40,7 @@
   function generateProjectElements(project) {
     const projectCard = generateProjectCard(project);
 
-    projectCard.appendChild(generateNameHeading(project));
+    projectCard.appendChild(generateLinkedHeading(project));
     projectCard.appendChild(generateTypeSpan(project));
     projectCard.appendChild(generateTime(project));
     projectCard.appendChild(generateLinkedScreenshot(project));
@@ -81,6 +82,32 @@
     projectArticle.classList.add('project-card');
 
     return projectArticle;
+  }
+
+  function generateLinkedHeading(project) {
+    const headingUrl = project.mainLinkUrl;
+    const headingLinkClass = HEADING_LINK_CLASS;
+    // need class name but no link text
+    const headingLink = generateAnchor(headingUrl, null, headingLinkClass);
+    const nameHeading = generateNameHeading(project);
+
+    headingLink.appendChild(nameHeading);
+
+    return headingLink;
+  }
+
+  function generateAnchor(url, urlText, className) {
+    const anchor = document.createElement('a');
+
+    anchor.href = url;
+    if (urlText) {
+      anchor.innerText = urlText;
+    }
+    if (className) {
+      anchor.classList.add(className);
+    }
+
+    return anchor;
   }
 
   function generateNameHeading(project) {
@@ -148,20 +175,6 @@
     const screenshotLink = generateAnchor(screenshotLinkUrl);
 
     return screenshotLink;
-  }
-
-  function generateAnchor(url, urlText, className) {
-    const anchor = document.createElement('a');
-
-    anchor.href = url;
-    if (urlText) {
-      anchor.innerText = urlText;
-    }
-    if (className) {
-      anchor.classList.add(className);
-    }
-
-    return anchor;
   }
 
   function generateScreenshot(project) {
