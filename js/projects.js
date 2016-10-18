@@ -77,6 +77,7 @@
 
   function generateProjectCard(project) {
     const projectArticle = document.createElement('article');
+
     projectArticle.classList.add('project-card');
 
     return projectArticle;
@@ -84,6 +85,7 @@
 
   function generateNameHeading(project) {
     const projectHeading = document.createElement('h3');
+
     projectHeading.innerText = project.name;
 
     return projectHeading;
@@ -91,6 +93,7 @@
 
   function generateTypeSpan(project) {
     const typeSpan = document.createElement('span');
+
     typeSpan.innerText = project.type;
     typeSpan.classList.add(TYPE_CLASS);
 
@@ -114,7 +117,6 @@
     // getMonth is zero-indexed, but getDate is not
     const monthNum = projectDate.getMonth() + 1;
     const dateNum = projectDate.getDate();
-
     const month = getTwoDigitNumberString(monthNum);
     const date = getTwoDigitNumberString(dateNum);
 
@@ -135,6 +137,7 @@
     const mainLinkUrl = project.mainLinkUrl;
     const screenshotLink = generateAnchor(mainLinkUrl);
     const screenshot = generateScreenshot(project);
+
     screenshotLink.appendChild(screenshot);
 
     return screenshotLink;
@@ -149,6 +152,7 @@
 
   function generateAnchor(url, urlText, className) {
     const anchor = document.createElement('a');
+
     anchor.href = url;
     if (urlText) {
       anchor.innerText = urlText;
@@ -163,6 +167,7 @@
   function generateScreenshot(project) {
     const altText = `Project screenshot for ${project.name}`;
     const screenshot = document.createElement('img');
+
     screenshot.src = project.imageUrl;
     screenshot.alt = altText;
 
@@ -172,6 +177,7 @@
   function generateTagSpan(project) {
     const tagSpan = document.createElement('span');
     const spanContents = project.tags.join(', ');
+
     tagSpan.innerText = spanContents;
     tagSpan.classList.add(TAGS_CLASS);
 
@@ -180,6 +186,7 @@
 
   function generateDescriptionParagraph(project) {
     const projectParagraph = document.createElement('p');
+
     projectParagraph.innerText = project.description;
 
     return projectParagraph;
