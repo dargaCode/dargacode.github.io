@@ -24,6 +24,12 @@
 
   // FUNCTIONS
 
+  function createProjects(projects) {
+    const processedProjects = processProjectAttributes(projects);
+
+    addProjectsToDom(processedProjects);
+  }
+
   function addProjectsToDom(projects) {
     for (var project of projects) {
       generateProjectElements(project);
@@ -48,6 +54,26 @@
   }
 
   // HELPERS
+
+  // add more attributes to the skills objects. More efficient than doing it inside of loop.
+  function processProjectAttributes(projects) {
+    return projects.map(function(project) {
+      project.mainLinkUrl = getMainLinkUrl(project);
+
+      return project;
+    });
+  }
+
+  // Webpage if one exists, GitHub if not. This link will be used by the heading and the screenshot.
+  function getMainLinkUrl(project) {
+    let mainLinkUrl = project.gitHubUrl;
+
+    if (project.livePageUrl) {
+      mainLinkUrl = project.livePageUrl;
+    }
+
+    return mainLinkUrl;
+  }
 
   function generateProjectCard(project) {
     const projectArticle = document.createElement('article');
@@ -106,7 +132,8 @@
   };
 
   function generateLinkedScreenshot(project) {
-    const screenshotLink = generateScreenshotLink(project);
+    const mainLinkUrl = project.mainLinkUrl;
+    const screenshotLink = generateAnchor(mainLinkUrl);
     const screenshot = generateScreenshot(project);
     screenshotLink.appendChild(screenshot);
 
@@ -114,13 +141,8 @@
   }
 
   function generateScreenshotLink(project) {
-    let screenshotLink;
-    let screenshotLinkUrl = project.gitHubUrl;
-
-    if (project.livePageUrl) {
-      screenshotLinkUrl = project.livePageUrl;
-    }
-    screenshotLink = generateAnchor(screenshotLinkUrl);
+    let screenshotLinkUrl = project.mainLinkUrl;
+    const screenshotLink = generateAnchor(screenshotLinkUrl);
 
     return screenshotLink;
   }
@@ -181,6 +203,6 @@
 
   // MAIN
 
-  addProjectsToDom(PROJECTS);
+  createProjects(PROJECTS);
 
 }())
