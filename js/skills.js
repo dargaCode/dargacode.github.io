@@ -55,18 +55,6 @@
 
   // COMPARATORS
 
-  // add more attributes to the skills objects to help with sorting. More efficient to do it once instead of inside the comparators.
-  function processSkillAttributes(skillsArray) {
-    return skillsArray.map(function(skill) {
-      // add numerical value for sorting by type (types aren't in alphabetical order, but importance)
-      skill.typeOrder = SKILL_TYPE_ORDER.indexOf(skill.type);
-      // make lowercase skills like jQuery sort properly
-      skill.nameLower = skill.name.toLowerCase();
-
-      return skill;
-    })
-  }
-
   function sortByName(a, b) {
     if (a.nameLower < b.nameLower) {
       return -1;
@@ -125,6 +113,18 @@
   }
 
   // HELPERS
+
+  // add more attributes to the skills objects to help with sorting. More efficient to do it once instead of inside the comparators.
+  function processSkillAttributes(skillsArray) {
+    return skillsArray.map(function(skill) {
+      // add numerical value for sorting by type (types aren't in alphabetical order, but importance)
+      skill.typeOrder = SKILL_TYPE_ORDER.indexOf(skill.type);
+      // make lowercase skills like jQuery sort properly
+      skill.nameLower = skill.name.toLowerCase();
+
+      return skill;
+    })
+  }
 
   function generateSkillElements(skill) {
     const skillCard = generateSkillCard();
