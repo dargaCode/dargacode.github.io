@@ -127,14 +127,17 @@
   }
 
   function generateSkillElements(skill) {
-    const skillCard = generateSkillCard();
+    const skillLink = generateSkillLink(skill);
+    const skillCard = generateSkillArticle(skill);
 
     skillCard.appendChild(generateSkillType(skill));
     skillCard.appendChild(generateSkillIcon(skill));
     skillCard.appendChild(generateSkillName(skill));
     skillCard.appendChild(generateSkillCount(skill));
 
-    skillParent.appendChild(skillCard);
+    skillLink.appendChild(skillCard);
+
+    skillParent.appendChild(skillLink);
   }
 
   function pluralizeProjects(skillObject) {
@@ -142,9 +145,19 @@
     return projectCount === 1 ? 'Project' : 'Projects';
   }
 
-  function generateSkillCard() {
+  function generateSkillLink(skillObject) {
+    const anchor = document.createElement('a');
+
+    anchor.href = skillObject.gitHubSearchUrl;
+
+    return anchor;
+  }
+
+  function generateSkillArticle(skillObject) {
     const skillCardArticle = document.createElement('article');
+
     skillCardArticle.classList.add('skill-card');
+
     return skillCardArticle;
   }
 

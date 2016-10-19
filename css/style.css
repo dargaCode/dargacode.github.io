@@ -368,6 +368,17 @@ nav ul li a:hover {
   border: 1px solid #2d4c53;
 }
 
+.skill-card:hover {
+  background: #e77f1f;
+}
+
+.skill-card:hover .skill-type,
+.skill-card:hover i,
+.skill-card:hover .skill-name,
+.skill-card:hover .skill-project-count {
+  color: #eef5f7;
+}
+
 .skill-card p {
   margin: 0;
 }
