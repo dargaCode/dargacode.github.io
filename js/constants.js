@@ -127,6 +127,16 @@ const CONSTANTS = (function() {
 
   const PROJECTS = [
     {
+      'name': 'This Portfolio Website',
+      'type': 'Front-End',
+      'tags': ['JavaScript', 'CSS', 'HTML',],
+      'description': 'This work-in-progress website is intended to showcase my knowledge of JavaScript DOM manipulation, CSS, and Semantic HTML. Future iterations will include responsiveness, more interactivity, and mobile support.',
+      'date': new Date('Oct 16 2016'),
+      'imageUrl': './img/project-thumbnails/portfolio.jpg',
+      'gitHubUrl': 'https://github.com/dargaCode/dargacode.github.io',
+      'livePageUrl': '',
+    },
+    {
       'name': 'Apartment Description Highlights',
       'type': 'Back-End',
       'tags': ['JavaScript', 'Node.js',],
@@ -145,16 +155,6 @@ const CONSTANTS = (function() {
       'imageUrl': './img/project-thumbnails/blog.jpg',
       'gitHubUrl': 'https://github.com/dargaCode/UdemyRESTfulBlog',
       'livePageUrl': 'https://darga-restful-blog.herokuapp.com/blogs',
-    },
-    {
-      'name': 'This Portfolio Website',
-      'type': 'Front-End',
-      'tags': ['JavaScript', 'CSS', 'HTML',],
-      'description': 'This work-in-progress website is intended to showcase my knowledge of JavaScript DOM manipulation, CSS, and Semantic HTML. Future iterations will include responsiveness, more interactivity, and mobile support.',
-      'date': new Date('Aug 28 2016'),
-      'imageUrl': './img/project-thumbnails/portfolio.jpg',
-      'gitHubUrl': 'https://github.com/dargaCode/dargacode.github.io',
-      'livePageUrl': '',
     },
     {
       'name': 'Color Match Game',
