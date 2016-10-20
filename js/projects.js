@@ -18,8 +18,10 @@
   const HEADING_LINK_CLASS = 'header-link';
   const TAGS_CLASS = 'tags-span';
   const TYPE_CLASS = 'type-span';
-  const GITHUB_LINK_CLASS = 'github-link';
-  const LIVE_PAGE_LINK_CLASS = 'live-page-link';
+  const GITHUB_LINK_CLASS = 'project-link';
+  const GITHUB_ICON_CLASS = 'fa-github';
+  const LIVE_PAGE_LINK_CLASS = 'project-link';
+  const LIVE_PAGE_ICON_CLASS = 'fa-globe';
 
   // VARIABLES
 
@@ -208,17 +210,36 @@
   function generateGitHubLink(project) {
     const url = project.gitHubUrl;
     const text = GITHUB_LINK_TEXT;
+    const iconClassName = GITHUB_ICON_CLASS;
     const className = GITHUB_LINK_CLASS;
+    const anchor = generateAnchor(url, text, className);
+    const icon = generateFontAwesomeIcon(iconClassName);
 
-    return generateAnchor(url, text, className);
+    anchor.appendChild(icon);
+
+    return anchor;
+  }
+
+  function generateFontAwesomeIcon(className) {
+    const icon = document.createElement('i');
+
+    icon.classList.add('fa');
+    icon.classList.add(className);
+
+    return icon;
   }
 
   function generateLivePageLink(project) {
     const url = project.livePageUrl;
     const text = LIVE_PAGE_LINK_TEXT;
+    const iconClassName = LIVE_PAGE_ICON_CLASS;
     const className = LIVE_PAGE_LINK_CLASS;
+    const anchor = generateAnchor(url, text, className);
+    const icon = generateFontAwesomeIcon(iconClassName);
 
-    return generateAnchor(url, text, className);
+    anchor.appendChild(icon);
+
+    return anchor;
   }
 
   // MAIN

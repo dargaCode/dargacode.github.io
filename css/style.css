@@ -445,7 +445,7 @@ nav ul li a:hover {
   display: inline-block;
   width: 480px;
   /*height: 618px;*/
-  padding: 0 40px 25px;
+  padding: 0 40px 20px;
   /*Override 0-size text in container*/
   text-align: center;
   font-size: 1rem;
@@ -486,18 +486,28 @@ nav ul li a:hover {
 
 .project-card p {
   font-size: 0.95em;
+  margin: 10px 0 -10px;
 }
 
-.project-card .github-link {
-  /*background-color: red;*/
-  /*position: absolute;*/
-  float: left;
-  /*bottom: 0;*/
+a.project-link {
+  display: inline-block;
+  /*Hide link text*/
+  font-size: 0;
+  width: 50px;
+  height: 50px;
+/*  background: pink;
+  border: 1px solid red;*/
 }
 
-.project-card .live-page-link {
-  /*background-color: blue;*/
-  float: right;
+a.project-link i {
+  vertical-align: top;
+  /*color: red;*/
+  font-size: 36px;
+  line-height: 50px;
+}
+
+a.project-link:hover i {
+  font-size: 50px;
 }
 
 /*RESUME*/
