@@ -69,7 +69,7 @@
 
   // Webpage if one exists, GitHub if not. This link will be used by the heading and the screenshot.
   function getMainLinkUrl(project) {
-    let mainLinkUrl = project.gitHubUrl;
+    var mainLinkUrl = project.gitHubUrl;
 
     if (project.livePageUrl) {
       mainLinkUrl = project.livePageUrl;
@@ -173,7 +173,7 @@
   }
 
   function generateScreenshotLink(project) {
-    let screenshotLinkUrl = project.mainLinkUrl;
+    var screenshotLinkUrl = project.mainLinkUrl;
     const screenshotLink = generateAnchor(screenshotLinkUrl);
 
     return screenshotLink;
