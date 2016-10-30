@@ -40,13 +40,6 @@ const CONSTANTS = (function() {
       'gitHubSearchUrl': 'https://github.com/dargaCode?tab=repositories&q=css',
     },
     {
-      'name': 'EJS',
-      'projectCount': 6,
-      'iconClass': 'icon-ejs-logo',
-      'type': 'Language',
-      'gitHubSearchUrl': 'https://github.com/dargaCode?tab=repositories&q=ejs',
-    },
-    {
       'name': 'Express.js',
       'projectCount': 6,
       'iconClass': 'icon-express-logo',
@@ -59,20 +52,6 @@ const CONSTANTS = (function() {
       'iconClass': 'devicon-git-plain',
       'type': 'Tool',
       'gitHubSearchUrl': 'https://github.com/dargaCode?tab=repositories',
-    },
-    {
-      'name': 'Gulp',
-      'projectCount': 1,
-      'iconClass': 'devicon-gulp-plain',
-      'type': 'Tool',
-      'gitHubSearchUrl': 'https://github.com/dargaCode?tab=repositories&q=gulp',
-    },
-    {
-      'name': 'Heroku',
-      'projectCount': 6,
-      'iconClass': 'devicon-heroku-plain',
-      'type': 'Tool',
-      'gitHubSearchUrl': 'https://github.com/dargaCode?tab=repositories&q=express',
     },
     {
       'name': 'HTML',
@@ -94,13 +73,6 @@ const CONSTANTS = (function() {
       'iconClass': 'devicon-jquery-plain',
       'type': 'Library',
       'gitHubSearchUrl': 'https://github.com/dargaCode?tab=repositories&q=jquery',
-    },
-    {
-      'name': 'Linux Shell',
-      'projectCount': 58,
-      'iconClass': 'devicon-linux-plain',
-      'type': 'Tool',
-      'gitHubSearchUrl': 'https://github.com/dargaCode?tab=repositories',
     },
     {
       'name': 'MongoDB',
