@@ -374,6 +374,7 @@ nav ul li a:hover {
   font-size: 16px;
   margin-bottom: 5px;
   color: #a1a9aa;
+  color: #8f8276;
 }
 
 .skill-card i {
@@ -467,6 +468,7 @@ nav ul li a:hover {
 
 .project-card time {
   color: #a1a9aa;
+  color: #8f8276;
   font-size: 0.95em;
 }
 
