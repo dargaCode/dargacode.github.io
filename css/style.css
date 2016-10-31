@@ -353,6 +353,7 @@ nav ul li a:hover {
 }
 
 .projects h2 {
+  text-align: center;
   margin: 0 0 15px;
   color: #eef5f7;
 }
