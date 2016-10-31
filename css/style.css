@@ -22,13 +22,15 @@ body {
 
 .content-section {
   background: #024A58;
-  overflow: hidden; /*No margin collapse w/children*/
+  /*No margin collapse w/children*/
+  overflow: hidden;
 }
 
 .content-section .container {
   background: #eef5f7;
   padding: 10px 35px 0;
-  overflow: hidden; /*No margin collapse w/children*/
+  /*No margin collapse w/children*/
+  overflow: hidden;
 }
 
 .content-section footer {
@@ -49,7 +51,8 @@ a:hover {
 
 /*used by headings that are needed for HTML5 document outline but not for visually browsing the site*/
 .invisible-but-outline-readable {
-  color: red; /*call attention if hiding isn't working*/
+  /*call attention if hiding isn't working*/
+  color: red;
   width: 0;
   height: 0;
   overflow: hidden;
@@ -81,7 +84,8 @@ nav {
   background: #455154;
   width: 100%;
   position: fixed;
-  z-index: 1; /*not affected by the about overlay*/
+  /*not affected by the about overlay*/
+  z-index: 1;
 }
 
 nav a {
@@ -362,7 +366,8 @@ nav ul li a:hover {
   font-size: 1rem;
   background: #eef5f7;
   border: 2px solid #1C7889;
-  overflow: hidden; /*No margin collapse with children*/
+  /*No margin collapse with children*/
+  overflow: hidden;
 }
 
 .project-card .header-link:hover {
@@ -530,7 +535,8 @@ a.project-link:hover i {
 
 .page-footer {
   background: none;
-  overflow: hidden; /*No margin collapse w/children*/
+  /*No margin collapse w/children*/
+  overflow: hidden;
   text-align: center;
   height: 70px;
 }
