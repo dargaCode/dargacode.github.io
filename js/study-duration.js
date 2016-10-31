@@ -52,7 +52,6 @@
       const daysPerUnit = durationObject[unit].daysPerUnit;
       const unitCount = Math.floor(remainingDays / daysPerUnit);
       const remainder = TOTAL_ELAPSED_DAYS % daysPerUnit;
-      console.log(unit, 'count', unitCount, 'remainder', remainder);
       durationObject[unit].count =unitCount
       remainingDays = remainder;
     }
@@ -109,8 +108,6 @@
   }
 
   // MAIN
-
-  console.log('starting days', remainingDays);
 
   updateUnitCounts();
   updateUnitStrings();
