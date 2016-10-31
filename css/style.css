@@ -9,16 +9,8 @@
 body {
   font-family: "Arimo", "Helvetica", sans-serif;
   line-height: 1.5;
-  color: #c07b59;
-  color: #1b2e32;
-  color: #243d42;
   color: #2d4c53;
-  background: #444C48;
-  background: #49575a;
-  /*darker*/
-  background: #455154;
   background: #394446;
-  /*background: #414648;*/
   margin: 0;
   padding: 0;
 }
@@ -29,19 +21,11 @@ body {
 }
 
 .content-section {
-  background: #144442;
-  background: #0A5C6B;
-  background: #AE5B0C;
-  background: #3b332b;
-  background: #024A58;
-  background: #265259;
-  background: #2d4d53;
   background: #024A58;
   overflow: hidden; /*No margin collapse w/children*/
 }
 
 .content-section .container {
-  background: white;
   background: #eef5f7;
   padding: 10px 35px 0;
   overflow: hidden; /*No margin collapse w/children*/
@@ -53,12 +37,6 @@ body {
 }
 
 a {
-  color: #144442;
-  color: #0A5C6B;
-  color: #F29A47;
-  color: #f09947;
-  color: #e19956;
-  /*color: #e69951;*/
   color: #e77f1f;
   text-decoration: none;
 }
@@ -84,14 +62,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  color: #732d0d;
   color: #1b2e32;
   margin: 0;
   font-size: 40px;
 }
 
 h3 {
-  color: #823c1c;
   color: #1b2e32;
   margin-top: 1.5em;
   margin-bottom: 0;
@@ -101,13 +77,7 @@ h3 {
 
 nav {
   font-family: "Roboto", sans-serif;
-  color: #a8e0f0;
-  color: #7ABECB;
-  color: #d4dcd8;
-  color: #bfd5d9;
   color: #c7d0d1;
-  background: #444C48;
-  background: #49575a;
   background: #455154;
   width: 100%;
   position: fixed;
@@ -131,9 +101,6 @@ nav a:hover {
 }
 
 .nav-logo:hover {
-  color: #d4dcd8;
-  color: #e3e8e6;
-  color: #c7d0d1;
   color: #d1dee0;
 }
 
@@ -157,7 +124,6 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #F29A47;
-  background: #242C28;
   background: #1b2e32;
 
 }
@@ -179,7 +145,6 @@ nav ul li a:hover {
 }
 
 .about .overlay {
-  /*background: #1C7889;*/
   background: rgba(28,120,137,0.82);
   min-height: 600px;
   height: 100vh;
@@ -200,8 +165,6 @@ nav ul li a:hover {
 }
 
 .about .about-logo {
-  color: white;
-  color: #F29A47;
   color: #f1f4f2;
   font-weight: 700;
   font-size: 3.1em;
@@ -215,20 +178,9 @@ nav ul li a:hover {
 
 .about-logo .darga {
   color: #F29A47;
-  color: white;
-  color: #d4dcd8;
-  color: #e3e8e6;
-  color: #f1f4f2;
-  color: #F29A47;
 }
 
 .about-logo .developer {
-  color: #444C48;
-  color: #024A58;
-  color: #444C48;
-  color: #242C28;
-  color: #25272d;
-  color: #22292a;
   color: #1b2e32;
   font-weight: 500;
   font-size: 0.62em;
@@ -239,11 +191,7 @@ nav ul li a:hover {
 }
 
 .about #study-duration span {
-  color: #F29A47;
   color: #f5b070;
-  /*color: #f7bd88;*/
-  /*color: #F09F52;*/
-  /*color: #FFBD7F;*/
   font-size: 1.2em;
   font-weight: 700;
 }
@@ -273,7 +221,6 @@ nav ul li a:hover {
 
 .about footer a:hover{
   padding-top: 0;
-  color: #eef5f7;
   color: #d97d26;
 }
 
@@ -285,7 +232,6 @@ nav ul li a:hover {
 /*SKILLS*/
 
 .skills {
-  background: #766BBE;
   background: #024A58;
 }
 
@@ -303,7 +249,6 @@ nav ul li a:hover {
 .skills h2 {
   display: inline-block;
   margin: 0 0 5px;
-  color: white;
   color: #eef5f7;
 }
 
@@ -347,10 +292,6 @@ nav ul li a:hover {
   text-align: center;
   /*Override 0-size text in ul*/
   font-size: 16px;
-  background: white;
-  background: #FFBD7F;
-  background: #58A0AE;
-  background: #ddebee;
   background: #eef5f7;
   border: 1px solid #2d4c53;
 }
@@ -373,7 +314,6 @@ nav ul li a:hover {
 .skill-card .skill-type {
   font-size: 16px;
   margin-bottom: 5px;
-  color: #a1a9aa;
   color: #8f8276;
 }
 
@@ -381,40 +321,13 @@ nav ul li a:hover {
   display: inline-block;
   margin-bottom: 5px;
   font-size: 60px;
-  color: #F29A47;
-  color: #F09F52;
-  color: #B56212;
-  color: #ee7c11;
-  color: #d76f0f;
-  /*this one is nice:*/
   color: #e77f1f;
-
-  /*color: #bf630d;*/
-  /*color: #8f4a0a;*/
-  /*color: #773e08;*/
-
-  /*trying some blues*/
-  /*color: #1C7889;*/
-  /*color: #2395a9;*/
-  /*color: #1a707f;*/
-  /*color: #008299;*/
 }
 
 .skill-name {
   font-size: 18px;
   margin: 0;
-  color: #F29A47;
-  color: #F09F52;
-  color: #B56212;
-  color: #ee7c11;
-  color: #da7212;
-  /*color: #e77f1f;*/
-
-  /*trying some blues*/
-  color: #1C7889;
-  color: #2395a9;
   color: #1a707f;
-  /*color: #008299;*/
 }
 
 .skill-project-count {
@@ -443,7 +356,6 @@ nav ul li a:hover {
 .projects .project-card {
   display: inline-block;
   width: 480px;
-  /*height: 618px;*/
   padding: 0 40px 20px;
   /*Override 0-size text in container*/
   text-align: center;
@@ -467,7 +379,6 @@ nav ul li a:hover {
 }
 
 .project-card time {
-  color: #a1a9aa;
   color: #8f8276;
   font-size: 0.95em;
 }
@@ -495,13 +406,10 @@ a.project-link {
   font-size: 0;
   width: 50px;
   height: 50px;
-/*  background: pink;
-  border: 1px solid red;*/
 }
 
 a.project-link i {
   vertical-align: top;
-  /*color: red;*/
   font-size: 36px;
   line-height: 50px;
 }
@@ -514,7 +422,6 @@ a.project-link:hover i {
 
 .resume {
   height: 410px;
-  background-image: url("../img/forest-grey.jpg");
   background-image: url("../img/ocean-grey.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -523,10 +430,6 @@ a.project-link:hover i {
 }
 
 .resume .overlay {
-  /*light blue*/
-  background: rgba(28,120,137,0.82);
-  /*darker blue*/
-  background: rgba(2,74,88,0.82);
   background: rgba(2,63,75,0.70);
   height: inherit;
 }
@@ -553,10 +456,7 @@ a.project-link:hover i {
   width: 164px;
   margin: 0 14px;
   padding: 10px 21px;
-  /*orange*/
   color: #eef5f7;
-  /*dark navbar grey*/
-  /*color: #455154;*/
   background: #e77f1f;
 }
 
@@ -629,13 +529,7 @@ a.project-link:hover i {
 /*FOOTER*/
 
 .page-footer {
-  background: #3b332b;
-  background: #2d4d53;
-  background: #024A58;
-  /*match nav*/
   background: none;
-  /*darker than nav*/
-  /*background: #455154;*/
   overflow: hidden; /*No margin collapse w/children*/
   text-align: center;
   height: 70px;
@@ -650,18 +544,7 @@ a.project-link:hover i {
   text-decoration: none;
   /*Hide link text*/
   font-size: 0;
-  color: #d4dcd8;
-  color: #1C7889;
-  color: #f09947;
-  color: #ec7c13;
-  color: #d97d26;
-  color: #d4dcd8;
-  color: #9dafa6;
-  color: #c7d0d1;
-  color: #abb9ba;
-  color: #9dadaf;
   color: #a1a9aa;
-  /*color: #d27d2d;*/
 }
 
 .page-footer a i {
@@ -671,7 +554,6 @@ a.project-link:hover i {
 
 .page-footer a:hover {
   margin-top: 0px;
-  color: #d4dcd8;
   color: #d97d26;
 }
 
