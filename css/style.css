@@ -355,9 +355,13 @@ nav ul li a:hover {
   color: #eef5f7;
 }
 
+.projects .project-list {
+  text-align: center;
+}
+
 .projects .project-card {
   display: inline-block;
-  width: 480px;
+  max-width: 480px;
   padding: 0 40px 20px;
   /*Override 0-size text in container*/
   text-align: center;
