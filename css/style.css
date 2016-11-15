@@ -281,6 +281,7 @@ nav ul li a:hover {
 }
 
 .skills .skill-list {
+  text-align: center;
   /*Remove spaces between inline-block children*/
   font-size: 0;
 }
@@ -616,6 +617,21 @@ a.project-link:hover i {
 
   /*SKILLS*/
 
+  .skills .container {
+    padding-top: 75px;
+  }
+
+  .skills h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .skills form {
+    position: relative;
+    text-align: center;
+  }
+
   /*PROJECTS*/
 
   /*RESUME*/
@@ -690,6 +706,10 @@ a.project-link:hover i {
   }
 
   /*SKILLS*/
+
+  .skills .container {
+    padding: 115px 4px 50px;
+  }
 
   /*PROJECTS*/
 
