@@ -638,6 +638,10 @@ a.project-link:hover i {
 
   /*PROJECTS*/
 
+  .projects .container {
+    padding-bottom: 110px;
+  }
+
   /*RESUME*/
 
   /*CONTACT*/
@@ -664,6 +668,10 @@ a.project-link:hover i {
   /*SKILLS*/
 
   /*PROJECTS*/
+
+  .projects .container {
+    padding-bottom: 100px;
+  }
 
   /*RESUME*/
 
@@ -717,8 +725,56 @@ a.project-link:hover i {
 
   /*PROJECTS*/
 
+  .projects .project-card h3 {
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+
   /*RESUME*/
 
+  .resume {
+    height: auto;
+  }
+
+  .resume .container {
+    padding: 60px 0 55px;
+    max-width: 200px;
+  }
+
+  .resume h2 {
+    margin-bottom: 12px;
+  }
+
+  .resume .button:nth-child(1) {
+    margin-bottom: 20px;
+  }
+
   /*CONTACT*/
+
+  .contact {
+    height: auto;
+  }
+
+  .contact .container {
+    padding: 40px 0 15px;
+    max-width: 200px;
+    font-size: 0;
+  }
+
+  .contact h2 {
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
+
+  .contact .button {
+    display: inline-block;
+    margin: 4px 10px;
+  }
+
+  /*FOOTER*/
+
+  .page-footer {
+    height: 70px;
+  }
 
 }
