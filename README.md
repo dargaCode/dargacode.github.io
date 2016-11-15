@@ -4,7 +4,6 @@
 I'm working on this site very gradually, and using it to learn/incorporate best practices for HTML/CSS/JS. That said, I also want to keep things very vanilla and avoid installing frameworks etc.
 
 **To-Do:**
-* Responsiveness
 * Mobile support
 * Improved accessibility
 * Custom 404 page
