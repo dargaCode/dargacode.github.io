@@ -795,6 +795,10 @@ a.project-link:hover i {
 
   /*ABOUT*/
 
+  .about .container {
+    padding-top: 40px;
+  }
+
   /*SKILLS*/
 
   .skills .container {
