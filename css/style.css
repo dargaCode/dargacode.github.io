@@ -142,7 +142,7 @@ nav ul li a:hover {
   background-position: center;
   background-attachment: scroll;
   background-size: cover;
-  min-height: 600px;
+  min-height: 775px;
   height: 100vh;
   color: white;
   font-size: 20px;
@@ -151,7 +151,7 @@ nav ul li a:hover {
 
 .about .overlay {
   background: rgba(28,120,137,0.82);
-  min-height: 600px;
+  min-height: 775px;
   height: 100vh;
 }
 
