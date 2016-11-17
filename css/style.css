@@ -725,6 +725,10 @@ a.project-link:hover i {
 
   /*PROJECTS*/
 
+  .projects .container {
+    padding-top: 112px;
+  }
+
   .projects .project-card h3 {
     margin-bottom: 6px;
     line-height: 1.4;
