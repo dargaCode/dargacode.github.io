@@ -782,3 +782,39 @@ a.project-link:hover i {
   }
 
 }
+
+@media (max-width: 325px) {
+
+  /*GENERAL*/
+
+  /*NAVIGATION*/
+
+  nav .nav-logo {
+    display: none;
+  }
+
+  /*ABOUT*/
+
+  /*SKILLS*/
+
+  .skills .container {
+    padding-top: 80px;
+  }
+
+  /*PROJECTS*/
+
+  .projects .container {
+    padding-top: 80px;
+  }
+
+  /*RESUME*/
+
+  .resume .container {
+    padding-top: 30px;
+  }
+
+  /*CONTACT*/
+
+  /*FOOTER*/
+
+}
