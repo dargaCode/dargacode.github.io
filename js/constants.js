@@ -102,7 +102,7 @@ const CONSTANTS = (function() {
       'name': 'This Portfolio Website',
       'type': 'Front-End',
       'tags': ['JavaScript', 'CSS', 'HTML',],
-      'description': 'This work-in-progress website is intended to showcase my knowledge of JavaScript DOM manipulation, CSS, and Semantic HTML. Future iterations will include responsiveness, more interactivity, and mobile support.',
+      'description': 'This work-in-progress website is intended to showcase my knowledge of JavaScript DOM manipulation, CSS, and Semantic HTML. Future iterations will include additional JS features, optimized performance, and SEO.',
       'date': new Date('Oct 16 2016'),
       'imageUrl': './img/project-thumbnails/portfolio.jpg',
       'gitHubUrl': 'https://github.com/dargaCode/dargacode.github.io',
