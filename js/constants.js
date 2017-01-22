@@ -34,7 +34,7 @@ const CONSTANTS = (function() {
     },
     {
       'name': 'CSS',
-      'projectCount': 23,
+      'projectCount': 24,
       'iconClass': 'devicon-css3-plain',
       'type': 'Language',
       'gitHubSearchUrl': 'https://github.com/dargaCode?tab=repositories&q=css',
@@ -48,21 +48,21 @@ const CONSTANTS = (function() {
     },
     {
       'name': 'Git',
-      'projectCount': 60,
+      'projectCount': 61,
       'iconClass': 'devicon-git-plain',
       'type': 'Tool',
       'gitHubSearchUrl': 'https://github.com/dargaCode?tab=repositories',
     },
     {
       'name': 'HTML',
-      'projectCount': 24,
+      'projectCount': 25,
       'iconClass': 'devicon-html5-plain',
       'type': 'Language',
       'gitHubSearchUrl': 'https://github.com/dargaCode?tab=repositories&q=html',
     },
     {
       'name': 'JavaScript',
-      'projectCount': 25,
+      'projectCount': 26,
       'iconClass': 'devicon-javascript-plain',
       'type': 'Language',
       'gitHubSearchUrl': 'https://github.com/dargaCode?tab=repositories&q=js',
