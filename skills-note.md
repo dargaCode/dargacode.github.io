@@ -17,5 +17,5 @@ I built tools as windows executables in C#:
 
 I worked on several mobile games with extensive databases for features and live content:
 
-* Eventually wrote SQL queries to gather, aggregate, and modify data.
+* Wrote SQL queries to gather, aggregate, and modify data.
 * Helped design database schemas for new games and features.
