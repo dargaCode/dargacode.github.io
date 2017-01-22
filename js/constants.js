@@ -148,16 +148,6 @@ const CONSTANTS = (function() {
       'gitHubUrl': 'https://github.com/dargaCode/AnimatedInsertionSort',
       'livePageUrl': null,
     },
-    {
-      'name': 'Drag and Drop Book Shelf',
-      'type': 'Front-End',
-      'tags': ['JavaScript', 'Canvas', 'Processing.js', 'OOP',],
-      'description': 'Originally written on Khan Academy, this old project is a personal favorite. I expanded the simple assignment ("Create an array of book objects") to include a drag and drop interface using a hierarchy of nine classes.',
-      'date': new Date('Jul 31 2015'),
-      'imageUrl': './img/project-thumbnails/bookshelf.jpg',
-      'gitHubUrl': 'https://github.com/dargaCode/KhanBookShelf',
-      'livePageUrl': 'http://dargacode.github.io/KhanBookShelf',
-    },
   ];
 
   // 'revealing' module
