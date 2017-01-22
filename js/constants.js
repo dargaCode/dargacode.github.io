@@ -99,6 +99,16 @@ const CONSTANTS = (function() {
 
   const PROJECTS = [
     {
+      'name': 'Darkest Timeline Me',
+      'type': 'Front-End',
+      'tags': ['JavaScript', 'CSS', 'HTML', 'Canvas', 'OOP',],
+      'description': 'Let users import a headshot to the canvas, position and scale it to align with an overlay image, and download the result as a new file. This project focuses on Object-Oriented design and custom event handling.',
+      'date': new Date('Jan 21 2016'),
+      'imageUrl': './img/project-thumbnails/darkest-timeline.jpg',
+      'gitHubUrl': 'https://github.com/dargaCode/DarkestTimelineMe',
+      'livePageUrl': 'http://darkesttimeline.me',
+    },
+    {
       'name': 'This Portfolio Website',
       'type': 'Front-End',
       'tags': ['JavaScript', 'CSS', 'HTML',],
