@@ -99,6 +99,16 @@ const CONSTANTS = (function() {
 
   const PROJECTS = [
     {
+      'name': 'Palindrome Highlighter',
+      'type': 'Front-End',
+      'tags': ['JavaScript', 'CSS', 'HTML'],
+      'description': 'Manipulate the DOM in real time to process and highlight inputted text. Handle many edgecases related to pasting in rich text formatting or raw HTML code. CSS provides the illusion that highlights are happening in the input box.',
+      'date': new Date('Mar 8 2016'),
+      'imageUrl': './img/project-thumbnails/palindrome.jpg',
+      'gitHubUrl': 'https://github.com/dargaCode/PalindromeHighlighter',
+      'livePageUrl': 'http://dargacode.com/PalindromeHighlighter/',
+    },
+    {
       'name': 'Darkest Timeline Me',
       'type': 'Front-End',
       'tags': ['JavaScript', 'CSS', 'HTML', 'Canvas', 'OOP',],
