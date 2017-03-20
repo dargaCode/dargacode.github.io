@@ -149,16 +149,6 @@ const CONSTANTS = (function() {
       'livePageUrl': 'https://darga-restful-blog.herokuapp.com/blogs',
     },
     {
-      'name': 'Color Match Game',
-      'type': 'Front-End',
-      'tags': ['JavaScript', 'CSS', 'HTML', 'LocalStorage',],
-      'description': 'An early attempt at JavaScript DOM manipulation, and my first use of LocalStorage to save settings. The biggest challenge was organizing code for logic, events, and UI elements while still remaining readable.',
-      'date': new Date('April 6 2016'),
-      'imageUrl': './img/project-thumbnails/color-game.jpg',
-      'gitHubUrl': 'https://github.com/dargaCode/UdemyColorMatchGame',
-      'livePageUrl': 'http://dargacode.github.io/UdemyColorMatchGame/',
-    },
-    {
       'name': 'Animated Insertion Sort',
       'type': 'Command Line',
       'tags': ['C', 'Sorting', 'Command Line'],
