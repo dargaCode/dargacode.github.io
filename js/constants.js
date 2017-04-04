@@ -48,10 +48,10 @@ const CONSTANTS = (function() {
     },
     {
       'name': 'Git',
-      'projectCount': 64,
+      'projectCount': 58,
       'iconClass': 'devicon-git-plain',
       'type': 'Tool',
-      'gitHubSearchUrl': 'https://github.com/dargaCode?tab=repositories',
+      'gitHubSearchUrl': 'https://github.com/dargaCode?tab=repositories&q=topic%3Agit',
     },
     {
       'name': 'HTML',
