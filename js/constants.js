@@ -99,6 +99,16 @@ const CONSTANTS = (function() {
 
   const PROJECTS = [
     {
+      'name': 'Healthcare Provider Search',
+      'type': 'Front-End',
+      'tags': ['JavaScript', 'Node.js', 'CSS', 'HTML', 'AJAX',],
+      'description': 'Generate, process, and store  2,000 fictional healthcare providers, then search them in real time. Incorporates Trie, Set, and Dictionary data structures to make sure search results are displayed extremely quickly',
+      'date': new Date('Apr 4 2017'),
+      'imageUrl': './img/project-thumbnails/healthcare-search.jpg',
+      'gitHubUrl': 'https://github.com/dargaCode/HealthcareSearch',
+      'livePageUrl': 'http://dargacode.com/HealthcareSearch/',
+    },
+    {
       'name': 'Palindrome Highlighter',
       'type': 'Front-End',
       'tags': ['JavaScript', 'CSS', 'HTML'],
