@@ -148,16 +148,6 @@ const CONSTANTS = (function() {
       'gitHubUrl': 'https://github.com/dargaCode/UdemyRESTfulBlog',
       'livePageUrl': 'https://darga-restful-blog.herokuapp.com/blogs',
     },
-    {
-      'name': 'Animated Insertion Sort',
-      'type': 'Command Line',
-      'tags': ['C', 'Sorting', 'Command Line'],
-      'description': 'I made three sorting programs in C which animated in the console. They were interesting exercises in generating random numbers, adding delays, rendering formatted text, and accepting program arguments.',
-      'date': new Date('Oct 1 2015'),
-      'imageUrl': './img/project-thumbnails/sort.jpg',
-      'gitHubUrl': 'https://github.com/dargaCode/AnimatedInsertionSort',
-      'livePageUrl': null,
-    },
   ];
 
   // 'revealing' module
