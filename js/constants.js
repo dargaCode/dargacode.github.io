@@ -129,16 +129,6 @@ const CONSTANTS = (function() {
       livePageUrl: 'http://darkesttimeline.me',
     },
     {
-      name: 'Portfolio Website',
-      type: 'Front-End',
-      tags: ['JavaScript', 'CSS', 'HTML',],
-      description: 'This work-in-progress website is intended to showcase my knowledge of JavaScript DOM manipulation, CSS, and Semantic HTML. Future iterations will include additional JS features, optimized performance, and SEO.',
-      date: new Date('Oct 16 2016'),
-      imageUrl: './img/project-thumbnails/portfolio.jpg',
-      gitHubUrl: 'https://github.com/dargaCode/dargacode.github.io',
-      livePageUrl: '',
-    },
-    {
       name: 'Apartment Description Highlights',
       type: 'Back-End',
       tags: ['JavaScript', 'Node.js',],
@@ -147,16 +137,6 @@ const CONSTANTS = (function() {
       imageUrl: './img/project-thumbnails/apartment.jpg',
       gitHubUrl: 'https://github.com/dargaCode/ApartmentDescriptionHighlights',
       livePageUrl: null,
-    },
-    {
-      name: 'RESTful Blog',
-      type: 'Back-End',
-      tags: ['JavaScript', 'Node.js', 'Express', 'EJS', 'MongoDB',],
-      description: 'Node/Express CRUD app using all 7 RESTful routes. HTML views are created server-side using templating, posts are added and removed from a MongoDB server, and sanitized HTML is used to render blog posts.',
-      date: new Date('May 23 2016'),
-      imageUrl: './img/project-thumbnails/blog.jpg',
-      gitHubUrl: 'https://github.com/dargaCode/UdemyRESTfulBlog',
-      livePageUrl: 'https://darga-restful-blog.herokuapp.com/blogs',
     },
   ];
 
