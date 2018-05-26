@@ -104,7 +104,7 @@
     const monthHtml = durationObject.month.html;
     const dayHtml = durationObject.day.html;
 
-    return `for ${yearHtml}, ${monthHtml}, and ${dayHtml}`;
+    return `It's been ${yearHtml}, ${monthHtml}, and ${dayHtml} since`;
   }
 
   // MAIN
