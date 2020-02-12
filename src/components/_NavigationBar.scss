@@ -1,0 +1,23 @@
+@import "../base";
+
+nav {
+  background-color: $nav-background-color;
+  li {
+    display: inline-block;
+    list-style-type: none;
+    a {
+      display: block;
+      padding: 20px;
+      color: $nav-color;
+      text-decoration: none;
+    }
+
+    :hover {
+      background-color: $nav-hover-background-color;
+    }
+
+    .activeNavSection {
+      background-color: $nav-active-background-color;
+    }
+  }
+}

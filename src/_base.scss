@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "HoneyFlower";
+  src: url("./fonts/Honeyflower-Regular.woff2") format("woff2"),
+    url("./fonts/Honeyflower-Regular.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+$headline-font-stack: "HoneyFlower", serif;
+
+$headline-color: rgb(42, 106, 236);
+$nav-color: white;
+$nav-background-color: royalblue;
+$nav-hover-background-color: cornflowerblue;
+$nav-active-background-color: midnightblue;
+
+$h1-size: 65px;
+$h2-size: $h1-size / 2;
+
+h2 {
+  color: $headline-color;
+  font-size: $h2-size;
+}
