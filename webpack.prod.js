@@ -18,7 +18,7 @@ module.exports = merge(common, {
     }),
     new HtmlWebpackPlugin({
       title: "dargaCode - Darga Darga Programmer Portfolio",
-      template: "index.html",
+      template: "src/index.html",
       filename: "404.html" // hack to allow navigation to routes, since GitHub doesn't support 200.html
     }),
     new HtmlWebpackRootPlugin(),

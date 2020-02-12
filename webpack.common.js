@@ -48,7 +48,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: "dargaCode - Darga Darga Programmer Portfolio",
-      template: "index.html"
+      template: "src/index.html"
     }),
     new HtmlWebpackRootPlugin(),
     new MiniCssExtractPlugin()
