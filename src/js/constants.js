@@ -142,9 +142,9 @@ const CONSTANTS = (function() {
 
   // 'revealing' module
   return {
-    SKILL_TYPE_ORDER: SKILL_TYPE_ORDER,
-    SKILLS: SKILLS,
-    PROJECTS: PROJECTS,
+    SKILL_TYPE_ORDER,
+    SKILLS,
+    PROJECTS,
   }
 
 }());

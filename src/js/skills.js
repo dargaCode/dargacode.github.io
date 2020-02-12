@@ -1,5 +1,5 @@
 
-//anonymouse module
+// anonymous module
 (function() {
 
   // CONSTANTS
@@ -12,8 +12,7 @@
   };
 
   // crappy fake Require for now
-  const SKILL_TYPE_ORDER = CONSTANTS.SKILL_TYPE_ORDER;
-  const SKILLS = CONSTANTS.SKILLS;
+  const {SKILL_TYPE_ORDER, SKILLS} = CONSTANTS;
 
   const sortSelect = document.querySelector('.skills select');
   const skillParent = document.querySelector('.skills .skill-list');
@@ -48,7 +47,7 @@
   }
 
   function addSkillsToDom(skillsArray) {
-    for (var skill of skillsArray) {
+    for (const skill of skillsArray) {
       generateSkillElements(skill);
     }
   }
@@ -59,16 +58,14 @@
     if (a.nameLower < b.nameLower) {
       return -1;
     }
-    else if (b.nameLower < a.nameLower) {
+    if (b.nameLower < a.nameLower) {
       return 1;
     }
-    else {
-      return 0;
-    }
+    return 0;
   }
 
   function sortByType(a, b) {
-    var result;
+    let result;
 
     switch(true) {
       // // sort by category order first
@@ -141,7 +138,7 @@
   }
 
   function pluralizeProjects(skillObject) {
-    const projectCount = skillObject.projectCount;
+    const {projectCount} = skillObject;
     return projectCount === 1 ? 'Project' : 'Projects';
   }
 
@@ -153,7 +150,7 @@
     return anchor;
   }
 
-  function generateSkillArticle(skillObject) {
+  function generateSkillArticle() {
     const skillCardArticle = document.createElement('article');
 
     skillCardArticle.classList.add('skill-card');
@@ -193,4 +190,4 @@
 
   updateSkills();
 
-}())
+}());

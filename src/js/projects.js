@@ -1,5 +1,5 @@
 
-//anonymous module
+// anonymous module
 (function() {
 
   // CONSTANTS
@@ -9,7 +9,7 @@
   ];
 
   // crappy fake Require for now
-  const PROJECTS = CONSTANTS.PROJECTS;
+  const {PROJECTS} = CONSTANTS;
 
   const projectParent = document.querySelector('.projects .project-list');
 
@@ -34,7 +34,7 @@
   }
 
   function addProjectsToDom(projects) {
-    for (var project of projects) {
+    for (const project of projects) {
       generateProjectElements(project);
     }
   }
@@ -69,7 +69,7 @@
 
   // Webpage if one exists, GitHub if not. This link will be used by the heading and the screenshot.
   function getMainLinkUrl(project) {
-    var mainLinkUrl = project.gitHubUrl;
+    let mainLinkUrl = project.gitHubUrl;
 
     if (project.livePageUrl) {
       mainLinkUrl = project.livePageUrl;
@@ -78,7 +78,7 @@
     return mainLinkUrl;
   }
 
-  function generateProjectCard(project) {
+  function generateProjectCard() {
     const projectArticle = document.createElement('article');
 
     projectArticle.classList.add('project-card');
@@ -88,9 +88,8 @@
 
   function generateLinkedHeading(project) {
     const headingUrl = project.mainLinkUrl;
-    const headingLinkClass = HEADING_LINK_CLASS;
     // need class name but no link text
-    const headingLink = generateAnchor(headingUrl, null, headingLinkClass);
+    const headingLink = generateAnchor(headingUrl, null, HEADING_LINK_CLASS);
     const nameHeading = generateNameHeading(project);
 
     headingLink.appendChild(nameHeading);
@@ -153,28 +152,21 @@
   }
 
   function getTwoDigitNumberString(num) {
-    var result = num.toString();
+    let result = num.toString();
 
     if (num < 10 ) {
-      result = '0' + result;
+      result = `0${result}`;
     }
 
     return result;
-  };
+  }
 
   function generateLinkedScreenshot(project) {
-    const mainLinkUrl = project.mainLinkUrl;
+    const {mainLinkUrl} = project;
     const screenshotLink = generateAnchor(mainLinkUrl);
     const screenshot = generateScreenshot(project);
 
     screenshotLink.appendChild(screenshot);
-
-    return screenshotLink;
-  }
-
-  function generateScreenshotLink(project) {
-    var screenshotLinkUrl = project.mainLinkUrl;
-    const screenshotLink = generateAnchor(screenshotLinkUrl);
 
     return screenshotLink;
   }
@@ -191,9 +183,7 @@
 
   function generateTagSpan(project) {
     const tagSpan = document.createElement('span');
-    const spanContents = project.tags.join(', ');
-
-    tagSpan.innerText = spanContents;
+    tagSpan.innerText = project.tags.join(', ');
     tagSpan.classList.add(TAGS_CLASS);
 
     return tagSpan;
@@ -208,12 +198,8 @@
   }
 
   function generateGitHubLink(project) {
-    const url = project.gitHubUrl;
-    const text = GITHUB_LINK_TEXT;
-    const iconClassName = GITHUB_ICON_CLASS;
-    const className = GITHUB_LINK_CLASS;
-    const anchor = generateAnchor(url, text, className);
-    const icon = generateFontAwesomeIcon(iconClassName);
+    const anchor = generateAnchor(project.gitHubUrl, GITHUB_LINK_TEXT, GITHUB_LINK_CLASS);
+    const icon = generateFontAwesomeIcon(GITHUB_ICON_CLASS);
 
     anchor.appendChild(icon);
 
@@ -230,12 +216,8 @@
   }
 
   function generateLivePageLink(project) {
-    const url = project.livePageUrl;
-    const text = LIVE_PAGE_LINK_TEXT;
-    const iconClassName = LIVE_PAGE_ICON_CLASS;
-    const className = LIVE_PAGE_LINK_CLASS;
-    const anchor = generateAnchor(url, text, className);
-    const icon = generateFontAwesomeIcon(iconClassName);
+    const anchor = generateAnchor(project.livePageUrl, LIVE_PAGE_LINK_TEXT, LIVE_PAGE_LINK_CLASS);
+    const icon = generateFontAwesomeIcon(LIVE_PAGE_ICON_CLASS);
 
     anchor.appendChild(icon);
 
@@ -246,4 +228,4 @@
 
   createProjects(PROJECTS);
 
-}())
+}());
