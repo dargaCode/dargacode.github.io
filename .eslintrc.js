@@ -49,7 +49,8 @@ module.exports = {
     "spellcheck/spell-checker": [
       2,
       {
-        skipWords: whitelistedWords
+        skipWords: whitelistedWords,
+        skipIfMatch: ["^http"]
       }
     ]
   },
