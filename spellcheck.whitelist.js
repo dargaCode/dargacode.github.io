@@ -23,6 +23,7 @@ module.exports = [
   "devtool",
   "dir",
   "dirname",
+  "dom",
   "dropdown",
   "edgecase",
   "edgecases",
