@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export default function NavigationBar(): JSX.Element {
   return (
     <header>
-      <nav>
+      <nav className="react-nav">
         <ul>
           <li>
             <NavLink to="/home" activeClassName="activeNavSection">
