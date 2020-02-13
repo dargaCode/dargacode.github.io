@@ -1,7 +1,8 @@
-
 /*GENERAL*/
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   color: inherit;
 }
@@ -21,7 +22,7 @@ body {
 }
 
 .content-section {
-  background: #024A58;
+  background: #024a58;
   /*No margin collapse w/children*/
   overflow: hidden;
 }
@@ -60,7 +61,12 @@ a:hover {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Arimo", "Helvetica", sans-serif;
 }
 
@@ -100,7 +106,7 @@ nav a:hover {
 .nav-logo {
   float: left;
   padding: 15px 0;
-  color: #F29A47;
+  color: #f29a47;
   font-weight: 700;
 }
 
@@ -128,9 +134,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #F29A47;
+  color: #f29a47;
   background: #1b2e32;
-
 }
 
 /*ABOUT*/
@@ -150,7 +155,7 @@ nav ul li a:hover {
 }
 
 .about .overlay {
-  background: rgba(28,120,137,0.82);
+  background: rgba(28, 120, 137, 0.82);
   min-height: 775px;
   height: 100vh;
 }
@@ -166,7 +171,7 @@ nav ul li a:hover {
 }
 
 .about a {
-  color: #F29A47;
+  color: #f29a47;
 }
 
 .about header {
@@ -177,7 +182,7 @@ nav ul li a:hover {
 }
 
 .about header .darga {
-  color: #F29A47;
+  color: #f29a47;
 }
 
 .about header .subtitle {
@@ -219,7 +224,7 @@ nav ul li a:hover {
   font-size: 3.5rem;
 }
 
-.about footer a:hover{
+.about footer a:hover {
   padding-top: 0;
   color: #d97d26;
 }
@@ -232,7 +237,7 @@ nav ul li a:hover {
 /*SKILLS*/
 
 .skills {
-  background: #024A58;
+  background: #024a58;
 }
 
 .skills .container {
@@ -338,7 +343,7 @@ nav ul li a:hover {
 /*PROJECTS*/
 
 .projects {
-  background: #1C7889;
+  background: #1c7889;
 }
 
 .projects .container {
@@ -367,7 +372,7 @@ nav ul li a:hover {
   text-align: center;
   font-size: 1rem;
   background: #eef5f7;
-  border: 2px solid #1C7889;
+  border: 2px solid #1c7889;
   /*No margin collapse with children*/
   overflow: hidden;
 }
@@ -437,7 +442,7 @@ a.project-link:hover i {
 }
 
 .resume .overlay {
-  background: rgba(2,63,75,0.70);
+  background: rgba(2, 63, 75, 0.7);
   height: inherit;
 }
 
@@ -561,7 +566,7 @@ a.project-link:hover i {
 }
 
 .page-footer a:hover {
-  margin-top: 0px;
+  margin-top: 0;
   color: #d97d26;
 }
 
@@ -573,7 +578,6 @@ a.project-link:hover i {
 /*MEDIA QUERIES*/
 
 @media (max-width: 800px) {
-
   /*GENERAL*/
 
   /*NAVIGATION*/
@@ -584,7 +588,7 @@ a.project-link:hover i {
   }
 
   nav .nav-logo {
-    margin-left: 11px
+    margin-left: 11px;
   }
 
   /*ABOUT*/
@@ -645,11 +649,9 @@ a.project-link:hover i {
   /*RESUME*/
 
   /*CONTACT*/
-
 }
 
 @media (max-width: 600px) {
-
   /*GENERAL*/
 
   /*NAVIGATION*/
@@ -676,11 +678,9 @@ a.project-link:hover i {
   /*RESUME*/
 
   /*CONTACT*/
-
 }
 
 @media (max-width: 486px) {
-
   /*GENERAL*/
 
   /*NAVIGATION*/
@@ -710,11 +710,11 @@ a.project-link:hover i {
   /*ABOUT*/
 
   .about header .logo {
-    font-size: .8em;
+    font-size: 0.8em;
   }
 
   .about header .subtitle {
-    font-size: .55em;
+    font-size: 0.55em;
   }
 
   /*SKILLS*/
@@ -780,11 +780,9 @@ a.project-link:hover i {
   .page-footer {
     height: 70px;
   }
-
 }
 
 @media (max-width: 325px) {
-
   /*GENERAL*/
 
   /*NAVIGATION*/
@@ -820,5 +818,4 @@ a.project-link:hover i {
   /*CONTACT*/
 
   /*FOOTER*/
-
 }

@@ -1,17 +1,18 @@
 @font-face {
-  font-family: 'custom-icons';
-  src:  url('../fonts/custom-icons.eot?lxz4qx');
-  src:  url('../fonts/custom-icons.eot?lxz4qx#iefix') format('embedded-opentype'),
-    url('../fonts/custom-icons.ttf?lxz4qx') format('truetype'),
-    url('../fonts/custom-icons.woff?lxz4qx') format('woff'),
-    url('../fonts/custom-icons.svg?lxz4qx#custom-icons') format('svg');
+  font-family: "custom-icons";
+  src: url("../fonts/custom-icons.eot?lxz4qx");
+  src: url("../fonts/custom-icons.eot?lxz4qx#iefix") format("embedded-opentype"),
+    url("../fonts/custom-icons.ttf?lxz4qx") format("truetype"),
+    url("../fonts/custom-icons.woff?lxz4qx") format("woff"),
+    url("../fonts/custom-icons.svg?lxz4qx#custom-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'custom-icons' !important;
+  font-family: "custom-icons" !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
