@@ -15,26 +15,26 @@ function App(): JSX.Element {
 
   return (
     <Router basename={projectPath}>
-      <div>
+      <div className="router-container">
         <header>
           <NavigationBar />
         </header>
         <Switch>
           <Route path="/home">
             <div>
-              <h1>Home</h1>
+              <h2>Home</h2>
             </div>
           </Route>
 
           <Route path="/about">
             <div>
-              <h1>About</h1>
+              <h2>About</h2>
             </div>
           </Route>
 
           <Route path="/">
             <div>
-              <h1>Default Route</h1>
+              <h2>Default Route</h2>
             </div>
           </Route>
         </Switch>

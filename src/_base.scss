@@ -17,7 +17,7 @@ $nav-active-background-color: midnightblue;
 $h1-size: 65px;
 $h2-size: $h1-size / 2;
 
-h2 {
+.router-container h2 {
   color: $headline-color;
   font-size: $h2-size;
 }
