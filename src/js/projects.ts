@@ -183,7 +183,7 @@ import { PROJECTS } from "./constants";
     const altText = `Project screenshot for ${project.name}`;
     const screenshot = document.createElement("img");
 
-    screenshot.src = project.imageUrl;
+    screenshot.src = project.image;
     screenshot.alt = altText;
 
     return screenshot;

@@ -1,3 +1,8 @@
+import phonebookSearchImage from "../img/project-thumbnails/phonebook-search.jpg";
+import palindromeImage from "../img/project-thumbnails/palindrome-highlighter.jpg";
+import darkestTimelineImage from "../img/project-thumbnails/darkest-timeline.jpg";
+import apartmentSearchImage from "../img/project-thumbnails/apartment-search.jpg";
+
 export const SKILL_TYPE_ORDER = [
   "Language",
   "Environment",
@@ -113,7 +118,7 @@ export const PROJECTS = [
     description:
       "Generate, process, and store 2,000 people and businesses, then search them in real time. Incorporates Trie, Set, and Dictionary data structures to make sure search results are displayed extremely quickly.",
     date: new Date("Apr 4 2017"),
-    imageUrl: "./img/project-thumbnails/phonebook-search.jpg",
+    image: phonebookSearchImage,
     gitHubUrl: "https://github.com/dargaCode/PhonebookSearch",
     livePageUrl: "http://dargacode.com/PhonebookSearch/"
   },
@@ -124,7 +129,7 @@ export const PROJECTS = [
     description:
       "Manipulate the DOM in real time to process and highlight inputted text. Handle many edgecases related to pasting in rich text formatting or raw HTML code. CSS provides the illusion that highlights are happening in the input box.",
     date: new Date("Mar 8 2017"),
-    imageUrl: "./img/project-thumbnails/palindrome.jpg",
+    image: palindromeImage,
     gitHubUrl: "https://github.com/dargaCode/PalindromeHighlighter",
     livePageUrl: "http://dargacode.com/PalindromeHighlighter/"
   },
@@ -135,7 +140,7 @@ export const PROJECTS = [
     description:
       "Let users import a headshot to the canvas, position and scale it to align with an overlay image, and download the result as a new file. This project focuses on Object-Oriented design and custom event handling.",
     date: new Date("Jan 21 2017"),
-    imageUrl: "./img/project-thumbnails/darkest-timeline.jpg",
+    image: darkestTimelineImage,
     gitHubUrl: "https://github.com/dargaCode/DarkestTimelineMe",
     livePageUrl: "http://darkesttimeline.me"
   },
@@ -146,7 +151,7 @@ export const PROJECTS = [
     description:
       "Given a long description of an apartment and a query string, generates a highlight snippet made from only relevant phrases. Uses an array of dictionary objects to map categories to relevant keywords.",
     date: new Date("Sep 16 2016"),
-    imageUrl: "./img/project-thumbnails/apartment.jpg",
+    image: apartmentSearchImage,
     gitHubUrl: "https://github.com/dargaCode/ApartmentDescriptionHighlights",
     livePageUrl: null
   }
