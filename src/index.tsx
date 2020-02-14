@@ -10,6 +10,10 @@ import NavigationBar from "./components/NavigationBar";
 import HelloWorld from "./components/HelloWorld";
 import HelloTypeScript from "./components/HelloTypeScript";
 
+require("./js/study-duration.ts");
+require("./js/skills.ts");
+require("./js/projects.ts");
+
 function App(): JSX.Element {
   const projectPath =
     process.env.NODE_ENV === "production" ? "/webpack-react-template/" : "/";
