@@ -1,4 +1,4 @@
-const SKILL_TYPE_ORDER = [
+export const SKILL_TYPE_ORDER = [
   "Language",
   "Environment",
   "Framework",
@@ -7,7 +7,7 @@ const SKILL_TYPE_ORDER = [
   "Tool"
 ];
 
-const SKILLS = [
+export const SKILLS = [
   {
     name: "Bootstrap",
     projectCount: 3,
@@ -105,7 +105,7 @@ const SKILLS = [
   }
 ];
 
-const PROJECTS = [
+export const PROJECTS = [
   {
     name: "Phonebook Search",
     type: "Front-End",
@@ -151,5 +151,3 @@ const PROJECTS = [
     livePageUrl: null
   }
 ];
-
-module.exports = { SKILL_TYPE_ORDER, SKILLS, PROJECTS };

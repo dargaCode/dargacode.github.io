@@ -1,3 +1,5 @@
+import { SKILLS, SKILL_TYPE_ORDER } from "./constants";
+
 // anonymous module
 (function() {
   // CONSTANTS
@@ -8,9 +10,6 @@
     "skill type": sortByType,
     "project count": sortByProjectCount
   };
-
-  // crappy fake Require for now
-  const { SKILL_TYPE_ORDER, SKILLS } = CONSTANTS;
 
   const sortSelect = document.querySelector(".skills select");
   const skillParent = document.querySelector(".skills .skill-list");

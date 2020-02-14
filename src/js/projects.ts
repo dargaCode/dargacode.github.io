@@ -1,3 +1,5 @@
+import { PROJECTS } from "./constants";
+
 // anonymous module
 (function() {
   // CONSTANTS
@@ -16,9 +18,6 @@
     "Nov",
     "Dec"
   ];
-
-  // crappy fake Require for now
-  const { PROJECTS } = CONSTANTS;
 
   const projectParent = document.querySelector(".projects .project-list");
 
