@@ -1,28 +1,24 @@
+import { SKILLS, SKILL_TYPE_ORDER } from "./constants";
 
-//anonymouse module
-(function() {
-
+// anonymous module
+(function skills() {
   // CONSTANTS
 
   // match up the text values from the sorting dropdown with a sort helper function
   const COMPARATORS = {
-    'skill name': sortByName,
-    'skill type': sortByType,
-    'project count': sortByProjectCount,
+    "skill name": sortByName,
+    "skill type": sortByType,
+    "project count": sortByProjectCount
   };
 
-  // crappy fake Require for now
-  const SKILL_TYPE_ORDER = CONSTANTS.SKILL_TYPE_ORDER;
-  const SKILLS = CONSTANTS.SKILLS;
-
-  const sortSelect = document.querySelector('.skills select');
-  const skillParent = document.querySelector('.skills .skill-list');
+  const sortSelect = document.querySelector(".skills select");
+  const skillParent = document.querySelector(".skills .skill-list");
 
   // VARIABLES
 
   // EVENTS
 
-  sortSelect.addEventListener('change', updateSkills);
+  sortSelect.addEventListener("change", updateSkills);
 
   // FUNCTIONS
 
@@ -48,7 +44,7 @@
   }
 
   function addSkillsToDom(skillsArray) {
-    for (var skill of skillsArray) {
+    for (const skill of skillsArray) {
       generateSkillElements(skill);
     }
   }
@@ -59,48 +55,46 @@
     if (a.nameLower < b.nameLower) {
       return -1;
     }
-    else if (b.nameLower < a.nameLower) {
+    if (b.nameLower < a.nameLower) {
       return 1;
     }
-    else {
-      return 0;
-    }
+    return 0;
   }
 
   function sortByType(a, b) {
-    var result;
+    let result;
 
-    switch(true) {
+    switch (true) {
       // // sort by category order first
-      case (a.typeOrder < b.typeOrder): {
+      case a.typeOrder < b.typeOrder: {
         result = -1;
         break;
       }
-      case (b.typeOrder < a.typeOrder): {
+      case b.typeOrder < a.typeOrder: {
         result = 1;
         break;
       }
       // same category, sort by descending project count
-      case (a.projectCount > b.projectCount): {
+      case a.projectCount > b.projectCount: {
         result = -1;
         break;
       }
-      case (b.projectCount > a.projectCount): {
+      case b.projectCount > a.projectCount: {
         result = 1;
         break;
       }
       // same project count, sort by skill name
-      case (a.nameLower < b.nameLower): {
+      case a.nameLower < b.nameLower: {
         result = -1;
         break;
       }
-      case (b.nameLower < a.nameLower): {
+      case b.nameLower < a.nameLower: {
         result = 1;
         break;
       }
       // should not happen
       default: {
-        console.log('Duplicate Skill!');
+        console.log("Duplicate Skill!");
         result = 0;
       }
     }
@@ -123,7 +117,7 @@
       skill.nameLower = skill.name.toLowerCase();
 
       return skill;
-    })
+    });
   }
 
   function generateSkillElements(skill) {
@@ -141,50 +135,50 @@
   }
 
   function pluralizeProjects(skillObject) {
-    const projectCount = skillObject.projectCount;
-    return projectCount === 1 ? 'Project' : 'Projects';
+    const { projectCount } = skillObject;
+    return projectCount === 1 ? "Project" : "Projects";
   }
 
   function generateSkillLink(skillObject) {
-    const anchor = document.createElement('a');
+    const anchor = document.createElement("a");
 
     anchor.href = skillObject.gitHubSearchUrl;
 
     return anchor;
   }
 
-  function generateSkillArticle(skillObject) {
-    const skillCardArticle = document.createElement('article');
+  function generateSkillArticle() {
+    const skillCardArticle = document.createElement("article");
 
-    skillCardArticle.classList.add('skill-card');
+    skillCardArticle.classList.add("skill-card");
 
     return skillCardArticle;
   }
 
   function generateSkillType(skillObject) {
-    const skillTypeParagraph = document.createElement('p');
-    skillTypeParagraph.classList.add('skill-type');
+    const skillTypeParagraph = document.createElement("p");
+    skillTypeParagraph.classList.add("skill-type");
     skillTypeParagraph.innerText = skillObject.type;
     return skillTypeParagraph;
   }
 
   function generateSkillIcon(skillObject) {
-    const skillIcon = document.createElement('i');
+    const skillIcon = document.createElement("i");
     skillIcon.classList.add(skillObject.iconClass);
     return skillIcon;
   }
 
   function generateSkillName(skillObject) {
-    const skillNameHeading = document.createElement('h3');
-    skillNameHeading.classList.add('skill-name');
+    const skillNameHeading = document.createElement("h3");
+    skillNameHeading.classList.add("skill-name");
     skillNameHeading.innerText = skillObject.name;
     return skillNameHeading;
   }
 
   function generateSkillCount(skillObject) {
     const pluralProject = pluralizeProjects(skillObject);
-    const skillCountParagraph = document.createElement('p');
-    skillCountParagraph.classList.add('skill-project-count');
+    const skillCountParagraph = document.createElement("p");
+    skillCountParagraph.classList.add("skill-project-count");
     skillCountParagraph.innerText = `${skillObject.projectCount} ${pluralProject}`;
     return skillCountParagraph;
   }
@@ -192,5 +186,4 @@
   // MAIN
 
   updateSkills();
-
-}())
+})();

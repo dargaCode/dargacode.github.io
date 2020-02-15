@@ -1,27 +1,35 @@
+import { PROJECTS } from "./constants";
 
-//anonymous module
-(function() {
-
+// anonymous module
+(function projects() {
   // CONSTANTS
 
   const MONTHS = [
-    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
   ];
 
-  // crappy fake Require for now
-  const PROJECTS = CONSTANTS.PROJECTS;
+  const projectParent = document.querySelector(".projects .project-list");
 
-  const projectParent = document.querySelector('.projects .project-list');
-
-  const GITHUB_LINK_TEXT = 'GitHub Repository';
-  const LIVE_PAGE_LINK_TEXT = 'Live Webpage';
-  const HEADING_LINK_CLASS = 'header-link';
-  const TAGS_CLASS = 'tags-span';
-  const TYPE_CLASS = 'type-span';
-  const GITHUB_LINK_CLASS = 'project-link';
-  const GITHUB_ICON_CLASS = 'fa-github';
-  const LIVE_PAGE_LINK_CLASS = 'project-link';
-  const LIVE_PAGE_ICON_CLASS = 'fa-globe';
+  const GITHUB_LINK_TEXT = "GitHub Repository";
+  const LIVE_PAGE_LINK_TEXT = "Live Webpage";
+  const HEADING_LINK_CLASS = "header-link";
+  const TAGS_CLASS = "tags-span";
+  const TYPE_CLASS = "type-span";
+  const GITHUB_LINK_CLASS = "project-link";
+  const GITHUB_ICON_CLASS = "fa-github";
+  const LIVE_PAGE_LINK_CLASS = "project-link";
+  const LIVE_PAGE_ICON_CLASS = "fa-globe";
 
   // VARIABLES
 
@@ -34,7 +42,7 @@
   }
 
   function addProjectsToDom(projects) {
-    for (var project of projects) {
+    for (const project of projects) {
       generateProjectElements(project);
     }
   }
@@ -69,7 +77,7 @@
 
   // Webpage if one exists, GitHub if not. This link will be used by the heading and the screenshot.
   function getMainLinkUrl(project) {
-    var mainLinkUrl = project.gitHubUrl;
+    let mainLinkUrl = project.gitHubUrl;
 
     if (project.livePageUrl) {
       mainLinkUrl = project.livePageUrl;
@@ -78,19 +86,18 @@
     return mainLinkUrl;
   }
 
-  function generateProjectCard(project) {
-    const projectArticle = document.createElement('article');
+  function generateProjectCard() {
+    const projectArticle = document.createElement("article");
 
-    projectArticle.classList.add('project-card');
+    projectArticle.classList.add("project-card");
 
     return projectArticle;
   }
 
   function generateLinkedHeading(project) {
     const headingUrl = project.mainLinkUrl;
-    const headingLinkClass = HEADING_LINK_CLASS;
     // need class name but no link text
-    const headingLink = generateAnchor(headingUrl, null, headingLinkClass);
+    const headingLink = generateAnchor(headingUrl, null, HEADING_LINK_CLASS);
     const nameHeading = generateNameHeading(project);
 
     headingLink.appendChild(nameHeading);
@@ -99,7 +106,7 @@
   }
 
   function generateAnchor(url, urlText, className) {
-    const anchor = document.createElement('a');
+    const anchor = document.createElement("a");
 
     anchor.href = url;
     if (urlText) {
@@ -113,7 +120,7 @@
   }
 
   function generateNameHeading(project) {
-    const projectHeading = document.createElement('h3');
+    const projectHeading = document.createElement("h3");
 
     projectHeading.innerText = project.name;
 
@@ -121,7 +128,7 @@
   }
 
   function generateTypeSpan(project) {
-    const typeSpan = document.createElement('span');
+    const typeSpan = document.createElement("span");
 
     typeSpan.innerText = project.type;
     typeSpan.classList.add(TYPE_CLASS);
@@ -130,7 +137,7 @@
   }
 
   function generateTime(project) {
-    const time = document.createElement('time');
+    const time = document.createElement("time");
     const year = project.date.getFullYear();
     const monthNum = project.date.getMonth();
     const month = MONTHS[monthNum];
@@ -153,17 +160,17 @@
   }
 
   function getTwoDigitNumberString(num) {
-    var result = num.toString();
+    let result = num.toString();
 
-    if (num < 10 ) {
-      result = '0' + result;
+    if (num < 10) {
+      result = `0${result}`;
     }
 
     return result;
-  };
+  }
 
   function generateLinkedScreenshot(project) {
-    const mainLinkUrl = project.mainLinkUrl;
+    const { mainLinkUrl } = project;
     const screenshotLink = generateAnchor(mainLinkUrl);
     const screenshot = generateScreenshot(project);
 
@@ -172,35 +179,26 @@
     return screenshotLink;
   }
 
-  function generateScreenshotLink(project) {
-    var screenshotLinkUrl = project.mainLinkUrl;
-    const screenshotLink = generateAnchor(screenshotLinkUrl);
-
-    return screenshotLink;
-  }
-
   function generateScreenshot(project) {
     const altText = `Project screenshot for ${project.name}`;
-    const screenshot = document.createElement('img');
+    const screenshot = document.createElement("img");
 
-    screenshot.src = project.imageUrl;
+    screenshot.src = project.image;
     screenshot.alt = altText;
 
     return screenshot;
   }
 
   function generateTagSpan(project) {
-    const tagSpan = document.createElement('span');
-    const spanContents = project.tags.join(', ');
-
-    tagSpan.innerText = spanContents;
+    const tagSpan = document.createElement("span");
+    tagSpan.innerText = project.tags.join(", ");
     tagSpan.classList.add(TAGS_CLASS);
 
     return tagSpan;
   }
 
   function generateDescriptionParagraph(project) {
-    const projectParagraph = document.createElement('p');
+    const projectParagraph = document.createElement("p");
 
     projectParagraph.innerText = project.description;
 
@@ -208,12 +206,12 @@
   }
 
   function generateGitHubLink(project) {
-    const url = project.gitHubUrl;
-    const text = GITHUB_LINK_TEXT;
-    const iconClassName = GITHUB_ICON_CLASS;
-    const className = GITHUB_LINK_CLASS;
-    const anchor = generateAnchor(url, text, className);
-    const icon = generateFontAwesomeIcon(iconClassName);
+    const anchor = generateAnchor(
+      project.gitHubUrl,
+      GITHUB_LINK_TEXT,
+      GITHUB_LINK_CLASS
+    );
+    const icon = generateFontAwesomeIcon(GITHUB_ICON_CLASS);
 
     anchor.appendChild(icon);
 
@@ -221,21 +219,21 @@
   }
 
   function generateFontAwesomeIcon(className) {
-    const icon = document.createElement('i');
+    const icon = document.createElement("i");
 
-    icon.classList.add('fa');
+    icon.classList.add("fa");
     icon.classList.add(className);
 
     return icon;
   }
 
   function generateLivePageLink(project) {
-    const url = project.livePageUrl;
-    const text = LIVE_PAGE_LINK_TEXT;
-    const iconClassName = LIVE_PAGE_ICON_CLASS;
-    const className = LIVE_PAGE_LINK_CLASS;
-    const anchor = generateAnchor(url, text, className);
-    const icon = generateFontAwesomeIcon(iconClassName);
+    const anchor = generateAnchor(
+      project.livePageUrl,
+      LIVE_PAGE_LINK_TEXT,
+      LIVE_PAGE_LINK_CLASS
+    );
+    const icon = generateFontAwesomeIcon(LIVE_PAGE_ICON_CLASS);
 
     anchor.appendChild(icon);
 
@@ -245,5 +243,4 @@
   // MAIN
 
   createProjects(PROJECTS);
-
-}())
+})();
