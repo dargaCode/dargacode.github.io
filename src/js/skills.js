@@ -1,4 +1,6 @@
-import { SKILLS, SKILL_TYPE_ORDER } from "./constants";
+/* eslint-disable */
+
+import { SKILLS, SKILL_TYPE_ORDER } from "./constants.js";
 
 // anonymous module
 (function skills() {

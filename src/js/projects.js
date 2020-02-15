@@ -1,4 +1,6 @@
-import { PROJECTS } from "./constants";
+/* eslint-disable */
+
+import { PROJECTS } from "./constants.js";
 
 // anonymous module
 (function projects() {
