@@ -1,4 +1,6 @@
+/* eslint-disable */
 // anonymous module, since no surfaced values
+
 (function studyDuration() {
   // CONSTANTS
 

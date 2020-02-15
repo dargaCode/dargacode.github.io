@@ -10,9 +10,9 @@ import NavigationBar from "./components/NavigationBar";
 import HelloWorld from "./components/HelloWorld";
 import HelloTypeScript from "./components/HelloTypeScript";
 
-require("./js/study-duration.ts");
-require("./js/skills.ts");
-require("./js/projects.ts");
+require("./js/study-duration.js");
+require("./js/skills.js");
+require("./js/projects.js");
 
 function App(): JSX.Element {
   const projectPath =
