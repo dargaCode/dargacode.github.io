@@ -1,5 +1,5 @@
 // anonymous module, since no surfaced values
-(function() {
+(function studyDuration() {
   // CONSTANTS
 
   const MILLISECONDS_PER_DAY = 86400000;

@@ -1,7 +1,7 @@
 import { SKILLS, SKILL_TYPE_ORDER } from "./constants";
 
 // anonymous module
-(function() {
+(function skills() {
   // CONSTANTS
 
   // match up the text values from the sorting dropdown with a sort helper function

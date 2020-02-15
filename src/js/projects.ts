@@ -1,7 +1,7 @@
 import { PROJECTS } from "./constants";
 
 // anonymous module
-(function() {
+(function projects() {
   // CONSTANTS
 
   const MONTHS = [
