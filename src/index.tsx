@@ -15,11 +15,8 @@ require("./js/skills.js");
 require("./js/projects.js");
 
 function App(): JSX.Element {
-  const projectPath =
-    process.env.NODE_ENV === "production" ? "/webpack-react-template/" : "/";
-
   return (
-    <Router basename={projectPath}>
+    <Router>
       <div className="router-container">
         <header>
           <NavigationBar />
