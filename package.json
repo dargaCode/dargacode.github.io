@@ -8,7 +8,7 @@
     "lint": "tsc --noEmit && eslint src webpack* --ext js,jsx,ts,tsx --fix",
     "test": "jest",
     "predeploy": "npm run build",
-    "deploy": "npx gh-pages -b master -d dist -t -m \"Deploy React app to Master\""
+    "deploy": "npx gh-pages -b master -d dist -m \"Deploy React app to Master\""
   },
   "main": "index.tsx",
   "author": "",
