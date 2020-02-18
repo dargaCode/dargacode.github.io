@@ -16,35 +16,36 @@ require("./js/projects.js");
 
 function App(): JSX.Element {
   return (
-    <Router>
-      <div className="router-container">
-        <header>
-          <NavigationBar />
-        </header>
-        <Switch>
-          <Route path="/home">
-            <div>
-              <h2>Home</h2>
-            </div>
-          </Route>
-
-          <Route path="/about">
-            <div>
-              <h2>About</h2>
-            </div>
-          </Route>
-
-          <Route path="/">
-            <div>
-              <h2>Default Route</h2>
-            </div>
-          </Route>
-        </Switch>
-        <HelloWorld descriptor="Webpack" />
-        <HelloTypeScript compiler="TypeScript" framework="React" />
-        <img src={icon} alt="a desert at night" />
-      </div>
-    </Router>
+    <div />
+    // <Router>
+    //   <div className="router-container">
+    //     <header>
+    //       <NavigationBar />
+    //     </header>
+    //     <Switch>
+    //       <Route path="/home">
+    //         <div>
+    //           <h2>Home</h2>
+    //         </div>
+    //       </Route>
+    //
+    //       <Route path="/about">
+    //         <div>
+    //           <h2>About</h2>
+    //         </div>
+    //       </Route>
+    //
+    //       <Route path="/">
+    //         <div>
+    //           <h2>Default Route</h2>
+    //         </div>
+    //       </Route>
+    //     </Switch>
+    //     <HelloWorld descriptor="Webpack" />
+    //     <HelloTypeScript compiler="TypeScript" framework="React" />
+    //     <img src={icon} alt="a desert at night" />
+    //   </div>
+    // </Router>
   );
 }
 
