@@ -7,6 +7,7 @@ module.exports = [
   "async",
   "attrs",
   "backend",
+  "cname",
   "comparator",
   "comparators",
   "const",

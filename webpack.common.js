@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-const HtmlWebpackRootPlugin = require("html-webpack-root-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackRootPlugin = require("html-webpack-root-plugin");
+const CnameWebpackPlugin = require("cname-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
@@ -51,6 +52,9 @@ module.exports = {
       template: "src/index.html"
     }),
     new HtmlWebpackRootPlugin(),
+    new CnameWebpackPlugin({
+      domain: "dargacode.com"
+    }),
     new MiniCssExtractPlugin()
   ]
 };
