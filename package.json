@@ -6,7 +6,7 @@
     "build": "webpack --config webpack.prod.js",
     "start": "webpack-dev-server --config webpack.dev.js",
     "lint": "tsc --noEmit && eslint src webpack* --ext js,jsx,ts,tsx --fix",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "predeploy": "npm run build",
     "deploy": "npx gh-pages -b master -d dist -m \"Build app and auto-deploy to Master\""
   },
