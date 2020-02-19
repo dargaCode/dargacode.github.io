@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 import "./main.scss";
 import "./css/custom-icons.scss";
 import "./css/font-awesome.min.scss";
@@ -50,6 +55,8 @@ function App(): JSX.Element {
               <h2>Contact</h2>
             </div>
           </Route>
+
+          <Redirect exact from="/" to="about" />
         </Switch>
 
         <HelloWorld descriptor="Webpack" />

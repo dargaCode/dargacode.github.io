@@ -7,7 +7,7 @@ export default function NavigationBar(): JSX.Element {
       <nav className="react-nav">
         <ul>
           <li>
-            <NavLink to="/" activeClassName="activeNavSection">
+            <NavLink to="/about" activeClassName="activeNavSection">
               Hi, I&apos;m Darga.
             </NavLink>
           </li>
