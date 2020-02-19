@@ -56,6 +56,7 @@ module.exports = [
   "mongodb",
   "mysql",
   "nav",
+  "nocontent",
   "nodejs",
   "noop",
   "num",

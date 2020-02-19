@@ -25,6 +25,7 @@ function App(): JSX.Element {
         <header>
           <NavigationBar />
         </header>
+
         <Switch>
           <Route path="/about">
             <div>
