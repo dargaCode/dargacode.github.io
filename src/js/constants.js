@@ -120,7 +120,7 @@ export const PROJECTS = [
     date: new Date("Apr 4 2017"),
     image: phonebookSearchImage,
     gitHubUrl: "https://github.com/dargaCode/PhonebookSearch",
-    livePageUrl: "http://dargacode.com/PhonebookSearch/"
+    livePageUrl: "https://dargacode.com/PhonebookSearch/"
   },
   {
     name: "Palindrome Highlighter",
@@ -131,7 +131,7 @@ export const PROJECTS = [
     date: new Date("Mar 8 2017"),
     image: palindromeImage,
     gitHubUrl: "https://github.com/dargaCode/PalindromeHighlighter",
-    livePageUrl: "http://dargacode.com/PalindromeHighlighter/"
+    livePageUrl: "https://dargacode.com/PalindromeHighlighter/"
   },
   {
     name: "Darkest Timeline Me",
@@ -142,7 +142,7 @@ export const PROJECTS = [
     date: new Date("Jan 21 2017"),
     image: darkestTimelineImage,
     gitHubUrl: "https://github.com/dargaCode/DarkestTimelineMe",
-    livePageUrl: "http://darkesttimeline.me"
+    livePageUrl: "https://darkesttimeline.me"
   },
   {
     name: "Apartment Description Highlights",

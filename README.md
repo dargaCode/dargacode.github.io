@@ -13,6 +13,6 @@ I'm working on this site very gradually, and using it to learn/incorporate best 
 - Analytics
 - SEO
 
-<img src ="http://dargacode.github.io/img/project-thumbnails/portfolio.jpg" width="500">
+<img src ="https://dargacode.github.io/img/project-thumbnails/portfolio.jpg" width="500">
 
-**<a href="http://dargacode.github.io"><b>Live Webpage</b></a>**
+**<a href="https://dargacode.github.io"><b>Live Webpage</b></a>**
