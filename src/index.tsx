@@ -10,9 +10,7 @@ import "./main.scss";
 import "./css/custom-icons.scss";
 import "./css/font-awesome.min.scss";
 import "./css/style.scss";
-import icon from "./icon.png";
 import NavigationBar from "./components/navigation/NavigationBar";
-import HelloWorld from "./components/helloWorld/HelloWorld";
 
 require("./js/study-duration.js");
 require("./js/skills.js");
@@ -59,9 +57,6 @@ function App(): JSX.Element {
 
           <Redirect from="/" to="about" />
         </Switch>
-
-        <HelloWorld descriptor="Webpack" />
-        <img src={icon} alt="a desert at night" />
       </div>
     </Router>
   );
