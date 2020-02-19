@@ -7,18 +7,28 @@ export default function NavigationBar(): JSX.Element {
       <nav className="react-nav">
         <ul>
           <li>
-            <NavLink to="/home" activeClassName="activeNavSection">
-              home
+            <NavLink to="/" activeClassName="activeNavSection">
+              Hi, I&apos;m Darga.
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" activeClassName="activeNavSection">
-              about
+            <NavLink to="/skills" activeClassName="activeNavSection">
+              Skills
             </NavLink>
           </li>
           <li>
-            <NavLink to="/other" activeClassName="activeNavSection">
-              other?
+            <NavLink to="/projects" activeClassName="activeNavSection">
+              Projects
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/resume" activeClassName="activeNavSection">
+              Resume
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" activeClassName="activeNavSection">
+              Contact
             </NavLink>
           </li>
         </ul>
