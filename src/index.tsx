@@ -6,9 +6,8 @@ import "./css/custom-icons.scss";
 import "./css/font-awesome.min.scss";
 import "./css/style.scss";
 import icon from "./icon.png";
-import NavigationBar from "./components/NavigationBar";
-import HelloWorld from "./components/HelloWorld";
-import HelloTypeScript from "./components/HelloTypeScript";
+import NavigationBar from "./components/navigation/NavigationBar";
+import HelloWorld from "./components/helloWorld/HelloWorld";
 
 require("./js/study-duration.js");
 require("./js/skills.js");
