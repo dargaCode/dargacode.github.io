@@ -11,8 +11,9 @@ import "./css/custom-icons.scss";
 import "./css/font-awesome.min.scss";
 import "./css/style.scss";
 import NavigationBar from "./components/navigation/NavigationBar";
+import AboutSection from "./components/about/AboutSection";
 
-require("./js/study-duration.js");
+// require("./js/study-duration.js");
 require("./js/skills.js");
 require("./js/projects.js");
 
@@ -25,11 +26,7 @@ function App(): JSX.Element {
         </header>
 
         <Switch>
-          <Route path="/about">
-            <div>
-              <h2>About Me</h2>
-            </div>
-          </Route>
+          <Route path="/about" component={AboutSection} />
 
           <Route path="/skills">
             <div>
