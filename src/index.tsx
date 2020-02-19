@@ -56,7 +56,7 @@ function App(): JSX.Element {
             </div>
           </Route>
 
-          <Redirect exact from="/" to="about" />
+          <Redirect from="/" to="about" />
         </Switch>
 
         <HelloWorld descriptor="Webpack" />
