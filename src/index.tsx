@@ -1,51 +1,51 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 import "./main.scss";
 import "./css/custom-icons.scss";
 import "./css/font-awesome.min.scss";
 import "./css/style.scss";
-import icon from "./icon.png";
-import NavigationBar from "./components/NavigationBar";
-import HelloWorld from "./components/HelloWorld";
-import HelloTypeScript from "./components/HelloTypeScript";
+import NavigationBar from "./components/navigation/NavigationBar";
+import AboutSection from "./components/about/AboutSection";
+import SkillsSection from "./components/skills/SkillsSection";
+import ProjectsSection from "./components/projects/ProjectsSection";
+import ResumeSection from "./components/resume/ResumeSection";
+import ContactSection from "./components/contact/ContactSection";
 
-require("./js/study-duration.js");
-require("./js/skills.js");
-require("./js/projects.js");
+// require("./js/study-duration.js");
+// require("./js/skills.js");
+// require("./js/projects.js");
 
 function App(): JSX.Element {
   return (
-    <div />
-    // <Router>
-    //   <div className="router-container">
-    //     <header>
-    //       <NavigationBar />
-    //     </header>
-    //     <Switch>
-    //       <Route path="/home">
-    //         <div>
-    //           <h2>Home</h2>
-    //         </div>
-    //       </Route>
-    //
-    //       <Route path="/about">
-    //         <div>
-    //           <h2>About</h2>
-    //         </div>
-    //       </Route>
-    //
-    //       <Route path="/">
-    //         <div>
-    //           <h2>Default Route</h2>
-    //         </div>
-    //       </Route>
-    //     </Switch>
-    //     <HelloWorld descriptor="Webpack" />
-    //     <HelloTypeScript compiler="TypeScript" framework="React" />
-    //     <img src={icon} alt="a desert at night" />
-    //   </div>
-    // </Router>
+    <Router>
+      <div className="router-container">
+        <div id="nocontent">
+          {/* ignored by google */}
+          <h1 className="invisible-but-outline-readable">
+            dargaCode - Darga Darga Programmer Portfolio
+          </h1>
+        </div>
+        <header>
+          <NavigationBar />
+        </header>
+
+        <Switch>
+          <Route path="/about" component={AboutSection} />
+          <Route path="/skills" component={SkillsSection} />
+          <Route path="/projects" component={ProjectsSection} />
+          <Route path="/resume" component={ResumeSection} />
+          <Route path="/contact" component={ContactSection} />
+
+          <Redirect from="/" to="about" />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
