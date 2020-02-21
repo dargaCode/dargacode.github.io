@@ -34,11 +34,6 @@ body {
   overflow: hidden;
 }
 
-.content-section footer {
-  text-align: center;
-  padding-top: 5px;
-}
-
 a {
   color: #e77f1f;
   text-decoration: none;
@@ -198,39 +193,6 @@ nav.portfolio-nav {
   color: #f5b070;
   font-size: 1.2em;
   font-weight: 700;
-}
-
-.about footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 80px;
-  width: 100%;
-}
-
-.about footer a {
-  display: block;
-  height: 100%;
-  padding-top: 5px;
-  text-align: center;
-  /*Hide link text*/
-  font-size: 0;
-  color: #a1a9aa;
-}
-
-.about footer a i {
-  /*Cancel out hidden text from parent*/
-  font-size: 3.5rem;
-}
-
-.about footer a:hover {
-  padding-top: 0;
-  color: #d97d26;
-}
-
-.about footer a:hover i {
-  /*Have to set fontsize here and not the anchor, so the original link text will stay hidden*/
-  font-size: 4rem;
 }
 
 /*SKILLS*/
@@ -537,43 +499,6 @@ a.project-link:hover i {
   font-size: 0;
 }
 
-/*FOOTER*/
-
-.page-footer {
-  background: none;
-  /*No margin collapse w/children*/
-  overflow: hidden;
-  text-align: center;
-  height: 70px;
-}
-
-.page-footer a {
-  display: inline-block;
-  margin: 4px 0 0;
-  /*Slightly wider hover 'hitbox'*/
-  padding: 0 10px;
-  text-align: center;
-  text-decoration: none;
-  /*Hide link text*/
-  font-size: 0;
-  color: #a1a9aa;
-}
-
-.page-footer a i {
-  /*Cancel out hidden text from parent*/
-  font-size: 3rem;
-}
-
-.page-footer a:hover {
-  margin-top: 0;
-  color: #d97d26;
-}
-
-.page-footer a:hover i {
-  /*Have to set fontsize here and not the anchor, so the original link text will stay hidden*/
-  font-size: 3.5rem;
-}
-
 /*MEDIA QUERIES*/
 
 @media (max-width: 800px) {
@@ -773,12 +698,6 @@ a.project-link:hover i {
     display: inline-block;
     margin: 4px 10px;
   }
-
-  /*FOOTER*/
-
-  .page-footer {
-    height: 70px;
-  }
 }
 
 @media (max-width: 325px) {
@@ -815,6 +734,4 @@ a.project-link:hover i {
   }
 
   /*CONTACT*/
-
-  /*FOOTER*/
 }
