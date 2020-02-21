@@ -26,15 +26,6 @@ export default function AboutSection(): JSX.Element {
           <span>Study Blog</span>
         </a>
       </div>
-
-      <footer className="page-footer">
-        <div className="container">
-          <a href="#about">
-            <i className="fa fa-angle-double-up" />
-            Back to Top
-          </a>
-        </div>
-      </footer>
     </section>
   );
 }

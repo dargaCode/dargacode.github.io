@@ -30,13 +30,6 @@ export default function AboutSection(): JSX.Element {
 
             <p>I love building things, solving problems, and learning.</p>
           </main>
-
-          <footer>
-            <a href="#skills">
-              <i className="fa fa-angle-down" />
-              Next Section: Skills
-            </a>
-          </footer>
         </div>
       </div>
     </section>
