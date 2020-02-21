@@ -64,6 +64,7 @@ module.exports = [
   "noop",
   "num",
   "param",
+  "params",
   "pdf",
   "png",
   "phonebook",
@@ -90,5 +91,8 @@ module.exports = [
   "util",
   "webpack",
   "whitelist",
-  "www"
+  "www",
+
+  // dates
+  "yyyymmdd"
 ];
