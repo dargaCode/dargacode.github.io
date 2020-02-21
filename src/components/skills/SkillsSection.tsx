@@ -8,12 +8,14 @@ export default function AboutSection(): JSX.Element {
           <h2>Skills</h2>
 
           <form>
-            <label htmlFor="skill-sort">Sort by:</label>
-            <select id="skill-sort">
-              <option>Skill Name</option>
-              <option selected>Skill Type</option>
-              <option>Project Count</option>
-            </select>
+            <label htmlFor="skill-sort">
+              Sort by:
+              <select id="skill-sort">
+                <option>Skill Name</option>
+                <option selected>Skill Type</option>
+                <option>Project Count</option>
+              </select>
+            </label>
           </form>
         </header>
 
