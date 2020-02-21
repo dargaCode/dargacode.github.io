@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackRootPlugin = require("html-webpack-root-plugin");
 const CnameWebpackPlugin = require("cname-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MomentLocalesWebpackPlugin = require("moment-locales-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -55,6 +56,7 @@ module.exports = {
     new CnameWebpackPlugin({
       domain: "dargacode.com"
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new MomentLocalesWebpackPlugin()
   ]
 };
