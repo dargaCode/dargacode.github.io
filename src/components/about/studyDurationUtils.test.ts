@@ -36,11 +36,18 @@ describe("`yearsMonthsDays`", () => {
 
   describe("when start/end are between 1 month and 1 year apart", () => {
     describe("when startDate is same day as endDate", () => {
-      it("should return 0y, [nonzero]m, 0d", () => {
+      it("should round the days down to the beginning of the month", () => {
         const duration = yearsMonthsDays("2000-01-01", "2000-08-01");
 
         // override Moment to round the month
         expect(duration).toEqual({ years: 0, months: 7, days: 0 });
+      });
+
+      it("should round the days up to the beginning of the next month", () => {
+        const duration = yearsMonthsDays("2000-05-01", "2000-09-01");
+
+        // override Moment to round the month
+        expect(duration).toEqual({ years: 0, months: 4, days: 0 });
       });
     });
 
@@ -80,11 +87,18 @@ describe("`yearsMonthsDays`", () => {
     });
 
     describe("when startDate is same day as endDate", () => {
-      it("should return [nonzero]y, [nonzero]m, 0d", () => {
+      it("should round the days up to the beginning of the next month", () => {
         const duration = yearsMonthsDays("2000-01-01", "2019-11-01");
 
         // override Moment to round the month
         expect(duration).toEqual({ years: 19, months: 10, days: 0 });
+      });
+
+      it("should round the days down to the beginning of the month", () => {
+        const duration = yearsMonthsDays("1996-05-01", "2000-09-01");
+
+        // override Moment to round the month
+        expect(duration).toEqual({ years: 4, months: 4, days: 0 });
       });
     });
 

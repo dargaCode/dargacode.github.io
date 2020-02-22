@@ -29,8 +29,6 @@ export function yearsMonthsDays(
   if (start.date() === end.date() && result.days > 0) {
     if (result.days > 15) {
       result.months += 1;
-    } else {
-      result.months -= 1;
     }
 
     result.days = 0;
