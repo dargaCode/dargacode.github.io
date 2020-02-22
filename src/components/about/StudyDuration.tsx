@@ -21,7 +21,7 @@ export default function StudyDuration(props: Props): JSX.Element {
       It&apos;s been
       <DurationUnit unit="year" count={years} />,
       <DurationUnit unit="month" count={months} />, and
-      <DurationUnit unit="day" count={days} /> since I quit my job to learn
+      <DurationUnit unit="day" count={days} /> since I quit my job to study
       coding!
     </p>
   );
