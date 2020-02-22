@@ -11,7 +11,8 @@ export default function DurationUnit(props: Props): JSX.Element {
 
   return (
     <span>
-      <span className="study-duration-unit-count"> {count}</span> {unit}
+      {" "}
+      <span className="study-duration-unit-count">{count}</span> {unit}
       {count === 1 ? "" : "s"}
     </span>
   );
