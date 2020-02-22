@@ -17,10 +17,6 @@ import ProjectsSection from "./components/projects/ProjectsSection";
 import ResumeSection from "./components/resume/ResumeSection";
 import ContactSection from "./components/contact/ContactSection";
 
-// require("./js/study-duration.js");
-// require("./js/skills.js");
-// require("./js/projects.js");
-
 function App(): JSX.Element {
   return (
     <Router>
