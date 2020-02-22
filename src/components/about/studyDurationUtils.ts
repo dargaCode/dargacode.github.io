@@ -1,6 +1,8 @@
 import moment from "moment";
 
 const DATE_FORMAT = "YYYY-MM-DD";
+export const STUDY_START_DATE = "2015-05-10";
+export const DATE_TODAY = moment().format(DATE_FORMAT);
 
 interface YearsMonthsDaysReturn {
   years: number;
@@ -8,7 +10,6 @@ interface YearsMonthsDaysReturn {
   days: number;
 }
 
-// eslint-disable-next-line import/prefer-default-export
 export function yearsMonthsDays(
   startDate: string,
   endDate: string
