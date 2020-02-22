@@ -1,4 +1,5 @@
 import React from "react";
+import StudyDuration from "./StudyDuration";
 
 export default function AboutSection(): JSX.Element {
   return (
@@ -23,10 +24,7 @@ export default function AboutSection(): JSX.Element {
               I&apos;m a self-taught software engineer and former game designer.
             </p>
 
-            <p>
-              <span id="study-duration">In May 2015,</span> I quit my job to
-              learn coding!
-            </p>
+            <StudyDuration />
 
             <p>I love building things, solving problems, and learning.</p>
           </main>
