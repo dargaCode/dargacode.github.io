@@ -7,7 +7,7 @@ describe("`DurationUnit`", () => {
     it("should return plural", () => {
       const wrapper = shallow(<DurationUnit unit="year" count={0} />);
 
-      expect(wrapper.text()).toBe("0 years");
+      expect(wrapper.text()).toBe(" 0 years");
     });
   });
 
@@ -15,7 +15,7 @@ describe("`DurationUnit`", () => {
     it("should return singular", () => {
       const wrapper = shallow(<DurationUnit unit="month" count={1} />);
 
-      expect(wrapper.text()).toBe("1 month");
+      expect(wrapper.text()).toBe(" 1 month");
     });
   });
 
@@ -23,7 +23,7 @@ describe("`DurationUnit`", () => {
     it("should return plural", () => {
       const wrapper = shallow(<DurationUnit unit="day" count={22} />);
 
-      expect(wrapper.text()).toBe("22 days");
+      expect(wrapper.text()).toBe(" 22 days");
     });
   });
 });
