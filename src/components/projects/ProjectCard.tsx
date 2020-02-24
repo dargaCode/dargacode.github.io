@@ -1,0 +1,66 @@
+import React from "react";
+import PropTypes from "prop-types";
+
+interface Props {
+  project: {
+    name: string;
+    type: string;
+    tags: string[];
+    description: string;
+    date: string;
+    imagePath: string;
+    githubUrl: string;
+    livePageUrl: string;
+  };
+}
+
+export default function ProjectCard(props: Props): JSX.Element {
+  const { project } = props;
+  const {
+    name,
+    type,
+    tags,
+    description,
+    date,
+    imagePath,
+    githubUrl,
+    livePageUrl
+  } = project;
+
+  return (
+    <article className="project-card">
+      <a href="http://dargacode.com/PhonebookSearch/" className="header-link">
+        <h3>{name}</h3>
+      </a>
+      <span className="type-span">{type}</span>
+      <time dateTime="2017-04-04"> - Apr 2017</time>
+      <a href="http://dargacode.com/PhonebookSearch/">
+        {/* eslint-disable-next-line global-require,import/no-dynamic-require */}
+        <img src={require(imagePath)} alt={`Project screenshot for ${name}`} />
+      </a>
+      <span className="tags-span">{tags.toString()}</span>
+      <p>{description}</p>
+      <a href={githubUrl} className="project-link">
+        GitHub Repository
+        <i className="fa fa-github" />
+      </a>
+      <a href={livePageUrl} className="project-link">
+        Live Webpage
+        <i className="fa fa-globe" />
+      </a>
+    </article>
+  );
+}
+
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+    description: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    imagePath: PropTypes.string.isRequired,
+    githubUrl: PropTypes.string.isRequired,
+    livePageUrl: PropTypes.string
+  }).isRequired
+};
