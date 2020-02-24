@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import moment from "moment";
 
 interface Props {
   project: {
@@ -21,11 +22,11 @@ export default function ProjectCard(props: Props): JSX.Element {
     type,
     tags,
     description,
-    date,
     imagePath,
     githubUrl,
     livePageUrl
   } = project;
+  const date = moment(project.date);
 
   return (
     <article className="project-card">
@@ -33,7 +34,10 @@ export default function ProjectCard(props: Props): JSX.Element {
         <h3>{name}</h3>
       </a>
       <span className="type-span">{type}</span>
-      <time dateTime="2017-04-04"> - Apr 2017</time>
+      <time dateTime={date.format("YYYY-MM-DD")}>
+        {" "}
+        - {date.format("MMM YYYY")}
+      </time>
       <a href="http://dargacode.com/PhonebookSearch/">
         {/* eslint-disable-next-line global-require,import/no-dynamic-require */}
         <img src={require(imagePath)} alt={`Project screenshot for ${name}`} />
