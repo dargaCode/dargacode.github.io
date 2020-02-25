@@ -11,7 +11,7 @@ interface Props {
     date: string;
     imagePath: string;
     githubUrl: string;
-    livePageUrl: string;
+    livePageUrl?: string;
   };
 }
 

@@ -41,7 +41,6 @@ export const PROJECTS = [
       "Given a long description of an apartment and a query string, generates a highlight snippet made from only relevant phrases. Uses an array of dictionary objects to map categories to relevant keywords.",
     date: "2016-09-16",
     imagePath: "./project-thumbnails/apartment-search.jpg",
-    githubUrl: "https://github.com/dargaCode/ApartmentDescriptionHighlights",
-    livePageUrl: null
+    githubUrl: "https://github.com/dargaCode/ApartmentDescriptionHighlights"
   }
 ];
