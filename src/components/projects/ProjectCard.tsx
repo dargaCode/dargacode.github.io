@@ -27,10 +27,11 @@ export default function ProjectCard(props: Props): JSX.Element {
     livePageUrl
   } = project;
   const date = moment(project.date);
+  const projectLink = livePageUrl || githubUrl;
 
   return (
     <article className="project-card">
-      <a href="http://dargacode.com/PhonebookSearch/" className="header-link">
+      <a className="header-link" href="http://dargacode.com/PhonebookSearch/">
         <h3>{name}</h3>
       </a>
       <span className="type-span">{type}</span>
@@ -44,11 +45,11 @@ export default function ProjectCard(props: Props): JSX.Element {
       </a>
       <span className="tags-span">{tags.toString()}</span>
       <p>{description}</p>
-      <a href={githubUrl} className="project-link">
+      <a className="project-link" href={githubUrl}>
         GitHub Repository
         <i className="fa fa-github" />
       </a>
-      <a href={livePageUrl} className="project-link">
+      <a className="project-link" href={livePageUrl}>
         Live Webpage
         <i className="fa fa-globe" />
       </a>
