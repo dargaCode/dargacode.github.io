@@ -1,9 +1,19 @@
 module.exports = {
-  stories: ["../src/**/*.stories.jsx"],
-  addons: ["@storybook/addon-actions", "@storybook/addon-links"],
+  stories: ["../src/components/**/*.stories.jsx"],
+  addons: [
+    "@storybook/addon-actions/register",
+    "@storybook/addon-links/register"
+  ],
   webpackFinal: async config => {
-    // do mutation to the config
-
+    config.module.rules.push({
+      test: /\.(ts|tsx)$/,
+      use: [
+        {
+          loader: require.resolve("ts-loader")
+        }
+      ]
+    });
+    config.resolve.extensions.push(".ts", ".tsx");
     return config;
   }
 };
