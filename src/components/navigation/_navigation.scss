@@ -21,3 +21,52 @@ nav.react-nav {
     }
   }
 }
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 800px) {
+  nav .container {
+    max-width: 550px;
+    padding: 0 20px;
+  }
+
+  nav .nav-logo {
+    margin-left: 11px;
+  }
+}
+
+@media (max-width: 600px) {
+
+}
+
+@media (max-width: 486px) {
+  /*NAVIGATION*/
+
+  nav {
+    text-align: center;
+  }
+
+  nav .container {
+    padding: 0;
+  }
+
+  nav .nav-logo {
+    float: none;
+    padding: 14px 0 10px;
+  }
+
+  nav ul {
+    float: none;
+    width: 100%;
+  }
+
+  nav ul li a {
+    padding: 12px 12px;
+  }
+}
+
+@media (max-width: 325px) {
+  nav .nav-logo {
+    display: none;
+  }
+}
