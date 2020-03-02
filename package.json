@@ -9,7 +9,7 @@
     "test": "jest --passWithNoTests",
     "predeploy": "npm run build",
     "deploy": "npx gh-pages -b master -d dist -m \"Build app and auto-deploy to Master\"",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006 --ci"
   },
   "main": "index.tsx",
   "author": "",
@@ -23,8 +23,7 @@
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
     "@babel/preset-typescript": "^7.8.3",
-    "@storybook/addon-actions": "^5.3.13",
-    "@storybook/addon-links": "^5.3.13",
+    "@storybook/addon-knobs": "^5.3.14",
     "@storybook/addons": "^5.3.13",
     "@storybook/preset-typescript": "^1.2.0",
     "@storybook/react": "^5.3.13",
