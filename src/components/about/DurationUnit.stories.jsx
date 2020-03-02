@@ -10,7 +10,7 @@ export default {
 
 export const Basic = () => (
   <DurationUnit
-    unit={text("Unit Name", "decade")}
+    unit={text("Unit Name", "day")}
     count={number("Unit Count", 20)}
   />
 );
