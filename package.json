@@ -9,7 +9,7 @@
     "test": "jest --passWithNoTests",
     "predeploy": "npm run build",
     "deploy": "npx gh-pages -b master -d dist -m \"Build app and auto-deploy to Master\"",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006 --ci"
   },
   "main": "index.tsx",
   "author": "",
