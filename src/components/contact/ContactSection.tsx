@@ -1,4 +1,6 @@
 import React from "react";
+import "../_general.scss";
+import "./_contact.scss";
 
 export default function AboutSection(): JSX.Element {
   return (

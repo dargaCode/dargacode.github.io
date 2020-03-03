@@ -6,6 +6,8 @@ import {
   DATE_TODAY
 } from "./studyDurationUtils";
 import DurationUnit from "./DurationUnit";
+import "../_general.scss";
+import "./_about.scss";
 
 interface Props {
   startDate: string;
