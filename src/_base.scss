@@ -1,23 +1,78 @@
-@font-face {
-  font-family: "HoneyFlower";
-  src: url("./fonts/Honeyflower-Regular.woff2") format("woff2"),
-    url("./fonts/Honeyflower-Regular.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
+/*GENERAL*/
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  color: inherit;
 }
 
-$headline-font-stack: "HoneyFlower", serif;
+body {
+  font-family: "Arimo", "Helvetica", sans-serif;
+  line-height: 1.5;
+  color: #2d4c53;
+  background: #394446;
+  margin: 0;
+  padding: 0;
+}
 
-$headline-color: rgb(42, 106, 236);
-$nav-color: white;
-$nav-background-color: royalblue;
-$nav-hover-background-color: cornflowerblue;
-$nav-active-background-color: midnightblue;
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+}
 
-$h1-size: 65px;
-$h2-size: $h1-size / 2;
+.content-section {
+  background: #024a58;
+  /*No margin collapse w/children*/
+  overflow: hidden;
+}
 
-.router-container h2 {
-  color: $headline-color;
-  font-size: $h2-size;
+.content-section .container {
+  background: #eef5f7;
+  padding: 10px 35px 0;
+  /*No margin collapse w/children*/
+  overflow: hidden;
+}
+
+a {
+  color: #e77f1f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*HEADINGS*/
+
+/*used by headings that are needed for HTML5 document outline but not for visually browsing the site*/
+.invisible-but-outline-readable {
+  /*call attention if hiding isn't working*/
+  color: red;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Arimo", "Helvetica", sans-serif;
+}
+
+h2 {
+  color: #1b2e32;
+  margin: 0;
+  font-size: 40px;
+}
+
+h3 {
+  color: #1b2e32;
+  margin-top: 1.5em;
+  margin-bottom: 0;
 }
