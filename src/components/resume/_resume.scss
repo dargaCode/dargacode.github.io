@@ -1,0 +1,95 @@
+.resume {
+  height: 410px;
+  //TODO get images working with webpack
+  //background-image: url("../img/ocean-grey.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.resume .overlay {
+  background: rgba(2, 63, 75, 0.7);
+  height: inherit;
+}
+
+.resume .container {
+  background: none;
+  padding: 30px 0 40px;
+}
+
+.resume h2 {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #eef5f7;
+}
+
+.resume .buttons {
+  text-align: center;
+  font-size: 0;
+}
+
+.resume .button {
+  display: inline-block;
+  width: 164px;
+  margin: 0 14px;
+  padding: 10px 21px;
+  color: #eef5f7;
+  background: #e77f1f;
+}
+
+.resume .button:hover {
+  color: #e77f1f;
+  background: #eef5f7;
+  text-decoration: none;
+}
+
+.resume i {
+  float: left;
+  font-size: 47px;
+}
+
+.resume span {
+  float: right;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.4em;
+  font-weight: 500;
+}
+
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 800px) {
+
+}
+
+@media (max-width: 600px) {
+
+}
+
+@media (max-width: 486px) {
+  .resume {
+    height: auto;
+  }
+
+  .resume .container {
+    padding: 60px 0 55px;
+    max-width: 200px;
+  }
+
+  .resume h2 {
+    margin-bottom: 12px;
+  }
+
+  .resume .button:nth-child(1) {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 325px) {
+  .resume .container {
+    padding-top: 30px;
+  }
+}

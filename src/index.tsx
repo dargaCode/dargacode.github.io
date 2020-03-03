@@ -9,7 +9,6 @@ import {
 import "./main.scss";
 import "./css/custom-icons.scss";
 import "./css/font-awesome.min.scss";
-import "./css/style.scss";
 import NavigationBar from "./components/navigation/NavigationBar";
 import AboutSection from "./components/about/AboutSection";
 import SkillsSection from "./components/skills/SkillsSection";
