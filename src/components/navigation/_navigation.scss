@@ -1,24 +1,56 @@
 @import "../../base";
 
-nav.react-nav {
-  background-color: $nav-background-color;
-  li {
+nav.portfolio-nav {
+  font-family: "Roboto", sans-serif;
+  color: #c7d0d1;
+  background: #455154;
+  width: 100%;
+  position: fixed;
+  /*not affected by the about overlay*/
+  z-index: 1;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .nav-logo {
+    float: left;
+    padding: 15px 0;
+    color: #f29a47;
+    font-weight: 700;
+  }
+
+  .nav-logo:hover {
+    color: #d1dee0;
+  }
+
+  ul {
+    list-style: none;
+    float: right;
+    /*Remove spaces between inline-block children*/
+    font-size: 0;
+    padding: 0;
+  }
+
+  ul li {
     display: inline-block;
-    list-style-type: none;
-    a {
-      display: block;
-      padding: 20px;
-      color: $nav-color;
-      text-decoration: none;
-    }
+    /*Override 0-size text in ul*/
+    font-size: 1rem;
+  }
 
-    :hover {
-      background-color: $nav-hover-background-color;
-    }
+  ul li a {
+    display: inline-block;
+    padding: 15px 11.2px;
+  }
 
-    .activeNavSection {
-      background-color: $nav-active-background-color;
-    }
+  ul li a:hover {
+    color: #f29a47;
+    background: #1b2e32;
   }
 }
 

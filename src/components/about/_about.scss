@@ -1,3 +1,64 @@
+.about {
+  font-family: "Roboto", sans-serif;
+  background-image: url("../img/mountains-grey.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
+  min-height: 775px;
+  height: 100vh;
+  color: white;
+  font-size: 20px;
+  position: relative;
+}
+
+.about .overlay {
+  background: rgba(28, 120, 137, 0.82);
+  min-height: 775px;
+  height: 100vh;
+}
+
+.about .container {
+  background: none;
+  padding: 280px 0 0;
+}
+
+.about p {
+  text-align: right;
+  line-height: 1.5;
+}
+
+.about a {
+  color: #f29a47;
+}
+
+.about header {
+  color: #f1f4f2;
+  font-weight: 700;
+  font-size: 3.1em;
+  line-height: 1em;
+}
+
+.about header .darga {
+  color: #f29a47;
+}
+
+.about header .subtitle {
+  color: #1b2e32;
+  font-weight: 500;
+  font-size: 0.62em;
+  float: right;
+  position: relative;
+  top: 8px;
+  right: 2px;
+}
+
+.about .study-duration-unit-count {
+  color: #f5b070;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
 /*MEDIA QUERIES*/
 
 @media (max-width: 800px) {
