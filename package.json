@@ -97,8 +97,11 @@
       "**/?(*.)+(spec|test|jest).[tj]s?(x)"
     ],
     "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.ts"
-    ]
+      "<rootDir>/.jest/setupTests.ts"
+    ],
+    "moduleNameMapper": {
+      "\\.(scss)$": "<rootDir>/.jest/__mocks__/styleMock.js"
+    }
   },
   "husky": {
     "hooks": {
