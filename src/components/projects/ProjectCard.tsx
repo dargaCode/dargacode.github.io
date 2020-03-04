@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
+import "../_general.scss";
+import "./_projects.scss";
 
 interface Props {
   project: {
@@ -41,7 +43,7 @@ export default function ProjectCard(props: Props): JSX.Element {
       </time>
       <a href="http://dargacode.com/PhonebookSearch/">
         {/* eslint-disable-next-line global-require,import/no-dynamic-require */}
-        <img src={require(imagePath)} alt={`Project screenshot for ${name}`} />
+        {/* <img src={require(imagePath)} alt={`Project screenshot for ${name}`} /> */}
       </a>
       <span className="tags-span">{tags.toString()}</span>
       <p>{description}</p>
