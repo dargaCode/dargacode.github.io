@@ -6,7 +6,6 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-import "./main.scss";
 import "./css/custom-icons.scss";
 import "./css/font-awesome.min.scss";
 import NavigationBar from "./components/navigation/NavigationBar";
