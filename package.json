@@ -97,7 +97,7 @@
       "**/?(*.)+(spec|test|jest).[tj]s?(x)"
     ],
     "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.ts"
+      "<rootDir>/.jest/setupTests.ts"
     ]
   },
   "husky": {
