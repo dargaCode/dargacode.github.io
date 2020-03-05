@@ -11,7 +11,7 @@ interface Props {
     tags: string[];
     description: string;
     date: string;
-    imagePath: string;
+    imageSrc: string;
     githubUrl: string;
     livePageUrl?: string;
   };
@@ -24,7 +24,7 @@ export default function ProjectCard(props: Props): JSX.Element {
     type,
     tags,
     description,
-    imagePath,
+    imageSrc,
     githubUrl,
     livePageUrl
   } = project;
@@ -42,8 +42,7 @@ export default function ProjectCard(props: Props): JSX.Element {
         - {date.format("MMM YYYY")}
       </time>
       <a href="http://dargacode.com/PhonebookSearch/">
-        {/* eslint-disable-next-line global-require,import/no-dynamic-require */}
-        {/* <img src={require(imagePath)} alt={`Project screenshot for ${name}`} /> */}
+        <img src={imageSrc} alt={`Project screenshot for ${name}`} />
       </a>
       <span className="tags-span">{tags.toString()}</span>
       <p>{description}</p>
@@ -66,7 +65,7 @@ ProjectCard.propTypes = {
     tags: PropTypes.arrayOf(PropTypes.string).isRequired,
     description: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
-    imagePath: PropTypes.string.isRequired,
+    imageSrc: PropTypes.string.isRequired,
     githubUrl: PropTypes.string.isRequired,
     livePageUrl: PropTypes.string
   }).isRequired
