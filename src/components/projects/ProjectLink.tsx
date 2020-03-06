@@ -4,21 +4,28 @@ import PropTypes from "prop-types";
 interface Props {
   preferredUrl: string;
   defaultUrl: string;
+  className: string;
   children?: React.ReactNode;
 }
 
 export default function ProjectLink(props: Props): JSX.Element {
-  const { preferredUrl, defaultUrl, children } = props;
+  const { preferredUrl, defaultUrl, className, children } = props;
   const hrefUrl = preferredUrl || defaultUrl;
 
-  return <a href={hrefUrl}> {children} </a>;
+  return (
+    <a className={className} href={hrefUrl}>
+      {children}
+    </a>
+  );
 }
 
 ProjectLink.propTypes = {
   preferredUrl: PropTypes.string,
-  defaultUrl: PropTypes.string.isRequired
+  defaultUrl: PropTypes.string.isRequired,
+  className: PropTypes.string
 };
 
 ProjectLink.defaultProps = {
-  preferredUrl: undefined
+  preferredUrl: undefined,
+  className: ""
 };

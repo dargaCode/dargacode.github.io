@@ -33,6 +33,15 @@ describe("ProjectLink", () => {
       });
     });
 
+    describe("`className`", () => {
+      it("should apply the class name to its anchor tag", () => {
+        const wrapper = shallow(
+          <ProjectLink className="project-link-class" defaultUrl={defaultUrl} />
+        );
+        expect(wrapper.find(".project-link-class")).toHaveLength(1);
+      });
+    });
+
     describe("children", () => {
       it("should pass through and render the child elements", () => {
         const wrapper = shallow(
