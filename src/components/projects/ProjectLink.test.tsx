@@ -7,20 +7,6 @@ const defaultUrl = "https://www.google.com";
 
 describe("ProjectLink", () => {
   describe("props", () => {
-    describe("children", () => {
-      it("should pass through and render the child elements", () => {
-        const wrapper = shallow(
-          <ProjectLink preferredUrl={preferredUrl} defaultUrl={defaultUrl}>
-            <div className="child-div">hello world</div>
-          </ProjectLink>
-        );
-        const childDivs = wrapper.find(".child-div");
-
-        expect(childDivs).toHaveLength(1);
-        expect(childDivs.at(0).text()).toBe("hello world");
-      });
-    });
-
     describe("when `preferredUrl` exists", () => {
       it("should link to `preferredUrl`", () => {
         const wrapper = shallow(
@@ -34,6 +20,7 @@ describe("ProjectLink", () => {
         expect(linkHref).toBe(preferredUrl);
       });
     });
+
     describe("when `preferredUrl` does not exist", () => {
       it("should link to `defaultUrl`", () => {
         const wrapper = shallow(<ProjectLink defaultUrl={defaultUrl} />);
@@ -43,6 +30,20 @@ describe("ProjectLink", () => {
           .props().href;
 
         expect(linkHref).toBe(defaultUrl);
+      });
+    });
+
+    describe("children", () => {
+      it("should pass through and render the child elements", () => {
+        const wrapper = shallow(
+          <ProjectLink preferredUrl={preferredUrl} defaultUrl={defaultUrl}>
+            <div className="child-div">hello world</div>
+          </ProjectLink>
+        );
+        const childDivs = wrapper.find(".child-div");
+
+        expect(childDivs).toHaveLength(1);
+        expect(childDivs.at(0).text()).toBe("hello world");
       });
     });
   });
