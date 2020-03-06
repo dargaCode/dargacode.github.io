@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 interface Props {
-  preferredUrl: string;
+  preferredUrl?: string;
   defaultUrl: string;
-  className: string;
+  className?: string;
   children?: React.ReactNode;
 }
 
@@ -27,5 +27,5 @@ ProjectLink.propTypes = {
 
 ProjectLink.defaultProps = {
   preferredUrl: undefined,
-  className: ""
+  className: undefined
 };
