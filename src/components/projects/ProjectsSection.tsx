@@ -1,4 +1,6 @@
 import React from "react";
+import ProjectCard from "./ProjectCard";
+import { PROJECTS } from "./projectData";
 import "../_general.scss";
 import "./_projects.scss";
 
@@ -9,7 +11,9 @@ export default function AboutSection(): JSX.Element {
         <h2>Projects</h2>
 
         <div className="project-list">
-          {/* JavaScript fills this div with projects */}
+          {PROJECTS.map(project => (
+            <ProjectCard project={project} key={project.name} />
+          ))}
         </div>
       </div>
     </section>
