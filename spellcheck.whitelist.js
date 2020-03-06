@@ -24,6 +24,8 @@ module.exports = [
   "devtool",
   "dir",
   "dirname",
+  "div",
+  "divs",
   "docx",
   "dom",
   "dropdown",
