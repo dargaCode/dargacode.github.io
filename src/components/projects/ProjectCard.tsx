@@ -40,14 +40,11 @@ export default function ProjectCard(props: Props): JSX.Element {
       >
         <h3>{name}</h3>
       </ProjectLink>
-
       <span className="type-span">{type}</span>
-
       <time dateTime={date.format("YYYY-MM-DD")}>
         {" "}
         - {date.format("MMM YYYY")}
       </time>
-
       <ProjectLink preferredUrl={livePageUrl} defaultUrl={githubUrl}>
         <img
           className={undefined}
@@ -55,20 +52,18 @@ export default function ProjectCard(props: Props): JSX.Element {
           alt={`Project screenshot for ${name}`}
         />
       </ProjectLink>
-
       <span className="tags-span">{tags.toString()}</span>
-
       <p>{description}</p>
-
       <a className="project-link" href={githubUrl}>
         GitHub Repository
         <i className="fa fa-github" />
       </a>
-
-      <a className="project-link" href={livePageUrl}>
-        Live Webpage
-        <i className="fa fa-globe" />
-      </a>
+      {livePageUrl && (
+        <a className="project-link" href={livePageUrl}>
+          Live Webpage
+          <i className="fa fa-globe" />
+        </a>
+      )}
     </article>
   );
 }

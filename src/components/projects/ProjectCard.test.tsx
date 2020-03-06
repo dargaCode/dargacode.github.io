@@ -11,12 +11,20 @@ describe("ProjectCard", () => {
     describe("`project.livePageUrl`", () => {
       describe("when `project.livePageUrl` exists", () => {
         it("should render icon linking to live webpage", () => {
-          // todo
+          const wrapper = shallow(
+            <ProjectCard project={projectWithLivePage} />
+          );
+
+          expect(wrapper.find(".project-link")).toHaveLength(2);
         });
       });
       describe("when `project.livePageUrl` does not exist", () => {
         it("should not render an icon linking to the live webpage", () => {
-          // todo
+          const wrapper = shallow(
+            <ProjectCard project={projectWithoutLivePage} />
+          );
+
+          expect(wrapper.find(".project-link")).toHaveLength(1);
         });
       });
     });
