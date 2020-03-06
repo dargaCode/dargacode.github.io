@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
+import ProjectLink from "./ProjectLink";
 import "../_general.scss";
 import "./_projects.scss";
 
@@ -29,27 +30,41 @@ export default function ProjectCard(props: Props): JSX.Element {
     livePageUrl
   } = project;
   const date = moment(project.date);
-  const projectLink = livePageUrl || githubUrl;
 
   return (
     <article className="project-card">
-      <a className="header-link" href="http://dargacode.com/PhonebookSearch/">
+      <ProjectLink
+        className="header-link"
+        preferredUrl={livePageUrl}
+        defaultUrl={githubUrl}
+      >
         <h3>{name}</h3>
-      </a>
+      </ProjectLink>
+
       <span className="type-span">{type}</span>
+
       <time dateTime={date.format("YYYY-MM-DD")}>
         {" "}
         - {date.format("MMM YYYY")}
       </time>
-      <a href="http://dargacode.com/PhonebookSearch/">
-        <img src={imageSrc} alt={`Project screenshot for ${name}`} />
-      </a>
+
+      <ProjectLink preferredUrl={livePageUrl} defaultUrl={githubUrl}>
+        <img
+          className={undefined}
+          src={imageSrc}
+          alt={`Project screenshot for ${name}`}
+        />
+      </ProjectLink>
+
       <span className="tags-span">{tags.toString()}</span>
+
       <p>{description}</p>
+
       <a className="project-link" href={githubUrl}>
         GitHub Repository
         <i className="fa fa-github" />
       </a>
+
       <a className="project-link" href={livePageUrl}>
         Live Webpage
         <i className="fa fa-globe" />
