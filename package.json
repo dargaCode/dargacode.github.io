@@ -100,6 +100,8 @@
       "<rootDir>/.jest/setupTests.ts"
     ],
     "moduleNameMapper": {
+      "\\.(jpg|png|svg)$": "<rootDir>/.jest/__mocks__/imageMock.js",
+      "\\.(ttf|woff|woff2)$": "<rootDir>/.jest/__mocks__/fileMock.js",
       "\\.(scss)$": "<rootDir>/.jest/__mocks__/styleMock.js"
     }
   },
