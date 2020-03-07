@@ -20,16 +20,9 @@ interface Props {
 
 export default function ProjectCard(props: Props): JSX.Element {
   const { project } = props;
-  const {
-    name,
-    type,
-    tags,
-    description,
-    imageSrc,
-    githubUrl,
-    livePageUrl
-  } = project;
+  const { name, type, description, imageSrc, githubUrl, livePageUrl } = project;
   const date = moment(project.date);
+  const tags = project.tags.join(", ");
 
   return (
     <article className="project-card">
@@ -52,7 +45,7 @@ export default function ProjectCard(props: Props): JSX.Element {
           alt={`Project screenshot for ${name}`}
         />
       </ProjectLink>
-      <span className="tags-span">{tags.toString()}</span>
+      <span className="tags-span">{tags}</span>
       <p>{description}</p>
       <a className="project-link" href={githubUrl}>
         GitHub Repository

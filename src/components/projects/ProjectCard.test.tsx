@@ -50,7 +50,7 @@ describe("ProjectCard", () => {
         const wrapper = shallow(<ProjectCard project={project} />);
         const tagsText = wrapper.find(".tags-span").text();
 
-        expect(tagsText).toEqual(project.tags.toString());
+        expect(tagsText).toEqual(project.tags.join(", "));
       });
     });
 
