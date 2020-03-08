@@ -13,22 +13,21 @@ export const SkillsData = [
     projectCount: 3,
     iconClass: "devicon-bootstrap-plain",
     type: "Library",
-    gitHubSearchUrl:
-      "https://github.com/dargaCode?tab=repositories&q=topic%3Abootstrap"
+    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Abootstrap"
   },
   {
     name: "C",
     projectCount: 18,
     iconClass: "devicon-c-plain",
     type: "Language",
-    gitHubSearchUrl: "https://github.com/dargaCode?tab=repositories&q=topic%3Ac"
+    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Ac"
   },
   {
     name: "C#",
     projectCount: 3,
     iconClass: "devicon-csharp-plain",
     type: "Language",
-    gitHubSearchUrl:
+    url:
       "https://github.com/dargaCode/dargacode.github.io/blob/master/skills-note.md#c"
   },
   {
@@ -36,63 +35,56 @@ export const SkillsData = [
     projectCount: 35,
     iconClass: "devicon-css3-plain",
     type: "Language",
-    gitHubSearchUrl:
-      "https://github.com/dargaCode?tab=repositories&q=topic%3Acss"
+    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Acss"
   },
   {
     name: "Express.js",
     projectCount: 6,
     iconClass: "icon-express-logo",
     type: "Framework",
-    gitHubSearchUrl:
-      "https://github.com/dargaCode?tab=repositories&q=topic%3Aexpressjs"
+    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Aexpressjs"
   },
   {
     name: "Git",
     projectCount: 58,
     iconClass: "devicon-git-plain",
     type: "Tool",
-    gitHubSearchUrl:
-      "https://github.com/dargaCode?tab=repositories&q=topic%3Agit"
+    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Agit"
   },
   {
     name: "HTML",
     projectCount: 36,
     iconClass: "devicon-html5-plain",
     type: "Language",
-    gitHubSearchUrl:
-      "https://github.com/dargaCode?tab=repositories&q=topic%3Ahtml"
+    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Ahtml"
   },
   {
     name: "JavaScript",
     projectCount: 29,
     iconClass: "devicon-javascript-plain",
     type: "Language",
-    gitHubSearchUrl:
-      "https://github.com/dargaCode?tab=repositories&q=topic%3Ajavascript"
+    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Ajavascript"
   },
   {
     name: "jQuery",
     projectCount: 1,
     iconClass: "devicon-jquery-plain",
     type: "Library",
-    gitHubSearchUrl:
-      "https://github.com/dargaCode?tab=repositories&q=topic%3Ajquery"
+    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Ajquery"
   },
   {
     name: "MongoDB",
     projectCount: 3,
     iconClass: "devicon-mongodb-plain",
     type: "Database",
-    gitHubSearchUrl:
-      "https://github.com/dargaCode?tab=repositories&q=topic%3Amongodb"
+    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Amongodb"
   },
   {
     name: "MySQL",
     projectCount: 3,
     iconClass: "devicon-mysql-plain",
     type: "Database",
-    gitHubSearchUrl:
+    url:
       "https://github.com/dargaCode/dargacode.github.io/blob/master/skills-note.md#mysql"
   },
   {
@@ -100,7 +92,6 @@ export const SkillsData = [
     projectCount: 10,
     iconClass: "devicon-nodejs-plain",
     type: "Environment",
-    gitHubSearchUrl:
-      "https://github.com/dargaCode?tab=repositories&q=topic%3Anodejs"
+    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Anodejs"
   }
 ];
