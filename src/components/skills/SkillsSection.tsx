@@ -1,4 +1,6 @@
 import React from "react";
+import SkillCard from "./SkillCard";
+import { SKILLS } from "./skillsData";
 import "../_general.scss";
 import "./_skills.scss";
 
@@ -22,7 +24,9 @@ export default function AboutSection(): JSX.Element {
         </header>
 
         <div className="skill-list">
-          {/* JavaScript fills this div with skills */}
+          {SKILLS.map(skill => (
+            <SkillCard skill={skill} key={skill.name} />
+          ))}
         </div>
       </div>
     </section>
