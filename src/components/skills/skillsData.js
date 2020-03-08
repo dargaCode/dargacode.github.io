@@ -7,7 +7,7 @@ export const SKILL_TYPE_ORDER = [
   "Tool"
 ];
 
-export const SkillsData = [
+export const SKILLS = [
   {
     name: "Bootstrap",
     iconClass: "devicon-bootstrap-plain",
