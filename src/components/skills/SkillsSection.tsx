@@ -14,9 +14,9 @@ export default function AboutSection(): JSX.Element {
           <form>
             <label htmlFor="skill-sort">
               Sort by:
-              <select id="skill-sort">
+              <select id="skill-sort" defaultValue="Skill Type">
                 <option>Skill Name</option>
-                <option selected>Skill Type</option>
+                <option>Skill Type</option>
                 <option>Project Count</option>
               </select>
             </label>
