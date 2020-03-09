@@ -3,17 +3,15 @@ import PropTypes from "prop-types";
 import "../_general.scss";
 import "./_skills.scss";
 
-interface Props {
-  skill: {
-    name: string;
-    iconClass: string;
-    type: string;
-    projectCount: number;
-    url: string;
-  };
+export interface Skill {
+  name: string;
+  iconClass: string;
+  type: string;
+  projectCount: number;
+  url: string;
 }
 
-export default function SkillCard(props: Props): JSX.Element {
+export default function SkillCard(props: { skill: Skill }): JSX.Element {
   const { skill } = props;
   const { name, iconClass, type, projectCount, url } = skill;
 
