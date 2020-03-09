@@ -1,14 +1,19 @@
 import React from "react";
 import { shallow } from "enzyme";
-import SkillCard from "./SkillCard";
+import cloneDeep from "clone-deep";
+import SkillCard, { Skill } from "./SkillCard";
 import { SKILLS } from "./skillsData";
 
+let skill: Skill;
+
 describe("SkillCard", () => {
-  const skill = SKILLS[0];
+  beforeEach(() => {
+    skill = cloneDeep(SKILLS[0]);
+  });
 
   describe("props", () => {
     describe("`skill.url`", () => {
-      it("should render the skill url", () => {
+      it("should link to the skill url", () => {
         const wrapper = shallow(<SkillCard skill={skill} />);
         const url = wrapper.find("a").props().href;
 
