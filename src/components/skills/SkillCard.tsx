@@ -21,7 +21,9 @@ export default function SkillCard(props: { skill: Skill }): JSX.Element {
         <p className="skill-type">{type}</p>
         <i className={iconClass} />
         <h3 className="skill-name">{name}</h3>
-        <p className="skill-project-count">{projectCount} Projects</p>
+        <p className="skill-project-count">
+          {projectCount} Project{projectCount === 1 ? "" : "s"}
+        </p>
       </article>
     </a>
   );

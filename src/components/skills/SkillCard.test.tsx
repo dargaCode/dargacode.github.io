@@ -49,11 +49,24 @@ describe("SkillCard", () => {
     });
 
     describe("`skill.projectCount`", () => {
-      it("should render the skill image", () => {
-        const wrapper = shallow(<SkillCard skill={skill} />);
-        const projectCountText = wrapper.find(".skill-project-count").text();
+      describe("when `projectCount` is 1", () => {
+        it("should render `n Project` (singular)", () => {
+          skill.projectCount = 1;
 
-        expect(projectCountText).toEqual(`${skill.projectCount} Projects`);
+          const wrapper = shallow(<SkillCard skill={skill} />);
+          const projectCountText = wrapper.find(".skill-project-count").text();
+
+          expect(projectCountText).toEqual(`${skill.projectCount} Project`);
+        });
+      });
+
+      describe("when `projectCount` is not 1", () => {
+        it("should render `n Projects` (plural)", () => {
+          const wrapper = shallow(<SkillCard skill={skill} />);
+          const projectCountText = wrapper.find(".skill-project-count").text();
+
+          expect(projectCountText).toEqual(`${skill.projectCount} Projects`);
+        });
       });
     });
   });
