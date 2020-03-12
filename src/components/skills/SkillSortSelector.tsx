@@ -1,19 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { SKILL_SORT_OPTIONS } from "./SkillConstants";
+import "../_general.scss";
+import "./_skills.scss";
 
-export default function SkillSortSelector(): JSX.Element {
-  function getOptions(sortOptions: string[]): JSX.Element[] {
-    return sortOptions.map((sortOption: string) => {
-      return <option key={sortOption}>{sortOption}</option>;
-    });
-  }
+interface Props {
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
+function getOptions(sortOptions: string[]): JSX.Element[] {
+  return sortOptions.map((sortOption: string) => {
+    return <option key={sortOption}>{sortOption}</option>;
+  });
+}
+
+export default function SkillSortSelector(props: Props): JSX.Element {
+  const { onChange } = props;
 
   return (
     <form>
       <label htmlFor="skill-sort">
         Sort by:
-        <select id="skill-sort" defaultValue={SKILL_SORT_OPTIONS[0]}>
+        <select
+          id="skill-sort"
+          defaultValue={SKILL_SORT_OPTIONS[0]}
+          onChange={onChange}
+        >
           {getOptions(SKILL_SORT_OPTIONS)}
         </select>
       </label>
@@ -21,4 +33,6 @@ export default function SkillSortSelector(): JSX.Element {
   );
 }
 
-SkillSortSelector.propTypes = {};
+SkillSortSelector.propTypes = {
+  onChange: PropTypes.func.isRequired
+};

@@ -1,4 +1,5 @@
 import React from "react";
+import { action } from "@storybook/addon-actions";
 import SkillSortSelector from "./SkillSortSelector";
 
 export default {
@@ -6,4 +7,4 @@ export default {
   component: SkillSortSelector
 };
 
-export const Basic = () => <SkillSortSelector />;
+export const Basic = () => <SkillSortSelector onChange={action("onChange")} />;
