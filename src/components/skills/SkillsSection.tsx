@@ -1,5 +1,6 @@
 import React from "react";
 import SkillCard from "./SkillCard";
+import SkillSortSelector from "./SkillSortSelector";
 import { SKILLS } from "./skillsData";
 import "../_general.scss";
 import "./_skills.scss";
@@ -11,16 +12,7 @@ export default function AboutSection(): JSX.Element {
         <header>
           <h2>Skills</h2>
 
-          <form>
-            <label htmlFor="skill-sort">
-              Sort by:
-              <select id="skill-sort" defaultValue="Skill Type">
-                <option>Skill Name</option>
-                <option>Skill Type</option>
-                <option>Project Count</option>
-              </select>
-            </label>
-          </form>
+          <SkillSortSelector onChange={() => null} />
         </header>
 
         <div className="skill-list">
