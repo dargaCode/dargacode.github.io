@@ -37,6 +37,7 @@ module.exports = [
   "falsy",
   "filename",
   "fn",
+  "func",
   "gif",
   "github",
   "headshot",
