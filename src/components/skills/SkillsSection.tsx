@@ -5,22 +5,28 @@ import { SKILLS } from "./skillsData";
 import "../_general.scss";
 import "./_skills.scss";
 
-export default function AboutSection(): JSX.Element {
-  return (
-    <section id="skills" className="content-section skills">
-      <div className="container">
-        <header>
-          <h2>Skills</h2>
+export default class AboutSection extends React.Component {
+  constructor(props: {}) {
+    super(props);
+  }
 
-          <SkillSortSelector onChange={() => null} />
-        </header>
+  render(): JSX.Element {
+    return (
+      <section id="skills" className="content-section skills">
+        <div className="container">
+          <header>
+            <h2>Skills</h2>
 
-        <div className="skill-list">
-          {SKILLS.map(skill => (
-            <SkillCard skill={skill} key={skill.name} />
-          ))}
+            <SkillSortSelector onChange={() => null} />
+          </header>
+
+          <div className="skill-list">
+            {SKILLS.map(skill => (
+              <SkillCard skill={skill} key={skill.name} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  }
 }
