@@ -1,4 +1,4 @@
-export const SKILL_TYPE_ORDER = [
+const SKILL_TYPE_ORDER: string[] = [
   "Language",
   "Environment",
   "Framework",
@@ -7,7 +7,22 @@ export const SKILL_TYPE_ORDER = [
   "Tool"
 ];
 
-export const SKILLS = [
+interface RawSkill {
+  name: string;
+  iconClass: string;
+  type: string;
+  projectCount: number;
+  url: string;
+}
+
+// some extra values are derived before export, but can be ignored by user
+export interface Skill extends RawSkill {
+  typeOrder: number;
+  nameLower: string;
+}
+
+// these are transformed below before exporting
+const RAW_SKILLS: RawSkill[] = [
   {
     name: "Bootstrap",
     iconClass: "devicon-bootstrap-plain",
