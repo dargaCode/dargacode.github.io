@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { SKILLS, SKILL_TYPE_ORDER } from "./skillData";
+import { SKILLS } from "./skillData";
 
 // match up the text values from the sorting dropdown with a sort helper function
 const COMPARATORS = {
@@ -86,18 +86,4 @@ function sortByType(a, b) {
 
 function sortByProjectCount(a, b) {
   return b.projectCount - a.projectCount;
-}
-
-// HELPERS
-
-// add more attributes to the skills objects to help with sorting. More efficient to do it once instead of inside the comparators.
-function processSkillAttributes(skillsArray) {
-  return skillsArray.map(function(skill) {
-    // add numerical value for sorting by type (types aren't in alphabetical order, but importance)
-    skill.typeOrder = SKILL_TYPE_ORDER.indexOf(skill.type);
-    // make lowercase skills like jQuery sort properly
-    skill.nameLower = skill.name.toLowerCase();
-
-    return skill;
-  });
 }
