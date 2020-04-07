@@ -2,14 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../_general.scss";
 import "./_skills.scss";
-
-export interface Skill {
-  name: string;
-  iconClass: string;
-  type: string;
-  projectCount: number;
-  url: string;
-}
+import { Skill } from "./skillData";
 
 export default function SkillCard(props: { skill: Skill }): JSX.Element {
   const { skill } = props;
