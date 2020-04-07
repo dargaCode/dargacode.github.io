@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import cloneDeep from "clone-deep";
 import SkillCard, { Skill } from "./SkillCard";
-import { SKILLS } from "./skillsData";
+import { SKILLS } from "./skillData";
 
 let skill: Skill;
 

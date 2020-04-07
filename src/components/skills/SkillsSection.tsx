@@ -1,7 +1,7 @@
 import React from "react";
 import SkillCard from "./SkillCard";
 import SkillSortSelector from "./SkillSortSelector";
-import { SKILLS } from "./skillsData";
+import { SKILLS } from "./skillData";
 import "../_general.scss";
 import "./_skills.scss";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import SkillsSection from "./SkillsSection";
-import { SKILLS } from "./skillsData";
+import { SKILLS } from "./skillData";
 
 describe("`SkillsSection`", () => {
   describe("render", () => {

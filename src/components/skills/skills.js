@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { SKILLS, SKILL_TYPE_ORDER } from "./skillsData";
+import { SKILLS, SKILL_TYPE_ORDER } from "./skillData";
 
 // match up the text values from the sorting dropdown with a sort helper function
 const COMPARATORS = {
