@@ -1,12 +1,10 @@
-/* eslint-disable */
-
 import { SKILLS } from "./skillData";
 
 // match up the text values from the sorting dropdown with a sort helper function
 const COMPARATORS = {
-  "skill name": sortByName,
-  "skill type": sortByType,
-  "project count": sortByProjectCount
+  "skill name": nameComparator,
+  "skill type": typeComparator,
+  "project count": projectCountComparator
 };
 
 const sortSelect = document.querySelector(".skills select");
@@ -33,7 +31,7 @@ function getSortedSkills() {
 
 // COMPARATORS
 
-function sortByName(a, b) {
+function nameComparator(a, b) {
   if (a.nameLower < b.nameLower) {
     return -1;
   }
@@ -43,7 +41,7 @@ function sortByName(a, b) {
   return 0;
 }
 
-function sortByType(a, b) {
+function typeComparator(a, b) {
   let result;
 
   switch (true) {
@@ -84,6 +82,6 @@ function sortByType(a, b) {
   return result;
 }
 
-function sortByProjectCount(a, b) {
+function projectCountComparator(a, b) {
   return b.projectCount - a.projectCount;
 }
