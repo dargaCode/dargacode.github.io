@@ -7,20 +7,6 @@ const COMPARATORS = {
   "project count": projectCountComparator
 };
 
-const sortSelect = document.querySelector(".skills select");
-
-// VARIABLES
-
-// EVENTS
-
-sortSelect.addEventListener("change", updateSkills);
-
-// FUNCTIONS
-
-function updateSkills() {
-  const sortedSkills = getSortedSkills();
-}
-
 function getSortedSkills() {
   const sortType = sortSelect.value.toLowerCase();
   const comparator = COMPARATORS[sortType];
