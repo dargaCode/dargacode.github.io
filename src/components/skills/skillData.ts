@@ -11,7 +11,7 @@ export const SKILL_TYPE_ORDER: string[] = [
   "Tool"
 ];
 
-interface RawSkill {
+export interface RawSkill {
   name: string;
   iconClass: string;
   type: string;

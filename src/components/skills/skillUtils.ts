@@ -1,4 +1,4 @@
-import { SKILLS, SKILL_TYPE_ORDER, Skill } from "./skillData";
+import { SKILLS, SKILL_TYPE_ORDER, RawSkill, Skill } from "./skillData";
 
 // match up the text values from the sorting dropdown with a sort comparator
 const COMPARATORS = {
