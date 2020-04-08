@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { SKILL_SORT_OPTIONS } from "./SkillConstants";
+import { SKILL_SORT_OPTIONS } from "./skillData";
 import "../_general.scss";
 import "./_skills.scss";
 

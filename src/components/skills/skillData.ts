@@ -1,3 +1,5 @@
+export const SKILL_SORT_OPTIONS = ["Skill Name", "Skill Type", "Project Count"];
+
 const SKILL_TYPE_ORDER: string[] = [
   "Language",
   "Environment",
