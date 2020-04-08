@@ -1,6 +1,6 @@
-import { SKILLS, SKILL_TYPE_ORDER } from "./skillData";
+import { SKILLS, SKILL_TYPE_ORDER, Skill } from "./skillData";
 
-// match up the text values from the sorting dropdown with a sort helper function
+// match up the text values from the sorting dropdown with a sort comparator
 const COMPARATORS = {
   "skill name": nameComparator,
   "skill type": typeComparator,
@@ -33,7 +33,11 @@ export function processSkills(skills: RawSkill[]): Skill[] {
 
 // COMPARATORS
 
-function nameComparator(a, b) {
+export function projectCountComparator(a: Skill, b: Skill): number {
+  return b.projectCount - a.projectCount;
+}
+
+export function nameComparator(a: Skill, b: Skill): number {
   if (a.nameLower < b.nameLower) {
     return -1;
   }
@@ -43,47 +47,32 @@ function nameComparator(a, b) {
   return 0;
 }
 
-function typeComparator(a, b) {
-  let result;
-
+export function typeComparator(a: Skill, b: Skill): number {
   switch (true) {
     // // sort by category order first
     case a.typeOrder < b.typeOrder: {
-      result = -1;
-      break;
+      return -1;
     }
     case b.typeOrder < a.typeOrder: {
-      result = 1;
-      break;
+      return 1;
     }
-    // same category, sort by descending project count
+    // same category, sort by descending project count second
     case a.projectCount > b.projectCount: {
-      result = -1;
-      break;
+      return -1;
     }
     case b.projectCount > a.projectCount: {
-      result = 1;
-      break;
+      return 1;
     }
-    // same project count, sort by skill name
+    // same project count, sort by skill name third
     case a.nameLower < b.nameLower: {
-      result = -1;
-      break;
+      return -1;
     }
     case b.nameLower < a.nameLower: {
-      result = 1;
-      break;
+      return 1;
     }
-    // should not happen
+    // everything matches (duplicate skill name)
     default: {
-      console.log("Duplicate Skill!");
-      result = 0;
+      return 0;
     }
   }
-
-  return result;
-}
-
-function projectCountComparator(a, b) {
-  return b.projectCount - a.projectCount;
 }
