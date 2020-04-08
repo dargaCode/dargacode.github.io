@@ -1,4 +1,4 @@
-import { processSkills } from "./skillUtils";
+import { processRawSkills } from "./skillUtils";
 
 export const SKILL_SORT_OPTIONS = ["Skill Name", "Skill Type", "Project Count"];
 
@@ -115,4 +115,4 @@ const RAW_SKILLS: RawSkill[] = [
   }
 ];
 
-export const SKILLS = processSkills(RAW_SKILLS);
+export const SKILLS = processRawSkills(RAW_SKILLS);

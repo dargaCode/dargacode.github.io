@@ -17,7 +17,7 @@ function getSortedSkills() {
 
 // add more attributes to the skills objects to help with sorting.
 // it's more efficient to do it once here instead of inside the comparators.
-export function processSkills(skills: RawSkill[]): Skill[] {
+export function processRawSkills(skills: RawSkill[]): Skill[] {
   return skills.map(
     (skill: RawSkill): Skill => {
       return {
