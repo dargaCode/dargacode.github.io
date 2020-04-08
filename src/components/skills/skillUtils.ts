@@ -1,4 +1,4 @@
-import { SKILLS } from "./skillData";
+import { SKILLS, SKILL_TYPE_ORDER } from "./skillData";
 
 // match up the text values from the sorting dropdown with a sort helper function
 const COMPARATORS = {
@@ -13,6 +13,22 @@ function getSortedSkills() {
   const processedSkills = processSkillAttributes(SKILLS);
 
   return processedSkills.sort(comparator);
+}
+
+// add more attributes to the skills objects to help with sorting.
+// it's more efficient to do it once here instead of inside the comparators.
+export function processSkills(skills: RawSkill[]): Skill[] {
+  return skills.map(
+    (skill: RawSkill): Skill => {
+      return {
+        ...skill,
+        // allow skills to be sorted by type
+        typeOrder: SKILL_TYPE_ORDER.indexOf(skill.type),
+        // allow lowercase skills like jQuery to sort properly by name
+        nameLower: skill.name.toLowerCase()
+      };
+    }
+  );
 }
 
 // COMPARATORS

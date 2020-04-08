@@ -1,6 +1,8 @@
+import { processSkills } from "./skillUtils";
+
 export const SKILL_SORT_OPTIONS = ["Skill Name", "Skill Type", "Project Count"];
 
-const SKILL_TYPE_ORDER: string[] = [
+export const SKILL_TYPE_ORDER: string[] = [
   "Language",
   "Environment",
   "Framework",
@@ -112,21 +114,5 @@ const RAW_SKILLS: RawSkill[] = [
     url: "https://github.com/dargaCode?tab=repositories&q=topic%3Anodejs"
   }
 ];
-
-// add more attributes to the skills objects to help with sorting.
-// it's more efficient to do it once here instead of inside the comparators.
-function processSkills(skills: RawSkill[]): Skill[] {
-  return skills.map(
-    (skill: RawSkill): Skill => {
-      return {
-        ...skill,
-        // allow skills to be sorted by type
-        typeOrder: SKILL_TYPE_ORDER.indexOf(skill.type),
-        // allow lowercase skills like jQuery to sort properly by name
-        nameLower: skill.name.toLowerCase()
-      };
-    }
-  );
-}
 
 export const SKILLS = processSkills(RAW_SKILLS);
