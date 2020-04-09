@@ -1,33 +1,4 @@
-import { processRawSkills } from "./skillsUtils";
-
-export interface SkillSortComparator {
-  (a: Skill, b: Skill): number;
-}
-
-export interface RawSkill {
-  name: string;
-  iconClass: string;
-  type: string;
-  projectCount: number;
-  url: string;
-}
-
-// some extra values are derived before export, but can be ignored by user
-export interface Skill extends RawSkill {
-  typeOrder: number;
-  nameLower: string;
-}
-
-export const SKILL_SORT_OPTIONS = ["Skill Name", "Skill Type", "Project Count"];
-
-export const SKILL_TYPE_ORDER: string[] = [
-  "Language",
-  "Environment",
-  "Framework",
-  "Library",
-  "Database",
-  "Tool"
-];
+import { RawSkill, processRawSkills } from "./skillsUtils";
 
 // these are transformed below before exporting
 const RAW_SKILLS: RawSkill[] = [
@@ -119,4 +90,5 @@ const RAW_SKILLS: RawSkill[] = [
   }
 ];
 
+// eslint-disable-next-line import/prefer-default-export
 export const SKILLS = processRawSkills(RAW_SKILLS);

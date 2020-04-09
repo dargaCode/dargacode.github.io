@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import SkillSortSelector from "./SkillSortSelector";
-import { SKILL_SORT_OPTIONS } from "./skillsData";
+import { SKILL_SORT_OPTIONS } from "./skillsUtils";
 
 const onChange = jest.fn();
 

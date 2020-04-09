@@ -1,4 +1,31 @@
-import { SKILL_TYPE_ORDER, RawSkill, Skill } from "./skillsData";
+export interface SkillSortComparator {
+  (a: Skill, b: Skill): number;
+}
+
+export interface RawSkill {
+  name: string;
+  iconClass: string;
+  type: string;
+  projectCount: number;
+  url: string;
+}
+
+// some extra values are derived before export, but can be ignored by user
+export interface Skill extends RawSkill {
+  typeOrder: number;
+  nameLower: string;
+}
+
+export const SKILL_SORT_OPTIONS = ["Skill Name", "Skill Type", "Project Count"];
+
+export const SKILL_TYPE_ORDER: string[] = [
+  "Language",
+  "Environment",
+  "Framework",
+  "Library",
+  "Database",
+  "Tool"
+];
 
 // add more attributes to the skills objects to help with sorting.
 // it's more efficient to do it once here instead of inside the comparators.

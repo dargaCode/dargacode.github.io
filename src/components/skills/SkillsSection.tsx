@@ -2,10 +2,12 @@ import React from "react";
 import cloneDeep from "clone-deep";
 import SkillCard from "./SkillCard";
 import SkillSortSelector from "./SkillSortSelector";
-import { SKILLS, Skill, SkillSortComparator } from "./skillsData";
+import { SKILLS } from "./skillsData";
 import "../_general.scss";
 import "./_skills.scss";
 import {
+  Skill,
+  SkillSortComparator,
   nameComparator,
   projectCountComparator,
   typeComparator
