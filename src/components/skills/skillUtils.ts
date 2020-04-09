@@ -1,20 +1,5 @@
 import { SKILLS, SKILL_TYPE_ORDER, RawSkill, Skill } from "./skillData";
 
-// match up the text values from the sorting dropdown with a sort comparator
-const COMPARATORS = {
-  "skill name": nameComparator,
-  "skill type": typeComparator,
-  "project count": projectCountComparator
-};
-
-function getSortedSkills() {
-  const sortType = sortSelect.value.toLowerCase();
-  const comparator = COMPARATORS[sortType];
-  const processedSkills = processSkillAttributes(SKILLS);
-
-  return processedSkills.sort(comparator);
-}
-
 // add more attributes to the skills objects to help with sorting.
 // it's more efficient to do it once here instead of inside the comparators.
 export function processRawSkills(skills: RawSkill[]): Skill[] {
@@ -30,8 +15,6 @@ export function processRawSkills(skills: RawSkill[]): Skill[] {
     }
   );
 }
-
-// COMPARATORS
 
 export function projectCountComparator(a: Skill, b: Skill): number {
   return b.projectCount - a.projectCount;

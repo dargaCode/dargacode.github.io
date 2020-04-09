@@ -5,10 +5,21 @@ import SkillSortSelector from "./SkillSortSelector";
 import { SKILLS, Skill } from "./skillData";
 import "../_general.scss";
 import "./_skills.scss";
+import {
+  nameComparator,
+  projectCountComparator,
+  typeComparator
+} from "./skillUtils";
 
 interface State {
   skills: Skill[];
 }
+
+const COMPARATORS: Map<string, Function> = new Map([
+  ["Skill Name", nameComparator],
+  ["Skill Type", typeComparator],
+  ["Project Count", projectCountComparator]
+]);
 
 export default class SkillsSection extends React.Component<{}, State> {
   constructor(props: {}) {
@@ -19,10 +30,12 @@ export default class SkillsSection extends React.Component<{}, State> {
     };
   }
 
-  handleSort = (): void => {
+  handleSort = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     const { skills } = this.state;
+    const sortType = event.target.value;
+    const comparator = COMPARATORS.get(sortType);
 
-    this.setState({ skills: skills.reverse() });
+    this.setState({ skills: skills.sort(comparator) });
   };
 
   render(): JSX.Element {
