@@ -43,11 +43,11 @@ export function processRawSkills(skills: RawSkill[]): Skill[] {
   );
 }
 
-export function projectCountComparator(a: Skill, b: Skill): number {
+export function projectCountSkillComparator(a: Skill, b: Skill): number {
   return b.projectCount - a.projectCount;
 }
 
-export function nameComparator(a: Skill, b: Skill): number {
+export function nameSkillComparator(a: Skill, b: Skill): number {
   if (a.nameLower < b.nameLower) {
     return -1;
   }
@@ -57,7 +57,7 @@ export function nameComparator(a: Skill, b: Skill): number {
   return 0;
 }
 
-export function typeComparator(a: Skill, b: Skill): number {
+export function typeSkillComparator(a: Skill, b: Skill): number {
   switch (true) {
     // // sort by category order first
     case a.typeOrder < b.typeOrder: {

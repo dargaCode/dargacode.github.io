@@ -8,9 +8,9 @@ import "./_skills.scss";
 import {
   Skill,
   SkillSortComparator,
-  nameComparator,
-  projectCountComparator,
-  typeComparator
+  nameSkillComparator,
+  projectCountSkillComparator,
+  typeSkillComparator
 } from "./skillsUtils";
 
 interface State {
@@ -18,9 +18,9 @@ interface State {
 }
 
 const COMPARATORS: Map<string, SkillSortComparator> = new Map([
-  ["Skill Name", nameComparator],
-  ["Skill Type", typeComparator],
-  ["Project Count", projectCountComparator]
+  ["Skill Name", nameSkillComparator],
+  ["Skill Type", typeSkillComparator],
+  ["Project Count", projectCountSkillComparator]
 ]);
 
 export default class SkillsSection extends React.Component<{}, State> {
