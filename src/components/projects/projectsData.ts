@@ -1,10 +1,11 @@
+import { Project } from "./projectsUtils";
 import phonebookSearchImg from "./project-thumbnails/phonebook-search.jpg";
 import palindromeHighlighterImg from "./project-thumbnails/palindrome-highlighter.jpg";
 import darkestTimelineMeImg from "./project-thumbnails/darkest-timeline-me.jpg";
 import apartmentDescriptionHighlightsImg from "./project-thumbnails/apartment-description-highlights.jpg";
 
 // eslint-disable-next-line import/prefer-default-export
-export const PROJECTS = [
+export const PROJECTS: Project[] = [
   {
     name: "Phonebook Search",
     type: "Front-End",
