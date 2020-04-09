@@ -2,7 +2,7 @@ import React from "react";
 import cloneDeep from "clone-deep";
 import SkillCard from "./SkillCard";
 import SkillSortSelector from "./SkillSortSelector";
-import { SKILLS, Skill } from "./skillData";
+import { SKILLS, Skill, SkillSortComparator } from "./skillData";
 import "../_general.scss";
 import "./_skills.scss";
 import {
@@ -15,7 +15,7 @@ interface State {
   skills: Skill[];
 }
 
-const COMPARATORS: Map<string, Function> = new Map([
+const COMPARATORS: Map<string, SkillSortComparator> = new Map([
   ["Skill Name", nameComparator],
   ["Skill Type", typeComparator],
   ["Project Count", projectCountComparator]

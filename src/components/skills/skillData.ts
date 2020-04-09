@@ -1,15 +1,8 @@
 import { processRawSkills } from "./skillUtils";
 
-export const SKILL_SORT_OPTIONS = ["Skill Name", "Skill Type", "Project Count"];
-
-export const SKILL_TYPE_ORDER: string[] = [
-  "Language",
-  "Environment",
-  "Framework",
-  "Library",
-  "Database",
-  "Tool"
-];
+export interface SkillSortComparator {
+  (a: Skill, b: Skill): number;
+}
 
 export interface RawSkill {
   name: string;
@@ -24,6 +17,17 @@ export interface Skill extends RawSkill {
   typeOrder: number;
   nameLower: string;
 }
+
+export const SKILL_SORT_OPTIONS = ["Skill Name", "Skill Type", "Project Count"];
+
+export const SKILL_TYPE_ORDER: string[] = [
+  "Language",
+  "Environment",
+  "Framework",
+  "Library",
+  "Database",
+  "Tool"
+];
 
 // these are transformed below before exporting
 const RAW_SKILLS: RawSkill[] = [
