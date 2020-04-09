@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import ProjectsSection from "./ProjectsSection";
-import { PROJECTS } from "./projectData";
+import { PROJECTS } from "./projectsData";
 
 describe("`ProjectsSection`", () => {
   describe("render", () => {

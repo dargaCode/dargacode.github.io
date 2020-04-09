@@ -1,6 +1,6 @@
 import React from "react";
 import SkillCard from "./SkillCard";
-import { SKILLS } from "./skillData";
+import { SKILLS } from "./skillsData";
 
 export default {
   title: "Skills/SkillCard",

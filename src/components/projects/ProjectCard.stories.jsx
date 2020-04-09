@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import { PROJECTS } from "./projectData";
+import { PROJECTS } from "./projectsData";
 
 export default {
   title: "Projects/ProjectCard",

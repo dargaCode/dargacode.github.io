@@ -1,4 +1,4 @@
-import { processRawSkills } from "./skillUtils";
+import { processRawSkills } from "./skillsUtils";
 
 export interface SkillSortComparator {
   (a: Skill, b: Skill): number;

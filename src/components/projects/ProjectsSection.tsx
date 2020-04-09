@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import { PROJECTS } from "./projectData";
+import { PROJECTS } from "./projectsData";
 import "../_general.scss";
 import "./_projects.scss";
 

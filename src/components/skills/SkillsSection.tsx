@@ -2,14 +2,14 @@ import React from "react";
 import cloneDeep from "clone-deep";
 import SkillCard from "./SkillCard";
 import SkillSortSelector from "./SkillSortSelector";
-import { SKILLS, Skill, SkillSortComparator } from "./skillData";
+import { SKILLS, Skill, SkillSortComparator } from "./skillsData";
 import "../_general.scss";
 import "./_skills.scss";
 import {
   nameComparator,
   projectCountComparator,
   typeComparator
-} from "./skillUtils";
+} from "./skillsUtils";
 
 interface State {
   skills: Skill[];

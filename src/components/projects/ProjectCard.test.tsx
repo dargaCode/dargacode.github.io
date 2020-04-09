@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import ProjectCard from "./ProjectCard";
-import { PROJECTS } from "./projectData";
+import { PROJECTS } from "./projectsData";
 
 describe("ProjectCard", () => {
   const project = PROJECTS[0];

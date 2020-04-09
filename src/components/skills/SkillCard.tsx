@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../_general.scss";
 import "./_skills.scss";
-import { Skill } from "./skillData";
+import { Skill } from "./skillsData";
 
 export default function SkillCard(props: { skill: Skill }): JSX.Element {
   const { skill } = props;
