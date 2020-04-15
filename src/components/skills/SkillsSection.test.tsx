@@ -1,5 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
+import cloneDeep from "clone-deep";
 import SkillsSection from "./SkillsSection";
 import { SKILLS } from "./skillsData";
 
@@ -9,6 +10,18 @@ import {
   projectCountSkillComparator,
   typeSkillComparator
 } from "./skillsUtils";
+
+const SKILLS_BY_NAME = cloneDeep(SKILLS).sort(nameSkillComparator);
+const SKILLS_BY_TYPE = cloneDeep(SKILLS).sort(typeSkillComparator);
+const SKILLS_BY_COUNT = cloneDeep(SKILLS).sort(projectCountSkillComparator);
+
+function getFakeEventWithValue(
+  valueText: string
+): React.ChangeEvent<HTMLSelectElement> {
+  return { target: { value: valueText } } as React.ChangeEvent<
+    HTMLSelectElement
+  >;
+}
 
 describe("`SkillsSection`", () => {
   describe("render", () => {
@@ -37,29 +50,27 @@ describe("`SkillsSection`", () => {
     it("can sort skills by type", () => {
       const wrapper = shallow<SkillsSection>(<SkillsSection />);
 
-      wrapper.instance().handleSort({ target: { value: "Skill Type" } });
+      wrapper.instance().handleSort(getFakeEventWithValue("Skill Type"));
 
-      expect(wrapper.state("skills")).toEqual(SKILLS.sort(typeSkillComparator));
+      expect(wrapper.state("skills")).toEqual(SKILLS_BY_TYPE);
     });
 
     it("can sort skills by project count", () => {
       const wrapper = shallow<SkillsSection>(<SkillsSection />);
 
-      wrapper.instance().handleSort({ target: { value: "Project Count" } });
+      wrapper.instance().handleSort(getFakeEventWithValue("Project Count"));
 
-      expect(wrapper.state("skills")).toEqual(
-        SKILLS.sort(projectCountSkillComparator)
-      );
+      expect(wrapper.state("skills")).toEqual(SKILLS_BY_COUNT);
     });
 
     it("can sort skills by name", () => {
       const wrapper = shallow<SkillsSection>(<SkillsSection />);
 
       // sort away from default Skill Name sort, to sort back again
-      wrapper.instance().handleSort({ target: { value: "Project Count" } });
-      wrapper.instance().handleSort({ target: { value: "Skill Name" } });
+      wrapper.instance().handleSort(getFakeEventWithValue("Project Count"));
+      wrapper.instance().handleSort(getFakeEventWithValue("Skill Name"));
 
-      expect(wrapper.state("skills")).toEqual(SKILLS.sort(nameSkillComparator));
+      expect(wrapper.state("skills")).toEqual(SKILLS_BY_NAME);
     });
   });
 });
