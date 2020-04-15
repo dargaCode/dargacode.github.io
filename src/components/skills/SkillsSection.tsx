@@ -28,7 +28,7 @@ export default class SkillsSection extends React.Component<{}, State> {
     super(props);
 
     this.state = {
-      skills: cloneDeep(SKILLS)
+      skills: cloneDeep(SKILLS).sort(nameSkillComparator)
     };
   }
 
