@@ -9,7 +9,7 @@ import {
   Skill,
   SkillSortComparator,
   nameSkillComparator,
-  projectCountSkillComparator,
+  projectsSkillComparator,
   typeSkillComparator
 } from "./skillsUtils";
 
@@ -20,7 +20,7 @@ interface State {
 const COMPARATORS: Map<string, SkillSortComparator> = new Map([
   ["Skill Name", nameSkillComparator],
   ["Skill Type", typeSkillComparator],
-  ["Project Count", projectCountSkillComparator]
+  ["Project Count", projectsSkillComparator]
 ]);
 
 export default class SkillsSection extends React.Component<{}, State> {

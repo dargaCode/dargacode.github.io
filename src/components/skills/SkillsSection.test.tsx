@@ -7,13 +7,13 @@ import { SKILLS } from "./skillsData";
 import {
   Skill,
   nameSkillComparator,
-  projectCountSkillComparator,
+  projectsSkillComparator,
   typeSkillComparator
 } from "./skillsUtils";
 
 const SKILLS_BY_NAME = cloneDeep(SKILLS).sort(nameSkillComparator);
 const SKILLS_BY_TYPE = cloneDeep(SKILLS).sort(typeSkillComparator);
-const SKILLS_BY_COUNT = cloneDeep(SKILLS).sort(projectCountSkillComparator);
+const SKILLS_BY_COUNT = cloneDeep(SKILLS).sort(projectsSkillComparator);
 
 function getFakeEventWithValue(
   valueText: string

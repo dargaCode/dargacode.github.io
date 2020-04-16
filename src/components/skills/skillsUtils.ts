@@ -43,7 +43,7 @@ export function processRawSkills(skills: RawSkill[]): Skill[] {
   );
 }
 
-export function projectCountSkillComparator(a: Skill, b: Skill): number {
+export function projectsSkillComparator(a: Skill, b: Skill): number {
   return b.projectCount - a.projectCount;
 }
 
