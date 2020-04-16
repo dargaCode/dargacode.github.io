@@ -1,30 +1,64 @@
 import React from "react";
+import cloneDeep from "clone-deep";
+import SkillCard from "./SkillCard";
+import SkillSortSelector from "./SkillSortSelector";
+import { SKILLS } from "./skillsData";
 import "../_general.scss";
 import "./_skills.scss";
+import {
+  Skill,
+  SkillSortComparator,
+  nameSkillComparator,
+  projectsSkillComparator,
+  typeSkillComparator
+} from "./skillsUtils";
 
-export default function AboutSection(): JSX.Element {
-  return (
-    <section id="skills" className="content-section skills">
-      <div className="container">
-        <header>
-          <h2>Skills</h2>
+interface State {
+  skills: Skill[];
+}
 
-          <form>
-            <label htmlFor="skill-sort">
-              Sort by:
-              <select id="skill-sort">
-                <option>Skill Name</option>
-                <option selected>Skill Type</option>
-                <option>Project Count</option>
-              </select>
-            </label>
-          </form>
-        </header>
+const COMPARATORS: Map<string, SkillSortComparator> = new Map([
+  ["Skill Name", nameSkillComparator],
+  ["Skill Type", typeSkillComparator],
+  ["Project Count", projectsSkillComparator]
+]);
 
-        <div className="skill-list">
-          {/* JavaScript fills this div with skills */}
+export default class SkillsSection extends React.Component<{}, State> {
+  constructor(props: {}) {
+    super(props);
+
+    this.state = {
+      skills: cloneDeep(SKILLS).sort(nameSkillComparator)
+    };
+  }
+
+  handleSort = (event: React.ChangeEvent<HTMLSelectElement>): void => {
+    const { skills } = this.state;
+    const sortType = event.target.value;
+    const comparator = COMPARATORS.get(sortType);
+
+    this.setState({ skills: skills.sort(comparator) });
+  };
+
+  render(): JSX.Element {
+    const { skills } = this.state;
+
+    return (
+      <section id="skills" className="content-section skills">
+        <div className="container">
+          <header>
+            <h2>Skills</h2>
+
+            <SkillSortSelector onChange={this.handleSort} />
+          </header>
+
+          <div className="skill-list">
+            {skills.map((skill: Skill) => (
+              <SkillCard skill={skill} key={skill.name} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  }
 }
