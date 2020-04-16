@@ -94,6 +94,7 @@ module.exports = [
   "unshift",
   "unwatch",
   "util",
+  "utils",
   "webpack",
   "whitelist",
   "www",
