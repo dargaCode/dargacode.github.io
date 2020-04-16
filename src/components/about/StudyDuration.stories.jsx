@@ -6,4 +6,4 @@ export default {
   component: StudyDuration
 };
 
-export const Basic = () => <StudyDuration />;
+export const Basic = (): JSX.Element => <StudyDuration />;

@@ -7,7 +7,7 @@ export default {
   component: NavigationBar
 };
 
-export const Basic = () => (
+export const Basic = (): JSX.Element => (
   <Router>
     <NavigationBar />
   </Router>

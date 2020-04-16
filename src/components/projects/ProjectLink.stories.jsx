@@ -8,7 +8,7 @@ export default {
   decorators: [withKnobs]
 };
 
-export const Basic = () => (
+export const Basic = (): JSX.Element => (
   <ProjectLink
     preferredUrl={text("Preferred Url", "https://www.google.com")}
     defaultUrl={text("Default Url", "https://www.dargacode.com")}

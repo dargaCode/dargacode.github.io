@@ -8,7 +8,7 @@ export default {
   decorators: [withKnobs]
 };
 
-export const Basic = () => (
+export const Basic = (): JSX.Element => (
   <DurationUnit
     unit={text("Unit Name", "day")}
     count={number("Unit Count", 20)}

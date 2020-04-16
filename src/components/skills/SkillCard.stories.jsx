@@ -7,6 +7,6 @@ export default {
   component: SkillCard
 };
 
-export const Basic = () => {
+export const Basic = (): JSX.Element => {
   return <SkillCard skill={SKILLS[0]} />;
 };

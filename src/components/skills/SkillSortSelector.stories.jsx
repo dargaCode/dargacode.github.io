@@ -7,4 +7,6 @@ export default {
   component: SkillSortSelector
 };
 
-export const Basic = () => <SkillSortSelector onChange={action("onChange")} />;
+export const Basic = (): JSX.Element => (
+  <SkillSortSelector onChange={action("onChange")} />
+);

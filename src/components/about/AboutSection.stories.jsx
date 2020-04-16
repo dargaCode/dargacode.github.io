@@ -6,6 +6,6 @@ export default {
   component: AboutSection
 };
 
-export const Basic = () => (
+export const Basic = (): JSX.Element => (
   <AboutSection compiler="storybook" framework="typescript" />
 );
