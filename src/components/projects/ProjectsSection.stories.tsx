@@ -6,4 +6,4 @@ export default {
   component: ProjectsSection
 };
 
-export const Basic = () => <ProjectsSection />;
+export const Basic = (): JSX.Element => <ProjectsSection />;

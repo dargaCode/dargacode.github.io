@@ -10,7 +10,8 @@
     "target": "es5",
     "jsx": "react",
     "strictNullChecks": true,
-    "allowJs": false,
+    "allowJs": true,
+    "checkJs": true,
     "alwaysStrict": true,
     "strict": true,
     "skipLibCheck": true

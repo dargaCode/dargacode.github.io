@@ -7,4 +7,4 @@ export default {
   component: ProjectCard
 };
 
-export const Basic = () => <ProjectCard project={PROJECTS[0]} />;
+export const Basic = (): JSX.Element => <ProjectCard project={PROJECTS[0]} />;
