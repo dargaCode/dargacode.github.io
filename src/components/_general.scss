@@ -1,24 +1,24 @@
 /*GENERAL*/
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
   color: inherit;
 }
 
 body {
-  font-family: "Arimo", "Helvetica", sans-serif;
-  line-height: 1.5;
-  color: #2d4c53;
   background: #394446;
+  color: #2d4c53;
+  font-family: 'Arimo', 'Helvetica', sans-serif;
+  line-height: 1.5;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  max-width: 720px;
   margin: 0 auto;
+  max-width: 720px;
 }
 
 .content-section {
@@ -29,9 +29,9 @@ body {
 
 .content-section .container {
   background: #eef5f7;
-  padding: 10px 35px 0;
   /*No margin collapse w/children*/
   overflow: hidden;
+  padding: 10px 35px 0;
 }
 
 a {
@@ -49,11 +49,11 @@ a:hover {
 .invisible-but-outline-readable {
   /*call attention if hiding isn't working*/
   color: red;
-  width: 0;
   height: 0;
-  overflow: hidden;
   margin: 0;
+  overflow: hidden;
   padding: 0;
+  width: 0;
 }
 
 h1,
@@ -62,17 +62,17 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Arimo", "Helvetica", sans-serif;
+  font-family: 'Arimo', 'Helvetica', sans-serif;
 }
 
 h2 {
   color: #1b2e32;
-  margin: 0;
   font-size: 40px;
+  margin: 0;
 }
 
 h3 {
   color: #1b2e32;
-  margin-top: 1.5em;
   margin-bottom: 0;
+  margin-top: 1.5em;
 }

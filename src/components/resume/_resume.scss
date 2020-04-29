@@ -1,11 +1,11 @@
 .resume {
-  height: 410px;
+  background-attachment: scroll;
+  background-position: center;
   //TODO get images working with webpack
   //background-image: url("../img/ocean-grey.jpg");
   background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: scroll;
   background-size: cover;
+  height: 410px;
 }
 
 .resume .overlay {
@@ -19,29 +19,29 @@
 }
 
 .resume h2 {
-  margin-top: 60px;
-  margin-bottom: 40px;
-  text-align: center;
   color: #eef5f7;
+  margin-bottom: 40px;
+  margin-top: 60px;
+  text-align: center;
 }
 
 .resume .buttons {
-  text-align: center;
   font-size: 0;
+  text-align: center;
 }
 
 .resume .button {
+  background: #e77f1f;
+  color: #eef5f7;
   display: inline-block;
-  width: 164px;
   margin: 0 14px;
   padding: 10px 21px;
-  color: #eef5f7;
-  background: #e77f1f;
+  width: 164px;
 }
 
 .resume .button:hover {
-  color: #e77f1f;
   background: #eef5f7;
+  color: #e77f1f;
   text-decoration: none;
 }
 
@@ -52,10 +52,10 @@
 
 .resume span {
   float: right;
-  text-align: left;
   font-size: 1.1rem;
-  line-height: 1.4em;
   font-weight: 500;
+  line-height: 1.4em;
+  text-align: left;
 }
 
 
@@ -75,8 +75,8 @@
   }
 
   .resume .container {
-    padding: 60px 0 55px;
     max-width: 200px;
+    padding: 60px 0 55px;
   }
 
   .resume h2 {
