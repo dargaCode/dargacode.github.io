@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 import ProjectLink from "./ProjectLink";
-import "../_general.scss";
+import "../../_general.scss";
 import "./_projects.scss";
 
 interface Props {
