@@ -1,4 +1,4 @@
-/*GENERAL*/
+/* GENERAL */
 
 *,
 *::before,
@@ -23,13 +23,15 @@ body {
 
 .content-section {
   background: #024a58;
-  /*No margin collapse w/children*/
+
+  /* No margin collapse w/children */
   overflow: hidden;
 }
 
 .content-section .container {
   background: #eef5f7;
-  /*No margin collapse w/children*/
+
+  /* No margin collapse w/children */
   overflow: hidden;
   padding: 10px 35px 0;
 }
@@ -43,11 +45,11 @@ a:hover {
   text-decoration: underline;
 }
 
-/*HEADINGS*/
+/* HEADINGS */
 
-/*used by headings that are needed for HTML5 document outline but not for visually browsing the site*/
+/* used by headings that are needed for HTML5 document outline but not for visually browsing the site */
 .invisible-but-outline-readable {
-  /*call attention if hiding isn't working*/
+  /* call attention if hiding isn't working */
   color: red;
   height: 0;
   margin: 0;

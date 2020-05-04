@@ -4,7 +4,8 @@
 
 .projects .container {
   background: none;
-  /*Remove spaces between inline-block children*/
+
+  /* Remove spaces between inline-block children */
   font-size: 0;
   max-width: 960px;
   padding: 110px 0 160px;
@@ -26,10 +27,12 @@
   display: inline-block;
   font-size: 1rem;
   max-width: 480px;
-  /*No margin collapse with children*/
+
+  /* No margin collapse with children */
   overflow: hidden;
   padding: 0 40px 20px;
-  /*Override 0-size text in container*/
+
+  /* Override 0-size text in container */
   text-align: center;
 }
 
@@ -70,7 +73,8 @@
 
 a.project-link {
   display: inline-block;
-  /*Hide link text*/
+
+  /* Hide link text */
   font-size: 0;
   height: 50px;
   width: 50px;
@@ -86,7 +90,7 @@ a.project-link:hover i {
   font-size: 50px;
 }
 
-/*MEDIA QUERIES*/
+/* MEDIA QUERIES */
 
 @media (max-width: 800px) {
   .projects .container {
