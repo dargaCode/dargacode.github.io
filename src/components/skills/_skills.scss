@@ -3,26 +3,27 @@
 }
 
 .skills .container {
-  padding: 110px 0 160px;
   background: none;
+  padding: 110px 0 160px;
 }
 
 .skills header {
   margin-bottom: 10px;
   position: relative;
-  /*Relative for dropdown positioning*/
+
+  /* Relative for dropdown positioning */
 }
 
 .skills h2 {
+  color: #eef5f7;
   display: inline-block;
   margin: 0 0 5px;
-  color: #eef5f7;
 }
 
 .skills form {
+  bottom: 18px;
   position: absolute;
   right: 0;
-  bottom: 18px;
 }
 
 .skills label {
@@ -33,14 +34,14 @@
 }
 
 .skills select {
-  width: 150px;
-  margin-left: 8px;
-  font-size: 1.05em;
-  font-weight: 500;
+  background: #eef5f7;
   border: 3px solid #e77f1f;
   border-radius: 0;
   color: #1a707f;
-  background: #eef5f7;
+  font-size: 1.05em;
+  font-weight: 500;
+  margin-left: 8px;
+  width: 150px;
 }
 
 .skills select:focus {
@@ -48,20 +49,21 @@
 }
 
 .skills .skill-list {
-  text-align: center;
-  /*Remove spaces between inline-block children*/
+  /* Remove spaces between inline-block children */
   font-size: 0;
+  text-align: center;
 }
 
 .skills .skill-card {
-  display: inline-block;
-  width: 120px;
-  padding: 15px 0;
-  text-align: center;
-  /*Override 0-size text in ul*/
-  font-size: 16px;
   background: #eef5f7;
   border: 1px solid #2d4c53;
+  display: inline-block;
+
+  /* Override 0-size text in ul */
+  font-size: 16px;
+  padding: 15px 0;
+  text-align: center;
+  width: 120px;
 }
 
 .skill-card:hover {
@@ -80,29 +82,29 @@
 }
 
 .skill-card .skill-type {
+  color: #8f8276;
   font-size: 16px;
   margin-bottom: 5px;
-  color: #8f8276;
 }
 
 .skill-card i {
-  display: inline-block;
-  margin-bottom: 5px;
-  font-size: 60px;
   color: #e77f1f;
+  display: inline-block;
+  font-size: 60px;
+  margin-bottom: 5px;
 }
 
 .skill-name {
+  color: #1a707f;
   font-size: 18px;
   margin: 0;
-  color: #1a707f;
 }
 
 .skill-project-count {
   font-size: 14px;
 }
 
-/*MEDIA QUERIES*/
+/* MEDIA QUERIES */
 
 @media (max-width: 800px) {
   .skills .container {
@@ -110,9 +112,9 @@
   }
 
   .skills h2 {
+    margin-bottom: 20px;
     text-align: center;
     width: 100%;
-    margin-bottom: 20px;
   }
 
   .skills form {
