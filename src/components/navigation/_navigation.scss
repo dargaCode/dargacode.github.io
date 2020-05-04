@@ -4,7 +4,8 @@ nav.portfolio-nav {
   font-family: 'Roboto', sans-serif;
   position: fixed;
   width: 100%;
-  /*not affected by the about overlay*/
+
+  /* not affected by the about overlay */
   z-index: 1;
 
   a {
@@ -29,7 +30,8 @@ nav.portfolio-nav {
 
   ul {
     float: right;
-    /*Remove spaces between inline-block children*/
+
+    /* Remove spaces between inline-block children */
     font-size: 0;
     list-style: none;
     padding: 0;
@@ -37,7 +39,8 @@ nav.portfolio-nav {
 
   ul li {
     display: inline-block;
-    /*Override 0-size text in ul*/
+
+    /* Override 0-size text in ul */
     font-size: 1rem;
   }
 
@@ -52,7 +55,7 @@ nav.portfolio-nav {
   }
 }
 
-/*MEDIA QUERIES*/
+/* MEDIA QUERIES */
 
 @media (max-width: 800px) {
   nav .container {
@@ -70,7 +73,7 @@ nav.portfolio-nav {
 }
 
 @media (max-width: 486px) {
-  /*NAVIGATION*/
+  /* NAVIGATION */
 
   nav {
     text-align: center;

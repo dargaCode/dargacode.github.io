@@ -10,7 +10,8 @@
 .skills header {
   margin-bottom: 10px;
   position: relative;
-  /*Relative for dropdown positioning*/
+
+  /* Relative for dropdown positioning */
 }
 
 .skills h2 {
@@ -48,7 +49,7 @@
 }
 
 .skills .skill-list {
-  /*Remove spaces between inline-block children*/
+  /* Remove spaces between inline-block children */
   font-size: 0;
   text-align: center;
 }
@@ -57,7 +58,8 @@
   background: #eef5f7;
   border: 1px solid #2d4c53;
   display: inline-block;
-  /*Override 0-size text in ul*/
+
+  /* Override 0-size text in ul */
   font-size: 16px;
   padding: 15px 0;
   text-align: center;
@@ -102,7 +104,7 @@
   font-size: 14px;
 }
 
-/*MEDIA QUERIES*/
+/* MEDIA QUERIES */
 
 @media (max-width: 800px) {
   .skills .container {
