@@ -1,0 +1,8 @@
+lib/*
+src/custom-icons.scss
+src/img/*
+src/fonts/*
+*.json
+*.pdf
+*.docx
+*.jpg
