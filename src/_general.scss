@@ -1,3 +1,5 @@
+@import './constants';
+
 /* GENERAL */
 
 *,
@@ -8,8 +10,8 @@
 }
 
 body {
-  background: #394446;
-  color: #2d4c53;
+  background: $body-background-color;
+  color: $body-text-color;
   font-family: 'Arimo', 'Helvetica', sans-serif;
   line-height: 1.5;
   margin: 0;
@@ -22,7 +24,7 @@ body {
 }
 
 .content-section {
-  background: #024a58;
+  background: $content-section-background-color;
 
   /* No margin collapse w/children */
   overflow: hidden;

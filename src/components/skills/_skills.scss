@@ -1,5 +1,7 @@
+@import '../../constants';
+
 .skills {
-  background: #024a58;
+  background: $content-section-background-color;
 }
 
 .skills .container {
@@ -37,7 +39,7 @@
   background: #eef5f7;
   border: 3px solid #e77f1f;
   border-radius: 0;
-  color: #1c7889;
+  color: $skill-sort-selector-text-color;
   font-size: 1.05em;
   font-weight: 500;
   margin-left: 8px;
@@ -56,7 +58,7 @@
 
 .skills .skill-card {
   background: #eef5f7;
-  border: 1px solid #2d4c53;
+  border: 1px solid $skill-card-border-color;
   display: inline-block;
 
   /* Override 0-size text in ul */
@@ -82,7 +84,7 @@
 }
 
 .skill-card .skill-type {
-  color: #8f8276;
+  color: $skill-card-type-color;
   font-size: 16px;
   margin-bottom: 5px;
 }
@@ -95,7 +97,7 @@
 }
 
 .skill-name {
-  color: #1c7889;
+  color: $skill-card-name-color;
   font-size: 18px;
   margin: 0;
 }

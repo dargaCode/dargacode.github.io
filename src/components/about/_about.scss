@@ -1,3 +1,5 @@
+@import '../../constants';
+
 .about {
   background-attachment: scroll;
   background-position: center;
@@ -55,7 +57,7 @@
 }
 
 .about .study-duration-unit-count {
-  color: #f5b070;
+  color: $about-duration-unit-text-color;
   font-size: 1.2em;
   font-weight: 700;
 }
