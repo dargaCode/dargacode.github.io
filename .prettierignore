@@ -2,3 +2,6 @@ src/registerServiceWorker.js
 node_modules/*
 dist/*
 .editorconfig
+.eslintignore
+.stylelintignore
+.prettierignore
