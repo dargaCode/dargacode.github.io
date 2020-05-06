@@ -43,7 +43,7 @@
 }
 
 .project-card h3 {
-  color: $project-card-name-color;
+  color: $project-card-name-text-color;
   font-size: 1.5em;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .project-card time {
-  color: $project-card-date-color;
+  color: $project-card-date-text-color;
   font-size: 0.95em;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .project-card .tags-span {
-  color: $project-card-tags-color;
+  color: $project-card-tags-text-color;
   font-size: 0.95em;
   font-weight: 700;
 }
