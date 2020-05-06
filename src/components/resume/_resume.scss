@@ -33,7 +33,7 @@
 }
 
 .resume .button {
-  background: #e77f1f;
+  background: $resume-button-background-color;
   color: #eef5f7;
   display: inline-block;
   margin: 0 14px;
@@ -43,7 +43,7 @@
 
 .resume .button:hover {
   background: #eef5f7;
-  color: #e77f1f;
+  color: $resume-button-hover-text-color;
   text-decoration: none;
 }
 

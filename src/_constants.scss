@@ -14,13 +14,14 @@ $color--geyser: #d1dee0;
 $color--tiara: #c7d0d1;
 $color--rajah: #f5b070;
 $color--jaffa: #f29a47;
-$color--zest: #e77f1f; //todo
+$color--zest: #e77f1f;
 
 $body-background-color: $color--cape-cod;
 $body-text-color: $color--spectra;
 $content-section-background-color: $color--teal-blue;
 $content-section-heading-text-color: $color--timber-green; //todo don't override these
 $content-section-sub-heading-text-color: $color--timber-green; //todo don't override these
+$link-text-color: $color--zest;
 
 $nav-bar-background-color: $color--river-bed;
 $nav-bar-text-color: $color--tiara;
@@ -35,12 +36,18 @@ $about-subtitle-text-color: $color--timber-green;
 $about-duration-unit-text-color: $color--rajah;
 
 $skill-sort-selector-text-color: $color--elm;
+$skill-sort-selector-border-color: $color--zest;
+$skill-card-hover-background-color: $color--zest;
 $skill-card-border-color: $color--spectra;
 $skill-card-name-color: $color--elm;
 $skill-card-type-color: $color--squirrel;
+$skill-card-icon-text-color: $color--zest;
 
 $projects-section-background-color: $color--elm;
 $project-card-border-color: $color--elm;
 $project-card-name-color: $color--elm;
 $project-card-date-color: $color--squirrel;
 $project-card-tags-color: $color--elm;
+
+$resume-button-background-color: $color--zest;
+$resume-button-hover-text-color: $color--zest;

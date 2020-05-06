@@ -37,7 +37,7 @@
 
 .skills select {
   background: #eef5f7;
-  border: 3px solid #e77f1f;
+  border: 3px solid $skill-sort-selector-border-color;
   border-radius: 0;
   color: $skill-sort-selector-text-color;
   font-size: 1.05em;
@@ -69,7 +69,7 @@
 }
 
 .skill-card:hover {
-  background: #e77f1f;
+  background: $skill-card-hover-background-color;
 }
 
 .skill-card:hover .skill-type,
@@ -90,7 +90,7 @@
 }
 
 .skill-card i {
-  color: #e77f1f;
+  color: $skill-card-icon-text-color;
   display: inline-block;
   font-size: 60px;
   margin-bottom: 5px;
