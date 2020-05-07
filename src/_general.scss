@@ -49,8 +49,6 @@ a:hover {
 
 /* used by headings that are needed for HTML5 document outline but not for visually browsing the site */
 .invisible-but-outline-readable {
-  /* call attention if hiding isn't working */
-  color: red;
   height: 0;
   margin: 0;
   overflow: hidden;
