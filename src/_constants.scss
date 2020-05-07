@@ -1,0 +1,65 @@
+// hex colors can only be defined in this file
+/* stylelint-disable color-no-hex */
+
+/* stylelint-disable color-named */
+$color--white: white;
+/* stylelint-enable color-named */
+$color--gray-nurse: #f1f4f2;
+$color--catskill-white: #eef5f7;
+$color--geyser: #d1dee0;
+$color--tiara: #c7d0d1;
+$color--squirrel: #8f8276;
+$color--river-bed: #455154;
+$color--cape-cod: #394446;
+$color--rajah: #f5b070;
+$color--jaffa: #f29a47;
+$color--zest: #e77f1f;
+$color--elm: #1c7889;
+$color--spectra: #2d4c53;
+$color--teal-blue: #024a58;
+$color--timber-green: #1b2e32;
+
+/* stylelint-enable color-no-hex */
+
+$body-background-color: $color--cape-cod;
+$body-text-color: $color--spectra;
+$content-section-background-color: $color--teal-blue;
+$content-section-heading-text-color: $color--catskill-white;
+$content-section-sub-heading-text-color: $color--elm;
+$link-text-color: $color--zest;
+
+$nav-bar-background-color: $color--river-bed;
+$nav-bar-text-color: $color--tiara;
+$nav-bar-logo-text-color: $color--jaffa;
+$nav-bar-logo-hover-text-color: $color--geyser;
+$nav-button-hover-background-color: $color--timber-green;
+$nav-button-hover-text-color: $color--jaffa;
+
+$about-title-text-color: $color--gray-nurse;
+$about-title-name-text-color: $color--jaffa;
+$about-subtitle-text-color: $color--timber-green;
+$about-duration-unit-text-color: $color--rajah;
+
+$skill-sort-selector-label-text-color: $color--catskill-white;
+$skill-sort-selector-background-color: $color--catskill-white;
+$skill-sort-selector-text-color: $color--elm;
+$skill-sort-selector-border-color: $color--zest;
+$skill-card-background-color: $color--catskill-white;
+$skill-card-hover-background-color: $color--zest;
+$skill-card-border-color: $color--spectra;
+$skill-card-type-text-color: $color--squirrel;
+$skill-card-icon-text-color: $color--zest;
+$skill-card-hover-text-color: $color--catskill-white;
+
+$projects-section-background-color: $color--elm;
+$project-card-background-color: $color--catskill-white;
+$project-card-border-color: $color--elm;
+$project-card-date-text-color: $color--squirrel;
+$project-card-tags-text-color: $color--elm;
+
+$resume-button-background-color: $color--zest;
+$resume-button-text-color: $color--catskill-white;
+$resume-button-hover-background-color: $color--catskill-white;
+$resume-button-hover-text-color: $color--zest;
+
+$contact-section-text-color: $color--catskill-white;

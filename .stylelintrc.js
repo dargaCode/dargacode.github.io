@@ -1,4 +1,9 @@
 module.exports = {
   extends: ["stylelint-config-standard", "stylelint-config-sass-guidelines"],
-  ignoreFiles: ["**/**/*.tsx", "**/**/*.jsx"]
+  rules: {
+    "color-no-hex": true,
+    "color-no-invalid-hex": true,
+    "color-named": "never",
+    "function-whitelist": ["calc", "url", "format"] // no rgb colors
+  }
 };

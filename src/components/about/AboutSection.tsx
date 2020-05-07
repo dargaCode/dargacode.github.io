@@ -1,6 +1,6 @@
 import React from "react";
 import StudyDuration from "./StudyDuration";
-import "../_general.scss";
+import "../../_general.scss";
 import "./_about.scss";
 
 export default function AboutSection(): JSX.Element {

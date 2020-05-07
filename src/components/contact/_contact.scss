@@ -1,6 +1,8 @@
+@import '../../constants';
+
 .contact {
   background: none;
-  color: #eef5f7;
+  color: $contact-section-text-color;
   height: 275px;
 }
 
@@ -13,14 +15,12 @@
 }
 
 .contact h2 {
-  color: inherit;
   margin-bottom: 33px;
   margin-top: 40px;
   text-align: center;
 }
 
 .contact .button {
-  color: #e77f1f;
   margin: 0 13px;
 }
 

@@ -1,5 +1,7 @@
+@import '../../constants';
+
 .skills {
-  background: #024a58;
+  background: $content-section-background-color;
 }
 
 .skills .container {
@@ -15,7 +17,6 @@
 }
 
 .skills h2 {
-  color: #eef5f7;
   display: inline-block;
   margin: 0 0 5px;
 }
@@ -27,17 +28,17 @@
 }
 
 .skills label {
-  color: #eef5f7;
+  color: $skill-sort-selector-label-text-color;
   font-size: 1.2em;
   position: relative;
   top: 2px;
 }
 
 .skills select {
-  background: #eef5f7;
-  border: 3px solid #e77f1f;
+  background: $skill-sort-selector-background-color;
+  border: 3px solid $skill-sort-selector-border-color;
   border-radius: 0;
-  color: #1a707f;
+  color: $skill-sort-selector-text-color;
   font-size: 1.05em;
   font-weight: 500;
   margin-left: 8px;
@@ -55,8 +56,8 @@
 }
 
 .skills .skill-card {
-  background: #eef5f7;
-  border: 1px solid #2d4c53;
+  background: $skill-card-background-color;
+  border: 1px solid $skill-card-border-color;
   display: inline-block;
 
   /* Override 0-size text in ul */
@@ -67,14 +68,14 @@
 }
 
 .skill-card:hover {
-  background: #e77f1f;
+  background: $skill-card-hover-background-color;
 }
 
 .skill-card:hover .skill-type,
 .skill-card:hover i,
 .skill-card:hover .skill-name,
 .skill-card:hover .skill-project-count {
-  color: #eef5f7;
+  color: $skill-card-hover-text-color;
 }
 
 .skill-card p {
@@ -82,20 +83,19 @@
 }
 
 .skill-card .skill-type {
-  color: #8f8276;
+  color: $skill-card-type-text-color;
   font-size: 16px;
   margin-bottom: 5px;
 }
 
 .skill-card i {
-  color: #e77f1f;
+  color: $skill-card-icon-text-color;
   display: inline-block;
   font-size: 60px;
   margin-bottom: 5px;
 }
 
 .skill-name {
-  color: #1a707f;
   font-size: 18px;
   margin: 0;
 }

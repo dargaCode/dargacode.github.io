@@ -1,6 +1,8 @@
+@import '../../constants';
+
 nav.portfolio-nav {
-  background: #455154;
-  color: #c7d0d1;
+  background: $nav-bar-background-color;
+  color: $nav-bar-text-color;
   font-family: 'Roboto', sans-serif;
   position: fixed;
   width: 100%;
@@ -18,14 +20,14 @@ nav.portfolio-nav {
   }
 
   .nav-logo {
-    color: #f29a47;
+    color: $nav-bar-logo-text-color;
     float: left;
     font-weight: 700;
     padding: 15px 0;
   }
 
   .nav-logo:hover {
-    color: #d1dee0;
+    color: $nav-bar-logo-hover-text-color;
   }
 
   ul {
@@ -50,8 +52,8 @@ nav.portfolio-nav {
   }
 
   ul li a:hover {
-    background: #1b2e32;
-    color: #f29a47;
+    background: $nav-button-hover-background-color;
+    color: $nav-button-hover-text-color;
   }
 }
 

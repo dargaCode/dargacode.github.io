@@ -1,0 +1,7 @@
+lib/*
+src/img/*
+src/fonts/*
+*.json
+*.pdf
+*.docx
+*.jpg

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../_general.scss";
+import "../../_general.scss";
 import "./_skills.scss";
 import { Skill } from "./skillsUtils";
 

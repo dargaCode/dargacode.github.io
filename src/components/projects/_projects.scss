@@ -1,5 +1,7 @@
+@import '../../constants';
+
 .projects {
-  background: #1c7889;
+  background: $projects-section-background-color;
 }
 
 .projects .container {
@@ -12,7 +14,6 @@
 }
 
 .projects h2 {
-  color: #eef5f7;
   margin: 0 0 15px;
   text-align: center;
 }
@@ -22,8 +23,8 @@
 }
 
 .projects .project-card {
-  background: #eef5f7;
-  border: 2px solid #1c7889;
+  background: $project-card-background-color;
+  border: 2px solid $project-card-border-color;
   display: inline-block;
   font-size: 1rem;
   max-width: 480px;
@@ -41,7 +42,6 @@
 }
 
 .project-card h3 {
-  color: #1a707f;
   font-size: 1.5em;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .project-card time {
-  color: #8f8276;
+  color: $project-card-date-text-color;
   font-size: 0.95em;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .project-card .tags-span {
-  color: #1a707f;
+  color: $project-card-tags-text-color;
   font-size: 0.95em;
   font-weight: 700;
 }

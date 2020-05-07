@@ -1,3 +1,5 @@
+@import '../../constants';
+
 .resume {
   background-attachment: scroll;
   background-position: center;
@@ -19,7 +21,6 @@
 }
 
 .resume h2 {
-  color: #eef5f7;
   margin-bottom: 40px;
   margin-top: 60px;
   text-align: center;
@@ -31,8 +32,8 @@
 }
 
 .resume .button {
-  background: #e77f1f;
-  color: #eef5f7;
+  background: $resume-button-background-color;
+  color: $resume-button-text-color;
   display: inline-block;
   margin: 0 14px;
   padding: 10px 21px;
@@ -40,8 +41,8 @@
 }
 
 .resume .button:hover {
-  background: #eef5f7;
-  color: #e77f1f;
+  background: $resume-button-hover-background-color;
+  color: $resume-button-hover-text-color;
   text-decoration: none;
 }
 

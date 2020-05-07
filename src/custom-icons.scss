@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'custom-icons';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/custom-icons.eot?lxz4qx');
+  src:
+    url('fonts/custom-icons.eot?lxz4qx#iefix') format('embedded-opentype'),
+    url('fonts/custom-icons.ttf?lxz4qx') format('truetype'),
+    url('fonts/custom-icons.woff?lxz4qx') format('woff'),
+    url('fonts/custom-icons.svg?lxz4qx#custom-icons') format('svg');
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'custom-icons' !important;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+.icon-envelope::before {
+  content: '\e3';
+}
+
+.icon-ejs-logo::before {
+  content: '\e1';
+}
+
+.icon-express-logo::before {
+  content: '\e2';
+}
