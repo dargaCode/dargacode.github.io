@@ -21,7 +21,7 @@
 }
 
 .resume h2 {
-  color: #eef5f7;
+  color: $resume-section-heading-text-color;
   margin-bottom: 40px;
   margin-top: 60px;
   text-align: center;
@@ -34,7 +34,7 @@
 
 .resume .button {
   background: $resume-button-background-color;
-  color: #eef5f7;
+  color: $resume-button-text-color;
   display: inline-block;
   margin: 0 14px;
   padding: 10px 21px;
@@ -42,7 +42,7 @@
 }
 
 .resume .button:hover {
-  background: #eef5f7;
+  background: $resume-button-hover-background-color;
   color: $resume-button-hover-text-color;
   text-decoration: none;
 }

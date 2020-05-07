@@ -17,7 +17,7 @@
 }
 
 .skills h2 {
-  color: #eef5f7;
+  color: $skills-section-heading-text-color;
   display: inline-block;
   margin: 0 0 5px;
 }
@@ -29,14 +29,14 @@
 }
 
 .skills label {
-  color: #eef5f7;
+  color: $skill-sort-selector-label-text-color;
   font-size: 1.2em;
   position: relative;
   top: 2px;
 }
 
 .skills select {
-  background: #eef5f7;
+  background: $skill-sort-selector-background-color;
   border: 3px solid $skill-sort-selector-border-color;
   border-radius: 0;
   color: $skill-sort-selector-text-color;
@@ -57,7 +57,7 @@
 }
 
 .skills .skill-card {
-  background: #eef5f7;
+  background: $skill-card-background-color;
   border: 1px solid $skill-card-border-color;
   display: inline-block;
 
@@ -76,7 +76,7 @@
 .skill-card:hover i,
 .skill-card:hover .skill-name,
 .skill-card:hover .skill-project-count {
-  color: #eef5f7;
+  color: $skill-card-hover-text-color;
 }
 
 .skill-card p {

@@ -14,7 +14,7 @@
 }
 
 .projects h2 {
-  color: #eef5f7;
+  color: $projects-section-heading-text-color;
   margin: 0 0 15px;
   text-align: center;
 }
@@ -24,7 +24,7 @@
 }
 
 .projects .project-card {
-  background: #eef5f7;
+  background: $project-card-background-color;
   border: 2px solid $project-card-border-color;
   display: inline-block;
   font-size: 1rem;
