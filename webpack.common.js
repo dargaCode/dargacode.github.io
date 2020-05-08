@@ -42,7 +42,10 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              modules: true
+              modules: true,
+              // replace kebab-case css class names with camelCase strings
+              // this way they can keep their conventions in both css and js
+              localsConvention: "dashesOnly"
             }
           },
           "sass-loader"
