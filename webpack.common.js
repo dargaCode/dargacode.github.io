@@ -17,7 +17,8 @@ module.exports = {
     filename: "[name].bundle.js"
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"]
+    // todo add aliases here for /components/, /src/, to remove need for lots of /../
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".scss"]
   },
   module: {
     rules: [
@@ -31,7 +32,21 @@ module.exports = {
       },
       {
         test: /\.scss$/,
+        exclude: /\.styles.scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+      },
+      {
+        test: /\.styles\.scss$/,
+        loader: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              modules: true
+            }
+          },
+          "sass-loader"
+        ]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,

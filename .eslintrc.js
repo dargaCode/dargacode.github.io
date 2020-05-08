@@ -33,7 +33,8 @@ module.exports = {
     ],
     "import/extensions": [
       "error",
-      "ignorePackages", // allow imports to leave off these extensions from the filenames
+      "ignorePackages",
+      // allow imports to leave off these extensions from the filenames
       {
         js: "never",
         jsx: "never",
