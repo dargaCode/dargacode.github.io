@@ -1,18 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../../_general.scss";
-import "./_navigation.scss";
+import styles from "./NavigationBar.styles.scss";
 
 export default function NavigationBar(): JSX.Element {
   return (
-    <nav className="portfolio-nav">
+    <nav className={styles.navigationBar}>
       <div className="container">
         <div className="nocontent">
           {/* ignored by google */}
           <h2 className="invisible-but-outline-readable">Navigation</h2>
         </div>
 
-        <div className="nav-logo">
+        <div className={styles.navLogo}>
           <NavLink to="/about" activeClassName="activeNavSection">
             Hi, I&apos;m Darga.
           </NavLink>
