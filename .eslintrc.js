@@ -6,12 +6,13 @@ module.exports = {
     "prettier",
     "prettier/react",
     "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
+    "plugin:css-modules/recommended",
     "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
     "plugin:@typescript-eslint/recommended-requiring-type-checking", // slower but more powerful
     "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
     "plugin:prettier/recommended" // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
-  plugins: ["react", "prettier", "spellcheck"],
+  plugins: ["react", "css-modules", "prettier", "spellcheck"],
   parser: "@typescript-eslint/parser", // Specifies the ESLint parser
   parserOptions: {
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
@@ -23,6 +24,8 @@ module.exports = {
     project: ["./tsconfig.json"]
   },
   rules: {
+    "css-modules/no-unused-class": [2, { camelCase: true }],
+    "css-modules/no-undef-class": [2, { camelCase: true }],
     "prettier/prettier": "off", // don't complain about style, just silently fix it
     "react/jsx-filename-extension": [2, { extensions: [".jsx", ".tsx"] }], // disallow jsx in js or ts files
     "import/no-extraneous-dependencies": [
