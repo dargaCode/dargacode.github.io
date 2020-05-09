@@ -1,16 +1,19 @@
 import React from "react";
 import "../../_general.scss";
-import "./_resume.scss";
+import styles from "./ResumeSection.styles.scss";
 
 export default function AboutSection(): JSX.Element {
   return (
-    <section id="resume" className="content-section resume">
-      <div className="overlay">
-        <div className="container">
+    <section id="resume" className={`content-section ${styles.resume}`}>
+      <div className={styles.overlay}>
+        <div className={styles.container}>
           <h2>Resume</h2>
 
-          <div className="buttons">
-            <a className="button" href="./resume/Darga_Developer_Resume.pdf">
+          <div className={styles.buttons}>
+            <a
+              className={styles.button}
+              href="./resume/Darga_Developer_Resume.pdf"
+            >
               <i className="fa fa-file-pdf-o" />
               <span>
                 PDF <br />
@@ -18,7 +21,10 @@ export default function AboutSection(): JSX.Element {
               </span>
             </a>
 
-            <a className="button" href="./resume/Darga_Developer_Resume.docx">
+            <a
+              className={styles.button}
+              href="./resume/Darga_Developer_Resume.docx"
+            >
               <i className="fa fa-file-word-o" />
               <span>
                 Simple <br />

@@ -10,12 +10,12 @@
   height: 410px;
 }
 
-.resume .overlay {
+.overlay {
   background: rgba(2, 63, 75, 0.7);
   height: inherit;
 }
 
-.resume .container {
+.container {
   background: none;
   padding: 30px 0 40px;
 }
@@ -26,12 +26,12 @@
   text-align: center;
 }
 
-.resume .buttons {
+.buttons {
   font-size: 0;
   text-align: center;
 }
 
-.resume .button {
+.button {
   background: $resume-button-background-color;
   color: $resume-button-text-color;
   display: inline-block;
@@ -40,7 +40,7 @@
   width: 164px;
 }
 
-.resume .button:hover {
+.button:hover {
   background: $resume-button-hover-background-color;
   color: $resume-button-hover-text-color;
   text-decoration: none;
