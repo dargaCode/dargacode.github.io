@@ -1,0 +1,64 @@
+@import '../../constants';
+
+.sort-selector-form {
+  bottom: 18px;
+  position: absolute;
+  right: 0;
+}
+
+.sort-selector-form label {
+  color: $skill-sort-selector-label-text-color;
+  font-size: 1.2em;
+  position: relative;
+  top: 2px;
+}
+
+.sort-selector-form select {
+  background: $skill-sort-selector-background-color;
+  border: 3px solid $skill-sort-selector-border-color;
+  border-radius: 0;
+  color: $skill-sort-selector-text-color;
+  font-size: 1.05em;
+  font-weight: 500;
+  margin-left: 8px;
+  width: 150px;
+}
+
+.skills select:focus {
+  outline: none;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 800px) {
+  .skills .container {
+    padding-top: 75px;
+  }
+
+  .skills h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .skills form {
+    position: relative;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+
+}
+
+@media (max-width: 486px) {
+  .skills .container {
+    padding: 115px 4px 50px;
+  }
+}
+
+@media (max-width: 325px) {
+  .skills .container {
+    padding-top: 80px;
+  }
+}
