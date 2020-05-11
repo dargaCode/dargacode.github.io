@@ -1,13 +1,13 @@
 import React from "react";
 import StudyDuration from "./StudyDuration";
 import "../../_general.scss";
-import "./_about.scss";
+import styles from "./AboutSection.styles.scss";
 
 export default function AboutSection(): JSX.Element {
   return (
     <section id="about" className="content-section about">
-      <div className="overlay">
-        <div className="container">
+      <div className={styles.overlay}>
+        <div className={styles.container}>
           <main>
             <div className="nocontent">
               {/* ignored by google */}
@@ -15,11 +15,11 @@ export default function AboutSection(): JSX.Element {
             </div>
 
             <header>
-              <span className="logo">
-                <span className="darga">darga</span>
-                <span className="code">Code</span>
+              <span className={styles.logo}>
+                <span className={styles.darga}>darga</span>
+                <span className={styles.code}>Code</span>
               </span>
-              <span className="subtitle">Software Development</span>
+              <span className={styles.subtitle}>Software Development</span>
             </header>
 
             <p>
