@@ -1,0 +1,68 @@
+@import '../../constants';
+
+.duration-unit-count {
+  color: $about-duration-unit-text-color;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 800px) {
+  .about .container {
+    padding-top: 200px;
+  }
+
+  .about main {
+    margin: 0 auto;
+    max-width: 485px;
+  }
+
+  .about header {
+    text-align: center;
+  }
+
+  .about p {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .about header .logo {
+    display: block;
+    width: 100%;
+  }
+
+  .about header .subtitle {
+    display: block;
+    line-height: 1.3;
+    margin: 6px 0 25px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .about .container {
+    padding-top: 28%;
+  }
+
+  .about main {
+    padding: 40px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 486px) {
+  .about header .logo {
+    font-size: 0.8em;
+  }
+
+  .about header .subtitle {
+    font-size: 0.55em;
+  }
+}
+
+@media (max-width: 325px) {
+  .about .container {
+    padding-top: 40px;
+  }
+}
