@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import moment from "moment";
 import SiteOrGithubLink from "./SiteOrGithubLink";
 import "../../_general.scss";
-import "./_projects.scss";
+import styles from "./ProjectCard.styles.scss";
 
 interface Props {
   project: {
@@ -25,15 +25,15 @@ export default function ProjectCard(props: Props): JSX.Element {
   const tags = project.tags.join(", ");
 
   return (
-    <article className="project-card">
+    <article className={styles.projectCard}>
       <SiteOrGithubLink
-        className="header-link"
+        className={styles.headerLink}
         preferredUrl={livePageUrl}
         defaultUrl={githubUrl}
       >
         <h3>{name}</h3>
       </SiteOrGithubLink>
-      <span className="type-span">{type}</span>
+      <span className={styles.typeSpan}>{type}</span>
       <time dateTime={date.format("YYYY-MM-DD")}>
         {" "}
         - {date.format("MMM YYYY")}
@@ -45,14 +45,14 @@ export default function ProjectCard(props: Props): JSX.Element {
           alt={`Project screenshot for ${name}`}
         />
       </SiteOrGithubLink>
-      <span className="tags-span">{tags}</span>
+      <span className={styles.tagsSpan}>{tags}</span>
       <p>{description}</p>
-      <a className="project-link" href={githubUrl}>
+      <a className={styles.linkIconContainer} href={githubUrl}>
         GitHub Repository
         <i className="fa fa-github" />
       </a>
       {livePageUrl && (
-        <a className="project-link" href={livePageUrl}>
+        <a className={styles.linkIconContainer} href={livePageUrl}>
           Live Webpage
           <i className="fa fa-globe" />
         </a>
