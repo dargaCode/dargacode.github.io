@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
-import ProjectLink from "./ProjectLink";
+import SiteOrGithubLink from "./SiteOrGithubLink";
 import "../../_general.scss";
 import "./_projects.scss";
 
@@ -26,25 +26,25 @@ export default function ProjectCard(props: Props): JSX.Element {
 
   return (
     <article className="project-card">
-      <ProjectLink
+      <SiteOrGithubLink
         className="header-link"
         preferredUrl={livePageUrl}
         defaultUrl={githubUrl}
       >
         <h3>{name}</h3>
-      </ProjectLink>
+      </SiteOrGithubLink>
       <span className="type-span">{type}</span>
       <time dateTime={date.format("YYYY-MM-DD")}>
         {" "}
         - {date.format("MMM YYYY")}
       </time>
-      <ProjectLink preferredUrl={livePageUrl} defaultUrl={githubUrl}>
+      <SiteOrGithubLink preferredUrl={livePageUrl} defaultUrl={githubUrl}>
         <img
           className={undefined}
           src={imageSrc}
           alt={`Project screenshot for ${name}`}
         />
-      </ProjectLink>
+      </SiteOrGithubLink>
       <span className="tags-span">{tags}</span>
       <p>{description}</p>
       <a className="project-link" href={githubUrl}>

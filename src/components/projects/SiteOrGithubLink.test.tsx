@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import ProjectLink from "./ProjectLink";
+import SiteOrGithubLink from "./SiteOrGithubLink";
 
 const preferredUrl = "https://www.dargacode.com";
 const defaultUrl = "https://www.google.com";
@@ -10,7 +10,7 @@ describe("ProjectLink", () => {
     describe("when `preferredUrl` exists", () => {
       it("should link to `preferredUrl`", () => {
         const wrapper = shallow(
-          <ProjectLink preferredUrl={preferredUrl} defaultUrl={defaultUrl} />
+          <SiteOrGithubLink preferredUrl={preferredUrl} defaultUrl={defaultUrl} />
         );
         const linkHref = wrapper
           .find("a")
@@ -23,7 +23,7 @@ describe("ProjectLink", () => {
 
     describe("when `preferredUrl` does not exist", () => {
       it("should link to `defaultUrl`", () => {
-        const wrapper = shallow(<ProjectLink defaultUrl={defaultUrl} />);
+        const wrapper = shallow(<SiteOrGithubLink defaultUrl={defaultUrl} />);
         const linkHref = wrapper
           .find("a")
           .at(0)
@@ -36,7 +36,7 @@ describe("ProjectLink", () => {
     describe("`className`", () => {
       it("should apply the class name to its anchor tag", () => {
         const wrapper = shallow(
-          <ProjectLink className="project-link-class" defaultUrl={defaultUrl} />
+          <SiteOrGithubLink className="project-link-class" defaultUrl={defaultUrl} />
         );
         expect(wrapper.find(".project-link-class")).toHaveLength(1);
       });
@@ -45,9 +45,9 @@ describe("ProjectLink", () => {
     describe("children", () => {
       it("should pass through and render the child elements", () => {
         const wrapper = shallow(
-          <ProjectLink preferredUrl={preferredUrl} defaultUrl={defaultUrl}>
+          <SiteOrGithubLink preferredUrl={preferredUrl} defaultUrl={defaultUrl}>
             <div className="child-div">hello world</div>
-          </ProjectLink>
+          </SiteOrGithubLink>
         );
         const childDivs = wrapper.find(".child-div");
 
