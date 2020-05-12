@@ -18,6 +18,9 @@ interface Props {
   };
 }
 
+const DATETIME_FORMAT = "YYYY-MM-DD";
+const MONTH_YEAR_FORMAT = "MMM YYYY";
+
 export default function ProjectCard(props: Props): JSX.Element {
   const { project } = props;
   const { name, type, description, imageSrc, githubUrl, livePageUrl } = project;
@@ -34,9 +37,9 @@ export default function ProjectCard(props: Props): JSX.Element {
         <h3>{name}</h3>
       </SiteOrGithubLink>
       <span className={styles.typeSpan}>{type}</span>
-      <time dateTime={date.format("YYYY-MM-DD")}>
+      <time dateTime={date.format(DATETIME_FORMAT)}>
         {" "}
-        - {date.format("MMM YYYY")}
+        - {date.format(MONTH_YEAR_FORMAT)}
       </time>
       <SiteOrGithubLink preferredUrl={livePageUrl} defaultUrl={githubUrl}>
         <img
