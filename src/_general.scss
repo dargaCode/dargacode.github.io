@@ -18,11 +18,6 @@ body {
   padding: 0;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 720px;
-}
-
 .content-section {
   background: $content-section-background-color;
 
@@ -31,6 +26,9 @@ body {
 }
 
 .container {
+  margin: 0 auto;
+  max-width: 720px;
+
   /* No margin collapse w/children */
   overflow: hidden;
   padding: 10px 35px 0;
