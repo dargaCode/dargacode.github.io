@@ -9,7 +9,10 @@ export default function AboutSection(): JSX.Element {
   const projects = cloneDeep(PROJECTS);
 
   return (
-    <section id="projects" className={`content-section ${styles.projects}`}>
+    <section
+      id="projects"
+      className={`${styles.contentSection} ${styles.projects}`}
+    >
       <div className={styles.container}>
         <h2>Projects</h2>
 

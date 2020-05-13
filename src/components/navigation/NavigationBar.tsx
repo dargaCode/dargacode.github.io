@@ -6,10 +6,10 @@ import styles from "./NavigationBar.styles.scss";
 export default function NavigationBar(): JSX.Element {
   return (
     <nav className={styles.navigationBar}>
-      <div className="container">
+      <div className={styles.container}>
         <div className="nocontent">
           {/* ignored by google */}
-          <h2 className="invisible-but-outline-readable">Navigation</h2>
+          <h2 className={styles.invisibleButOutlineReadable}>Navigation</h2>
         </div>
 
         <div className={styles.navLogo}>

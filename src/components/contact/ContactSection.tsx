@@ -4,7 +4,10 @@ import styles from "./ContactSection.styles.scss";
 
 export default function AboutSection(): JSX.Element {
   return (
-    <section id="contact" className={`content-section ${styles.contact}`}>
+    <section
+      id="contact"
+      className={`${styles.contentSection} ${styles.contact}`}
+    >
       <div className={styles.container}>
         <h2>Contact</h2>
 

@@ -5,13 +5,13 @@ import styles from "./AboutSection.styles.scss";
 
 export default function AboutSection(): JSX.Element {
   return (
-    <section id="about" className="content-section about">
+    <section id="about" className={`${styles.contentSection} ${styles.about}`}>
       <div className={styles.overlay}>
         <div className={styles.container}>
           <main>
             <div className="nocontent">
               {/* ignored by google */}
-              <h2 className="invisible-but-outline-readable">About Me</h2>
+              <h2 className={styles.invisibleButOutlineReadable}>About Me</h2>
             </div>
 
             <header>
