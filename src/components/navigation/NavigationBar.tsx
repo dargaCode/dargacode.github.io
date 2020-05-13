@@ -12,11 +12,9 @@ export default function NavigationBar(): JSX.Element {
           <h2 className={styles.invisibleButOutlineReadable}>Navigation</h2>
         </div>
 
-        <div className={styles.navLogo}>
-          <NavLink to="/about" activeClassName="activeNavSection">
-            Hi, I&apos;m Darga.
-          </NavLink>
-        </div>
+        <NavLink to="/about" activeClassName="activeNavSection">
+          <div className={styles.navLogo}>Hi, I&apos;m Darga.</div>{" "}
+        </NavLink>
 
         <ul>
           <li>
