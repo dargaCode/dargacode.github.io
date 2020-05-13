@@ -41,8 +41,11 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
+
             options: {
-              modules: true,
+              modules: {
+                localIdentName: "[name]__[local]___[hash:base64:5]"
+              },
               // replace kebab-case css class names with camelCase strings
               // this way they can keep their conventions in both css and js
               localsConvention: "dashesOnly"
