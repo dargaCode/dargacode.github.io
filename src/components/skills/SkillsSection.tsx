@@ -44,7 +44,10 @@ export default class SkillsSection extends React.Component<{}, State> {
     const { skills } = this.state;
 
     return (
-      <section id="skills" className={`content-section ${styles.skills}`}>
+      <section
+        id="skills"
+        className={`${styles.contentSection} ${styles.skills}`}
+      >
         <div className={styles.container}>
           <header>
             <h2>Skills</h2>
