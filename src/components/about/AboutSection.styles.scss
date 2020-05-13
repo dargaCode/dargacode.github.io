@@ -15,13 +15,13 @@
   position: relative;
 }
 
-.about .overlay {
+.overlay {
   background: rgba(28, 120, 137, 0.82);
   height: 100vh;
   min-height: 775px;
 }
 
-.about .container {
+.container {
   background: none;
   padding: 280px 0 0;
 }
@@ -38,11 +38,11 @@
   line-height: 1em;
 }
 
-.about header .darga {
+.darga {
   color: $about-title-name-text-color;
 }
 
-.about header .subtitle {
+.subtitle {
   color: $about-subtitle-text-color;
   float: right;
   font-size: 0.62em;
@@ -52,7 +52,7 @@
   top: 8px;
 }
 
-.about .study-duration-unit-count {
+.study-duration-unit-count {
   color: $about-duration-unit-text-color;
   font-size: 1.2em;
   font-weight: 700;

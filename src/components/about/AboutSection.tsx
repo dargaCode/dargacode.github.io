@@ -17,7 +17,7 @@ export default function AboutSection(): JSX.Element {
             <header>
               <span className={styles.logo}>
                 <span className={styles.darga}>darga</span>
-                <span className={styles.code}>Code</span>
+                <span>Code</span>
               </span>
               <span className={styles.subtitle}>Software Development</span>
             </header>
