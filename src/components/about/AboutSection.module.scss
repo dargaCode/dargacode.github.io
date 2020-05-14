@@ -53,16 +53,10 @@
   top: 8px;
 }
 
-.study-duration-unit-count {
-  color: constants.$about-duration-unit-text-color;
-  font-size: 1.2em;
-  font-weight: 700;
-}
-
 /* MEDIA QUERIES */
 
 @media (max-width: 800px) {
-  .about .container {
+  .container {
     padding-top: 200px;
   }
 
@@ -94,7 +88,7 @@
 }
 
 @media (max-width: 600px) {
-  .about .container {
+  .container {
     padding-top: 28%;
   }
 
@@ -115,7 +109,7 @@
 }
 
 @media (max-width: 325px) {
-  .about .container {
+  .container {
     padding-top: 40px;
   }
 }

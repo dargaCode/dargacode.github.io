@@ -53,20 +53,7 @@
 /* MEDIA QUERIES */
 
 @media (max-width: 800px) {
-  .skills .container {
-    padding-top: 75px;
-  }
 
-  .skills h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    width: 100%;
-  }
-
-  .skills form {
-    position: relative;
-    text-align: center;
-  }
 }
 
 @media (max-width: 600px) {
@@ -74,13 +61,9 @@
 }
 
 @media (max-width: 486px) {
-  .skills .container {
-    padding: 115px 4px 50px;
-  }
+
 }
 
 @media (max-width: 325px) {
-  .skills .container {
-    padding-top: 80px;
-  }
+
 }

@@ -72,30 +72,20 @@
 /* MEDIA QUERIES */
 
 @media (max-width: 800px) {
-  .projects .container {
-    padding-bottom: 110px;
-  }
+
 }
 
 @media (max-width: 600px) {
-  .projects .container {
-    padding-bottom: 100px;
-  }
+
 }
 
 @media (max-width: 486px) {
-  .projects .container {
-    padding-top: 112px;
-  }
-
-  .projects .project-card h3 {
+  .project-card h3 {
     line-height: 1.4;
     margin-bottom: 6px;
   }
 }
 
 @media (max-width: 325px) {
-  .projects .container {
-    padding-top: 80px;
-  }
+
 }
