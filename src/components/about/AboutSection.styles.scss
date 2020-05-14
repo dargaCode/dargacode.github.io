@@ -1,5 +1,5 @@
-@import '../../constants';
-@import '../../general';
+@use '../../constants';
+@use '../../general';
 
 .about {
   background-attachment: scroll;
@@ -33,18 +33,18 @@
 }
 
 .about header {
-  color: $about-title-text-color;
+  color: constants.$about-title-text-color;
   font-size: 3.1em;
   font-weight: 700;
   line-height: 1em;
 }
 
 .darga {
-  color: $about-title-name-text-color;
+  color: constants.$about-title-name-text-color;
 }
 
 .subtitle {
-  color: $about-subtitle-text-color;
+  color: constants.$about-subtitle-text-color;
   float: right;
   font-size: 0.62em;
   font-weight: 500;
@@ -54,7 +54,7 @@
 }
 
 .study-duration-unit-count {
-  color: $about-duration-unit-text-color;
+  color: constants.$about-duration-unit-text-color;
   font-size: 1.2em;
   font-weight: 700;
 }

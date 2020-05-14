@@ -1,9 +1,9 @@
-@import '../../constants';
-@import '../../general';
+@use '../../constants';
+@use '../../general';
 
 .navigation-bar {
-  background: $nav-bar-background-color;
-  color: $nav-bar-text-color;
+  background: constants.$nav-bar-background-color;
+  color: constants.$nav-bar-text-color;
   font-family: 'Roboto', sans-serif;
   position: fixed;
   width: 100%;
@@ -21,14 +21,14 @@
   }
 
   .nav-logo {
-    color: $nav-bar-logo-text-color;
+    color: constants.$nav-bar-logo-text-color;
     float: left;
     font-weight: 700;
     padding: 15px 0;
   }
 
   .nav-logo:hover {
-    color: $nav-bar-logo-hover-text-color;
+    color: constants.$nav-bar-logo-hover-text-color;
   }
 
   ul {
@@ -53,8 +53,8 @@
   }
 
   ul li a:hover {
-    background: $nav-button-hover-background-color;
-    color: $nav-button-hover-text-color;
+    background: constants.$nav-button-hover-background-color;
+    color: constants.$nav-button-hover-text-color;
   }
 }
 

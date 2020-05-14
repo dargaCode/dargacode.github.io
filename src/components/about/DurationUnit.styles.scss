@@ -1,8 +1,8 @@
-@import '../../constants';
-@import '../../general';
+@use '../../constants';
+@use '../../general';
 
 .duration-unit-count {
-  color: $about-duration-unit-text-color;
+  color: constants.$about-duration-unit-text-color;
   font-size: 1.2em;
   font-weight: 700;
 }

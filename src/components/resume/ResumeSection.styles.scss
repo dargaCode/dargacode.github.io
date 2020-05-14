@@ -1,5 +1,5 @@
-@import '../../constants';
-@import '../../general';
+@use '../../constants';
+@use '../../general';
 
 .resume {
   background-attachment: scroll;
@@ -33,8 +33,8 @@
 }
 
 .button {
-  background: $resume-button-background-color;
-  color: $resume-button-text-color;
+  background: constants.$resume-button-background-color;
+  color: constants.$resume-button-text-color;
   display: inline-block;
   margin: 0 14px;
   padding: 10px 21px;
@@ -42,8 +42,8 @@
 }
 
 .button:hover {
-  background: $resume-button-hover-background-color;
-  color: $resume-button-hover-text-color;
+  background: constants.$resume-button-hover-background-color;
+  color: constants.$resume-button-hover-text-color;
   text-decoration: none;
 }
 

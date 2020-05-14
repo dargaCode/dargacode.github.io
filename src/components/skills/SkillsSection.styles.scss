@@ -1,8 +1,8 @@
-@import '../../constants';
-@import '../../general';
+@use '../../constants';
+@use '../../general';
 
 .skills {
-  background: $content-section-background-color;
+  background: constants.$content-section-background-color;
 }
 
 .skills .container {

@@ -1,4 +1,4 @@
-@import './constants';
+@use './constants';
 
 /* GENERAL */
 
@@ -10,8 +10,8 @@
 }
 
 body {
-  background: $body-background-color;
-  color: $body-text-color;
+  background: constants.$body-background-color;
+  color: constants.$body-text-color;
   font-family: 'Arimo', 'Helvetica', sans-serif;
   line-height: 1.5;
   margin: 0;
@@ -19,7 +19,7 @@ body {
 }
 
 .content-section {
-  background: $content-section-background-color;
+  background: constants.$content-section-background-color;
 
   /* No margin collapse w/children */
   overflow: hidden;
@@ -35,7 +35,7 @@ body {
 }
 
 a {
-  color: $link-text-color;
+  color: constants.$link-text-color;
   text-decoration: none;
 }
 
@@ -64,13 +64,13 @@ h6 {
 }
 
 h2 {
-  color: $content-section-heading-text-color;
+  color: constants.$content-section-heading-text-color;
   font-size: 40px;
   margin: 0;
 }
 
 h3 {
-  color: $content-section-sub-heading-text-color;
+  color: constants.$content-section-sub-heading-text-color;
   margin-bottom: 0;
   margin-top: 1.5em;
 }

@@ -1,9 +1,9 @@
-@import '../../constants';
-@import '../../general';
+@use '../../constants';
+@use '../../general';
 
 .contact {
   background: none;
-  color: $contact-section-text-color;
+  color: constants.$contact-section-text-color;
   height: 275px;
 }
 

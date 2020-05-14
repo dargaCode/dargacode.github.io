@@ -1,5 +1,5 @@
-@import '../../constants';
-@import '../../general';
+@use '../../constants';
+@use '../../general';
 
 .sort-selector-form {
   bottom: 18px;
@@ -8,17 +8,17 @@
 }
 
 .sort-selector-form label {
-  color: $skill-sort-selector-label-text-color;
+  color: constants.$skill-sort-selector-label-text-color;
   font-size: 1.2em;
   position: relative;
   top: 2px;
 }
 
 .sort-selector-form select {
-  background: $skill-sort-selector-background-color;
-  border: 3px solid $skill-sort-selector-border-color;
+  background: constants.$skill-sort-selector-background-color;
+  border: 3px solid constants.$skill-sort-selector-border-color;
   border-radius: 0;
-  color: $skill-sort-selector-text-color;
+  color: constants.$skill-sort-selector-text-color;
   font-size: 1.05em;
   font-weight: 500;
   margin-left: 8px;

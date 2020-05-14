@@ -1,8 +1,8 @@
-@import '../../constants';
-@import '../../general';
+@use '../../constants';
+@use '../../general';
 
 .projects {
-  background: $projects-section-background-color;
+  background: constants.$projects-section-background-color;
 }
 
 .container {

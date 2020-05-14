@@ -1,9 +1,9 @@
-@import '../../constants';
-@import '../../general';
+@use '../../constants';
+@use '../../general';
 
 .project-card {
-  background: $project-card-background-color;
-  border: 2px solid $project-card-border-color;
+  background: constants.$project-card-background-color;
+  border: 2px solid constants.$project-card-border-color;
   display: inline-block;
   font-size: 1rem;
   max-width: 480px;
@@ -25,7 +25,7 @@
 }
 
 .project-card time {
-  color: $project-card-date-text-color;
+  color: constants.$project-card-date-text-color;
   font-size: 0.95em;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .tags-span {
-  color: $project-card-tags-text-color;
+  color: constants.$project-card-tags-text-color;
   font-size: 0.95em;
   font-weight: 700;
 }
