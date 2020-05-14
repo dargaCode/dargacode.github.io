@@ -3,7 +3,7 @@ import cloneDeep from "clone-deep";
 import ProjectCard from "./ProjectCard";
 import { PROJECTS } from "./projectsData";
 import "../../_general.scss";
-import styles from "./ProjectsSection.styles.scss";
+import styles from "./ProjectsSection.module.scss";
 
 export default function AboutSection(): JSX.Element {
   const projects = cloneDeep(PROJECTS);

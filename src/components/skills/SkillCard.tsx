@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../../_general.scss";
-import styles from "./SkillCard.styles.scss";
+import styles from "./SkillCard.module.scss";
 import { Skill } from "./skillsUtils";
 
 export default function SkillCard(props: { skill: Skill }): JSX.Element {

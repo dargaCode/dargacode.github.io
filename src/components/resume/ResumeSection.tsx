@@ -1,6 +1,6 @@
 import React from "react";
 import "../../_general.scss";
-import styles from "./ResumeSection.styles.scss";
+import styles from "./ResumeSection.module.scss";
 
 export default function AboutSection(): JSX.Element {
   return (

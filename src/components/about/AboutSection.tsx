@@ -1,7 +1,7 @@
 import React from "react";
 import StudyDuration from "./StudyDuration";
 import "../../_general.scss";
-import styles from "./AboutSection.styles.scss";
+import styles from "./AboutSection.module.scss";
 
 export default function AboutSection(): JSX.Element {
   return (

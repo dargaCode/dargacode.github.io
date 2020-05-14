@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import moment from "moment";
 import SiteOrGithubLink from "./SiteOrGithubLink";
 import "../../_general.scss";
-import styles from "./ProjectCard.styles.scss";
+import styles from "./ProjectCard.module.scss";
 
 interface Props {
   project: {

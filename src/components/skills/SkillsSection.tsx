@@ -4,7 +4,7 @@ import SkillCard from "./SkillCard";
 import SkillSortSelector from "./SkillSortSelector";
 import { SKILLS } from "./skillsData";
 import "../../_general.scss";
-import styles from "./SkillsSection.styles.scss";
+import styles from "./SkillsSection.module.scss";
 import {
   Skill,
   SkillSortComparator,
