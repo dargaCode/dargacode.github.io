@@ -1,5 +1,6 @@
 @use '../../constants';
 @use '../../general';
+@use '../../break';
 
 .contact {
   background: none;
@@ -46,7 +47,7 @@
 
 /* MEDIA QUERIES */
 
-@media (max-width: 486px) {
+@include break.under(small) {
   .contact {
     height: auto;
   }
@@ -67,4 +68,3 @@
     margin: 4px 10px;
   }
 }
-

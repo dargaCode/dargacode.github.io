@@ -1,5 +1,6 @@
 @use '../../constants';
 @use '../../general';
+@use '../../break';
 
 .about {
   background-attachment: scroll;
@@ -55,7 +56,7 @@
 
 /* MEDIA QUERIES */
 
-@media (max-width: 800px) {
+@include break.under(large) {
   .container {
     padding-top: 200px;
   }
@@ -87,7 +88,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@include break.under(medium) {
   .container {
     padding-top: 28%;
   }
@@ -98,7 +99,7 @@
   }
 }
 
-@media (max-width: 486px) {
+@include break.under(small) {
   .about header .logo {
     font-size: 0.8em;
   }
@@ -108,7 +109,7 @@
   }
 }
 
-@media (max-width: 325px) {
+@include break.under(tiny) {
   .container {
     padding-top: 40px;
   }

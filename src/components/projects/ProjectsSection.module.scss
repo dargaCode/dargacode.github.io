@@ -1,5 +1,6 @@
 @use '../../constants';
 @use '../../general';
+@use '../../break';
 
 .projects {
   background: constants.$projects-section-background-color;
@@ -25,25 +26,25 @@
 
 /* MEDIA QUERIES */
 
-@media (max-width: 800px) {
+@include break.under(large) {
   .container {
     padding-bottom: 110px;
   }
 }
 
-@media (max-width: 600px) {
+@include break.under(medium) {
   .container {
     padding-bottom: 100px;
   }
 }
 
-@media (max-width: 486px) {
+@include break.under(small) {
   .container {
     padding-top: 112px;
   }
 }
 
-@media (max-width: 325px) {
+@include break.under(tiny) {
   .container {
     padding-top: 80px;
   }

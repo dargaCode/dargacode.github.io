@@ -1,5 +1,6 @@
 @use '../../constants';
 @use '../../general';
+@use '../../break';
 
 .skills {
   background: constants.$content-section-background-color;
@@ -30,7 +31,7 @@
 
 /* MEDIA QUERIES */
 
-@media (max-width: 800px) {
+@include break.under(large) {
   .skills .container {
     padding-top: 75px;
   }
@@ -47,13 +48,13 @@
   }
 }
 
-@media (max-width: 486px) {
+@include break.under(small) {
   .skills .container {
     padding: 115px 4px 50px;
   }
 }
 
-@media (max-width: 325px) {
+@include break.under(tiny) {
   .skills .container {
     padding-top: 80px;
   }

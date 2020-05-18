@@ -1,5 +1,6 @@
 @use '../../constants';
 @use '../../general';
+@use '../../break';
 
 .resume {
   background-attachment: scroll;
@@ -62,7 +63,7 @@
 
 /* MEDIA QUERIES */
 
-@media (max-width: 486px) {
+@include break.under(small) {
   .resume {
     height: auto;
   }
@@ -81,7 +82,7 @@
   }
 }
 
-@media (max-width: 325px) {
+@include break.under(tiny) {
   .resume .container {
     padding-top: 30px;
   }

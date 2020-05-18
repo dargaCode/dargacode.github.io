@@ -1,5 +1,6 @@
 @use '../../constants';
 @use '../../general';
+@use '../../break';
 
 .sort-selector-form {
   bottom: 18px;
@@ -31,7 +32,7 @@
 
 /* MEDIA QUERIES */
 
-@media (max-width: 800px) {
+@include break.under(large) {
   .sort-selector-form {
     position: relative;
     text-align: center;

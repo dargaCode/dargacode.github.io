@@ -1,5 +1,6 @@
 @use '../../constants';
 @use '../../general';
+@use '../../break';
 
 .navigation-bar {
   background: constants.$nav-bar-background-color;
@@ -64,7 +65,7 @@
 
 /* MEDIA QUERIES */
 
-@media (max-width: 800px) {
+@include break.under(large) {
   nav .container {
     max-width: 550px;
     padding: 0 20px;
@@ -75,7 +76,7 @@
   }
 }
 
-@media (max-width: 486px) {
+@include break.under(small) {
   /* NAVIGATION */
 
   nav {
@@ -101,7 +102,7 @@
   }
 }
 
-@media (max-width: 325px) {
+@include break.under(tiny) {
   nav .nav-logo {
     display: none;
   }

@@ -1,5 +1,6 @@
 @use '../../constants';
 @use '../../general';
+@use '../../break';
 
 .project-card {
   background: constants.$project-card-background-color;
@@ -71,7 +72,7 @@
 
 /* MEDIA QUERIES */
 
-@media (max-width: 486px) {
+@include break.under(small) {
   .project-card h3 {
     line-height: 1.4;
     margin-bottom: 6px;
