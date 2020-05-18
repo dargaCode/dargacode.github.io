@@ -43,6 +43,7 @@ module.exports = {
             loader: "css-loader",
             options: {
               modules: {
+                // eslint-disable-next-line spellcheck/spell-checker
                 localIdentName: "[name]__[local]___[hash:base64:5]"
               },
               // replace kebab-case css class names with camelCase strings
