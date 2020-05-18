@@ -1,25 +1,20 @@
+@use 'sass:map';
 
 $breakpoints: (
-  'large': (max-width: 800px),
-  'medium': (max-width: 600px),
-  'small': (max-width: 486px),
-  'tiny': (max-width: 325px),
+  'large': 800px,
+  'medium': 600px,
+  'small': 486px,
+  'tiny': 325px,
 );
 
-@mixin under($break-point) {
-  @if $break-point == large {
-    @media (max-width: 800px) { @content; }
+@mixin under($breakpoint-name) {
+  @if map-has-key($breakpoints, $breakpoint-name) {
+    @media (max-width: map.get($breakpoints, $breakpoint-name)) {
+      @content;
+    }
   }
 
-  @else if $break-point == medium {
-    @media (max-width: 600px) { @content; }
-  }
-
-  @else if $break-point == small {
-    @media (max-width: 486px) { @content; }
-  }
-
-  @else if $break-point == tiny {
-    @media (max-width: 325px) { @content; }
+  @else {
+    @error 'Invalid breakpoint `#{$breakpoint-name}`!';
   }
 }
