@@ -1,5 +1,5 @@
-@use '../../constants';
-@use '../../general';
+@use '../../base/constants';
+@use '../../base/base';
 
 .skill-card {
   background: constants.$skill-card-background-color;

@@ -1,6 +1,6 @@
-@use '../../constants';
-@use '../../general';
-@use '../../break';
+@use '../../base/constants';
+@use '../../base/base';
+@use '../../util/break';
 
 .sort-selector-form {
   bottom: 18px;

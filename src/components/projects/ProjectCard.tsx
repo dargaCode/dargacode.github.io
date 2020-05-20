@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 import SiteOrGithubLink from "./SiteOrGithubLink";
-import "../../_general.scss";
+import "../../base/_base.scss";
 import styles from "./ProjectCard.module.scss";
 
 interface Props {
