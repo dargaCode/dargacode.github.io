@@ -13,7 +13,7 @@ export default function NavigationBar(): JSX.Element {
         </div>
 
         <NavLink to="/about" activeClassName="activeNavSection">
-          <div className={styles.navLogo}>Hi, I&apos;m Darga.</div>{" "}
+          <div className={styles.navLogo}>Hi, I&apos;m Darga.</div>
         </NavLink>
 
         <ul>
