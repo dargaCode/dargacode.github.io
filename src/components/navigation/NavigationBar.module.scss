@@ -15,41 +15,26 @@
   @include break.under(small) {
     text-align: center;
   }
-}
 
-ul {
-  float: right;
+  ul {
+    float: right;
 
-  /* Remove spaces between inline-block children */
-  font-size: 0;
-  list-style: none;
-  padding: 0;
-
-  @include break.under(small) {
-    float: none;
-    width: 100%;
-  }
-}
-
-li {
-  display: inline-block;
-
-  /* Override 0-size text in ul */
-  font-size: 1rem;
-
-  a {
-    color: inherit;
-    display: inline-block;
-    padding: 15px 11.2px;
+    /* Remove spaces between inline-block children */
+    font-size: 0;
+    list-style: none;
+    padding: 0;
 
     @include break.under(small) {
-      padding: 12px;
+      float: none;
+      width: 100%;
     }
+  }
 
-    &:hover {
-      background: constants.$nav-button-hover-background-color;
-      color: constants.$nav-button-hover-text-color;
-    }
+  li {
+    display: inline-block;
+
+    /* Override 0-size text in ul */
+    font-size: 1rem;
   }
 }
 
@@ -87,5 +72,22 @@ li {
 
   &:hover {
     color: constants.$nav-bar-logo-hover-text-color;
+  }
+}
+
+.button {
+  a {
+    color: inherit;
+    display: inline-block;
+    padding: 15px 11.2px;
+
+    @include break.under(small) {
+      padding: 12px;
+    }
+
+    &:hover {
+      background: constants.$nav-button-hover-background-color;
+      color: constants.$nav-button-hover-text-color;
+    }
   }
 }

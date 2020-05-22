@@ -17,25 +17,25 @@ export default function NavigationBar(): JSX.Element {
         </NavLink>
 
         <ul>
-          <li>
+          <li className={styles.button}>
             <NavLink to="/skills" activeClassName="activeNavSection">
               Skills
             </NavLink>
           </li>
 
-          <li>
+          <li className={styles.button}>
             <NavLink to="/projects" activeClassName="activeNavSection">
               Projects
             </NavLink>
           </li>
 
-          <li>
+          <li className={styles.button}>
             <NavLink to="/resume" activeClassName="activeNavSection">
               Resume
             </NavLink>
           </li>
 
-          <li>
+          <li className={styles.button}>
             <NavLink to="/contact" activeClassName="activeNavSection">
               Contact
             </NavLink>
