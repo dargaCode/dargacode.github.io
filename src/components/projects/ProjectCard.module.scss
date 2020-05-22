@@ -52,8 +52,10 @@
   font-weight: 700;
 }
 
-.header-link:hover {
-  text-decoration: none;
+.header-link {
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .link-icon-container {

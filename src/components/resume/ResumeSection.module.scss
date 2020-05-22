@@ -74,10 +74,10 @@
   @include break.under(small) {
     margin-bottom: 20px;
   }
-}
 
-.button:hover {
-  background: constants.$resume-button-hover-background-color;
-  color: constants.$resume-button-hover-text-color;
-  text-decoration: none;
+  &:hover {
+    background: constants.$resume-button-hover-background-color;
+    color: constants.$resume-button-hover-text-color;
+    text-decoration: none;
+  }
 }
