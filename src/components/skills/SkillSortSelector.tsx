@@ -18,7 +18,7 @@ export default function SkillSortSelector(props: Props): JSX.Element {
   const { onChange } = props;
 
   return (
-    <form className={styles.sortSelectorForm}>
+    <form className={styles.skillSortSelector}>
       <label htmlFor="skill-sort">
         Sort by:
         <select

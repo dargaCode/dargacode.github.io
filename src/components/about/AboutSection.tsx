@@ -5,7 +5,7 @@ import styles from "./AboutSection.module.scss";
 
 export default function AboutSection(): JSX.Element {
   return (
-    <section id="about" className={`${styles.contentSection} ${styles.about}`}>
+    <section id="about" className={`${styles.contentSection} ${styles.aboutSection}`}>
       <div className={styles.overlay}>
         <div className={styles.container}>
           <main>

@@ -6,7 +6,7 @@ export default function AboutSection(): JSX.Element {
   return (
     <section
       id="contact"
-      className={`${styles.contentSection} ${styles.contact}`}
+      className={`${styles.contentSection} ${styles.contactSection}`}
     >
       <div className={styles.container}>
         <h2>Contact</h2>

@@ -6,7 +6,7 @@ export default function AboutSection(): JSX.Element {
   return (
     <section
       id="resume"
-      className={`${styles.contentSection} ${styles.resume}`}
+      className={`${styles.contentSection} ${styles.resumeSection}`}
     >
       <div className={styles.overlay}>
         <div className={styles.container}>
