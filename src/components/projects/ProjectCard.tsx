@@ -29,11 +29,7 @@ export default function ProjectCard(props: Props): JSX.Element {
 
   return (
     <article className={styles.projectCard}>
-      <SiteOrGithubLink
-        className={styles.headerLink}
-        preferredUrl={livePageUrl}
-        defaultUrl={githubUrl}
-      >
+      <SiteOrGithubLink preferredUrl={livePageUrl} defaultUrl={githubUrl}>
         <h3>{name}</h3>
       </SiteOrGithubLink>
       <span className={styles.typeSpan}>{type}</span>
