@@ -6,6 +6,29 @@
   background: none;
   color: constants.$contact-section-text-color;
   height: 275px;
+
+  @include break.under(small) {
+    height: auto;
+  }
+
+  h2 {
+    margin-bottom: 33px;
+    margin-top: 40px;
+    text-align: center;
+
+    @include break.under(small) {
+      margin-bottom: 6px;
+      margin-top: 0;
+    }
+  }
+
+  span {
+    font-size: 0;
+  }
+
+  i {
+    font-size: 80px;
+  }
 }
 
 .container {
@@ -14,57 +37,30 @@
   height: inherit;
   padding: 22px 0 0;
   text-align: center;
-}
 
-.contact h2 {
-  margin-bottom: 33px;
-  margin-top: 40px;
-  text-align: center;
-}
-
-.contact .button {
-  margin: 0 13px;
-}
-
-.contact .button:hover {
-  color: inherit;
-  text-decoration: none;
-}
-
-.contact i {
-  font-size: 80px;
-}
-
-.contact .envelope {
-  font-size: 68px;
-  position: relative;
-  top: 1px;
-}
-
-.contact span {
-  font-size: 0;
-}
-
-/* MEDIA QUERIES */
-
-@include break.under(small) {
-  .contact {
-    height: auto;
-  }
-
-  .contact .container {
+  @include break.under(small) {
     font-size: 0;
     max-width: 200px;
     padding: 40px 0 15px;
   }
+}
 
-  .contact h2 {
-    margin-bottom: 6px;
-    margin-top: 0;
-  }
+.button {
+  margin: 0 13px;
 
-  .contact .button {
+  @include break.under(small) {
     display: inline-block;
     margin: 4px 10px;
   }
+
+  .envelope {
+    font-size: 68px;
+    position: relative;
+    top: 1px;
+  }
+}
+
+.button:hover {
+  color: inherit;
+  text-decoration: none;
 }

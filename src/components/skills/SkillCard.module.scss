@@ -11,27 +11,27 @@
   padding: 15px 0;
   text-align: center;
   width: 120px;
-}
 
-.skill-card:hover {
-  background: constants.$skill-card-hover-background-color;
-}
+  &:hover {
+    background: constants.$skill-card-hover-background-color;
+  }
 
-.skill-card p {
-  margin: 0;
-}
+  i {
+    color: constants.$skill-card-icon-text-color;
+    display: inline-block;
+    font-size: 60px;
+    margin-bottom: 5px;
+  }
 
-.skill-type {
-  color: constants.$skill-card-type-text-color;
-  font-size: 16px;
-  margin-bottom: 5px;
-}
+  p {
+    margin: 0;
+  }
 
-.skill-card i {
-  color: constants.$skill-card-icon-text-color;
-  display: inline-block;
-  font-size: 60px;
-  margin-bottom: 5px;
+  .skill-type {
+    color: constants.$skill-card-type-text-color;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
 }
 
 .skill-name {

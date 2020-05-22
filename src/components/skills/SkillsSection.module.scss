@@ -4,58 +4,52 @@
 
 .skills {
   background: constants.$content-section-background-color;
+
+  header {
+    margin-bottom: 10px;
+
+    /* Relative for dropdown positioning */
+    position: relative;
+  }
+
+  h2 {
+    display: inline-block;
+    margin: 0 0 5px;
+
+    @include break.under(large) {
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  form {
+    @include break.under(large) {
+      position: relative;
+      text-align: center;
+    }
+  }
 }
 
-.skills .container {
+.container {
   background: none;
   padding: 110px 0 160px;
-}
 
-.skills header {
-  margin-bottom: 10px;
-  position: relative;
+  @include break.under(large) {
+    padding-top: 75px;
+  }
 
-  /* Relative for dropdown positioning */
-}
+  @include break.under(small) {
+    padding: 115px 4px 50px;
+  }
 
-.skills h2 {
-  display: inline-block;
-  margin: 0 0 5px;
+  @include break.under(tiny) {
+    padding-top: 80px;
+  }
 }
 
 .skill-list {
   /* Remove spaces between inline-block children */
   font-size: 0;
   text-align: center;
-}
-
-/* MEDIA QUERIES */
-
-@include break.under(large) {
-  .skills .container {
-    padding-top: 75px;
-  }
-
-  .skills h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    width: 100%;
-  }
-
-  .skills form {
-    position: relative;
-    text-align: center;
-  }
-}
-
-@include break.under(small) {
-  .skills .container {
-    padding: 115px 4px 50px;
-  }
-}
-
-@include break.under(tiny) {
-  .skills .container {
-    padding-top: 80px;
-  }
 }

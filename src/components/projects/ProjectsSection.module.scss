@@ -4,6 +4,11 @@
 
 .projects {
   background: constants.$projects-section-background-color;
+
+  h2 {
+    margin: 0 0 15px;
+    text-align: center;
+  }
 }
 
 .container {
@@ -13,39 +18,24 @@
   font-size: 0;
   max-width: 960px;
   padding: 110px 0 160px;
-}
 
-.projects h2 {
-  margin: 0 0 15px;
-  text-align: center;
+  @include break.under(large) {
+    padding-bottom: 110px;
+  }
+
+  @include break.under(medium) {
+    padding-bottom: 100px;
+  }
+
+  @include break.under(small) {
+    padding-top: 112px;
+  }
+
+  @include break.under(tiny) {
+    padding-top: 80px;
+  }
 }
 
 .project-list {
   text-align: center;
-}
-
-/* MEDIA QUERIES */
-
-@include break.under(large) {
-  .container {
-    padding-bottom: 110px;
-  }
-}
-
-@include break.under(medium) {
-  .container {
-    padding-bottom: 100px;
-  }
-}
-
-@include break.under(small) {
-  .container {
-    padding-top: 112px;
-  }
-}
-
-@include break.under(tiny) {
-  .container {
-    padding-top: 80px;
-  }
 }

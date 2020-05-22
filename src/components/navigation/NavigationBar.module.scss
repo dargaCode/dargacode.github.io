@@ -12,98 +12,80 @@
   /* not affected by the about overlay */
   z-index: 1;
 
+  @include break.under(small) {
+    text-align: center;
+  }
+}
+
+ul {
+  float: right;
+
+  /* Remove spaces between inline-block children */
+  font-size: 0;
+  list-style: none;
+  padding: 0;
+
+  @include break.under(small) {
+    float: none;
+    width: 100%;
+  }
+}
+
+li {
+  display: inline-block;
+
+  /* Override 0-size text in ul */
+  font-size: 1rem;
+
   a {
     color: inherit;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: none;
-  }
-
-  .nav-logo {
-    color: constants.$nav-bar-logo-text-color;
-    float: left;
-    font-weight: 700;
-    padding: 15px 0;
-  }
-
-  .nav-logo:hover {
-    color: constants.$nav-bar-logo-hover-text-color;
-  }
-
-  ul {
-    float: right;
-
-    /* Remove spaces between inline-block children */
-    font-size: 0;
-    list-style: none;
-    padding: 0;
-  }
-
-  ul li {
-    display: inline-block;
-
-    /* Override 0-size text in ul */
-    font-size: 1rem;
-  }
-
-  ul li a {
     display: inline-block;
     padding: 15px 11.2px;
-  }
 
-  ul li a:hover {
-    background: constants.$nav-button-hover-background-color;
-    color: constants.$nav-button-hover-text-color;
+    @include break.under(small) {
+      padding: 12px;
+    }
+
+    &:hover {
+      background: constants.$nav-button-hover-background-color;
+      color: constants.$nav-button-hover-text-color;
+    }
   }
 }
 
 .container {
   padding: 0;
-}
 
-/* MEDIA QUERIES */
-
-@include break.under(large) {
-  nav .container {
+  @include break.under(large) {
     max-width: 550px;
     padding: 0 20px;
   }
 
-  nav .nav-logo {
-    margin-left: 11px;
+  @include break.under(small) {
+    padding: 0;
   }
 }
 
-@include break.under(small) {
-  /* NAVIGATION */
+.nav-logo {
+  color: constants.$nav-bar-logo-text-color;
+  float: left;
+  font-weight: 700;
+  padding: 15px 0;
 
-  nav {
-    text-align: center;
+  @include break.under(large) {
+    margin-left: 11px;
   }
 
-  nav .container {
-    padding: 0;
-  }
-
-  nav .nav-logo {
+  @include break.under(small) {
     float: none;
     padding: 14px 0 10px;
   }
 
-  nav ul {
-    float: none;
-    width: 100%;
-  }
-
-  nav ul li a {
-    padding: 12px;
-  }
-}
-
-@include break.under(tiny) {
-  nav .nav-logo {
+  @include break.under(tiny) {
     display: none;
+  }
+
+  &:hover {
+    color: constants.$nav-bar-logo-hover-text-color;
   }
 }

@@ -10,6 +10,33 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 410px;
+
+  @include break.under(small) {
+    height: auto;
+  }
+
+  h2 {
+    margin-bottom: 40px;
+    margin-top: 60px;
+    text-align: center;
+
+    @include break.under(small) {
+      margin-bottom: 12px;
+    }
+  }
+
+  i {
+    float: left;
+    font-size: 47px;
+  }
+
+  span {
+    float: right;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.4em;
+    text-align: left;
+  }
 }
 
 .overlay {
@@ -20,12 +47,15 @@
 .container {
   background: none;
   padding: 30px 0 40px;
-}
 
-.resume h2 {
-  margin-bottom: 40px;
-  margin-top: 60px;
-  text-align: center;
+  @include break.under(small) {
+    max-width: 200px;
+    padding: 60px 0 55px;
+  }
+
+  @include break.under(tiny) {
+    padding-top: 30px;
+  }
 }
 
 .buttons {
@@ -40,50 +70,14 @@
   margin: 0 14px;
   padding: 10px 21px;
   width: 164px;
+
+  @include break.under(small) {
+    margin-bottom: 20px;
+  }
 }
 
 .button:hover {
   background: constants.$resume-button-hover-background-color;
   color: constants.$resume-button-hover-text-color;
   text-decoration: none;
-}
-
-.resume i {
-  float: left;
-  font-size: 47px;
-}
-
-.resume span {
-  float: right;
-  font-size: 1.1rem;
-  font-weight: 500;
-  line-height: 1.4em;
-  text-align: left;
-}
-
-/* MEDIA QUERIES */
-
-@include break.under(small) {
-  .resume {
-    height: auto;
-  }
-
-  .resume .container {
-    max-width: 200px;
-    padding: 60px 0 55px;
-  }
-
-  .resume h2 {
-    margin-bottom: 12px;
-  }
-
-  .resume .button:nth-child(1) {
-    margin-bottom: 20px;
-  }
-}
-
-@include break.under(tiny) {
-  .resume .container {
-    padding-top: 30px;
-  }
 }

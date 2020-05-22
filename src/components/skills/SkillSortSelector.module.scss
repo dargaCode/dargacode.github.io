@@ -7,6 +7,11 @@
   position: absolute;
   right: 0;
 
+  @include break.under(large) {
+    position: relative;
+    text-align: center;
+  }
+
   label {
     color: constants.$skill-sort-selector-label-text-color;
     font-size: 1.2em;
@@ -23,18 +28,5 @@
     font-weight: 500;
     margin-left: 8px;
     width: 150px;
-  }
-
-  select:focus {
-    outline: none;
-  }
-}
-
-/* MEDIA QUERIES */
-
-@include break.under(large) {
-  .sort-selector-form {
-    position: relative;
-    text-align: center;
   }
 }
