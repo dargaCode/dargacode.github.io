@@ -2,6 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import ProjectCard from "./ProjectCard";
 import { PROJECTS } from "./projectsData";
+import styles from "./ProjectCard.module.scss";
 
 describe("ProjectCard", () => {
   const project = PROJECTS[0];
@@ -19,7 +20,7 @@ describe("ProjectCard", () => {
     describe("`project.type`", () => {
       it("should render the project type", () => {
         const wrapper = shallow(<ProjectCard project={project} />);
-        const typeText = wrapper.find(".type-span").text();
+        const typeText = wrapper.find(styles.typeSpan).text();
 
         expect(typeText).toEqual(project.type);
       });
@@ -48,7 +49,7 @@ describe("ProjectCard", () => {
     describe("`project.tags`", () => {
       it("should render the project tags", () => {
         const wrapper = shallow(<ProjectCard project={project} />);
-        const tagsText = wrapper.find(".tags-span").text();
+        const tagsText = wrapper.find(styles.tagsSpan).text();
 
         expect(tagsText).toEqual(project.tags.join(", "));
       });
@@ -73,7 +74,7 @@ describe("ProjectCard", () => {
             <ProjectCard project={projectWithLivePage} />
           );
 
-          expect(wrapper.find(".project-link")).toHaveLength(2);
+          expect(wrapper.find(styles.linkIconContainer)).toHaveLength(2);
         });
       });
 
@@ -83,7 +84,7 @@ describe("ProjectCard", () => {
             <ProjectCard project={projectWithoutLivePage} />
           );
 
-          expect(wrapper.find(".project-link")).toHaveLength(1);
+          expect(wrapper.find(styles.linkIconContainer)).toHaveLength(1);
         });
       });
     });
