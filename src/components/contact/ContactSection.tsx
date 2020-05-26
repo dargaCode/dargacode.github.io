@@ -1,5 +1,5 @@
 import React from "react";
-import "../../base/_base.scss";
+import "../../config/_general.scss";
 import styles from "./ContactSection.module.scss";
 
 export default function AboutSection(): JSX.Element {

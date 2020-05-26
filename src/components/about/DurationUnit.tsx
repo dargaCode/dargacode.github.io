@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../../base/_base.scss";
+import "../../config/_general.scss";
 import styles from "./DurationUnit.module.scss";
 
 interface Props {

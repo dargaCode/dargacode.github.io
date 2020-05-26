@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { SKILL_SORT_OPTIONS } from "./skillsUtils";
-import "../../base/_base.scss";
+import "../../config/_general.scss";
 import styles from "./SkillSortSelector.module.scss";
 
 interface Props {

@@ -1,6 +1,6 @@
-@use '../../base/constants';
-@use '../../base/base';
-@use '../../util/break';
+@use '../../config/constants';
+@use '../../config/general';
+@use '../../mixins/break';
 
 .navigation-bar {
   background: constants.$nav-bar-background-color;

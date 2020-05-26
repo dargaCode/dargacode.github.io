@@ -1,5 +1,5 @@
-@use '../../base/constants';
-@use '../../base/base';
+@use '../../config/constants';
+@use '../../config/general';
 
 .duration-unit-count {
   color: constants.$about-duration-unit-text-color;
