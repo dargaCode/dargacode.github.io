@@ -1,7 +1,3 @@
-src/img/*
-src/fonts/*
-vendor/*
-*.json
-*.pdf
-*.docx
-*.jpg
+src/img
+src/fonts
+vendor
