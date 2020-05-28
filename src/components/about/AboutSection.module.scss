@@ -1,5 +1,4 @@
-@use '../../config/constants';
-@use '../../config/general';
+@use '../../config';
 @use '../../mixins/break';
 
 .about-section {
@@ -39,7 +38,7 @@
   }
 
   header {
-    color: constants.$about-title-text-color;
+    color: config.$about-title-text-color;
     font-size: 3.1em;
     font-weight: 700;
     line-height: 1em;
@@ -85,11 +84,11 @@
 }
 
 .darga {
-  color: constants.$about-title-name-text-color;
+  color: config.$about-title-name-text-color;
 }
 
 .subtitle {
-  color: constants.$about-subtitle-text-color;
+  color: config.$about-subtitle-text-color;
   float: right;
   font-size: 0.62em;
   font-weight: 500;

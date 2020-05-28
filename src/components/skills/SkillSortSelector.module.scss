@@ -1,5 +1,4 @@
-@use '../../config/constants';
-@use '../../config/general';
+@use '../../config';
 @use '../../mixins/break';
 
 .skill-sort-selector {
@@ -13,17 +12,17 @@
   }
 
   label {
-    color: constants.$skill-sort-selector-label-text-color;
+    color: config.$skill-sort-selector-label-text-color;
     font-size: 1.2em;
     position: relative;
     top: 2px;
   }
 
   select {
-    background: constants.$skill-sort-selector-background-color;
-    border: 3px solid constants.$skill-sort-selector-border-color;
+    background: config.$skill-sort-selector-background-color;
+    border: 3px solid config.$skill-sort-selector-border-color;
     border-radius: 0;
-    color: constants.$skill-sort-selector-text-color;
+    color: config.$skill-sort-selector-text-color;
     font-size: 0.9em;
     font-weight: 500;
     margin-left: 8px;

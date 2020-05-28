@@ -1,9 +1,8 @@
-@use '../../config/constants';
-@use '../../config/general';
+@use '../../config';
 @use '../../mixins/break';
 
 .projects-section {
-  background: constants.$projects-section-background-color;
+  background: config.$projects-section-background-color;
 
   h2 {
     margin: 0 0 15px;

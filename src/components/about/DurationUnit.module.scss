@@ -1,8 +1,7 @@
-@use '../../config/constants';
-@use '../../config/general';
+@use '../../config';
 
 .duration-unit-count {
-  color: constants.$about-duration-unit-text-color;
+  color: config.$about-duration-unit-text-color;
   font-size: 1.2em;
   font-weight: 700;
 }

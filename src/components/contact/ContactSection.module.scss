@@ -1,10 +1,9 @@
-@use '../../config/constants';
-@use '../../config/general';
+@use '../../config';
 @use '../../mixins/break';
 
 .contact-section {
   background: none;
-  color: constants.$contact-section-text-color;
+  color: config.$contact-section-text-color;
   height: 275px;
 
   @include break.under(small) {

@@ -1,5 +1,4 @@
-@use '../../config/constants';
-@use '../../config/general';
+@use '../../config';
 @use '../../mixins/break';
 
 .resume-section {
@@ -64,8 +63,8 @@
 }
 
 .button {
-  background: constants.$resume-button-background-color;
-  color: constants.$resume-button-text-color;
+  background: config.$resume-button-background-color;
+  color: config.$resume-button-text-color;
   display: inline-block;
   margin: 0 14px;
   padding: 10px 21px;
@@ -76,7 +75,7 @@
   }
 
   &:hover {
-    background: constants.$resume-button-hover-background-color;
-    color: constants.$resume-button-hover-text-color;
+    background: config.$resume-button-hover-background-color;
+    color: config.$resume-button-hover-text-color;
   }
 }

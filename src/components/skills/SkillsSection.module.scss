@@ -1,9 +1,8 @@
-@use '../../config/constants';
-@use '../../config/general';
+@use '../../config';
 @use '../../mixins/break';
 
 .skills-section {
-  background: constants.$content-section-background-color;
+  background: config.$content-section-background-color;
 
   header {
     margin-bottom: 10px;

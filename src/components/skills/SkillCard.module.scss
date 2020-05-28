@@ -1,9 +1,8 @@
-@use '../../config/constants';
-@use '../../config/general';
+@use '../../config';
 
 .skill-card {
-  background: constants.$skill-card-background-color;
-  border: 1px solid constants.$skill-card-border-color;
+  background: config.$skill-card-background-color;
+  border: 1px solid config.$skill-card-border-color;
   display: inline-block;
 
   /* Override 0-size text in ul */
@@ -13,11 +12,11 @@
   width: 120px;
 
   &:hover {
-    background: constants.$skill-card-hover-background-color;
+    background: config.$skill-card-hover-background-color;
   }
 
   i {
-    color: constants.$skill-card-icon-text-color;
+    color: config.$skill-card-icon-text-color;
     display: inline-block;
     font-size: 60px;
     margin-bottom: 5px;
@@ -28,7 +27,7 @@
   }
 
   .skill-type {
-    color: constants.$skill-card-type-text-color;
+    color: config.$skill-card-type-text-color;
     font-size: 16px;
     margin-bottom: 5px;
   }
@@ -47,5 +46,5 @@
 .skill-card:hover i,
 .skill-card:hover .skill-name,
 .skill-card:hover .skill-project-count {
-  color: constants.$skill-card-hover-text-color;
+  color: config.$skill-card-hover-text-color;
 }
