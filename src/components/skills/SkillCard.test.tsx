@@ -57,7 +57,9 @@ describe("SkillCard", () => {
           skill.projectCount = 1;
 
           const wrapper = shallow(<SkillCard skill={skill} />);
-          const projectCountText = wrapper.find(styles.skillProjectCount).text();
+          const projectCountText = wrapper
+            .find(styles.skillProjectCount)
+            .text();
 
           expect(projectCountText).toEqual(`${skill.projectCount} Project`);
         });
@@ -66,7 +68,9 @@ describe("SkillCard", () => {
       describe("when `projectCount` is not 1", () => {
         it("should render `n Projects` (plural)", () => {
           const wrapper = shallow(<SkillCard skill={skill} />);
-          const projectCountText = wrapper.find(styles.skillProjectCount).text();
+          const projectCountText = wrapper
+            .find(styles.skillProjectCount)
+            .text();
 
           expect(projectCountText).toEqual(`${skill.projectCount} Projects`);
         });

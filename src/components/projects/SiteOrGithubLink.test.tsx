@@ -10,7 +10,10 @@ describe("ProjectLink", () => {
     describe("when `preferredUrl` exists", () => {
       it("should link to `preferredUrl`", () => {
         const wrapper = shallow(
-          <SiteOrGithubLink preferredUrl={preferredUrl} defaultUrl={defaultUrl} />
+          <SiteOrGithubLink
+            preferredUrl={preferredUrl}
+            defaultUrl={defaultUrl}
+          />
         );
         const linkHref = wrapper
           .find("a")
@@ -36,7 +39,10 @@ describe("ProjectLink", () => {
     describe("`className`", () => {
       it("should apply the class name to its anchor tag", () => {
         const wrapper = shallow(
-          <SiteOrGithubLink className="project-link-class" defaultUrl={defaultUrl} />
+          <SiteOrGithubLink
+            className="project-link-class"
+            defaultUrl={defaultUrl}
+          />
         );
         expect(wrapper.find(".project-link-class")).toHaveLength(1);
       });
