@@ -88,6 +88,7 @@ module.exports = [
   "trie",
   "truthy",
   "tsx",
+  "ttf",
   "typecheck",
   "ui",
   "unhandled",
@@ -97,6 +98,8 @@ module.exports = [
   "utils",
   "webpack",
   "whitelist",
+  "woff",
+  "woff2",
   "www",
 
   // dates
