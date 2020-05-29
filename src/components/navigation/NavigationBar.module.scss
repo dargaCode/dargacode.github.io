@@ -1,5 +1,5 @@
 @use '../../config';
-@use '../../mixins/break';
+@use '../../utils/break';
 
 .navigation-bar {
   background: config.$nav-bar-background-color;

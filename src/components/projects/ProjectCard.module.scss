@@ -1,5 +1,5 @@
 @use '../../config';
-@use '../../mixins/break';
+@use '../../utils/break';
 
 .project-card {
   background: config.$project-card-background-color;

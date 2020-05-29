@@ -1,5 +1,5 @@
 @use '../../config';
-@use '../../mixins/break';
+@use '../../utils/break';
 
 .projects-section {
   background: config.$projects-section-background-color;

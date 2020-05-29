@@ -1,5 +1,5 @@
 @use '../../config';
-@use '../../mixins/break';
+@use '../../utils/break';
 
 .skills-section {
   background: config.$content-section-background-color;
