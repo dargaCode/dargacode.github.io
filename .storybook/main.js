@@ -1,6 +1,9 @@
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 module.exports = {
   stories: ["../src/components/**/*.stories.tsx"],
   addons: [
+    "@storybook/preset-scss",
     "@storybook/addon-knobs/register",
     "@storybook/addon-actions/register"
   ],
@@ -15,9 +18,10 @@ module.exports = {
     });
     config.module.rules.push({
       test: /\.scss$/,
-      use: ["style-loader", "css-loader", "sass-loader"]
+      use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
     });
     config.resolve.extensions.push(".ts", ".tsx");
+    config.plugins.push(new MiniCssExtractPlugin());
     return config;
   }
 };

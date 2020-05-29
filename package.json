@@ -26,6 +26,7 @@
     "@storybook/addon-actions": "^5.3.14",
     "@storybook/addon-knobs": "^5.3.14",
     "@storybook/addons": "^5.3.13",
+    "@storybook/preset-scss": "^1.0.2",
     "@storybook/preset-typescript": "^1.2.0",
     "@storybook/react": "^5.3.13",
     "@types/clone-deep": "^4.0.1",
