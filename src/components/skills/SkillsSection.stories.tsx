@@ -6,4 +6,4 @@ export default {
   component: SkillsSection
 };
 
-export const Basic = ():JSX.Element => <SkillsSection />;
+export const Basic = (): JSX.Element => <SkillsSection />;
