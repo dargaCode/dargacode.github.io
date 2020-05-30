@@ -16,5 +16,9 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["./src/", "./storybook/", "*.js" /*js files in the project root*/]
+  "include": [
+    "./src/",
+    "./.storybook/",
+    "*.js" /*js files in the project root*/
+  ]
 }
