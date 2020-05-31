@@ -8,7 +8,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-export default function ProjectLink(props: Props): JSX.Element {
+export default function SiteOrGithubLink(props: Props): JSX.Element {
   const { preferredUrl, defaultUrl, className, children } = props;
   const hrefUrl = preferredUrl || defaultUrl;
 
@@ -19,13 +19,13 @@ export default function ProjectLink(props: Props): JSX.Element {
   );
 }
 
-ProjectLink.propTypes = {
+SiteOrGithubLink.propTypes = {
   preferredUrl: PropTypes.string,
   defaultUrl: PropTypes.string.isRequired,
   className: PropTypes.string
 };
 
-ProjectLink.defaultProps = {
+SiteOrGithubLink.defaultProps = {
   preferredUrl: undefined,
   className: undefined
 };

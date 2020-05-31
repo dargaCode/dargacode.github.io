@@ -1,0 +1,50 @@
+@use '../../config';
+
+.card {
+  background: config.$skill-card-background-color;
+  border: 2px solid config.$content-section-background-color;
+  display: inline-block;
+
+  /* Override 0-size text in ul */
+  font-size: 16px;
+  padding: 15px 0;
+  text-align: center;
+  width: 120px;
+
+  &:hover {
+    background: config.$skill-card-hover-background-color;
+  }
+
+  i {
+    color: config.$skill-card-icon-text-color;
+    display: inline-block;
+    font-size: 60px;
+    margin-bottom: 5px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .type {
+    color: config.$skill-card-type-text-color;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+}
+
+.name {
+  font-size: 18px;
+  margin: 0;
+}
+
+.project-count {
+  font-size: 14px;
+}
+
+.card:hover .type,
+.card:hover i,
+.card:hover .name,
+.card:hover .project-count {
+  color: config.$skill-card-hover-text-color;
+}

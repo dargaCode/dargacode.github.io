@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../../_general.scss";
-import "./_skills.scss";
+import "../../config/_general.scss";
+import styles from "./SkillCard.module.scss";
 import { Skill } from "./skillsUtils";
 
 export default function SkillCard(props: { skill: Skill }): JSX.Element {
@@ -10,11 +10,11 @@ export default function SkillCard(props: { skill: Skill }): JSX.Element {
 
   return (
     <a href={url}>
-      <article className="skill-card">
-        <p className="skill-type">{type}</p>
+      <article className={styles.card}>
+        <p className={styles.type}>{type}</p>
         <i className={iconClass} />
-        <h3 className="skill-name">{name}</h3>
-        <p className="skill-project-count">
+        <h3 className={styles.name}>{name}</h3>
+        <p className={styles.projectCount}>
           {projectCount} Project{projectCount === 1 ? "" : "s"}
         </p>
       </article>

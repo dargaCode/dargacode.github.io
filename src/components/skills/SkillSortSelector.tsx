@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { SKILL_SORT_OPTIONS } from "./skillsUtils";
-import "../../_general.scss";
-import "./_skills.scss";
+import "../../config/_general.scss";
+import styles from "./SkillSortSelector.module.scss";
 
 interface Props {
   onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
@@ -18,7 +18,7 @@ export default function SkillSortSelector(props: Props): JSX.Element {
   const { onChange } = props;
 
   return (
-    <form>
+    <form className={styles.sort}>
       <label htmlFor="skill-sort">
         Sort by:
         <select

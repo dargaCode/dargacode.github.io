@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
-import ProjectLink from "./ProjectLink";
-import "../../_general.scss";
-import "./_projects.scss";
+import SiteOrGithubLink from "./SiteOrGithubLink";
+import "../../config/_general.scss";
+import styles from "./ProjectCard.module.scss";
 
 interface Props {
   project: {
@@ -18,6 +18,9 @@ interface Props {
   };
 }
 
+const DATETIME_FORMAT = "YYYY-MM-DD";
+const MONTH_YEAR_FORMAT = "MMM YYYY";
+
 export default function ProjectCard(props: Props): JSX.Element {
   const { project } = props;
   const { name, type, description, imageSrc, githubUrl, livePageUrl } = project;
@@ -25,34 +28,30 @@ export default function ProjectCard(props: Props): JSX.Element {
   const tags = project.tags.join(", ");
 
   return (
-    <article className="project-card">
-      <ProjectLink
-        className="header-link"
-        preferredUrl={livePageUrl}
-        defaultUrl={githubUrl}
-      >
+    <article className={styles.card}>
+      <SiteOrGithubLink preferredUrl={livePageUrl} defaultUrl={githubUrl}>
         <h3>{name}</h3>
-      </ProjectLink>
-      <span className="type-span">{type}</span>
-      <time dateTime={date.format("YYYY-MM-DD")}>
+      </SiteOrGithubLink>
+      <span className={styles.type}>{type}</span>
+      <time dateTime={date.format(DATETIME_FORMAT)}>
         {" "}
-        - {date.format("MMM YYYY")}
+        - {date.format(MONTH_YEAR_FORMAT)}
       </time>
-      <ProjectLink preferredUrl={livePageUrl} defaultUrl={githubUrl}>
+      <SiteOrGithubLink preferredUrl={livePageUrl} defaultUrl={githubUrl}>
         <img
           className={undefined}
           src={imageSrc}
           alt={`Project screenshot for ${name}`}
         />
-      </ProjectLink>
-      <span className="tags-span">{tags}</span>
+      </SiteOrGithubLink>
+      <span className={styles.tags}>{tags}</span>
       <p>{description}</p>
-      <a className="project-link" href={githubUrl}>
+      <a className={styles.linkIconContainer} href={githubUrl}>
         GitHub Repository
         <i className="fa fa-github" />
       </a>
       {livePageUrl && (
-        <a className="project-link" href={livePageUrl}>
+        <a className={styles.linkIconContainer} href={livePageUrl}>
           Live Webpage
           <i className="fa fa-globe" />
         </a>

@@ -1,9 +1,12 @@
 import React from "react";
 import { shallow } from "enzyme";
 import cloneDeep from "clone-deep";
+import { classSelector } from "../../utils/jestUtils";
 import SkillCard from "./SkillCard";
 import { SKILLS } from "./skillsData";
 import { Skill } from "./skillsUtils";
+// eslint-disable-next-line css-modules/no-unused-class
+import styles from "./SkillCard.module.scss";
 
 let skill: Skill;
 
@@ -25,7 +28,7 @@ describe("SkillCard", () => {
     describe("`skill.name`", () => {
       it("should render the skill name", () => {
         const wrapper = shallow(<SkillCard skill={skill} />);
-        const nameText = wrapper.find(".skill-name").text();
+        const nameText = wrapper.find(classSelector(styles.name)).text();
 
         expect(nameText).toEqual(skill.name);
       });
@@ -43,7 +46,7 @@ describe("SkillCard", () => {
     describe("`skill.type`", () => {
       it("should render the skill type", () => {
         const wrapper = shallow(<SkillCard skill={skill} />);
-        const typeText = wrapper.find(".skill-type").text();
+        const typeText = wrapper.find(classSelector(styles.type)).text();
 
         expect(typeText).toEqual(skill.type);
       });
@@ -55,7 +58,9 @@ describe("SkillCard", () => {
           skill.projectCount = 1;
 
           const wrapper = shallow(<SkillCard skill={skill} />);
-          const projectCountText = wrapper.find(".skill-project-count").text();
+          const projectCountText = wrapper
+            .find(classSelector(styles.projectCount))
+            .text();
 
           expect(projectCountText).toEqual(`${skill.projectCount} Project`);
         });
@@ -64,7 +69,9 @@ describe("SkillCard", () => {
       describe("when `projectCount` is not 1", () => {
         it("should render `n Projects` (plural)", () => {
           const wrapper = shallow(<SkillCard skill={skill} />);
-          const projectCountText = wrapper.find(".skill-project-count").text();
+          const projectCountText = wrapper
+            .find(classSelector(styles.projectCount))
+            .text();
 
           expect(projectCountText).toEqual(`${skill.projectCount} Projects`);
         });

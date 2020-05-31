@@ -1,0 +1,43 @@
+@use 'colors';
+
+$body-background-color: colors.$color--cape-cod;
+$body-text-color: colors.$color--spectra;
+$content-section-background-color: colors.$color--teal-blue;
+$content-section-heading-text-color: colors.$color--catskill-white;
+$content-section-sub-heading-text-color: colors.$color--elm;
+$link-text-color: colors.$color--zest;
+
+$nav-bar-background-color: colors.$color--river-bed;
+$nav-bar-text-color: colors.$color--tiara;
+$nav-bar-logo-text-color: colors.$color--jaffa;
+$nav-bar-logo-hover-text-color: colors.$color--geyser;
+$nav-button-hover-background-color: colors.$color--timber-green;
+$nav-button-hover-text-color: colors.$color--jaffa;
+
+$about-section-text-color: colors.$color--bubbles;
+$about-title-text-color: colors.$color--catskill-white;
+$about-title-name-text-color: colors.$color--jaffa;
+$about-subtitle-text-color: colors.$color--timber-green;
+$about-duration-unit-text-color: colors.$color--rajah;
+
+$skill-sort-selector-label-text-color: colors.$color--catskill-white;
+$skill-sort-selector-background-color: colors.$color--catskill-white;
+$skill-sort-selector-text-color: colors.$color--elm;
+$skill-sort-selector-border-color: colors.$color--zest;
+$skill-card-background-color: colors.$color--catskill-white;
+$skill-card-hover-background-color: colors.$color--zest;
+$skill-card-type-text-color: colors.$color--squirrel;
+$skill-card-icon-text-color: colors.$color--zest;
+$skill-card-hover-text-color: colors.$color--catskill-white;
+
+$projects-section-background-color: colors.$color--elm;
+$project-card-background-color: colors.$color--catskill-white;
+$project-card-date-text-color: colors.$color--squirrel;
+$project-card-tags-text-color: colors.$color--elm;
+
+$resume-button-background-color: colors.$color--zest;
+$resume-button-text-color: colors.$color--catskill-white;
+$resume-button-hover-background-color: colors.$color--catskill-white;
+$resume-button-hover-text-color: colors.$color--zest;
+
+$contact-section-text-color: colors.$color--catskill-white;

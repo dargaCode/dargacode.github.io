@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../../_general.scss";
-import "./_about.scss";
+import "../../config/_general.scss";
+import styles from "./DurationUnit.module.scss";
 
 interface Props {
   unit: string;
@@ -14,7 +14,7 @@ export default function DurationUnit(props: Props): JSX.Element {
   return (
     <span>
       {" "}
-      <span className="study-duration-unit-count">{count}</span> {unit}
+      <span className={styles.count}>{count}</span> {unit}
       {count === 1 ? "" : "s"}
     </span>
   );

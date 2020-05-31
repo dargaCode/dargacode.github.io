@@ -1,8 +1,7 @@
 src/registerServiceWorker.js
-node_modules/*
-dist/*
+node_modules
+dist
 .editorconfig
 .eslintignore
 .stylelintignore
 .prettierignore
-*.scss

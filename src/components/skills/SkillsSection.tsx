@@ -3,8 +3,8 @@ import cloneDeep from "clone-deep";
 import SkillCard from "./SkillCard";
 import SkillSortSelector from "./SkillSortSelector";
 import { SKILLS } from "./skillsData";
-import "../../_general.scss";
-import "./_skills.scss";
+import "../../config/_general.scss";
+import styles from "./SkillsSection.module.scss";
 import {
   Skill,
   SkillSortComparator,
@@ -44,15 +44,15 @@ export default class SkillsSection extends React.Component<{}, State> {
     const { skills } = this.state;
 
     return (
-      <section id="skills" className="content-section skills">
-        <div className="container">
+      <section className={styles.contentSection}>
+        <div className={styles.container}>
           <header>
             <h2>Skills</h2>
 
             <SkillSortSelector onChange={this.handleSort} />
           </header>
 
-          <div className="skill-list">
+          <div className={styles.list}>
             {skills.map((skill: Skill) => (
               <SkillCard skill={skill} key={skill.name} />
             ))}

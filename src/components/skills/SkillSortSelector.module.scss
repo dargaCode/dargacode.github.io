@@ -1,0 +1,31 @@
+@use '../../config';
+@use '../../utils/break';
+
+.sort {
+  bottom: 18px;
+  position: absolute;
+  right: 0;
+
+  @include break.under(large) {
+    position: relative;
+    text-align: center;
+  }
+
+  label {
+    color: config.$skill-sort-selector-label-text-color;
+    font-size: 1.2em;
+    position: relative;
+    top: 2px;
+  }
+
+  select {
+    background: config.$skill-sort-selector-background-color;
+    border: 3px solid config.$skill-sort-selector-border-color;
+    border-radius: 0;
+    color: config.$skill-sort-selector-text-color;
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-left: 8px;
+    width: 150px;
+  }
+}

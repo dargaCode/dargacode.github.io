@@ -17,7 +17,8 @@ module.exports = {
     filename: "[name].bundle.js"
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"]
+    // todo add aliases here for /components/, /src/, to remove need for lots of /../
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".scss"]
   },
   module: {
     rules: [
@@ -31,15 +32,35 @@ module.exports = {
       },
       {
         test: /\.scss$/,
+        exclude: /\.module\.scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
       },
       {
+        test: /\.module\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                // eslint-disable-next-line spellcheck/spell-checker
+                localIdentName: "[name]__[local]___[hash:base64:5]"
+              },
+              // replace kebab-case css class names with camelCase strings
+              // this way they can keep their conventions in both css and js
+              localsConvention: "dashesOnly"
+            }
+          },
+          "sass-loader"
+        ]
+      },
+      {
         test: /\.(png|svg|jpg|gif)$/,
-        use: "file-loader"
+        loader: "file-loader"
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: "file-loader"
+        loader: "file-loader"
       }
     ]
   },

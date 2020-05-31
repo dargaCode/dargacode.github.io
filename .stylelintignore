@@ -1,7 +1,7 @@
-lib/*
-src/img/*
-src/fonts/*
-*.json
-*.pdf
+src/img
+src/fonts
+vendor
 *.docx
 *.jpg
+*.json
+*.pdf

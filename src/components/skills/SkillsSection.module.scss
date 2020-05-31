@@ -1,0 +1,52 @@
+@use '../../config';
+@use '../../utils/break';
+
+.content-section {
+  header {
+    margin-bottom: 10px;
+
+    /* Relative for dropdown positioning */
+    position: relative;
+  }
+
+  h2 {
+    display: inline-block;
+    margin: 0 0 5px;
+
+    @include break.under(large) {
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  form {
+    @include break.under(large) {
+      position: relative;
+      text-align: center;
+    }
+  }
+}
+
+.container {
+  background: none;
+  padding: 110px 0 160px;
+
+  @include break.under(large) {
+    padding-top: 75px;
+  }
+
+  @include break.under(small) {
+    padding: 115px 4px 50px;
+  }
+
+  @include break.under(tiny) {
+    padding-top: 80px;
+  }
+}
+
+.list {
+  /* Remove spaces between inline-block children */
+  font-size: 0;
+  text-align: center;
+}

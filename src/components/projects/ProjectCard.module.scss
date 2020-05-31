@@ -1,0 +1,71 @@
+@use '../../config';
+@use '../../utils/break';
+
+.card {
+  background: config.$project-card-background-color;
+  border: 2px solid config.$projects-section-background-color;
+  display: inline-block;
+
+  /* Override 0-size text in container */
+  font-size: 1rem;
+  max-width: 480px;
+
+  /* No margin collapse with children */
+  overflow: hidden;
+  padding: 0 40px 20px;
+  text-align: center;
+
+  h3 {
+    font-size: 1.5em;
+
+    @include break.under(small) {
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+  }
+
+  time {
+    color: config.$project-card-date-text-color;
+    font-size: 0.95em;
+  }
+
+  img {
+    display: block;
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  p {
+    font-size: 0.95em;
+    margin: 10px 0 -10px;
+  }
+}
+
+.type {
+  font-size: 0.95em;
+}
+
+.tags {
+  color: config.$project-card-tags-text-color;
+  font-size: 0.95em;
+  font-weight: 700;
+}
+
+.link-icon-container {
+  display: inline-block;
+
+  /* Hide link text */
+  font-size: 0;
+  height: 50px;
+  width: 50px;
+
+  i {
+    font-size: 36px;
+    line-height: 50px;
+    vertical-align: top;
+  }
+
+  &:hover i {
+    font-size: 50px;
+  }
+}

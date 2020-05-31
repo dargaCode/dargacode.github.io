@@ -1,43 +1,41 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../../_general.scss";
-import "./_navigation.scss";
+import "../../config/_general.scss";
+import styles from "./NavigationBar.module.scss";
 
 export default function NavigationBar(): JSX.Element {
   return (
-    <nav className="portfolio-nav">
-      <div className="container">
+    <nav className={styles.bar}>
+      <div className={styles.container}>
         <div className="nocontent">
           {/* ignored by google */}
-          <h2 className="invisible-but-outline-readable">Navigation</h2>
+          <h2 className={styles.invisibleButOutlineReadable}>Navigation</h2>
         </div>
 
-        <div className="nav-logo">
-          <NavLink to="/about" activeClassName="activeNavSection">
-            Hi, I&apos;m Darga.
-          </NavLink>
-        </div>
+        <NavLink to="/about" activeClassName="activeNavSection">
+          <div className={styles.about}>Hi, I&apos;m Darga.</div>
+        </NavLink>
 
         <ul>
-          <li>
+          <li className={styles.button}>
             <NavLink to="/skills" activeClassName="activeNavSection">
               Skills
             </NavLink>
           </li>
 
-          <li>
+          <li className={styles.button}>
             <NavLink to="/projects" activeClassName="activeNavSection">
               Projects
             </NavLink>
           </li>
 
-          <li>
+          <li className={styles.button}>
             <NavLink to="/resume" activeClassName="activeNavSection">
               Resume
             </NavLink>
           </li>
 
-          <li>
+          <li className={styles.button}>
             <NavLink to="/contact" activeClassName="activeNavSection">
               Contact
             </NavLink>

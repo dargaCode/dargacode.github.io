@@ -1,0 +1,81 @@
+@use '../../config';
+@use '../../utils/break';
+
+.content-section {
+  background-attachment: scroll;
+  background-position: center;
+  //TODO get images working with webpack
+  //background-image: url("../img/ocean-grey.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 410px;
+
+  @include break.under(small) {
+    height: auto;
+  }
+
+  h2 {
+    margin-bottom: 40px;
+    margin-top: 60px;
+    text-align: center;
+
+    @include break.under(small) {
+      margin-bottom: 12px;
+    }
+  }
+
+  i {
+    float: left;
+    font-size: 47px;
+  }
+
+  span {
+    float: right;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.4em;
+    text-align: left;
+  }
+}
+
+.overlay {
+  background: rgba(2, 63, 75, 0.7);
+  height: inherit;
+}
+
+.container {
+  background: none;
+  padding: 30px 0 40px;
+
+  @include break.under(small) {
+    max-width: 200px;
+    padding: 60px 0 55px;
+  }
+
+  @include break.under(tiny) {
+    padding-top: 30px;
+  }
+}
+
+.buttons {
+  font-size: 0;
+  text-align: center;
+}
+
+.button {
+  background: config.$resume-button-background-color;
+  color: config.$resume-button-text-color;
+  display: inline-block;
+  margin: 0 14px;
+  padding: 10px 21px;
+  width: 164px;
+
+  @include break.under(small) {
+    margin-bottom: 20px;
+  }
+
+  &:hover {
+    background: config.$resume-button-hover-background-color;
+    color: config.$resume-button-hover-text-color;
+  }
+}

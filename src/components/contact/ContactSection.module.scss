@@ -1,0 +1,64 @@
+@use '../../config';
+@use '../../utils/break';
+
+.content-section {
+  background: none;
+  color: config.$contact-section-text-color;
+  height: 275px;
+
+  @include break.under(small) {
+    height: auto;
+  }
+
+  h2 {
+    margin-bottom: 33px;
+    margin-top: 40px;
+    text-align: center;
+
+    @include break.under(small) {
+      margin-bottom: 6px;
+      margin-top: 0;
+    }
+  }
+
+  span {
+    font-size: 0;
+  }
+
+  i {
+    font-size: 80px;
+  }
+}
+
+.container {
+  background: none;
+  font-size: 0;
+  height: inherit;
+  padding: 22px 0 0;
+  text-align: center;
+
+  @include break.under(small) {
+    font-size: 0;
+    max-width: 200px;
+    padding: 40px 0 15px;
+  }
+}
+
+.button {
+  margin: 0 13px;
+
+  @include break.under(small) {
+    display: inline-block;
+    margin: 4px 10px;
+  }
+
+  &:hover {
+    color: inherit;
+  }
+
+  .envelope {
+    font-size: 68px;
+    position: relative;
+    top: 1px;
+  }
+}
