@@ -21,7 +21,7 @@ describe("ProjectCard", () => {
     describe("`project.type`", () => {
       it("should render the project type", () => {
         const wrapper = shallow(<ProjectCard project={project} />);
-        const typeText = wrapper.find(classSelector(styles.typeSpan)).text();
+        const typeText = wrapper.find(classSelector(styles.type)).text();
 
         expect(typeText).toEqual(project.type);
       });
@@ -50,7 +50,7 @@ describe("ProjectCard", () => {
     describe("`project.tags`", () => {
       it("should render the project tags", () => {
         const wrapper = shallow(<ProjectCard project={project} />);
-        const tagsText = wrapper.find(classSelector(styles.tagsSpan)).text();
+        const tagsText = wrapper.find(classSelector(styles.tags)).text();
 
         expect(tagsText).toEqual(project.tags.join(", "));
       });

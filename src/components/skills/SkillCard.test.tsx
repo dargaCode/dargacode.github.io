@@ -28,7 +28,7 @@ describe("SkillCard", () => {
     describe("`skill.name`", () => {
       it("should render the skill name", () => {
         const wrapper = shallow(<SkillCard skill={skill} />);
-        const nameText = wrapper.find(classSelector(styles.skillName)).text();
+        const nameText = wrapper.find(classSelector(styles.name)).text();
 
         expect(nameText).toEqual(skill.name);
       });
@@ -46,7 +46,7 @@ describe("SkillCard", () => {
     describe("`skill.type`", () => {
       it("should render the skill type", () => {
         const wrapper = shallow(<SkillCard skill={skill} />);
-        const typeText = wrapper.find(classSelector(styles.skillType)).text();
+        const typeText = wrapper.find(classSelector(styles.type)).text();
 
         expect(typeText).toEqual(skill.type);
       });
@@ -59,7 +59,7 @@ describe("SkillCard", () => {
 
           const wrapper = shallow(<SkillCard skill={skill} />);
           const projectCountText = wrapper
-            .find(classSelector(styles.skillProjectCount))
+            .find(classSelector(styles.projectCount))
             .text();
 
           expect(projectCountText).toEqual(`${skill.projectCount} Project`);
@@ -70,7 +70,7 @@ describe("SkillCard", () => {
         it("should render `n Projects` (plural)", () => {
           const wrapper = shallow(<SkillCard skill={skill} />);
           const projectCountText = wrapper
-            .find(classSelector(styles.skillProjectCount))
+            .find(classSelector(styles.projectCount))
             .text();
 
           expect(projectCountText).toEqual(`${skill.projectCount} Projects`);

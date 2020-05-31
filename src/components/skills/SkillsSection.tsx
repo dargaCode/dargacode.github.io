@@ -55,7 +55,7 @@ export default class SkillsSection extends React.Component<{}, State> {
             <SkillSortSelector onChange={this.handleSort} />
           </header>
 
-          <div className={styles.skillList}>
+          <div className={styles.list}>
             {skills.map((skill: Skill) => (
               <SkillCard skill={skill} key={skill.name} />
             ))}

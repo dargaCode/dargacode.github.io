@@ -16,7 +16,7 @@ export default function AboutSection(): JSX.Element {
       <div className={styles.container}>
         <h2>Projects</h2>
 
-        <div className={styles.projectList}>
+        <div className={styles.list}>
           {projects.map(project => (
             <ProjectCard project={project} key={project.name} />
           ))}

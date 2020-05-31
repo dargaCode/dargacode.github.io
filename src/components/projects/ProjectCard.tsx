@@ -28,11 +28,11 @@ export default function ProjectCard(props: Props): JSX.Element {
   const tags = project.tags.join(", ");
 
   return (
-    <article className={styles.projectCard}>
+    <article className={styles.card}>
       <SiteOrGithubLink preferredUrl={livePageUrl} defaultUrl={githubUrl}>
         <h3>{name}</h3>
       </SiteOrGithubLink>
-      <span className={styles.typeSpan}>{type}</span>
+      <span className={styles.type}>{type}</span>
       <time dateTime={date.format(DATETIME_FORMAT)}>
         {" "}
         - {date.format(MONTH_YEAR_FORMAT)}
@@ -44,7 +44,7 @@ export default function ProjectCard(props: Props): JSX.Element {
           alt={`Project screenshot for ${name}`}
         />
       </SiteOrGithubLink>
-      <span className={styles.tagsSpan}>{tags}</span>
+      <span className={styles.tags}>{tags}</span>
       <p>{description}</p>
       <a className={styles.linkIconContainer} href={githubUrl}>
         GitHub Repository

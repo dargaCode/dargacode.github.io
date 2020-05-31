@@ -5,7 +5,7 @@ import styles from "./NavigationBar.module.scss";
 
 export default function NavigationBar(): JSX.Element {
   return (
-    <nav className={styles.navigationBar}>
+    <nav className={styles.bar}>
       <div className={styles.container}>
         <div className="nocontent">
           {/* ignored by google */}
@@ -13,7 +13,7 @@ export default function NavigationBar(): JSX.Element {
         </div>
 
         <NavLink to="/about" activeClassName="activeNavSection">
-          <div className={styles.navLogo}>Hi, I&apos;m Darga.</div>
+          <div className={styles.about}>Hi, I&apos;m Darga.</div>
         </NavLink>
 
         <ul>

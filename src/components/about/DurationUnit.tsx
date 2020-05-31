@@ -14,7 +14,7 @@ export default function DurationUnit(props: Props): JSX.Element {
   return (
     <span>
       {" "}
-      <span className={styles.durationUnitCount}>{count}</span> {unit}
+      <span className={styles.count}>{count}</span> {unit}
       {count === 1 ? "" : "s"}
     </span>
   );

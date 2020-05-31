@@ -1,6 +1,6 @@
 @use '../../config';
 
-.skill-card {
+.card {
   background: config.$skill-card-background-color;
   border: 1px solid config.$skill-card-border-color;
   display: inline-block;
@@ -26,25 +26,25 @@
     margin: 0;
   }
 
-  .skill-type {
+  .type {
     color: config.$skill-card-type-text-color;
     font-size: 16px;
     margin-bottom: 5px;
   }
 }
 
-.skill-name {
+.name {
   font-size: 18px;
   margin: 0;
 }
 
-.skill-project-count {
+.project-count {
   font-size: 14px;
 }
 
-.skill-card:hover .skill-type,
-.skill-card:hover i,
-.skill-card:hover .skill-name,
-.skill-card:hover .skill-project-count {
+.card:hover .type,
+.card:hover i,
+.card:hover .name,
+.card:hover .project-count {
   color: config.$skill-card-hover-text-color;
 }

@@ -10,11 +10,11 @@ export default function SkillCard(props: { skill: Skill }): JSX.Element {
 
   return (
     <a href={url}>
-      <article className={styles.skillCard}>
-        <p className={styles.skillType}>{type}</p>
+      <article className={styles.card}>
+        <p className={styles.type}>{type}</p>
         <i className={iconClass} />
-        <h3 className={styles.skillName}>{name}</h3>
-        <p className={styles.skillProjectCount}>
+        <h3 className={styles.name}>{name}</h3>
+        <p className={styles.projectCount}>
           {projectCount} Project{projectCount === 1 ? "" : "s"}
         </p>
       </article>
