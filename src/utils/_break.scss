@@ -1,15 +1,9 @@
 @use 'sass:map';
-
-$breakpoints: (
-  'large': 800px,
-  'medium': 600px,
-  'small': 486px,
-  'tiny': 325px,
-);
+@use '../config/breakpoints';
 
 @mixin under($breakpoint-name) {
-  @if map-has-key($breakpoints, $breakpoint-name) {
-    @media (max-width: map.get($breakpoints, $breakpoint-name)) {
+  @if map-has-key(breakpoints.$max-widths, $breakpoint-name) {
+    @media (max-width: map.get(breakpoints.$max-widths, $breakpoint-name)) {
       @content;
     }
   }
