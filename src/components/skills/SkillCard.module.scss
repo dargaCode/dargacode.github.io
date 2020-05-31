@@ -2,7 +2,7 @@
 
 .card {
   background: config.$skill-card-background-color;
-  border: 1px solid config.$skill-card-border-color;
+  border: 2px solid config.$content-section-background-color;
   display: inline-block;
 
   /* Override 0-size text in ul */

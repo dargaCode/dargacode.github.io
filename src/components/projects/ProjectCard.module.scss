@@ -3,7 +3,7 @@
 
 .card {
   background: config.$project-card-background-color;
-  border: 2px solid config.$project-card-border-color;
+  border: 2px solid config.$projects-section-background-color;
   display: inline-block;
 
   /* Override 0-size text in container */
