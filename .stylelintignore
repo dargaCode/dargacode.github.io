@@ -1,3 +1,7 @@
 src/img
 src/fonts
 vendor
+*.docx
+*.jpg
+*.json
+*.pdf
