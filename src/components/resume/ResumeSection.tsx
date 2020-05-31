@@ -4,10 +4,7 @@ import styles from "./ResumeSection.module.scss";
 
 export default function AboutSection(): JSX.Element {
   return (
-    <section
-      id="resume"
-      className={`${styles.contentSection} ${styles.resumeSection}`}
-    >
+    <section id="resume" className={styles.contentSection}>
       <div className={styles.overlay}>
         <div className={styles.container}>
           <h2>Resume</h2>
