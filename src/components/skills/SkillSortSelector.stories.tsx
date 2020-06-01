@@ -8,5 +8,8 @@ export default {
 };
 
 export const Basic = (): JSX.Element => (
-  <SkillSortSelector onChange={action("onChange")} />
+  // eslint-disable-next-line spellcheck/spell-checker
+  <div style={{ position: "relative", height: "100px", width: "300px" }}>
+    <SkillSortSelector onChange={action("onChange")} />
+  </div>
 );
