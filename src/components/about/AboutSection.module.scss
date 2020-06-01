@@ -46,6 +46,7 @@
     line-height: 1em;
 
     @include break.under(large) {
+      flex-direction: column;
       text-align: center;
     }
   }
@@ -87,6 +88,10 @@
 
 .darga {
   color: config.$about-title-name-text-color;
+
+  @include break.under(tiny) {
+    display: block;
+  }
 }
 
 .subtitle {
@@ -101,6 +106,7 @@
     display: block;
     line-height: 1.3;
     margin: 6px 0 25px;
+    right: 0;
     width: 100%;
   }
 
