@@ -39,8 +39,10 @@
 
   header {
     color: config.$about-title-text-color;
+    display: flex;
     font-size: 3.1em;
     font-weight: 700;
+    justify-content: space-between;
     line-height: 1em;
 
     @include break.under(large) {
@@ -89,7 +91,6 @@
 
 .subtitle {
   color: config.$about-subtitle-text-color;
-  float: right;
   font-size: 0.62em;
   font-weight: 500;
   position: relative;
