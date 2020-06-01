@@ -25,12 +25,10 @@
   }
 
   i {
-    float: left;
     font-size: 47px;
   }
 
   span {
-    float: right;
     font-size: 1.1rem;
     font-weight: 500;
     line-height: 1.4em;
@@ -65,7 +63,8 @@
 .button {
   background: config.$resume-button-background-color;
   color: config.$resume-button-text-color;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: space-between;
   margin: 0 14px;
   padding: 10px 21px;
   width: 164px;

@@ -6,12 +6,11 @@ import styles from "./NavigationBar.module.scss";
 export default function NavigationBar(): JSX.Element {
   return (
     <nav className={styles.bar}>
+      <div className="nocontent">
+        {/* ignored by google */}
+        <h2 className={styles.invisibleButOutlineReadable}>Navigation</h2>
+      </div>
       <div className={styles.container}>
-        <div className="nocontent">
-          {/* ignored by google */}
-          <h2 className={styles.invisibleButOutlineReadable}>Navigation</h2>
-        </div>
-
         <NavLink to="/about" activeClassName="activeNavSection">
           <div className={styles.about}>Hi, I&apos;m Darga.</div>
         </NavLink>
