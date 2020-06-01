@@ -46,8 +46,8 @@ module.exports = {
                 // eslint-disable-next-line spellcheck/spell-checker
                 localIdentName: "[name]__[local]___[hash:base64:5]"
               },
-              /* Replace kebab-case css class names with camelCase strings.
-              This way they can keep their conventions in both css and js */
+              // Replace kebab-case css class names with camelCase strings
+              // so they can keep their conventions in both css and js
               localsConvention: "dashesOnly"
             }
           },
