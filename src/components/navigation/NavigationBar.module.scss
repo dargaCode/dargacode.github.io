@@ -8,7 +8,7 @@
   position: fixed;
   width: 100%;
 
-  /* not affected by the about overlay */
+  // Not affected by the about overlay
   z-index: 1;
 
   @include break.under(small) {
@@ -16,7 +16,7 @@
   }
 
   ul {
-    /* Remove spaces between inline-block children */
+    // Remove spaces between inline-block children
     font-size: 0;
     list-style: none;
     padding: 0;
@@ -29,7 +29,7 @@
   li {
     display: inline-block;
 
-    /* Override 0-size text in ul */
+    // Override 0-size text in ul
     font-size: 1rem;
   }
 }

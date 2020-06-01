@@ -1,7 +1,5 @@
 @use 'constants';
 
-/* GENERAL */
-
 *,
 *::before,
 *::after {
@@ -21,7 +19,7 @@ body {
 .content-section {
   background: constants.$content-section-background-color;
 
-  /* No margin collapse w/children */
+  // No margin collapse w/children
   overflow: hidden;
 }
 
@@ -29,7 +27,7 @@ body {
   margin: 0 auto;
   max-width: 720px;
 
-  /* No margin collapse w/children */
+  // No margin collapse w/children
   overflow: hidden;
   padding: 10px 35px 0;
 }
@@ -39,9 +37,7 @@ a {
   text-decoration: none;
 }
 
-/* HEADINGS */
-
-/* used by headings that are needed for HTML5 document outline but not for visually browsing the site */
+// Used by headings that are needed for HTML5 document outline but not for visually browsing the site
 .invisible-but-outline-readable {
   height: 0;
   margin: 0;

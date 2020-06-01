@@ -12,10 +12,10 @@
 
 [class^='icon-'],
 [class*=' icon-'] {
-  /* use !important to prevent issues with browser extensions that change fonts */
+  // Use !important to prevent issues with browser extensions that change fonts
   font-family: 'custom-icons' !important;
 
-  /* Better Font Rendering =========== */
+  // Better font rendering
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-style: normal;
