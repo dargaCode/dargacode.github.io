@@ -20,7 +20,7 @@ function App(): JSX.Element {
     <Router>
       <div className="router-container">
         <div id="nocontent">
-          {/* ignored by google */}
+          {/* Ignored by google */}
           <h1 className="invisible-but-outline-readable">
             dargaCode - Darga Darga Programmer Portfolio
           </h1>

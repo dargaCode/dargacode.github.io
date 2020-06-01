@@ -27,7 +27,6 @@ module.exports = {
     "css-modules/no-unused-class": [2, { camelCase: true }],
     "css-modules/no-undef-class": [2, { camelCase: true }],
     "prettier/prettier": "off", // don't complain about style, just silently fix it
-    "react/jsx-filename-extension": [2, { extensions: [".jsx", ".tsx"] }], // disallow jsx in js or ts files
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -45,11 +44,13 @@ module.exports = {
         tsx: "never"
       }
     ],
+    "react/jsx-filename-extension": [2, { extensions: [".jsx", ".tsx"] }], // disallow jsx in js or ts files
     "react/prop-types": [2, { skipUndeclared: false }],
     "react/no-unused-prop-types": [2],
     "react/forbid-prop-types": [2],
     "react/require-default-props": [2, { forbidDefaultForRequired: true }],
     "react/default-props-match-prop-types": [2],
+    "capitalized-comments": [2, "always", { ignoreConsecutiveComments: true }],
     "spellcheck/spell-checker": [
       2,
       {

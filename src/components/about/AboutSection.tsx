@@ -10,7 +10,7 @@ export default function AboutSection(): JSX.Element {
         <div className={styles.container}>
           <main>
             <div className="nocontent">
-              {/* ignored by google */}
+              {/* Ignored by google */}
               <h2 className={styles.invisibleButOutlineReadable}>About Me</h2>
             </div>
 

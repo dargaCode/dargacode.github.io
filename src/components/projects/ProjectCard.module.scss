@@ -6,11 +6,11 @@
   border: 2px solid config.$projects-section-background-color;
   display: inline-block;
 
-  /* Override 0-size text in container */
+  // Override 0-size text in container
   font-size: 1rem;
   max-width: 480px;
 
-  /* No margin collapse with children */
+  // No margin collapse with children
   overflow: hidden;
   padding: 0 40px 20px;
   text-align: center;
@@ -54,7 +54,7 @@
 .link-icon-container {
   display: inline-block;
 
-  /* Hide link text */
+  // Hide link text, to replace with icon
   font-size: 0;
   height: 50px;
   width: 50px;
