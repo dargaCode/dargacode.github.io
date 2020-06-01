@@ -16,15 +16,12 @@
   }
 
   ul {
-    float: right;
-
     /* Remove spaces between inline-block children */
     font-size: 0;
     list-style: none;
     padding: 0;
 
     @include break.under(small) {
-      float: none;
       width: 100%;
     }
   }
@@ -38,6 +35,8 @@
 }
 
 .container {
+  display: flex;
+  justify-content: space-between;
   padding: 0;
 
   @include break.under(large) {
@@ -46,13 +45,13 @@
   }
 
   @include break.under(small) {
+    flex-direction: column;
     padding: 0;
   }
 }
 
 .about {
   color: config.$nav-bar-logo-text-color;
-  float: left;
   font-weight: 700;
   padding: 15px 0;
 
@@ -61,7 +60,6 @@
   }
 
   @include break.under(small) {
-    float: none;
     padding: 14px 0 10px;
   }
 
