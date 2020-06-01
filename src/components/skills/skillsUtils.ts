@@ -10,7 +10,7 @@ export interface RawSkill {
   url: string;
 }
 
-// some extra values are derived before export, but can be ignored by user
+// Some extra values are derived before export, but can be ignored by user
 export interface Skill extends RawSkill {
   typeOrder: number;
   nameLower: string;
@@ -27,16 +27,16 @@ export const SKILL_TYPE_ORDER: string[] = [
   "Tool"
 ];
 
-// add more attributes to the skills objects to help with sorting.
-// it's more efficient to do it once here instead of inside the comparators.
+// Add more attributes to the skills objects to help with sorting.
+// It's more efficient to do it once here instead of inside the comparators.
 export function processRawSkills(skills: RawSkill[]): Skill[] {
   return skills.map(
     (skill: RawSkill): Skill => {
       return {
         ...skill,
-        // allow skills to be sorted by type
+        // Allow skills to be sorted by type
         typeOrder: SKILL_TYPE_ORDER.indexOf(skill.type),
-        // allow lowercase skills like jQuery to sort properly by name
+        // Allow lowercase skills like jQuery to sort properly by name
         nameLower: skill.name.toLowerCase()
       };
     }
@@ -66,21 +66,21 @@ export function typeSkillComparator(a: Skill, b: Skill): number {
     case b.typeOrder < a.typeOrder: {
       return 1;
     }
-    // same category, sort by descending project count second
+    // Same category, sort by descending project count second
     case a.projectCount > b.projectCount: {
       return -1;
     }
     case b.projectCount > a.projectCount: {
       return 1;
     }
-    // same project count, sort by skill name third
+    // Same project count, sort by skill name third
     case a.nameLower < b.nameLower: {
       return -1;
     }
     case b.nameLower < a.nameLower: {
       return 1;
     }
-    // everything matches (duplicate skill name)
+    // Everything matches (duplicate skill name)
     default: {
       return 0;
     }

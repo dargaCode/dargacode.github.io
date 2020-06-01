@@ -26,7 +26,7 @@ export function yearsMonthsDays(
 
   // For monthly anniversaries, it's noticeably weird not to see "x months, 0 days".
   // Overriding Moment's calculation here, even if that may result in the same
-  // output on 2 consecutive days.
+  // Output on 2 consecutive days.
   if (start.date() === end.date() && result.days > 0) {
     if (result.days > 15) {
       result.months += 1;

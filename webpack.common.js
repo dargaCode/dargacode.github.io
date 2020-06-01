@@ -17,7 +17,7 @@ module.exports = {
     filename: "[name].bundle.js"
   },
   resolve: {
-    // todo add aliases here for /components/, /src/, to remove need for lots of /../
+    // TODO add aliases here for /components/, /src/, to remove need for lots of /../
     extensions: [".ts", ".tsx", ".js", ".jsx", ".scss"]
   },
   module: {
@@ -26,7 +26,7 @@ module.exports = {
         test: /\.(ts|tsx|js|jsx)$/,
         loader: "ts-loader",
         options: {
-          // disable type checker - typecheck will happen via eslint
+          // Disable type checker - typecheck will happen via eslint
           transpileOnly: true
         }
       },
@@ -46,8 +46,8 @@ module.exports = {
                 // eslint-disable-next-line spellcheck/spell-checker
                 localIdentName: "[name]__[local]___[hash:base64:5]"
               },
-              // replace kebab-case css class names with camelCase strings
-              // this way they can keep their conventions in both css and js
+              /* Replace kebab-case css class names with camelCase strings.
+              This way they can keep their conventions in both css and js */
               localsConvention: "dashesOnly"
             }
           },

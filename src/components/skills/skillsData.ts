@@ -1,6 +1,6 @@
 import { RawSkill, processRawSkills } from "./skillsUtils";
 
-// these are transformed below before exporting
+// These are transformed below before exporting
 const RAW_SKILLS: RawSkill[] = [
   {
     name: "Bootstrap",

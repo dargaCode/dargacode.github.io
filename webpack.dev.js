@@ -10,6 +10,6 @@ module.exports = merge(common, {
   devtool: "inline-source-map",
   devServer: {
     contentBase: "./dist",
-    historyApiFallback: true // allow react routes to be directly navigable by users
+    historyApiFallback: true // Allow react routes to be directly navigable by users
   }
 });
