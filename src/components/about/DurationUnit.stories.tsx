@@ -9,8 +9,10 @@ export default {
 };
 
 export const Basic = (): JSX.Element => (
-  <DurationUnit
-    unit={text("Unit Name", "day")}
-    count={number("Unit Count", 20)}
-  />
+  <div style={{ background: "white" }}>
+    <DurationUnit
+      unit={text("Unit Name", "day")}
+      count={number("Unit Count", 20)}
+    />
+  </div>
 );
