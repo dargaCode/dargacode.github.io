@@ -33,9 +33,7 @@ body {
 .container {
   margin: 0 auto;
   max-width: 720px;
-
-  // No margin collapse w/children
-  overflow: hidden;
+  overflow: hidden;  // No margin collapse w/children
   padding: 10px 35px 0;
 }
 
