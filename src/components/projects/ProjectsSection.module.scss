@@ -12,9 +12,7 @@
 
 .container {
   background: none;
-
-  // Remove spaces between inline-block children
-  font-size: 0;
+  font-size: 0; // Remove spaces between inline-block children
   max-width: 960px;
   padding: 110px 0 160px;
 

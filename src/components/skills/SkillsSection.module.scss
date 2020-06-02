@@ -4,9 +4,7 @@
 .content-section {
   header {
     margin-bottom: 10px;
-
-    // Relative for dropdown positioning
-    position: relative;
+    position: relative; // Relative for dropdown positioning
   }
 
   h2 {
@@ -46,7 +44,6 @@
 }
 
 .list {
-  // Remove spaces between inline-block children
-  font-size: 0;
+  font-size: 0; // Remove spaces between inline-block children
   text-align: center;
 }
