@@ -1,10 +1,17 @@
 @use 'constants';
 
+$navigation-bar-height: 54px;
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   color: inherit;
+}
+
+html,
+body {
+  overflow: hidden; // Never scroll at this top level of the page
 }
 
 body {
@@ -18,9 +25,9 @@ body {
 
 .content-section {
   background: constants.$content-section-background-color;
-
-  // No margin collapse w/children
-  overflow: hidden;
+  height: 100vh; // Must have an explicit height to allow scrolling;
+  margin-top: $navigation-bar-height;
+  overflow: auto; // Allow scrollbar within content sections
 }
 
 .container {
