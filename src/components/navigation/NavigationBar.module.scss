@@ -48,16 +48,8 @@
   font-weight: 700;
   padding: 15px 0;
 
-  @include break.under(large) {
-    margin-left: 11px;
-  }
-
   @include break.under(small) {
-    padding: 14px 0 10px;
-  }
-
-  @include break.under(tiny) {
-    display: none;
+    padding: 8px 0 0;
   }
 
   &:hover {
@@ -72,7 +64,7 @@
     padding: 15px 11.2px;
 
     @include break.under(small) {
-      padding: 12px;
+      padding: 8px 10px;
     }
 
     &:hover {
