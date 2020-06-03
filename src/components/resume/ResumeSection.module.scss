@@ -7,7 +7,6 @@
   //background-image: url("../img/ocean-grey.jpg");  // TODO get images working with webpack
   background-repeat: no-repeat;
   background-size: cover;
-  height: 410px;
 
   @include break.under(small) {
     height: auto;

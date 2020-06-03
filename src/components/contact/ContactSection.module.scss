@@ -4,7 +4,6 @@
 .content-section {
   background: none;
   color: config.$contact-section-text-color;
-  height: 275px;
 
   @include break.under(small) {
     height: auto;
