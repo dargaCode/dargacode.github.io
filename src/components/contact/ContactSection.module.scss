@@ -2,6 +2,7 @@
 @use '../../utils/break';
 
 .content-section {
+  background: config.$contact-background-color;
   color: config.$contact-section-text-color;
 
   span {
