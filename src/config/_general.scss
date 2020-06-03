@@ -72,8 +72,24 @@ h2 {
   font-size: 40px;
   margin: 0 0 40px;
 
+  @include break.under(large) {
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+
+  @include break.under(medium) {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
   @include break.under(small) {
+    font-size: 33px;
     margin-bottom: 12px;
+  }
+
+  @include break.under(tiny) {
+    font-size: 30px;
+    margin-bottom: 10px;
   }
 }
 
