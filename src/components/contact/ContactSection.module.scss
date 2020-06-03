@@ -15,7 +15,6 @@
 
 .container {
   font-size: 0;
-  height: inherit;
   text-align: center;
 
   @include break.under(small) {
@@ -24,12 +23,16 @@
   }
 }
 
+.buttons {
+  margin-top: -6px; // Icon SVGs have some blank space on their tops
+}
+
 .button {
   margin: 0 13px;
 
   @include break.under(small) {
     display: inline-block;
-    margin: 4px 10px;
+    margin: 3px 10px;
   }
 
   &:hover {
@@ -40,5 +43,11 @@
     font-size: 68px;
     position: relative;
     top: 1px;
+
+    @include break.under(tiny) {
+      display: inline-block;
+      margin-right: 1px;
+      padding-bottom: 6px;
+    }
   }
 }
