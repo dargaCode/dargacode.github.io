@@ -2,7 +2,6 @@
 @use '../../utils/break';
 
 .content-section {
-  background: none;
   color: config.$contact-section-text-color;
 
   span {
@@ -15,7 +14,6 @@
 }
 
 .container {
-  background: none;
   font-size: 0;
   height: inherit;
   text-align: center;
