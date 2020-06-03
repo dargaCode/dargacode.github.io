@@ -1,7 +1,5 @@
 @use 'constants';
 
-$navigation-bar-height: 54px;
-
 *,
 *::before,
 *::after {
@@ -26,7 +24,6 @@ body {
 .content-section {
   background: constants.$content-section-background-color;
   height: 100vh; // Must have an explicit height to allow scrolling;
-  margin-top: $navigation-bar-height;
   overflow: auto; // Allow scrollbar within content sections
 }
 
