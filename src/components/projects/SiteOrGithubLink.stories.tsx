@@ -9,12 +9,10 @@ export default {
 };
 
 export const Basic = (): JSX.Element => (
-  <div style={{ backgroundColor: "white" }}>
-    <SiteOrGithubLink
-      preferredUrl={text("Preferred Url", "https://www.google.com")}
-      defaultUrl={text("Default Url", "https://www.dargacode.com")}
-    >
-      <button type="button">Link</button>
-    </SiteOrGithubLink>
-  </div>
+  <SiteOrGithubLink
+    preferredUrl={text("Preferred Url", "https://www.google.com")}
+    defaultUrl={text("Default Url", "https://www.dargacode.com")}
+  >
+    <button type="button">Link</button>
+  </SiteOrGithubLink>
 );
