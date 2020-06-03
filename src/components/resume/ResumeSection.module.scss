@@ -8,10 +8,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  @include break.under(small) {
-    height: auto;
-  }
-
   i {
     font-size: 47px;
   }
@@ -30,16 +26,8 @@
 }
 
 .container {
-  background: none;
-  padding: 30px 0 40px;
-
   @include break.under(small) {
     max-width: 200px;
-    padding: 60px 0 55px;
-  }
-
-  @include break.under(tiny) {
-    padding-top: 30px;
   }
 }
 

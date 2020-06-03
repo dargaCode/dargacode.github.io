@@ -32,7 +32,15 @@ body {
   margin: 0 auto;
   max-width: 720px;
   overflow: hidden;  // No margin collapse w/children
-  padding: 10px 35px 0;
+  padding: 88px 0;
+
+  @include break.under(large) {
+    padding-top: 42px;
+  }
+
+  @include break.under(small) {
+    padding-top: 18px;
+  }
 }
 
 a {

@@ -9,23 +9,6 @@
   background: none;
   font-size: 0; // Remove spaces between inline-block children
   max-width: 960px;
-  padding: 110px 0 160px;
-
-  @include break.under(large) {
-    padding-bottom: 110px;
-  }
-
-  @include break.under(medium) {
-    padding-bottom: 100px;
-  }
-
-  @include break.under(small) {
-    padding-top: 112px;
-  }
-
-  @include break.under(tiny) {
-    padding-top: 80px;
-  }
 }
 
 .list {

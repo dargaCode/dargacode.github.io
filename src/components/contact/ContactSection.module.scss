@@ -5,10 +5,6 @@
   background: none;
   color: config.$contact-section-text-color;
 
-  @include break.under(small) {
-    height: auto;
-  }
-
   span {
     font-size: 0;
   }
@@ -22,13 +18,11 @@
   background: none;
   font-size: 0;
   height: inherit;
-  padding: 22px 0 0;
   text-align: center;
 
   @include break.under(small) {
     font-size: 0;
     max-width: 200px;
-    padding: 40px 0 15px;
   }
 }
 
