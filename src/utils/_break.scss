@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '../config/breakpoints';
+@use '../config/breakpoint-sizes';
 
 @mixin under($breakpoint-name) {
   @if map-has-key(breakpoints.$max-widths, $breakpoint-name) {
