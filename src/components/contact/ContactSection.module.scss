@@ -9,17 +9,6 @@
     height: auto;
   }
 
-  h2 {
-    margin-bottom: 33px;
-    margin-top: 40px;
-    text-align: center;
-
-    @include break.under(small) {
-      margin-bottom: 6px;
-      margin-top: 0;
-    }
-  }
-
   span {
     font-size: 0;
   }

@@ -1,4 +1,5 @@
 @use 'constants';
+@use '../utils/break';
 
 *,
 *::before,
@@ -55,12 +56,17 @@ h4,
 h5,
 h6 {
   font-family: 'Arimo', 'Helvetica', sans-serif;
+  text-align: center;
 }
 
 h2 {
   color: constants.$content-section-heading-text-color;
   font-size: 40px;
-  margin: 0;
+  margin: 0 0 40px;
+
+  @include break.under(small) {
+    margin-bottom: 12px;
+  }
 }
 
 h3 {
