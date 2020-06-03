@@ -29,6 +29,7 @@
 
 .container {
   @include break.under(large) {
+    max-width: 600px;
     padding-left: 32px;
     padding-right: 32px;
   }
