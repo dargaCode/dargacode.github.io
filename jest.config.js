@@ -4,7 +4,7 @@ module.exports = {
   moduleNameMapper: {
     "\\.(jpg|png|svg)$": "<rootDir>/.jest/__mocks__/imageMock.js",
     "\\.(ttf|woff|woff2)$": "<rootDir>/.jest/__mocks__/fileMock.js",
-    "^.+\\.module\\.(css|scss)$": "identity-obj-proxy"
+    "^.+\\.(css|scss)$": "identity-obj-proxy"
   },
   transform: {
     "^.+\\.js$": "babel-jest",
