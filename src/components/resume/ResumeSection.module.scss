@@ -7,21 +7,6 @@
   //background-image: url("../img/ocean-grey.jpg");  // TODO get images working with webpack
   background-repeat: no-repeat;
   background-size: cover;
-  height: 410px;
-
-  @include break.under(small) {
-    height: auto;
-  }
-
-  h2 {
-    margin-bottom: 40px;
-    margin-top: 60px;
-    text-align: center;
-
-    @include break.under(small) {
-      margin-bottom: 12px;
-    }
-  }
 
   i {
     font-size: 47px;
@@ -41,16 +26,8 @@
 }
 
 .container {
-  background: none;
-  padding: 30px 0 40px;
-
   @include break.under(small) {
     max-width: 200px;
-    padding: 60px 0 55px;
-  }
-
-  @include break.under(tiny) {
-    padding-top: 30px;
   }
 }
 

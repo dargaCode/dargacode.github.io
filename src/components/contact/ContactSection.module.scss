@@ -2,24 +2,7 @@
 @use '../../utils/break';
 
 .content-section {
-  background: none;
   color: config.$contact-section-text-color;
-  height: 275px;
-
-  @include break.under(small) {
-    height: auto;
-  }
-
-  h2 {
-    margin-bottom: 33px;
-    margin-top: 40px;
-    text-align: center;
-
-    @include break.under(small) {
-      margin-bottom: 6px;
-      margin-top: 0;
-    }
-  }
 
   span {
     font-size: 0;
@@ -31,17 +14,17 @@
 }
 
 .container {
-  background: none;
   font-size: 0;
-  height: inherit;
-  padding: 22px 0 0;
   text-align: center;
 
   @include break.under(small) {
     font-size: 0;
     max-width: 200px;
-    padding: 40px 0 15px;
   }
+}
+
+.buttons {
+  margin-top: -6px; // Icon SVGs have some blank space on their tops
 }
 
 .button {
@@ -49,7 +32,7 @@
 
   @include break.under(small) {
     display: inline-block;
-    margin: 4px 10px;
+    margin: 3px 10px;
   }
 
   &:hover {
@@ -60,5 +43,11 @@
     font-size: 68px;
     position: relative;
     top: 1px;
+
+    @include break.under(tiny) {
+      display: inline-block;
+      margin-right: 1px;
+      padding-bottom: 6px;
+    }
   }
 }

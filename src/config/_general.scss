@@ -1,6 +1,8 @@
 @use 'constants';
+@use '../utils/break';
 
-$navigation-bar-height: 54px;
+$navigation-bar-height: '54px';
+$navigation-bar-height-stacked: '72px';
 
 *,
 *::before,
@@ -25,16 +27,27 @@ body {
 
 .content-section {
   background: constants.$content-section-background-color;
-  height: 100vh; // Must have an explicit height to allow scrolling;
-  margin-top: $navigation-bar-height;
+  height: calc(100vh - #{$navigation-bar-height}); // Must have an explicit height to allow scrolling;
   overflow: auto; // Allow scrollbar within content sections
+
+  @include break.under(small) {
+    height: calc(100vh - #{$navigation-bar-height-stacked}); // Make sure the scrollbar doesn't clip at the bottom
+  }
 }
 
 .container {
   margin: 0 auto;
   max-width: 720px;
   overflow: hidden;  // No margin collapse w/children
-  padding: 10px 35px 0;
+  padding: 88px 0;
+
+  @include break.under(large) {
+    padding: 42px 0;
+  }
+
+  @include break.under(small) {
+    padding: 18px 0;
+  }
 }
 
 a {
@@ -58,12 +71,33 @@ h4,
 h5,
 h6 {
   font-family: 'Arimo', 'Helvetica', sans-serif;
+  text-align: center;
 }
 
 h2 {
   color: constants.$content-section-heading-text-color;
   font-size: 40px;
-  margin: 0;
+  margin: 0 0 40px;
+
+  @include break.under(large) {
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+
+  @include break.under(medium) {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  @include break.under(small) {
+    font-size: 33px;
+    margin-bottom: 12px;
+  }
+
+  @include break.under(tiny) {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
 }
 
 h3 {
