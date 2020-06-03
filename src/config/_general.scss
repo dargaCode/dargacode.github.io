@@ -35,11 +35,11 @@ body {
   padding: 88px 0;
 
   @include break.under(large) {
-    padding-top: 42px;
+    padding: 42px 0;
   }
 
   @include break.under(small) {
-    padding-top: 18px;
+    padding: 18px 0;
   }
 }
 
