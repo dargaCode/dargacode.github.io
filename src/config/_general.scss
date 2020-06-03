@@ -1,6 +1,9 @@
 @use 'constants';
 @use '../utils/break';
 
+$navigation-bar-height: '54px';
+$navigation-bar-height-stacked: '72px';
+
 *,
 *::before,
 *::after {
@@ -24,8 +27,12 @@ body {
 
 .content-section {
   background: constants.$content-section-background-color;
-  height: 100vh; // Must have an explicit height to allow scrolling;
+  height: calc(100vh - #{$navigation-bar-height}); // Must have an explicit height to allow scrolling;
   overflow: auto; // Allow scrollbar within content sections
+
+  @include break.under(small) {
+    height: calc(100vh - #{$navigation-bar-height-stacked}); // Make sure the scrollbar doesn't clip at the bottom
+  }
 }
 
 .container {
