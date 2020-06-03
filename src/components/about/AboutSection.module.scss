@@ -14,18 +14,6 @@
   min-height: 775px;
   position: relative;
 
-  main {
-    @include break.under(medium) {
-      padding: 40px;
-      width: 100%;
-    }
-
-    @include break.under(large) {
-      margin: 0 auto;
-      max-width: 485px;
-    }
-  }
-
   p {
     line-height: 1.5;
     text-align: right;
@@ -33,6 +21,11 @@
     @include break.under(large) {
       margin-bottom: 30px;
       text-align: center;
+    }
+
+    @include break.under(medium) {
+      margin: 0 auto 20px;
+      max-width: 312px;
     }
   }
 
@@ -58,18 +51,23 @@
 }
 
 .container {
-  padding: 280px 0 0;
+  padding-top: 226px;
 
   @include break.under(large) {
-    padding-top: 200px;
+    max-width: 485px;
+    padding: 140px 28px 0;
   }
 
   @include break.under(medium) {
-    padding-top: 28%;
+    padding-top: 20%;
+  }
+
+  @include break.under(small) {
+    max-width: 350px;
   }
 
   @include break.under(tiny) {
-    padding-top: 40px;
+    padding-top: 24px;
   }
 }
 
@@ -79,8 +77,17 @@
     width: 100%;
   }
 
+  @include break.under(medium) {
+    font-size: 0.9em;
+  }
+
   @include break.under(small) {
     font-size: 0.8em;
+  }
+
+  @include break.under(tiny) {
+    font-size: 0.6em;
+    line-height: 1.2;
   }
 }
 
@@ -108,7 +115,16 @@
     width: 100%;
   }
 
-  @include break.under(small) {
+  @include break.under(medium) {
     font-size: 0.55em;
+  }
+
+  @include break.under(small) {
+    font-size: 0.5em;
+  }
+
+  @include break.under(tiny) {
+    font-size: 0.44em;
+    line-height: 1.1;
   }
 }
