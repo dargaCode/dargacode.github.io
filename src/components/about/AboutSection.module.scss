@@ -3,8 +3,8 @@
 
 .content-section {
   background-attachment: scroll;
+  background-image: url('../../img/mountains-grey.jpg');
   background-position: center;
-  //background-image: url("../img/mountains-grey.jpg"); // TODO get images working with webpack
   background-repeat: no-repeat;
   background-size: cover;
   color: config.$about-section-text-color;

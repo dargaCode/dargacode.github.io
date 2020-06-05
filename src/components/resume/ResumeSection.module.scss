@@ -3,8 +3,8 @@
 
 .content-section {
   background-attachment: scroll;
+  background-image: url('../../img/ocean-grey.jpg');
   background-position: center;
-  //background-image: url("../img/ocean-grey.jpg");  // TODO get images working with webpack
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -21,7 +21,7 @@
 }
 
 .overlay {
-  background: rgba(2, 63, 75, 0.7);
+  background: rgba(2, 63, 75, 0.8);
   height: inherit;
 }
 
