@@ -76,7 +76,7 @@ describe("ProjectCard", () => {
           );
 
           expect(
-            wrapper.find(classSelector(styles.linkIconContainer))
+            wrapper.find(classSelector(styles.linkContainer))
           ).toHaveLength(2);
         });
       });
@@ -88,7 +88,7 @@ describe("ProjectCard", () => {
           );
 
           expect(
-            wrapper.find(classSelector(styles.linkIconContainer))
+            wrapper.find(classSelector(styles.linkContainer))
           ).toHaveLength(1);
         });
       });
