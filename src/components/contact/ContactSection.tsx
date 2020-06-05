@@ -27,7 +27,10 @@ export default function AboutSection(): JSX.Element {
             <span>GitHub</span>
           </a>
 
-          <a className={styles.button} href="https://blog.dargacode.com">
+          <a
+            className={styles.button}
+            href="https://blog.dargacode.com/tagged/highlights"
+          >
             <i className="fa fa-rss-square" />
             <span>Study Blog</span>
           </a>
