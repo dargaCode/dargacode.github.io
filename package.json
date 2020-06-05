@@ -8,7 +8,7 @@
     "lint": "tsc --noEmit && eslint src webpack* --ext js,jsx,ts,tsx --fix",
     "test": "jest --passWithNoTests",
     "predeploy": "npm run build",
-    "deploy": "npx gh-pages -b master -d dist -m \"Build app and auto-deploy to Master\"",
+    "deploy": "npx gh-pages -b release -d dist -m \"Build app and deploy to Release\"",
     "storybook": "start-storybook -p 6006 --ci"
   },
   "main": "index.tsx",
