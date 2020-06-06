@@ -2,20 +2,15 @@
 @use '../../utils/break';
 
 .sort {
-  bottom: 18px;
-  position: absolute;
-  right: 0;
+  padding-top: 18px;
 
   @include break.under(large) {
-    position: relative;
-    text-align: center;
+    padding-top: 0;
   }
 
   label {
     color: config.$skill-sort-selector-label-text-color;
     font-size: 1.2em;
-    position: relative;
-    top: 2px;
   }
 
   select {
