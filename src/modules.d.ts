@@ -1,5 +1,7 @@
-declare module "*.png";
+declare module "*.docx";
 declare module "*.jpg";
+declare module "*.pdf";
+declare module "*.png";
 declare module "*.scss";
 
 declare module "cname-webpack-plugin";
