@@ -1,6 +1,8 @@
 import React from "react";
 import "../../config/_general.scss";
 import styles from "./ResumeSection.module.scss";
+import pdfResume from "../../resumes/Darga_SWE_Resume.pdf";
+import docxResume from "../../resumes/Darga_SWE_Resume.docx";
 
 export default function AboutSection(): JSX.Element {
   return (
@@ -10,10 +12,7 @@ export default function AboutSection(): JSX.Element {
           <h2>Resume</h2>
 
           <div className={styles.buttons}>
-            <a
-              className={styles.button}
-              href="./resume/Darga_Developer_Resume.pdf"
-            >
+            <a className={styles.button} href={pdfResume}>
               <i className="fa fa-file-pdf-o" />
               <span>
                 PDF <br />
@@ -21,10 +20,7 @@ export default function AboutSection(): JSX.Element {
               </span>
             </a>
 
-            <a
-              className={styles.button}
-              href="./resume/Darga_Developer_Resume.docx"
-            >
+            <a className={styles.button} href={docxResume}>
               <i className="fa fa-file-word-o" />
               <span>
                 Simple <br />
