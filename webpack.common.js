@@ -56,11 +56,17 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        loader: "file-loader"
+        loader: "file-loader",
+        options: {
+          name: "[name].[ext]"
+        }
       },
       {
         test: /\.(pdf|docx)$/,
-        loader: "file-loader"
+        loader: "file-loader",
+        options: {
+          name: "[name].[ext]"
+        }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
