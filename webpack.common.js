@@ -55,17 +55,10 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|pdf|docx)$/,
         loader: "file-loader",
         options: {
-          name: "[name].[ext]"
-        }
-      },
-      {
-        test: /\.(pdf|docx)$/,
-        loader: "file-loader",
-        options: {
-          name: "[name].[ext]"
+          name: "[name].[hash:base64:5].[ext]"
         }
       },
       {
