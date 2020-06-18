@@ -10,7 +10,7 @@ export default function AboutSection(): JSX.Element {
 
         <div className={styles.buttons}>
           <a className={styles.button} href="mailto:resume@dargaCode.com">
-            <i className={`icon-envelope ${styles.envelope}`} />
+            <i className="fa fa-envelope-square" />
             <span>Email</span>
           </a>
 

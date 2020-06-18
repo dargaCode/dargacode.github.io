@@ -39,16 +39,4 @@
   &:hover {
     color: inherit;
   }
-
-  .envelope {
-    font-size: 68px;
-    position: relative;
-    top: 1px;
-
-    @include break.under(tiny) {
-      display: inline-block;
-      margin-right: 1px;
-      padding-bottom: 6px;
-    }
-  }
 }
