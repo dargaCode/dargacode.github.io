@@ -3,14 +3,15 @@
 
 .content-section {
   background: config.$contact-background-color;
-  color: config.$contact-section-text-color;
-
-  span {
-    font-size: 0;
-  }
 
   i {
-    font-size: 80px;
+    font-size: 47px;
+  }
+
+  span {
+    font-size: 1.1rem;
+    margin-left: 18px;
+    text-align: left;
   }
 }
 
@@ -25,30 +26,26 @@
 }
 
 .buttons {
-  margin-top: -6px; // Icon SVGs have some blank space on their tops
+  margin: 0 auto;
+  max-width: 400px;
 }
 
 .button {
-  margin: 0 13px;
+  align-items: center;
+  background: config.$contact-button-background-color;
+  color: config.$contact-button-text-color;
+  display: inline-flex;
+  justify-content: left;
+  margin: 0 14px 28px;
+  padding: 10px 21px;
+  width: 164px;
 
   @include break.under(small) {
-    display: inline-block;
-    margin: 3px 10px;
+    margin-bottom: 20px;
   }
 
   &:hover {
-    color: inherit;
-  }
-
-  .envelope {
-    font-size: 68px;
-    position: relative;
-    top: 1px;
-
-    @include break.under(tiny) {
-      display: inline-block;
-      margin-right: 1px;
-      padding-bottom: 6px;
-    }
+    background: config.$contact-button-hover-background-color;
+    color: config.$contact-button-hover-text-color;
   }
 }
