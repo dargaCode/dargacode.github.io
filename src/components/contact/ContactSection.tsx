@@ -9,9 +9,9 @@ export default function AboutSection(): JSX.Element {
         <h2>Contact</h2>
 
         <div className={styles.buttons}>
-          <a className={styles.button} href="mailto:resume@dargaCode.com">
-            <i className="fa fa-envelope" />
-            <span>Email</span>
+          <a className={styles.button} href="https://github.com/dargaCode">
+            <i className="fa fa-github" />
+            <span>GitHub</span>
           </a>
 
           <a
@@ -22,9 +22,9 @@ export default function AboutSection(): JSX.Element {
             <span>LinkedIn</span>
           </a>
 
-          <a className={styles.button} href="https://github.com/dargaCode">
-            <i className="fa fa-github" />
-            <span>GitHub</span>
+          <a className={styles.button} href="mailto:resume@dargaCode.com">
+            <i className="fa fa-envelope" />
+            <span>Email</span>
           </a>
 
           <a
