@@ -10,7 +10,7 @@ export default function AboutSection(): JSX.Element {
 
         <div className={styles.buttons}>
           <a className={styles.button} href="mailto:resume@dargaCode.com">
-            <i className="fa fa-envelope-square" />
+            <i className="fa fa-envelope" />
             <span>Email</span>
           </a>
 
@@ -18,12 +18,12 @@ export default function AboutSection(): JSX.Element {
             className={styles.button}
             href="https://www.linkedin.com/in/dargaCode"
           >
-            <i className="fa fa-linkedin-square" />
+            <i className="fa fa-linkedin" />
             <span>LinkedIn</span>
           </a>
 
           <a className={styles.button} href="https://github.com/dargaCode">
-            <i className="fa fa-github-square" />
+            <i className="fa fa-github" />
             <span>GitHub</span>
           </a>
 
@@ -31,8 +31,8 @@ export default function AboutSection(): JSX.Element {
             className={styles.button}
             href="https://blog.dargacode.com/tagged/highlights"
           >
-            <i className="fa fa-rss-square" />
-            <span>Study Blog</span>
+            <i className="fa fa-rss" />
+            <span>Blog</span>
           </a>
         </div>
       </div>
