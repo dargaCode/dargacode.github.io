@@ -1,10 +1,10 @@
 import React from "react";
-import { Repo } from "./repoUtils";
+import { TopicCounts, aggregateRepoTopicCounts } from "./repoUtils";
 
 interface State {
   loading: boolean;
   error: Error | null;
-  repos: Repo[];
+  topicCounts: TopicCounts | {};
 }
 
 export default class SkillsSectionContainer extends React.Component<{}, State> {
@@ -14,7 +14,7 @@ export default class SkillsSectionContainer extends React.Component<{}, State> {
     this.state = {
       loading: true,
       error: null,
-      repos: []
+      topicCounts: {}
     };
   }
 
@@ -28,7 +28,7 @@ export default class SkillsSectionContainer extends React.Component<{}, State> {
         result => {
           this.setState({
             loading: false,
-            repos: result
+            topicCounts: aggregateRepoTopicCounts(result)
           });
         },
         error => {
@@ -41,7 +41,7 @@ export default class SkillsSectionContainer extends React.Component<{}, State> {
   }
 
   render(): JSX.Element {
-    const { loading, error, repos } = this.state;
+    const { loading, error, topicCounts } = this.state;
 
     if (loading) {
       return <div>Loading...</div>;
@@ -50,16 +50,18 @@ export default class SkillsSectionContainer extends React.Component<{}, State> {
       return <div>Error: {error.message}</div>;
     }
 
+    const topics: { name: string; count: number }[] = [];
+
+    Object.entries(topicCounts).forEach(([name, count]) => {
+      topics.push({ name, count });
+    });
+    topics.sort((a, b) => b.count - a.count);
+
     return (
       <ul>
-        {repos.map(repo => (
-          <li key={repo.name}>
-            {repo.name}
-            <ul>
-              {repo.topics.map(topic => (
-                <li key={topic}>{topic}</li>
-              ))}
-            </ul>
+        {topics.map(topic => (
+          <li key={topic.name}>
+            <b>{topic.name}:</b> {topic.count}
           </li>
         ))}
       </ul>

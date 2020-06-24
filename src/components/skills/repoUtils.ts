@@ -1,10 +1,14 @@
-export interface Repo {
+interface Repo {
   name: string;
   topics: string[];
 }
 
+export interface TopicCounts {
+  [key: string]: number;
+}
+
 export function aggregateRepoTopicCounts(repos: Repo[]): object {
-  const topicCounts: { [key: string]: number } = {};
+  const topicCounts: TopicCounts = {};
 
   repos.forEach(repo => {
     const { topics } = repo;
