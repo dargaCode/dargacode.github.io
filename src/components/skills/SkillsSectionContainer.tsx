@@ -1,9 +1,5 @@
 import React from "react";
-
-interface Repo {
-  name: string;
-  topics: string[];
-}
+import { Repo } from "./repoUtils";
 
 interface State {
   loading: boolean;
