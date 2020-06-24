@@ -74,6 +74,8 @@ module.exports = [
   "phonebook",
   "prev",
   "renderer",
+  "repo",
+  "repos",
   "rss",
   "runtime",
   "sourcemap",
