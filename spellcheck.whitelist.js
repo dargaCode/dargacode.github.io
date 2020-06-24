@@ -1,4 +1,4 @@
-// words to whitelist in eslint
+// Words to whitelist in eslint
 module.exports = [
   "api",
   "arg",
@@ -102,6 +102,6 @@ module.exports = [
   "woff2",
   "www",
 
-  // dates
+  // Dates
   "yyyymmdd"
 ];
