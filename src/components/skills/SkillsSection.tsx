@@ -5,21 +5,11 @@ import SkillSortSelector from "./SkillSortSelector";
 import { SKILLS } from "./skillsData";
 import "../../config/_general.scss";
 import styles from "./SkillsSection.module.scss";
-import {
-  Skill,
-  SkillSortComparator,
-  nameSkillComparator,
-  repoCountComparator
-} from "./skillsUtils";
+import { Skill, COMPARATORS, nameSkillComparator } from "./skillsUtils";
 
 interface State {
   skills: Skill[];
 }
-
-const COMPARATORS: Map<string, SkillSortComparator> = new Map([
-  ["Skill Name", nameSkillComparator],
-  ["Repo Count", repoCountComparator]
-]);
 
 export default class SkillsSection extends React.Component<{}, State> {
   constructor(props: {}) {

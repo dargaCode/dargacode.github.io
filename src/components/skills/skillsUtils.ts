@@ -16,9 +16,6 @@ export interface Skill extends RawSkill {
   nameLower: string;
 }
 
-export const SKILL_SORT_OPTIONS = ["Skill Name", "Repo Count"];
-
-
 // Add more attributes to the skills objects to help with sorting.
 // It's more efficient to do it once here instead of inside the comparators.
 export function processRawSkills(skills: RawSkill[]): Skill[] {
@@ -46,3 +43,10 @@ export function nameSkillComparator(a: Skill, b: Skill): number {
   }
   return 0;
 }
+
+export const COMPARATORS: Map<string, SkillSortComparator> = new Map([
+  ["Skill Name", nameSkillComparator],
+  ["Repo Count", repoCountComparator]
+]);
+
+export const SKILL_SORT_OPTIONS = Array.from(COMPARATORS.keys());
