@@ -1,5 +1,5 @@
 module.exports = {
-  testMatch: ["**/?(*.)+(test.tsx)"],
+  testMatch: ["**/?(*.)+(test.(ts|tsx))"],
   setupFilesAfterEnv: ["<rootDir>/.jest/setupTests.ts"],
   moduleNameMapper: {
     "\\.(jpg|png|svg)$": "<rootDir>/.jest/__mocks__/imageMock.js",
