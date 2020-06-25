@@ -33,6 +33,12 @@ const RAW_SKILLS: RawSkill[] = [
     projectCount: 58
   },
   {
+    name: "heroku",
+    displayName: "Heroku",
+    iconClass: "devicon-heroku-plain",
+    projectCount: 6
+  },
+  {
     name: "html",
     displayName: "HTML",
     iconClass: "devicon-html5-plain",
@@ -45,10 +51,10 @@ const RAW_SKILLS: RawSkill[] = [
     projectCount: 29
   },
   {
-    name: "jquery",
-    displayName: "jQuery",
-    iconClass: "devicon-jquery-plain",
-    projectCount: 1
+    name: "jest",
+    displayName: "Jest",
+    iconClass: "devicon-jest-plain",
+    projectCount: 2
   },
   {
     name: "mongodb",
@@ -61,6 +67,24 @@ const RAW_SKILLS: RawSkill[] = [
     displayName: "Node.js",
     iconClass: "devicon-nodejs-plain",
     projectCount: 10
+  },
+  {
+    name: "react",
+    displayName: "React.js",
+    iconClass: "devicon-react-plain",
+    projectCount: 3
+  },
+  {
+    name: "scss",
+    displayName: "SCSS",
+    iconClass: "devicon-sass-plain",
+    projectCount: 2
+  },
+  {
+    name: "storybook",
+    displayName: "Storybook",
+    iconClass: "devicon-storybook-plain",
+    projectCount: 2
   }
 ];
 
