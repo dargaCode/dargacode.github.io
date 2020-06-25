@@ -1,6 +1,6 @@
 import moment from "moment";
 
-interface Repo {
+export interface Repo {
   name: string;
   pushed_at: string;
   topics: string[];
@@ -10,7 +10,7 @@ export interface TopicStats {
   [key: string]: { count: number; updateTime: moment.Moment };
 }
 
-export function aggregateRepoTopicStats(repos: Repo[]): object {
+export function aggregateRepoTopicStats(repos: Repo[]): TopicStats {
   const topicStats: TopicStats = {};
 
   repos.forEach(repo => {
