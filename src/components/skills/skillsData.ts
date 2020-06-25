@@ -17,14 +17,6 @@ const RAW_SKILLS: RawSkill[] = [
     url: "https://github.com/dargaCode?tab=repositories&q=topic%3Ac"
   },
   {
-    name: "C#",
-    iconClass: "devicon-csharp-plain",
-    type: "Language",
-    projectCount: 3,
-    url:
-      "https://github.com/dargaCode/dargacode.github.io/blob/master/skills-note.md#c"
-  },
-  {
     name: "CSS",
     iconClass: "devicon-css3-plain",
     type: "Language",
@@ -72,14 +64,6 @@ const RAW_SKILLS: RawSkill[] = [
     type: "Database",
     projectCount: 3,
     url: "https://github.com/dargaCode?tab=repositories&q=topic%3Amongodb"
-  },
-  {
-    name: "MySQL",
-    iconClass: "devicon-mysql-plain",
-    type: "Database",
-    projectCount: 3,
-    url:
-      "https://github.com/dargaCode/dargacode.github.io/blob/master/skills-note.md#mysql"
   },
   {
     name: "Node.js",
