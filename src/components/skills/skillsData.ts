@@ -3,74 +3,74 @@ import { RawSkill, processRawSkills } from "./skillsUtils";
 // These are transformed below before exporting
 const RAW_SKILLS: RawSkill[] = [
   {
-    name: "Bootstrap",
+    name: "bootstrap",
+    displayName: "Bootstrap",
     iconClass: "devicon-bootstrap-plain",
     type: "Library",
-    projectCount: 3,
-    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Abootstrap"
+    projectCount: 3
   },
   {
-    name: "C",
+    name: "c",
+    displayName: "C",
     iconClass: "devicon-c-plain",
     type: "Language",
-    projectCount: 18,
-    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Ac"
+    projectCount: 18
   },
   {
-    name: "CSS",
+    name: "css",
+    displayName: "CSS",
     iconClass: "devicon-css3-plain",
     type: "Language",
-    projectCount: 35,
-    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Acss"
+    projectCount: 35
   },
   {
-    name: "Express.js",
+    name: "express-js",
+    displayName: "Express.js",
     iconClass: "icon-express-logo",
     type: "Framework",
-    projectCount: 6,
-    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Aexpressjs"
+    projectCount: 6
   },
   {
-    name: "Git",
+    name: "git",
+    displayName: "Git",
     iconClass: "devicon-git-plain",
     type: "Tool",
-    projectCount: 58,
-    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Agit"
+    projectCount: 58
   },
   {
-    name: "HTML",
+    name: "html",
+    displayName: "HTML",
     iconClass: "devicon-html5-plain",
     type: "Language",
-    projectCount: 36,
-    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Ahtml"
+    projectCount: 36
   },
   {
-    name: "JavaScript",
+    name: "javascript",
+    displayName: "JavaScript",
     iconClass: "devicon-javascript-plain",
     type: "Language",
-    projectCount: 29,
-    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Ajavascript"
+    projectCount: 29
   },
   {
-    name: "jQuery",
+    name: "jquery",
+    displayName: "jQuery",
     iconClass: "devicon-jquery-plain",
     type: "Library",
-    projectCount: 1,
-    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Ajquery"
+    projectCount: 1
   },
   {
-    name: "MongoDB",
+    name: "mongodb",
+    displayName: "MongoDB",
     iconClass: "devicon-mongodb-plain",
     type: "Database",
-    projectCount: 3,
-    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Amongodb"
+    projectCount: 3
   },
   {
-    name: "Node.js",
+    name: "nodejs",
+    displayName: "Node.js",
     iconClass: "devicon-nodejs-plain",
     type: "Environment",
-    projectCount: 10,
-    url: "https://github.com/dargaCode?tab=repositories&q=topic%3Anodejs"
+    projectCount: 10
   }
 ];
 

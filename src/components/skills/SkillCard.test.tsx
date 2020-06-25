@@ -4,7 +4,7 @@ import cloneDeep from "clone-deep";
 import { classSelector } from "../../utils/jestUtils";
 import SkillCard from "./SkillCard";
 import { SKILLS } from "./skillsData";
-import { Skill } from "./skillsUtils";
+import { Skill, SKILL_URL_PREFIX } from "./skillsUtils";
 // eslint-disable-next-line css-modules/no-unused-class
 import styles from "./SkillCard.module.scss";
 
@@ -21,7 +21,7 @@ describe("SkillCard", () => {
         const wrapper = shallow(<SkillCard skill={skill} />);
         const url = wrapper.find("a").props().href;
 
-        expect(url).toEqual(skill.url);
+        expect(url).toEqual(SKILL_URL_PREFIX + skill.name);
       });
     });
 
@@ -30,7 +30,7 @@ describe("SkillCard", () => {
         const wrapper = shallow(<SkillCard skill={skill} />);
         const nameText = wrapper.find(classSelector(styles.name)).text();
 
-        expect(nameText).toEqual(skill.name);
+        expect(nameText).toEqual(skill.displayName);
       });
     });
 

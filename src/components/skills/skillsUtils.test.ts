@@ -11,18 +11,18 @@ import {
 describe("`skillsUtils`", () => {
   const rawSkills: RawSkill[] = [
     {
-      name: "A",
+      name: "",
+      displayName: "A",
       type: "Language",
       projectCount: 2,
-      iconClass: "",
-      url: ""
+      iconClass: ""
     },
     {
-      name: "b",
+      name: "",
+      displayName: "b",
       type: "Framework",
       projectCount: 1,
-      iconClass: "",
-      url: ""
+      iconClass: ""
     }
   ];
 
@@ -45,13 +45,13 @@ describe("`skillsUtils`", () => {
     let skillB: Skill;
 
     const emptySkill: Skill = {
+      name: "",
+      displayName: "",
+      iconClass: "",
+      type: "",
       projectCount: 0,
       nameLower: "",
-      typeOrder: 0,
-      name: "",
-      type: "",
-      iconClass: "",
-      url: ""
+      typeOrder: 0
     };
 
     beforeEach(() => {

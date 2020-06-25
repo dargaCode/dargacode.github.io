@@ -1,13 +1,15 @@
+export const SKILL_URL_PREFIX = `https://github.com/dargaCode?tab=repositories&q=topic%3A`;
+
 export interface SkillSortComparator {
   (a: Skill, b: Skill): number;
 }
 
 export interface RawSkill {
   name: string;
+  displayName: string;
   iconClass: string;
   type: string;
   projectCount: number;
-  url: string;
 }
 
 // Some extra values are derived before export, but can be ignored by user
@@ -37,7 +39,7 @@ export function processRawSkills(skills: RawSkill[]): Skill[] {
         // Allow skills to be sorted by type
         typeOrder: SKILL_TYPE_ORDER.indexOf(skill.type),
         // Allow lowercase skills like jQuery to sort properly by name
-        nameLower: skill.name.toLowerCase()
+        nameLower: skill.displayName.toLowerCase()
       };
     }
   );
