@@ -42,6 +42,7 @@ module.exports = [
   "gif",
   "github",
   "headshot",
+  "heroku",
   "html",
   "http",
   "https",
