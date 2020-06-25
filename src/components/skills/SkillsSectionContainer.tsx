@@ -1,10 +1,11 @@
 import React from "react";
-import { TopicCounts, aggregateRepoTopicCounts } from "./repoUtils";
+import moment from "moment";
+import { TopicStats, aggregateRepoTopicStats } from "./repoUtils";
 
 interface State {
   loading: boolean;
   error: Error | null;
-  topicCounts: TopicCounts | {};
+  topicStats: TopicStats | {};
 }
 
 export default class SkillsSectionContainer extends React.Component<{}, State> {
@@ -14,7 +15,7 @@ export default class SkillsSectionContainer extends React.Component<{}, State> {
     this.state = {
       loading: true,
       error: null,
-      topicCounts: {}
+      topicStats: {}
     };
   }
 
@@ -28,7 +29,7 @@ export default class SkillsSectionContainer extends React.Component<{}, State> {
         result => {
           this.setState({
             loading: false,
-            topicCounts: aggregateRepoTopicCounts(result)
+            topicStats: aggregateRepoTopicStats(result)
           });
         },
         error => {
@@ -41,7 +42,7 @@ export default class SkillsSectionContainer extends React.Component<{}, State> {
   }
 
   render(): JSX.Element {
-    const { loading, error, topicCounts } = this.state;
+    const { loading, error, topicStats } = this.state;
 
     if (loading) {
       return <div>Loading...</div>;
@@ -50,18 +51,26 @@ export default class SkillsSectionContainer extends React.Component<{}, State> {
       return <div>Error: {error.message}</div>;
     }
 
-    const topics: { name: string; count: number }[] = [];
+    const topics: {
+      name: string;
+      count: number;
+      updateTime: moment.Moment;
+    }[] = [];
 
-    Object.entries(topicCounts).forEach(([name, count]) => {
-      topics.push({ name, count });
+    Object.entries(topicStats).forEach(([name, stats]) => {
+      topics.push({ name, count: stats.count, updateTime: stats.updateTime });
     });
-    topics.sort((a, b) => b.count - a.count);
+    topics.sort((a, b) => b.updateTime.diff(a.updateTime));
 
     return (
       <ul>
         {topics.map(topic => (
           <li key={topic.name}>
-            <b>{topic.name}:</b> {topic.count}
+            <b>{topic.name}:</b>
+            <ul>
+              <li>{topic.count} repos</li>
+              <li>Last used {topic.updateTime.format("YYYY-MM-DD")}</li>
+            </ul>
           </li>
         ))}
       </ul>
