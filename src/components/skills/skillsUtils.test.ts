@@ -4,7 +4,7 @@ import {
   Skill,
   processRawSkills,
   nameSkillComparator,
-  projectsSkillComparator
+  repoCountComparator
 } from "./skillsUtils";
 
 describe("`skillsUtils`", () => {
@@ -12,13 +12,13 @@ describe("`skillsUtils`", () => {
     {
       name: "",
       displayName: "A",
-      projectCount: 2,
+      repoCount: 2,
       iconClass: ""
     },
     {
       name: "",
       displayName: "b",
-      projectCount: 1,
+      repoCount: 1,
       iconClass: ""
     }
   ];
@@ -39,7 +39,7 @@ describe("`skillsUtils`", () => {
       name: "",
       displayName: "",
       iconClass: "",
-      projectCount: 0,
+      repoCount: 0,
       nameLower: ""
     };
 
@@ -71,26 +71,26 @@ describe("`skillsUtils`", () => {
       });
     });
 
-    describe("projectCountSkillComparator", () => {
-      it("should return 0 when both skills have equal projectCount", () => {
-        skillA.projectCount = 5;
-        skillB.projectCount = 5;
+    describe("repoCountSkillComparator", () => {
+      it("should return 0 when both skills have equal repoCount", () => {
+        skillA.repoCount = 5;
+        skillB.repoCount = 5;
 
-        expect(projectsSkillComparator(skillA, skillB)).toBe(0);
+        expect(repoCountComparator(skillA, skillB)).toBe(0);
       });
 
-      it("should return positive number when A's projectCount is lower", () => {
-        skillA.projectCount = 11;
-        skillB.projectCount = 20;
+      it("should return positive number when A's repoCount is lower", () => {
+        skillA.repoCount = 11;
+        skillB.repoCount = 20;
 
-        expect(projectsSkillComparator(skillA, skillB)).toBeGreaterThan(0);
+        expect(repoCountComparator(skillA, skillB)).toBeGreaterThan(0);
       });
 
-      it("should return negative number when B's projectCount is lower", () => {
-        skillA.projectCount = 22;
-        skillB.projectCount = 1;
+      it("should return negative number when B's repoCount is lower", () => {
+        skillA.repoCount = 22;
+        skillB.repoCount = 1;
 
-        expect(projectsSkillComparator(skillA, skillB)).toBeLessThan(0);
+        expect(repoCountComparator(skillA, skillB)).toBeLessThan(0);
       });
     });
   });

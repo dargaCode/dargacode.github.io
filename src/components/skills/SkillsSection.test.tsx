@@ -4,14 +4,10 @@ import cloneDeep from "clone-deep";
 import SkillsSection from "./SkillsSection";
 import { SKILLS } from "./skillsData";
 
-import {
-  Skill,
-  nameSkillComparator,
-  projectsSkillComparator
-} from "./skillsUtils";
+import { Skill, nameSkillComparator, repoCountComparator } from "./skillsUtils";
 
 const SKILLS_BY_NAME = cloneDeep(SKILLS).sort(nameSkillComparator);
-const SKILLS_BY_COUNT = cloneDeep(SKILLS).sort(projectsSkillComparator);
+const SKILLS_BY_COUNT = cloneDeep(SKILLS).sort(repoCountComparator);
 
 function getFakeEventWithValue(
   valueText: string
@@ -45,10 +41,10 @@ describe("`SkillsSection`", () => {
   });
 
   describe("events", () => {
-    it("can sort skills by project count", () => {
+    it("can sort skills by repo count", () => {
       const wrapper = shallow<SkillsSection>(<SkillsSection />);
 
-      wrapper.instance().handleSort(getFakeEventWithValue("Project Count"));
+      wrapper.instance().handleSort(getFakeEventWithValue("Repo Count"));
 
       expect(wrapper.state("skills")).toEqual(SKILLS_BY_COUNT);
     });
@@ -57,7 +53,7 @@ describe("`SkillsSection`", () => {
       const wrapper = shallow<SkillsSection>(<SkillsSection />);
 
       // Sort away from default Skill Name sort, to sort back again
-      wrapper.instance().handleSort(getFakeEventWithValue("Project Count"));
+      wrapper.instance().handleSort(getFakeEventWithValue("Repo Count"));
       wrapper.instance().handleSort(getFakeEventWithValue("Skill Name"));
 
       expect(wrapper.state("skills")).toEqual(SKILLS_BY_NAME);

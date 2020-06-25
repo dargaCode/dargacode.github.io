@@ -30,12 +30,12 @@
   margin: 0;
 }
 
-.project-count {
+.repo-count {
   font-size: 14px;
 }
 
 .card:hover i,
 .card:hover .name,
-.card:hover .project-count {
+.card:hover .repo-count {
   color: config.$skill-card-hover-text-color;
 }

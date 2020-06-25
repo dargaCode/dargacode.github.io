@@ -8,7 +8,7 @@ export interface RawSkill {
   name: string;
   displayName: string;
   iconClass: string;
-  projectCount: number;
+  repoCount: number;
 }
 
 // Some extra values are derived before export, but can be ignored by user
@@ -16,7 +16,7 @@ export interface Skill extends RawSkill {
   nameLower: string;
 }
 
-export const SKILL_SORT_OPTIONS = ["Skill Name", "Project Count"];
+export const SKILL_SORT_OPTIONS = ["Skill Name", "Repo Count"];
 
 export const SKILL_TYPE_ORDER: string[] = [
   "Language",
@@ -41,8 +41,8 @@ export function processRawSkills(skills: RawSkill[]): Skill[] {
   );
 }
 
-export function projectsSkillComparator(a: Skill, b: Skill): number {
-  return b.projectCount - a.projectCount;
+export function repoCountComparator(a: Skill, b: Skill): number {
+  return b.repoCount - a.repoCount;
 }
 
 export function nameSkillComparator(a: Skill, b: Skill): number {

@@ -43,28 +43,28 @@ describe("SkillCard", () => {
       });
     });
 
-    describe("`skill.projectCount`", () => {
-      describe("when `projectCount` is 1", () => {
-        it("should render `n Project` (singular)", () => {
-          skill.projectCount = 1;
+    describe("`skill.repoCount`", () => {
+      describe("when `repoCount` is 1", () => {
+        it("should render `n Repo` (singular)", () => {
+          skill.repoCount = 1;
 
           const wrapper = shallow(<SkillCard skill={skill} />);
-          const projectCountText = wrapper
-            .find(classSelector(styles.projectCount))
+          const repoCountText = wrapper
+            .find(classSelector(styles.repoCount))
             .text();
 
-          expect(projectCountText).toEqual(`${skill.projectCount} Project`);
+          expect(repoCountText).toEqual(`${skill.repoCount} Repo`);
         });
       });
 
-      describe("when `projectCount` is not 1", () => {
-        it("should render `n Projects` (plural)", () => {
+      describe("when `repoCount` is not 1", () => {
+        it("should render `n Repos` (plural)", () => {
           const wrapper = shallow(<SkillCard skill={skill} />);
-          const projectCountText = wrapper
-            .find(classSelector(styles.projectCount))
+          const repoCountText = wrapper
+            .find(classSelector(styles.repoCount))
             .text();
 
-          expect(projectCountText).toEqual(`${skill.projectCount} Projects`);
+          expect(repoCountText).toEqual(`${skill.repoCount} Repos`);
         });
       });
     });
