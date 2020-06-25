@@ -18,14 +18,6 @@ export interface Skill extends RawSkill {
 
 export const SKILL_SORT_OPTIONS = ["Skill Name", "Repo Count"];
 
-export const SKILL_TYPE_ORDER: string[] = [
-  "Language",
-  "Environment",
-  "Framework",
-  "Library",
-  "Database",
-  "Tool"
-];
 
 // Add more attributes to the skills objects to help with sorting.
 // It's more efficient to do it once here instead of inside the comparators.
