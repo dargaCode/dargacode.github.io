@@ -43,15 +43,6 @@ describe("SkillCard", () => {
       });
     });
 
-    describe("`skill.type`", () => {
-      it("should render the skill type", () => {
-        const wrapper = shallow(<SkillCard skill={skill} />);
-        const typeText = wrapper.find(classSelector(styles.type)).text();
-
-        expect(typeText).toEqual(skill.type);
-      });
-    });
-
     describe("`skill.projectCount`", () => {
       describe("when `projectCount` is 1", () => {
         it("should render `n Project` (singular)", () => {

@@ -7,12 +7,10 @@ import { SKILLS } from "./skillsData";
 import {
   Skill,
   nameSkillComparator,
-  projectsSkillComparator,
-  typeSkillComparator
+  projectsSkillComparator
 } from "./skillsUtils";
 
 const SKILLS_BY_NAME = cloneDeep(SKILLS).sort(nameSkillComparator);
-const SKILLS_BY_TYPE = cloneDeep(SKILLS).sort(typeSkillComparator);
 const SKILLS_BY_COUNT = cloneDeep(SKILLS).sort(projectsSkillComparator);
 
 function getFakeEventWithValue(
@@ -47,14 +45,6 @@ describe("`SkillsSection`", () => {
   });
 
   describe("events", () => {
-    it("can sort skills by type", () => {
-      const wrapper = shallow<SkillsSection>(<SkillsSection />);
-
-      wrapper.instance().handleSort(getFakeEventWithValue("Skill Type"));
-
-      expect(wrapper.state("skills")).toEqual(SKILLS_BY_TYPE);
-    });
-
     it("can sort skills by project count", () => {
       const wrapper = shallow<SkillsSection>(<SkillsSection />);
 

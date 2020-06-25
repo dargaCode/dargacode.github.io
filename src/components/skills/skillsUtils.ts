@@ -8,17 +8,15 @@ export interface RawSkill {
   name: string;
   displayName: string;
   iconClass: string;
-  type: string;
   projectCount: number;
 }
 
 // Some extra values are derived before export, but can be ignored by user
 export interface Skill extends RawSkill {
-  typeOrder: number;
   nameLower: string;
 }
 
-export const SKILL_SORT_OPTIONS = ["Skill Name", "Skill Type", "Project Count"];
+export const SKILL_SORT_OPTIONS = ["Skill Name", "Project Count"];
 
 export const SKILL_TYPE_ORDER: string[] = [
   "Language",
@@ -36,8 +34,6 @@ export function processRawSkills(skills: RawSkill[]): Skill[] {
     (skill: RawSkill): Skill => {
       return {
         ...skill,
-        // Allow skills to be sorted by type
-        typeOrder: SKILL_TYPE_ORDER.indexOf(skill.type),
         // Allow lowercase skills like jQuery to sort properly by name
         nameLower: skill.displayName.toLowerCase()
       };
@@ -57,34 +53,4 @@ export function nameSkillComparator(a: Skill, b: Skill): number {
     return 1;
   }
   return 0;
-}
-
-export function typeSkillComparator(a: Skill, b: Skill): number {
-  switch (true) {
-    // // sort by category order first
-    case a.typeOrder < b.typeOrder: {
-      return -1;
-    }
-    case b.typeOrder < a.typeOrder: {
-      return 1;
-    }
-    // Same category, sort by descending project count second
-    case a.projectCount > b.projectCount: {
-      return -1;
-    }
-    case b.projectCount > a.projectCount: {
-      return 1;
-    }
-    // Same project count, sort by skill name third
-    case a.nameLower < b.nameLower: {
-      return -1;
-    }
-    case b.nameLower < a.nameLower: {
-      return 1;
-    }
-    // Everything matches (duplicate skill name)
-    default: {
-      return 0;
-    }
-  }
 }

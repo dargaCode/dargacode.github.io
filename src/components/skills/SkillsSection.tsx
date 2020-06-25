@@ -9,8 +9,7 @@ import {
   Skill,
   SkillSortComparator,
   nameSkillComparator,
-  projectsSkillComparator,
-  typeSkillComparator
+  projectsSkillComparator
 } from "./skillsUtils";
 
 interface State {
@@ -19,7 +18,6 @@ interface State {
 
 const COMPARATORS: Map<string, SkillSortComparator> = new Map([
   ["Skill Name", nameSkillComparator],
-  ["Skill Type", typeSkillComparator],
   ["Project Count", projectsSkillComparator]
 ]);
 
