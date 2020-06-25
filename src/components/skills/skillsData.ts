@@ -3,12 +3,6 @@ import { RawSkill, processRawSkills } from "./skillsUtils";
 // These are transformed below before exporting
 const RAW_SKILLS: RawSkill[] = [
   {
-    name: "bootstrap",
-    displayName: "Bootstrap",
-    iconClass: "devicon-bootstrap-plain",
-    repoCount: 3
-  },
-  {
     name: "c",
     displayName: "C",
     iconClass: "devicon-c-plain",
@@ -31,12 +25,6 @@ const RAW_SKILLS: RawSkill[] = [
     displayName: "Git",
     iconClass: "devicon-git-plain",
     repoCount: 58
-  },
-  {
-    name: "heroku",
-    displayName: "Heroku",
-    iconClass: "devicon-heroku-plain",
-    repoCount: 6
   },
   {
     name: "html",
