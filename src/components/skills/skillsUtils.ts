@@ -8,12 +8,10 @@ export interface RawSkill {
   name: string;
   displayName: string;
   iconClass: string;
-  repoCount: number;
 }
 
-// Some extra values are derived before export, but can be ignored by user
 export interface Skill extends RawSkill {
-  nameLower: string;
+  repoCount: number;
 }
 
 export function repoCountComparator(a: Skill, b: Skill): number {

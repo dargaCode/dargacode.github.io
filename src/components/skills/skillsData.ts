@@ -4,73 +4,61 @@ export const RAW_SKILLS: RawSkill[] = [
   {
     name: "c",
     displayName: "C",
-    iconClass: "devicon-c-plain",
-    repoCount: 18
+    iconClass: "devicon-c-plain"
   },
   {
     name: "css",
     displayName: "CSS",
-    iconClass: "devicon-css3-plain",
-    repoCount: 35
+    iconClass: "devicon-css3-plain"
   },
   {
     name: "express-js",
     displayName: "Express.js",
-    iconClass: "icon-express-logo",
-    repoCount: 6
+    iconClass: "icon-express-logo"
   },
   {
     name: "git",
     displayName: "Git",
-    iconClass: "devicon-git-plain",
-    repoCount: 58
+    iconClass: "devicon-git-plain"
   },
   {
     name: "html",
     displayName: "HTML",
-    iconClass: "devicon-html5-plain",
-    repoCount: 36
+    iconClass: "devicon-html5-plain"
   },
   {
     name: "javascript",
     displayName: "JavaScript",
-    iconClass: "devicon-javascript-plain",
-    repoCount: 29
+    iconClass: "devicon-javascript-plain"
   },
   {
     name: "jest",
     displayName: "Jest",
-    iconClass: "devicon-jest-plain",
-    repoCount: 2
+    iconClass: "devicon-jest-plain"
   },
   {
     name: "mongodb",
     displayName: "MongoDB",
-    iconClass: "devicon-mongodb-plain",
-    repoCount: 3
+    iconClass: "devicon-mongodb-plain"
   },
   {
     name: "nodejs",
     displayName: "Node.js",
-    iconClass: "devicon-nodejs-plain",
-    repoCount: 10
+    iconClass: "devicon-nodejs-plain"
   },
   {
     name: "react",
     displayName: "React.js",
-    iconClass: "devicon-react-plain",
-    repoCount: 3
+    iconClass: "devicon-react-plain"
   },
   {
     name: "scss",
     displayName: "SCSS",
-    iconClass: "devicon-sass-plain",
-    repoCount: 2
+    iconClass: "devicon-sass-plain"
   },
   {
     name: "storybook",
     displayName: "Storybook",
-    iconClass: "devicon-storybook-plain",
-    repoCount: 2
+    iconClass: "devicon-storybook-plain"
   }
 ];
