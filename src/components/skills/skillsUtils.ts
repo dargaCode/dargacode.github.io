@@ -16,29 +16,15 @@ export interface Skill extends RawSkill {
   nameLower: string;
 }
 
-// Add more attributes to the skills objects to help with sorting.
-// It's more efficient to do it once here instead of inside the comparators.
-export function processRawSkills(skills: RawSkill[]): Skill[] {
-  return skills.map(
-    (skill: RawSkill): Skill => {
-      return {
-        ...skill,
-        // Allow lowercase skills like jQuery to sort properly by name
-        nameLower: skill.displayName.toLowerCase()
-      };
-    }
-  );
-}
-
 export function repoCountComparator(a: Skill, b: Skill): number {
   return b.repoCount - a.repoCount;
 }
 
 export function nameSkillComparator(a: Skill, b: Skill): number {
-  if (a.nameLower < b.nameLower) {
+  if (a.name < b.name) {
     return -1;
   }
-  if (b.nameLower < a.nameLower) {
+  if (b.name < a.name) {
     return 1;
   }
   return 0;

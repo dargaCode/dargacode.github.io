@@ -1,7 +1,6 @@
-import { RawSkill, processRawSkills } from "./skillsUtils";
+import { RawSkill } from "./skillsUtils";
 
-// These are transformed below before exporting
-const RAW_SKILLS: RawSkill[] = [
+export const RAW_SKILLS: RawSkill[] = [
   {
     name: "c",
     displayName: "C",
@@ -75,6 +74,3 @@ const RAW_SKILLS: RawSkill[] = [
     repoCount: 2
   }
 ];
-
-// eslint-disable-next-line import/prefer-default-export
-export const SKILLS = processRawSkills(RAW_SKILLS);

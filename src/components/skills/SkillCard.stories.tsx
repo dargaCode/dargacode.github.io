@@ -1,6 +1,6 @@
 import React from "react";
 import SkillCard from "./SkillCard";
-import { SKILLS } from "./skillsData";
+import { RAW_SKILLS } from "./skillsData";
 
 export default {
   title: "Skills/SkillCard",
@@ -8,5 +8,5 @@ export default {
 };
 
 export const Basic = (): JSX.Element => {
-  return <SkillCard skill={SKILLS[0]} />;
+  return <SkillCard skill={RAW_SKILLS[0]} />;
 };

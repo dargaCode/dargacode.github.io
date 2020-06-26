@@ -1,36 +1,7 @@
 import cloneDeep from "clone-deep";
-import {
-  RawSkill,
-  Skill,
-  processRawSkills,
-  nameSkillComparator,
-  repoCountComparator
-} from "./skillsUtils";
+import { Skill, nameSkillComparator, repoCountComparator } from "./skillsUtils";
 
 describe("`skillsUtils`", () => {
-  const rawSkills: RawSkill[] = [
-    {
-      name: "",
-      displayName: "A",
-      repoCount: 2,
-      iconClass: ""
-    },
-    {
-      name: "",
-      displayName: "b",
-      repoCount: 1,
-      iconClass: ""
-    }
-  ];
-
-  describe("processRawSkills", () => {
-    it("should add the `nameLower` property", () => {
-      const skills = processRawSkills(rawSkills);
-
-      expect(skills[0].nameLower).toBe("a");
-    });
-  });
-
   describe("comparators", () => {
     let skillA: Skill;
     let skillB: Skill;
@@ -39,8 +10,7 @@ describe("`skillsUtils`", () => {
       name: "",
       displayName: "",
       iconClass: "",
-      repoCount: 0,
-      nameLower: ""
+      repoCount: 0
     };
 
     beforeEach(() => {
@@ -49,23 +19,23 @@ describe("`skillsUtils`", () => {
     });
 
     describe("nameSkillComparator", () => {
-      it("should return 0 when both skills have equal nameLower", () => {
-        skillA.nameLower = "a";
-        skillB.nameLower = "a";
+      it("should return 0 when both skills have equal name", () => {
+        skillA.name = "a";
+        skillB.name = "a";
 
         expect(nameSkillComparator(skillA, skillB)).toBe(0);
       });
 
-      it("should return -1 when A's nameLower alphabetizes first", () => {
-        skillA.nameLower = "a";
-        skillB.nameLower = "b";
+      it("should return -1 when A's name alphabetizes first", () => {
+        skillA.name = "a";
+        skillB.name = "b";
 
         expect(nameSkillComparator(skillA, skillB)).toBe(-1);
       });
 
-      it("should return 1 when B's nameLower alphabetizes first", () => {
-        skillA.nameLower = "b";
-        skillB.nameLower = "a";
+      it("should return 1 when B's name alphabetizes first", () => {
+        skillA.name = "b";
+        skillB.name = "a";
 
         expect(nameSkillComparator(skillA, skillB)).toBe(1);
       });

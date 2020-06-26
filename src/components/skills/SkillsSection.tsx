@@ -2,7 +2,7 @@ import React from "react";
 import cloneDeep from "clone-deep";
 import SkillCard from "./SkillCard";
 import SkillSortSelector from "./SkillSortSelector";
-import { SKILLS } from "./skillsData";
+import { RAW_SKILLS } from "./skillsData";
 import "../../config/_general.scss";
 import styles from "./SkillsSection.module.scss";
 import { Skill, COMPARATORS, nameSkillComparator } from "./skillsUtils";
@@ -16,7 +16,7 @@ export default class SkillsSection extends React.Component<{}, State> {
     super(props);
 
     this.state = {
-      skills: cloneDeep(SKILLS).sort(nameSkillComparator)
+      skills: cloneDeep(RAW_SKILLS).sort(nameSkillComparator)
     };
   }
 
