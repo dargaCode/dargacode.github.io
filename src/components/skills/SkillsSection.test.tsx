@@ -2,12 +2,12 @@ import React from "react";
 import { shallow } from "enzyme";
 import cloneDeep from "clone-deep";
 import SkillsSection from "./SkillsSection";
-import { RAW_SKILLS } from "./rawSkillsData";
+import { MOCK_SKILLS } from "./mockSkills";
 
 import { Skill, nameSkillComparator, repoCountComparator } from "./skillsUtils";
 
-const SKILLS_BY_NAME = cloneDeep(RAW_SKILLS).sort(nameSkillComparator);
-const SKILLS_BY_COUNT = cloneDeep(RAW_SKILLS).sort(repoCountComparator);
+const SKILLS_BY_NAME = cloneDeep(MOCK_SKILLS).sort(nameSkillComparator);
+const SKILLS_BY_COUNT = cloneDeep(MOCK_SKILLS).sort(repoCountComparator);
 
 function getFakeEventWithValue(
   valueText: string
@@ -28,7 +28,7 @@ describe("`SkillsSection`", () => {
     it("should display a `SkillCard` for every skill", () => {
       const wrapper = shallow(<SkillsSection />);
 
-      expect(wrapper.find("SkillCard")).toHaveLength(RAW_SKILLS.length);
+      expect(wrapper.find("SkillCard")).toHaveLength(MOCK_SKILLS.length);
     });
 
     it("should initially sort skills by name", () => {
@@ -36,7 +36,7 @@ describe("`SkillsSection`", () => {
 
       const skills: Skill[] = wrapper.state("skills");
 
-      expect(skills).toEqual(RAW_SKILLS.sort(nameSkillComparator));
+      expect(skills).toEqual(MOCK_SKILLS.sort(nameSkillComparator));
     });
   });
 

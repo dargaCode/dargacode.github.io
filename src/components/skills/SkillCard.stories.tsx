@@ -1,6 +1,6 @@
 import React from "react";
 import SkillCard from "./SkillCard";
-import { RAW_SKILLS } from "./rawSkillsData";
+import { MOCK_SKILLS } from "./mockSkills";
 
 export default {
   title: "Skills/SkillCard",
@@ -8,5 +8,5 @@ export default {
 };
 
 export const Basic = (): JSX.Element => {
-  return <SkillCard skill={RAW_SKILLS[0]} />;
+  return <SkillCard skill={MOCK_SKILLS[0]} />;
 };

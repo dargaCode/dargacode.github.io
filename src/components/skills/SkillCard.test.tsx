@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import cloneDeep from "clone-deep";
 import { classSelector } from "../../utils/jestUtils";
 import SkillCard from "./SkillCard";
-import { RAW_SKILLS } from "./rawSkillsData";
+import { MOCK_SKILLS } from "./mockSkills";
 import { Skill, SKILL_URL_PREFIX } from "./skillsUtils";
 // eslint-disable-next-line css-modules/no-unused-class
 import styles from "./SkillCard.module.scss";
@@ -12,7 +12,7 @@ let skill: Skill;
 
 describe("SkillCard", () => {
   beforeEach(() => {
-    skill = cloneDeep(RAW_SKILLS[0]);
+    skill = cloneDeep(MOCK_SKILLS[0]);
   });
 
   describe("props", () => {
