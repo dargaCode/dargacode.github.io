@@ -6,28 +6,28 @@ const REPOS: Repo[] = [
     name: "",
     // eslint-disable-next-line @typescript-eslint/camelcase
     pushed_at: "2016-08-26T21:40:06Z",
-    topics: ["a", "b", "c"]
+    topics: ["react", "javascript", "jest"]
   },
   {
     name: "",
     // eslint-disable-next-line @typescript-eslint/camelcase
     pushed_at: "2020-08-26T21:40:06Z",
-    topics: ["b", "d", "f"]
+    topics: ["javascript", "storybook", "mongodb"]
   },
   {
     name: "",
     // eslint-disable-next-line @typescript-eslint/camelcase
     pushed_at: "2018-08-26T21:40:06Z",
-    topics: ["a", "b", "f"]
+    topics: ["react", "javascript", "mongodb"]
   }
 ];
 
 const TOPIC_STATS: TopicStats = {
-  a: { count: 2, updateTime: moment("2018-08-26T21:40:06Z") },
-  b: { count: 3, updateTime: moment("2020-08-26T21:40:06Z") },
-  c: { count: 1, updateTime: moment("2016-08-26T21:40:06Z") },
-  d: { count: 1, updateTime: moment("2020-08-26T21:40:06Z") },
-  f: { count: 2, updateTime: moment("2020-08-26T21:40:06Z") }
+  react: { count: 2, updateTime: moment("2018-08-26T21:40:06Z") },
+  javascript: { count: 3, updateTime: moment("2020-08-26T21:40:06Z") },
+  jest: { count: 1, updateTime: moment("2016-08-26T21:40:06Z") },
+  storybook: { count: 1, updateTime: moment("2020-08-26T21:40:06Z") },
+  mongodb: { count: 2, updateTime: moment("2020-08-26T21:40:06Z") }
 };
 
 describe("`repoUtils`", () => {
@@ -42,22 +42,26 @@ describe("`repoUtils`", () => {
     it("should count single-use topics", () => {
       const topicStats = aggregateRepoTopicStats(REPOS);
 
-      expect(topicStats.c.count).toBe(TOPIC_STATS.c.count);
+      expect(topicStats.jest.count).toBe(TOPIC_STATS.jest.count);
     });
     it("should count multi-use topics", () => {
       const topicStats = aggregateRepoTopicStats(REPOS);
 
-      expect(topicStats.a.count).toBe(TOPIC_STATS.a.count);
+      expect(topicStats.react.count).toBe(TOPIC_STATS.react.count);
     });
     it("should track most recent update for single-use topics", () => {
       const topicStats = aggregateRepoTopicStats(REPOS);
 
-      expect(topicStats.d.updateTime).toStrictEqual(TOPIC_STATS.d.updateTime);
+      expect(topicStats.storybook.updateTime).toStrictEqual(
+        TOPIC_STATS.storybook.updateTime
+      );
     });
     it("should track most recent update for multi-use topics", () => {
       const topicStats = aggregateRepoTopicStats(REPOS);
 
-      expect(topicStats.c.updateTime).toStrictEqual(TOPIC_STATS.c.updateTime);
+      expect(topicStats.jest.updateTime).toStrictEqual(
+        TOPIC_STATS.jest.updateTime
+      );
     });
   });
 });
