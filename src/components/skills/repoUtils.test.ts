@@ -1,5 +1,5 @@
 import { aggregateRepoTopicStats } from "./repoUtils";
-import { MOCK_REPOS, MOCK_REPO_TOPIC_STATS } from "./repoMocks";
+import { MOCK_REPOS, MOCK_REPO_TOPIC_STATS } from "./mockRepos";
 
 describe("`repoUtils`", () => {
   describe("`aggregateRepoTopicStats`", () => {

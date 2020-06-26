@@ -2,8 +2,8 @@ module.exports = {
   testMatch: ["**/?(*.)+(test.(ts|tsx))"],
   setupFilesAfterEnv: ["<rootDir>/.jest/setupTests.ts"],
   moduleNameMapper: {
-    "\\.(jpg|png|svg)$": "<rootDir>/.jest/__mocks__/imageMock.js",
-    "\\.(ttf|woff|woff2)$": "<rootDir>/.jest/__mocks__/fileMock.js",
+    "\\.(jpg|png|svg)$": "<rootDir>/.jest/__mocks__/mockImage.js",
+    "\\.(ttf|woff|woff2)$": "<rootDir>/.jest/__mocks__/mockFile.js",
     "^.+\\.(css|scss)$": "identity-obj-proxy"
   },
   transform: {
