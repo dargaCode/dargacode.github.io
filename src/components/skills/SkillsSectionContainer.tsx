@@ -1,11 +1,11 @@
 import React from "react";
 import moment from "moment";
-import { TopicStats, aggregateRepoTopicStats } from "./repoUtils";
+import { RepoTopicStats, aggregateRepoTopicStats } from "./repoUtils";
 
 interface State {
   loading: boolean;
   error: Error | null;
-  topicStats: TopicStats | {};
+  topicStats: RepoTopicStats | {};
 }
 
 export default class SkillsSectionContainer extends React.Component<{}, State> {

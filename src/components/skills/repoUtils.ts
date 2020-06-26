@@ -6,12 +6,12 @@ export interface Repo {
   topics: string[];
 }
 
-export interface TopicStats {
+export interface RepoTopicStats {
   [key: string]: { count: number; updateTime: moment.Moment };
 }
 
-export function aggregateRepoTopicStats(repos: Repo[]): TopicStats {
-  const topicStats: TopicStats = {};
+export function aggregateRepoTopicStats(repos: Repo[]): RepoTopicStats {
+  const topicStats: RepoTopicStats = {};
 
   repos.forEach(repo => {
     // eslint-disable-next-line @typescript-eslint/camelcase

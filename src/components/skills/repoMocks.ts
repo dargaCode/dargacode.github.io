@@ -1,5 +1,5 @@
 import moment from "moment";
-import { Repo, TopicStats } from "./repoUtils";
+import { Repo, RepoTopicStats } from "./repoUtils";
 
 export const MOCK_REPOS: Repo[] = [
   {
@@ -22,7 +22,7 @@ export const MOCK_REPOS: Repo[] = [
   }
 ];
 
-export const MOCK_TOPIC_STATS: TopicStats = {
+export const MOCK_REPO_TOPIC_STATS: RepoTopicStats = {
   react: { count: 2, updateTime: moment("2018-08-26T21:40:06Z") },
   javascript: { count: 3, updateTime: moment("2020-08-26T21:40:06Z") },
   jest: { count: 1, updateTime: moment("2016-08-26T21:40:06Z") },
