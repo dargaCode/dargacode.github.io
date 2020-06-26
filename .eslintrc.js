@@ -27,6 +27,7 @@ module.exports = {
     "css-modules/no-unused-class": [2, { camelCase: true }],
     "css-modules/no-undef-class": [2, { camelCase: true }],
     "prettier/prettier": "off", // don't complain about style, just silently fix it
+    "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": [
       "error",
       {
