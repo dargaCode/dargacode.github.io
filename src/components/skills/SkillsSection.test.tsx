@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import cloneDeep from "clone-deep";
 import SkillsSection from "./SkillsSection";
-import { RAW_SKILLS } from "./skillsData";
+import { RAW_SKILLS } from "./rawSkillsData";
 
 import { Skill, nameSkillComparator, repoCountComparator } from "./skillsUtils";
 

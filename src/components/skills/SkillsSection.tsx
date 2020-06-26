@@ -2,7 +2,7 @@ import React from "react";
 import cloneDeep from "clone-deep";
 import SkillCard from "./SkillCard";
 import SkillSortSelector from "./SkillSortSelector";
-import { RAW_SKILLS } from "./skillsData";
+import { RAW_SKILLS } from "./rawSkillsData";
 import "../../config/_general.scss";
 import styles from "./SkillsSection.module.scss";
 import { Skill, COMPARATORS, nameSkillComparator } from "./skillsUtils";

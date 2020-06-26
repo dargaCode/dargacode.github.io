@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import cloneDeep from "clone-deep";
 import { classSelector } from "../../utils/jestUtils";
 import SkillCard from "./SkillCard";
-import { RAW_SKILLS } from "./skillsData";
+import { RAW_SKILLS } from "./rawSkillsData";
 import { Skill, SKILL_URL_PREFIX } from "./skillsUtils";
 // eslint-disable-next-line css-modules/no-unused-class
 import styles from "./SkillCard.module.scss";
