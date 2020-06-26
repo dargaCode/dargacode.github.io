@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import { shallow } from "enzyme";
 import cloneDeep from "clone-deep";
@@ -18,21 +19,25 @@ function getFakeEventWithValue(
 }
 
 describe("`SkillsSection`", () => {
+  const props = {
+    skills: cloneDeep(MOCK_SKILLS)
+  };
+
   describe("render", () => {
     it("should display a `SkillSortSelector`", () => {
-      const wrapper = shallow(<SkillsSection />);
+      const wrapper = shallow(<SkillsSection {...props} />);
 
       expect(wrapper.find("SkillSortSelector")).toHaveLength(1);
     });
 
     it("should display a `SkillCard` for every skill", () => {
-      const wrapper = shallow(<SkillsSection />);
+      const wrapper = shallow(<SkillsSection {...props} />);
 
       expect(wrapper.find("SkillCard")).toHaveLength(MOCK_SKILLS.length);
     });
 
     it("should initially sort skills by name", () => {
-      const wrapper = shallow(<SkillsSection />);
+      const wrapper = shallow(<SkillsSection {...props} />);
 
       const skills: Skill[] = wrapper.state("skills");
 
@@ -42,7 +47,7 @@ describe("`SkillsSection`", () => {
 
   describe("events", () => {
     it("can sort skills by repo count", () => {
-      const wrapper = shallow<SkillsSection>(<SkillsSection />);
+      const wrapper = shallow<SkillsSection>(<SkillsSection {...props} />);
 
       wrapper.instance().handleSort(getFakeEventWithValue("Repo Count"));
 
@@ -50,7 +55,7 @@ describe("`SkillsSection`", () => {
     });
 
     it("can sort skills by name", () => {
-      const wrapper = shallow<SkillsSection>(<SkillsSection />);
+      const wrapper = shallow<SkillsSection>(<SkillsSection {...props} />);
 
       // Sort away from default Skill Name sort, to sort back again
       wrapper.instance().handleSort(getFakeEventWithValue("Repo Count"));

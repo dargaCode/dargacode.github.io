@@ -1,6 +1,8 @@
 import React from "react";
 import moment from "moment";
 import { RepoTopicStats, aggregateRepoTopicStats } from "./repoUtils";
+import SkillsSection from "./SkillsSection";
+import { MOCK_SKILLS } from "./mockSkills";
 
 interface State {
   loading: boolean;
@@ -62,18 +64,6 @@ export default class SkillsSectionContainer extends React.Component<{}, State> {
     });
     topics.sort((a, b) => b.updateTime.diff(a.updateTime));
 
-    return (
-      <ul>
-        {topics.map(topic => (
-          <li key={topic.name}>
-            <b>{topic.name}:</b>
-            <ul>
-              <li>{topic.count} repos</li>
-              <li>Last used {topic.updateTime.format("YYYY-MM-DD")}</li>
-            </ul>
-          </li>
-        ))}
-      </ul>
-    );
+    return <SkillsSection skills={MOCK_SKILLS} />;
   }
 }

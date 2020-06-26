@@ -1,22 +1,38 @@
 import React from "react";
+import PropTypes from "prop-types";
 import cloneDeep from "clone-deep";
 import SkillCard from "./SkillCard";
 import SkillSortSelector from "./SkillSortSelector";
-import { RAW_SKILLS } from "./rawSkillsData";
 import "../../config/_general.scss";
 import styles from "./SkillsSection.module.scss";
+
 import { Skill, COMPARATORS, nameSkillComparator } from "./skillsUtils";
+
+interface Props {
+  skills: Skill[];
+}
 
 interface State {
   skills: Skill[];
 }
 
-export default class SkillsSection extends React.Component<{}, State> {
-  constructor(props: {}) {
+export default class SkillsSection extends React.Component<Props, State> {
+  static propTypes = {
+    skills: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        displayName: PropTypes.string.isRequired,
+        iconClass: PropTypes.string.isRequired,
+        repoCount: PropTypes.number.isRequired
+      })
+    ).isRequired
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.state = {
-      skills: cloneDeep(RAW_SKILLS).sort(nameSkillComparator)
+      skills: cloneDeep(props.skills).sort(nameSkillComparator)
     };
   }
 
