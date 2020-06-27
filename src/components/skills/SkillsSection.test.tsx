@@ -57,7 +57,7 @@ describe("`SkillsSection`", () => {
     it("can sort skills by name", () => {
       const wrapper = shallow<SkillsSection>(<SkillsSection {...props} />);
 
-      // Sort away from default Skill Name sort, to sort back again
+      // sort away from default Skill Name sort, to sort back again
       wrapper.instance().handleSort(getFakeEventWithValue("Repo Count"));
       wrapper.instance().handleSort(getFakeEventWithValue("Skill Name"));
 
