@@ -51,7 +51,7 @@ module.exports = {
     "react/forbid-prop-types": [2],
     "react/require-default-props": [2, { forbidDefaultForRequired: true }],
     "react/default-props-match-prop-types": [2],
-    "capitalized-comments": [2, "always", { ignoreConsecutiveComments: true }],
+    "capitalized-comments": [1, "never", { ignorePattern: "TODO" }],
     "spellcheck/spell-checker": [
       2,
       {
