@@ -10,7 +10,7 @@ import "./fonts/custom-icons.scss";
 import "../vendor/font-awesome.min.scss";
 import NavigationBar from "./components/navigation/NavigationBar";
 import AboutSection from "./components/about/AboutSection";
-import SkillsSection from "./components/skills/SkillsSection";
+import SkillsSectionContainer from "./components/skills/SkillsSectionContainer";
 import ProjectsSection from "./components/projects/ProjectsSection";
 import ResumeSection from "./components/resume/ResumeSection";
 import ContactSection from "./components/contact/ContactSection";
@@ -31,7 +31,7 @@ function App(): JSX.Element {
 
         <Switch>
           <Route path="/about" component={AboutSection} />
-          <Route path="/skills" component={SkillsSection} />
+          <Route path="/skills" component={SkillsSectionContainer} />
           <Route path="/projects" component={ProjectsSection} />
           <Route path="/resume" component={ResumeSection} />
           <Route path="/contact" component={ContactSection} />
