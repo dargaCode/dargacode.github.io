@@ -10,28 +10,32 @@ describe("`repoUtils`", () => {
         Object.keys(MOCK_REPO_TOPIC_STATS)
       );
     });
-    it("should count single-use topics", () => {
+    it("should count repos for single-use topics", () => {
       const topicStats = aggregateRepoTopicStats(MOCK_REPOS);
 
-      expect(topicStats.jest.count).toBe(MOCK_REPO_TOPIC_STATS.jest.count);
+      expect(topicStats.jest.repoCount).toBe(
+        MOCK_REPO_TOPIC_STATS.jest.repoCount
+      );
     });
-    it("should count multi-use topics", () => {
+    it("should count repos for multi-use topics", () => {
       const topicStats = aggregateRepoTopicStats(MOCK_REPOS);
 
-      expect(topicStats.react.count).toBe(MOCK_REPO_TOPIC_STATS.react.count);
+      expect(topicStats.react.repoCount).toBe(
+        MOCK_REPO_TOPIC_STATS.react.repoCount
+      );
     });
     it("should track most recent update for single-use topics", () => {
       const topicStats = aggregateRepoTopicStats(MOCK_REPOS);
 
-      expect(topicStats.storybook.updateTime).toStrictEqual(
-        MOCK_REPO_TOPIC_STATS.storybook.updateTime
+      expect(topicStats.storybook.recentRepoUpdateTime).toStrictEqual(
+        MOCK_REPO_TOPIC_STATS.storybook.recentRepoUpdateTime
       );
     });
     it("should track most recent update for multi-use topics", () => {
       const topicStats = aggregateRepoTopicStats(MOCK_REPOS);
 
-      expect(topicStats.jest.updateTime).toStrictEqual(
-        MOCK_REPO_TOPIC_STATS.jest.updateTime
+      expect(topicStats.jest.recentRepoUpdateTime).toStrictEqual(
+        MOCK_REPO_TOPIC_STATS.jest.recentRepoUpdateTime
       );
     });
   });

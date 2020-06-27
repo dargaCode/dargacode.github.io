@@ -55,14 +55,18 @@ export default class SkillsSectionContainer extends React.Component<{}, State> {
 
     const topics: {
       name: string;
-      count: number;
-      updateTime: moment.Moment;
+      repoCount: number;
+      recentRepoUpdateTime: moment.Moment;
     }[] = [];
 
     Object.entries(topicStats).forEach(([name, stats]) => {
-      topics.push({ name, count: stats.count, updateTime: stats.updateTime });
+      topics.push({
+        name,
+        repoCount: stats.repoCount,
+        recentRepoUpdateTime: stats.recentRepoUpdateTime
+      });
     });
-    topics.sort((a, b) => b.updateTime.diff(a.updateTime));
+    topics.sort((a, b) => b.recentRepoUpdateTime.diff(a.recentRepoUpdateTime));
 
     return <SkillsSection skills={MOCK_SKILLS} />;
   }
