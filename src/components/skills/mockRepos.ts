@@ -23,18 +23,18 @@ export const MOCK_REPOS: Repo[] = [
 ];
 
 export const MOCK_REPO_TOPIC_STATS: RepoTopicStats = {
-  react: { repoCount: 2, recentRepoUpdateTime: moment("2018-08-26T21:40:06Z") },
+  react: { repoCount: 2, lastCommitTime: moment("2018-08-26T21:40:06Z") },
   javascript: {
     repoCount: 3,
-    recentRepoUpdateTime: moment("2020-08-26T21:40:06Z")
+    lastCommitTime: moment("2020-08-26T21:40:06Z")
   },
-  jest: { repoCount: 1, recentRepoUpdateTime: moment("2016-08-26T21:40:06Z") },
+  jest: { repoCount: 1, lastCommitTime: moment("2016-08-26T21:40:06Z") },
   storybook: {
     repoCount: 1,
-    recentRepoUpdateTime: moment("2020-08-26T21:40:06Z")
+    lastCommitTime: moment("2020-08-26T21:40:06Z")
   },
   mongodb: {
     repoCount: 2,
-    recentRepoUpdateTime: moment("2020-08-26T21:40:06Z")
+    lastCommitTime: moment("2020-08-26T21:40:06Z")
   }
 };

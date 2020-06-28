@@ -27,15 +27,15 @@ describe("`repoUtils`", () => {
     it("should track most recent update for single-use topics", () => {
       const topicStats = aggregateRepoTopicStats(MOCK_REPOS);
 
-      expect(topicStats.storybook.recentRepoUpdateTime).toStrictEqual(
-        MOCK_REPO_TOPIC_STATS.storybook.recentRepoUpdateTime
+      expect(topicStats.storybook.lastCommitTime).toStrictEqual(
+        MOCK_REPO_TOPIC_STATS.storybook.lastCommitTime
       );
     });
     it("should track most recent update for multi-use topics", () => {
       const topicStats = aggregateRepoTopicStats(MOCK_REPOS);
 
-      expect(topicStats.jest.recentRepoUpdateTime).toStrictEqual(
-        MOCK_REPO_TOPIC_STATS.jest.recentRepoUpdateTime
+      expect(topicStats.jest.lastCommitTime).toStrictEqual(
+        MOCK_REPO_TOPIC_STATS.jest.lastCommitTime
       );
     });
   });

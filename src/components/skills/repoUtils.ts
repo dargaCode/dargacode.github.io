@@ -7,7 +7,7 @@ export interface Repo {
 }
 
 export interface RepoTopicStats {
-  [key: string]: { repoCount: number; recentRepoUpdateTime: moment.Moment };
+  [key: string]: { repoCount: number; lastCommitTime: moment.Moment };
 }
 
 export function aggregateRepoTopicStats(repos: Repo[]): RepoTopicStats {
@@ -16,20 +16,18 @@ export function aggregateRepoTopicStats(repos: Repo[]): RepoTopicStats {
   repos.forEach(repo => {
     // eslint-disable-next-line @typescript-eslint/camelcase
     const { pushed_at, topics } = repo;
-    const recentRepoUpdateTime = moment(pushed_at);
+    const lastCommitTime = moment(pushed_at);
 
     topics.forEach(topic => {
       if (!topicStats[topic]) {
         topicStats[topic] = {
           repoCount: 1,
-          recentRepoUpdateTime
+          lastCommitTime
         };
       } else {
         topicStats[topic].repoCount += 1;
-        if (
-          recentRepoUpdateTime.isAfter(topicStats[topic].recentRepoUpdateTime)
-        ) {
-          topicStats[topic].recentRepoUpdateTime = recentRepoUpdateTime;
+        if (lastCommitTime.isAfter(topicStats[topic].lastCommitTime)) {
+          topicStats[topic].lastCommitTime = lastCommitTime;
         }
       }
     });
