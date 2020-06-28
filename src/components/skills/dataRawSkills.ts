@@ -37,11 +37,6 @@ export const RAW_SKILLS: RawSkill[] = [
     iconClass: "devicon-jest-plain"
   },
   {
-    name: "mongodb",
-    displayName: "MongoDB",
-    iconClass: "devicon-mongodb-plain"
-  },
-  {
     name: "nodejs",
     displayName: "Node.js",
     iconClass: "devicon-nodejs-plain"
@@ -60,5 +55,10 @@ export const RAW_SKILLS: RawSkill[] = [
     name: "storybook",
     displayName: "Storybook",
     iconClass: "devicon-storybook-plain"
+  },
+  {
+    name: "typescript",
+    displayName: "TypeScript",
+    iconClass: "devicon-typescript-plain"
   }
 ];
