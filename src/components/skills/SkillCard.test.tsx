@@ -43,6 +43,17 @@ describe("SkillCard", () => {
       });
     });
 
+    describe("`skill.lastCommitTime`", () => {
+      it("should render the time since `lastCommitTime`", () => {
+        const wrapper = shallow(<SkillCard skill={skill} />);
+        const lastCommitTimeText = wrapper
+          .find(classSelector(styles.timeSinceCommit))
+          .text();
+
+        expect(lastCommitTimeText).toEqual(skill.lastCommitTime.fromNow());
+      });
+    });
+
     describe("`skill.repoCount`", () => {
       describe("when `repoCount` is 1", () => {
         it("should render `n Repo` (singular)", () => {
