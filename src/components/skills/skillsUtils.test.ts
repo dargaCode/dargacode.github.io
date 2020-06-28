@@ -1,4 +1,5 @@
 import cloneDeep from "clone-deep";
+import moment from "moment";
 import { Skill, nameSkillComparator, repoCountComparator } from "./skillsUtils";
 
 describe("`skillsUtils`", () => {
@@ -10,7 +11,8 @@ describe("`skillsUtils`", () => {
       name: "",
       displayName: "",
       iconClass: "",
-      repoCount: 0
+      repoCount: 0,
+      lastCommitTime: moment()
     };
 
     beforeEach(() => {
