@@ -1,8 +1,8 @@
 import React from "react";
-import { aggregateRepoTopicStats } from "./repoUtils";
-import SkillsSection from "./SkillsSection";
-import { RAW_SKILLS } from "./dataRawSkills";
+import { Repo, aggregateRepoTopicStats, getTimeSinceCommit } from "./repoUtils";
 import { Skill } from "./skillsUtils";
+import { RAW_SKILLS } from "./dataRawSkills";
+import SkillsSection from "./SkillsSection";
 
 interface State {
   loading: boolean;
@@ -12,6 +12,18 @@ interface State {
 
 const GITHUB_REPOS_API_URL =
   "https://api.github.com/users/dargacode/repos?per_page=100";
+
+function processSkills(repos: Repo[]): Skill[] {
+  const topicStats = aggregateRepoTopicStats(repos);
+
+  return RAW_SKILLS.map(skill => {
+    const topic = topicStats[skill.name];
+
+    return Object.assign(skill, topic, {
+      timeSinceCommit: getTimeSinceCommit(topic.lastCommitTime)
+    });
+  });
+}
 
 export default class SkillsSectionContainer extends React.Component<{}, State> {
   constructor(props: {}) {
@@ -31,16 +43,10 @@ export default class SkillsSectionContainer extends React.Component<{}, State> {
     })
       .then(response => response.json())
       .then(
-        result => {
-          // merge the raw skills with the api topic data
-          const topicStats = aggregateRepoTopicStats(result);
-          const skills: Skill[] = RAW_SKILLS.map(skill => {
-            return Object.assign(skill, topicStats[skill.name]);
-          });
-
+        apiRepos => {
           this.setState({
             loading: false,
-            skills
+            skills: processSkills(apiRepos)
           });
         },
         error => {

@@ -12,7 +12,8 @@ describe("`skillsUtils`", () => {
       displayName: "",
       iconClass: "",
       repoCount: 0,
-      lastCommitTime: moment()
+      lastCommitTime: moment(),
+      timeSinceCommit: ""
     };
 
     beforeEach(() => {

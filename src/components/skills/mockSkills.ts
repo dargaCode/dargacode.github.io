@@ -1,6 +1,8 @@
 import moment from "moment";
 import { Skill } from "./skillsUtils";
+import { getTimeSinceCommit } from "./repoUtils";
 
+// `timeSinceCommit` key added below in map, to keep current as date changes
 export const MOCK_SKILLS: Skill[] = [
   {
     name: "javascript",
@@ -38,4 +40,8 @@ export const MOCK_SKILLS: Skill[] = [
     repoCount: 1,
     lastCommitTime: moment("2020-08-26T21:40:06Z")
   }
-];
+].map(incompleteSkill => {
+  return Object.assign(incompleteSkill, {
+    timeSinceCommit: getTimeSinceCommit(incompleteSkill.lastCommitTime)
+  });
+});

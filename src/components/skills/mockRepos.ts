@@ -1,5 +1,5 @@
 import moment from "moment";
-import { Repo, RepoTopicStats } from "./repoUtils";
+import { Repo, AggregatedTopicStats } from "./repoUtils";
 
 export const MOCK_REPOS: Repo[] = [
   {
@@ -22,7 +22,7 @@ export const MOCK_REPOS: Repo[] = [
   }
 ];
 
-export const MOCK_REPO_TOPIC_STATS: RepoTopicStats = {
+export const MOCK_REPO_TOPIC_STATS: AggregatedTopicStats = {
   react: { repoCount: 2, lastCommitTime: moment("2018-08-26T21:40:06Z") },
   javascript: {
     repoCount: 3,

@@ -15,6 +15,7 @@ export interface RawSkill {
 export interface Skill extends RawSkill {
   repoCount: number;
   lastCommitTime: moment.Moment;
+  timeSinceCommit: string;
 }
 
 export function repoCountComparator(a: Skill, b: Skill): number {
