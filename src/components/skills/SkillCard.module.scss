@@ -19,16 +19,12 @@
     font-size: 60px;
     margin-bottom: 5px;
   }
+}
 
-  p {
-    margin: 0;
-  }
-
-  .time-since-commit {
-    color: config.$skill-card-time-since-commit-text-color;
-    font-size: 15px;
-    margin-bottom: 5px;
-  }
+.time-since-commit {
+  color: config.$skill-card-time-since-commit-text-color;
+  font-size: 15px;
+  margin: 0 0 5px;
 }
 
 .name {
@@ -38,6 +34,7 @@
 
 .repo-count {
   font-size: 14px;
+  margin: 0;
 }
 
 .card:hover .time-since-commit,
