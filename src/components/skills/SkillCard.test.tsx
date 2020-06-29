@@ -2,6 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import cloneDeep from "clone-deep";
 import { classSelector } from "../../utils/jestUtils";
+import { getTimeSinceCommit } from "./repoUtils";
 import SkillCard from "./SkillCard";
 import { MOCK_SKILLS } from "./mockSkills";
 import { Skill, SKILL_URL_PREFIX } from "./skillsUtils";
@@ -17,7 +18,7 @@ describe("SkillCard", () => {
 
   describe("props", () => {
     describe("`skill.url`", () => {
-      it("should link to the skill url", () => {
+      it("should link to the skill's `url`", () => {
         const wrapper = shallow(<SkillCard skill={skill} />);
         const url = wrapper.find("a").props().href;
 
@@ -25,8 +26,19 @@ describe("SkillCard", () => {
       });
     });
 
+    describe("`skill.timeSinceCommit`", () => {
+      it("should render the skill's `timeSinceCommit`", () => {
+        const wrapper = shallow(<SkillCard skill={skill} />);
+        const nameText = wrapper
+          .find(classSelector(styles.timeSinceCommit))
+          .text();
+
+        expect(nameText).toEqual(getTimeSinceCommit(skill.lastCommitTime));
+      });
+    });
+
     describe("`skill.name`", () => {
-      it("should render the skill name", () => {
+      it("should render the skill's `name`", () => {
         const wrapper = shallow(<SkillCard skill={skill} />);
         const nameText = wrapper.find(classSelector(styles.name)).text();
 
@@ -35,22 +47,11 @@ describe("SkillCard", () => {
     });
 
     describe("`skill.iconClass`", () => {
-      it("should render the skill iconClass", () => {
+      it("should render the skill's `iconClass`", () => {
         const wrapper = shallow(<SkillCard skill={skill} />);
         const { className } = wrapper.find("i").props();
 
         expect(className).toBe(skill.iconClass);
-      });
-    });
-
-    describe("`skill.lastCommitTime`", () => {
-      it("should render the time since `lastCommitTime`", () => {
-        const wrapper = shallow(<SkillCard skill={skill} />);
-        const lastCommitTimeText = wrapper
-          .find(classSelector(styles.timeSinceCommit))
-          .text();
-
-        expect(lastCommitTimeText).toEqual(skill.lastCommitTime.fromNow());
       });
     });
 
