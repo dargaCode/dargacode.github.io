@@ -1,5 +1,15 @@
 import moment from "moment";
 
+// shorter and/or more uniform strings
+const FROM_NOW_REPLACEMENTS: { [key: string]: string } = {
+  "a few seconds ago": "1 minute ago",
+  "a minute ago": "1 minute ago",
+  "an hour ago": "1 hour ago",
+  "a day ago": "1 day ago",
+  "a month ago": "1 month ago",
+  "a year ago": "1 year ago"
+};
+
 export interface Repo {
   name: string;
   pushed_at: string;
@@ -44,8 +54,5 @@ export function aggregateRepoTopicStats(repos: Repo[]): AggregatedTopicStats {
 export function getTimeSinceCommit(lastCommitTime: moment.Moment): string {
   const timeSinceCommit = lastCommitTime.fromNow();
 
-  // the default result is longer and doesn't fit as well as the other values
-  return timeSinceCommit === "a few seconds ago"
-    ? "seconds ago"
-    : timeSinceCommit;
+  return FROM_NOW_REPLACEMENTS[timeSinceCommit] || timeSinceCommit;
 }

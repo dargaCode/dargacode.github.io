@@ -16,10 +16,10 @@ const GITHUB_REPOS_API_URL =
 function processSkills(repos: Repo[]): Skill[] {
   const topicStats = aggregateRepoTopicStats(repos);
 
-  return RAW_SKILLS.map(skill => {
-    const topic = topicStats[skill.name];
+  return RAW_SKILLS.map(rawSkill => {
+    const topic = topicStats[rawSkill.name];
 
-    return Object.assign(skill, topic, {
+    return Object.assign(rawSkill, topic, {
       timeSinceCommit: getTimeSinceCommit(topic.lastCommitTime)
     });
   });
