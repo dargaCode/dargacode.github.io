@@ -4,6 +4,9 @@ import "../../config/_general.scss";
 import styles from "./SkillCard.module.scss";
 import { Skill, SKILL_URL_PREFIX } from "./skillsUtils";
 
+// eslint-disable-next-line spellcheck/spell-checker,@typescript-eslint/no-var-requires
+const ReactMomentPropTypes = require("react-moment-proptypes");
+
 export default function SkillCard(props: { skill: Skill }): JSX.Element {
   const { skill } = props;
   const { name, displayName, iconClass, repoCount, timeSinceCommit } = skill;
