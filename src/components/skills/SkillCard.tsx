@@ -1,11 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../../config/_general.scss";
+import reactMomentPropTypes from "react-moment-proptypes";
 import styles from "./SkillCard.module.scss";
 import { Skill, SKILL_URL_PREFIX } from "./skillsUtils";
-
-// eslint-disable-next-line spellcheck/spell-checker,@typescript-eslint/no-var-requires
-const ReactMomentPropTypes = require("react-moment-proptypes");
 
 export default function SkillCard(props: { skill: Skill }): JSX.Element {
   const { skill } = props;
@@ -31,6 +29,7 @@ SkillCard.propTypes = {
     displayName: PropTypes.string.isRequired,
     iconClass: PropTypes.string.isRequired,
     repoCount: PropTypes.number.isRequired,
+    lastCommitTime: reactMomentPropTypes.momentObject,
     timeSinceCommit: PropTypes.string
   }).isRequired
 };
