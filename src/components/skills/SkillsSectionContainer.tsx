@@ -1,8 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Repo, aggregateRepoTopicStats, getTimeSinceCommit } from "./repoUtils";
-import { Skill } from "./skillsUtils";
+import { RawSkill, Skill } from "./skillsUtils";
 import { RAW_SKILLS } from "./dataRawSkills";
 import SkillsSection from "./SkillsSection";
+
+interface Props {
+  rawSkills: RawSkill[];
+}
 
 interface State {
   loading: boolean;
@@ -10,13 +15,13 @@ interface State {
   skills: Skill[];
 }
 
-const GITHUB_REPOS_API_URL =
+export const GITHUB_REPOS_API_URL =
   "https://api.github.com/users/dargacode/repos?per_page=100";
 
-function processSkills(repos: Repo[]): Skill[] {
+function processSkills(rawSkills: RawSkill[], repos: Repo[]): Skill[] {
   const topicStats = aggregateRepoTopicStats(repos);
 
-  return RAW_SKILLS.map(rawSkill => {
+  return rawSkills.map(rawSkill => {
     const topic = topicStats[rawSkill.name];
 
     return Object.assign(rawSkill, topic, {
@@ -25,8 +30,25 @@ function processSkills(repos: Repo[]): Skill[] {
   });
 }
 
-export default class SkillsSectionContainer extends React.Component<{}, State> {
-  constructor(props: {}) {
+export default class SkillsSectionContainer extends React.Component<
+  Props,
+  State
+> {
+  static propTypes = {
+    rawSkills: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        displayName: PropTypes.string.isRequired,
+        iconClass: PropTypes.string.isRequired
+      })
+    )
+  };
+
+  static defaultProps = {
+    rawSkills: RAW_SKILLS
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -44,9 +66,11 @@ export default class SkillsSectionContainer extends React.Component<{}, State> {
       .then(response => response.json())
       .then(
         apiRepos => {
+          const { rawSkills } = this.props;
+
           this.setState({
             loading: false,
-            skills: processSkills(apiRepos)
+            skills: processSkills(rawSkills, apiRepos)
           });
         },
         error => {
