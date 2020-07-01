@@ -6,9 +6,4 @@ export default {
   component: SkillsSectionContainer
 };
 
-export const Basic = (): JSX.Element => (
-  // eslint-disable-next-line spellcheck/spell-checker
-  <div style={{ overflow: "auto", maxHeight: "500px" }}>
-    <SkillsSectionContainer />
-  </div>
-);
+export const Basic = (): JSX.Element => <SkillsSectionContainer />;
