@@ -1,6 +1,35 @@
 import moment from "moment";
-import { Skill } from "./skillsUtils";
+import { RawSkill, Skill } from "./skillsUtils";
 import { getTimeSinceCommit } from "./repoUtils";
+
+export const MOCK_RAW_SKILLS: RawSkill[] = [
+  {
+    name: "javascript",
+    displayName: "JavaScript",
+    iconClass: "devicon-javascript-plain"
+  },
+  {
+    name: "jest",
+    displayName: "Jest",
+    iconClass: "devicon-jest-plain"
+  },
+  {
+    name: "mongodb",
+    displayName: "MongoDB",
+    iconClass: "devicon-mongodb-plain"
+  },
+
+  {
+    name: "react",
+    displayName: "React.js",
+    iconClass: "devicon-react-plain"
+  },
+  {
+    name: "storybook",
+    displayName: "Storybook",
+    iconClass: "devicon-storybook-plain"
+  }
+];
 
 // `timeSinceCommit` key added below in map, to keep current as date changes
 export const MOCK_SKILLS: Skill[] = [
