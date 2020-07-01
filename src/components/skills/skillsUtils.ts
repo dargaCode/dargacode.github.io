@@ -12,6 +12,7 @@ export interface RawSkill {
   iconClass: string;
 }
 
+// added keys derived from api data (in container)
 export interface Skill extends RawSkill {
   repoCount: number;
   lastCommitTime: moment.Moment;
