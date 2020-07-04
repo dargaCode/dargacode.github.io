@@ -86,13 +86,6 @@ export default class SkillsSectionContainer extends React.Component<
   render(): JSX.Element {
     const { loading, error, skills } = this.state;
 
-    if (loading) {
-      return <div>Loading...</div>;
-    }
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    }
-
-    return <SkillsSection skills={skills} />;
+    return <SkillsSection loading={loading} skills={skills} />;
   }
 }

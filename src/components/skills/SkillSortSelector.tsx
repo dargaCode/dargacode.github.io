@@ -5,6 +5,7 @@ import "../../config/_general.scss";
 import styles from "./SkillSortSelector.module.scss";
 
 interface Props {
+  disabled: boolean;
   onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
@@ -15,7 +16,7 @@ function getOptions(sortOptions: string[]): JSX.Element[] {
 }
 
 export default function SkillSortSelector(props: Props): JSX.Element {
-  const { onChange } = props;
+  const { disabled, onChange } = props;
 
   return (
     <form className={styles.sort}>
@@ -25,6 +26,7 @@ export default function SkillSortSelector(props: Props): JSX.Element {
           id="skill-sort"
           defaultValue={SKILL_SORT_OPTIONS[0]}
           onChange={onChange}
+          disabled={disabled}
         >
           {getOptions(SKILL_SORT_OPTIONS)}
         </select>
@@ -34,5 +36,10 @@ export default function SkillSortSelector(props: Props): JSX.Element {
 }
 
 SkillSortSelector.propTypes = {
+  disabled: PropTypes.bool,
   onChange: PropTypes.func.isRequired
+};
+
+SkillSortSelector.defaultProps = {
+  disabled: false
 };

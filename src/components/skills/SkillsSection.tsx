@@ -5,10 +5,10 @@ import SkillCard from "./SkillCard";
 import SkillSortSelector from "./SkillSortSelector";
 import "../../config/_general.scss";
 import styles from "./SkillsSection.module.scss";
-
 import { Skill, COMPARATORS, nameSkillComparator } from "./skillsUtils";
 
 interface Props {
+  loading: boolean;
   skills: Skill[];
 }
 
@@ -18,6 +18,7 @@ interface State {
 
 export default class SkillsSection extends React.Component<Props, State> {
   static propTypes = {
+    loading: PropTypes.bool,
     skills: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
@@ -26,6 +27,10 @@ export default class SkillsSection extends React.Component<Props, State> {
         repoCount: PropTypes.number.isRequired
       })
     ).isRequired
+  };
+
+  static defaultProps = {
+    loading: false,
   };
 
   constructor(props: Props) {
@@ -45,6 +50,7 @@ export default class SkillsSection extends React.Component<Props, State> {
   };
 
   render(): JSX.Element {
+    const { loading } = this.props;
     const { skills } = this.state;
 
     return (
@@ -53,7 +59,7 @@ export default class SkillsSection extends React.Component<Props, State> {
           <header>
             <h2>Skills</h2>
 
-            <SkillSortSelector onChange={this.handleSort} />
+            <SkillSortSelector disabled={loading} onChange={this.handleSort} />
           </header>
 
           <div className={styles.list}>
