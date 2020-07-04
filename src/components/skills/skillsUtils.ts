@@ -19,6 +19,16 @@ export interface Skill extends RawSkill {
   timeSinceCommit: string;
 }
 
+// used for tests, and when waiting for data to load
+export const EMPTY_SKILL: Skill = {
+  name: "",
+  displayName: "",
+  iconClass: "",
+  repoCount: 0,
+  lastCommitTime: moment(),
+  timeSinceCommit: ""
+};
+
 export function repoCountComparator(a: Skill, b: Skill): number {
   return b.repoCount - a.repoCount;
 }

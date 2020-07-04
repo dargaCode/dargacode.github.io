@@ -1,24 +1,20 @@
 import cloneDeep from "clone-deep";
 import moment from "moment";
-import { Skill, nameSkillComparator, repoCountComparator } from "./skillsUtils";
+import {
+  Skill,
+  EMPTY_SKILL,
+  nameSkillComparator,
+  repoCountComparator
+} from "./skillsUtils";
 
 describe("`skillsUtils`", () => {
   describe("comparators", () => {
     let skillA: Skill;
     let skillB: Skill;
 
-    const emptySkill: Skill = {
-      name: "",
-      displayName: "",
-      iconClass: "",
-      repoCount: 0,
-      lastCommitTime: moment(),
-      timeSinceCommit: ""
-    };
-
     beforeEach(() => {
-      skillA = cloneDeep(emptySkill);
-      skillB = cloneDeep(emptySkill);
+      skillA = cloneDeep(EMPTY_SKILL);
+      skillB = cloneDeep(EMPTY_SKILL);
     });
 
     describe("nameSkillComparator", () => {
