@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Repo, aggregateRepoTopicStats, getTimeSinceCommit } from "./repoUtils";
 import { RawSkill, Skill } from "./skillsUtils";
+import { Error } from "../error/errorUtils";
 import { RAW_SKILLS } from "./dataRawSkills";
 import SkillsSection from "./SkillsSection";
 
@@ -65,7 +66,7 @@ export default class SkillsSectionContainer extends React.Component<
     })
       .then(response => response.json())
       .then(
-        apiRepos => {
+        (apiRepos: Repo[]) => {
           const { rawSkills } = this.props;
 
           this.setState({
@@ -73,7 +74,7 @@ export default class SkillsSectionContainer extends React.Component<
             skills: processSkills(rawSkills, apiRepos)
           });
         },
-        error => {
+        (error: Error) => {
           this.setState({
             loading: false,
             error
