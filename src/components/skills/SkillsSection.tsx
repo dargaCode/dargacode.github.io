@@ -1,11 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import cloneDeep from "clone-deep";
 import SkillCard from "./SkillCard";
 import SkillSortSelector from "./SkillSortSelector";
 import "../../config/_general.scss";
 import styles from "./SkillsSection.module.scss";
-import { Skill, COMPARATORS, nameSkillComparator } from "./skillsUtils";
+import {
+  Skill,
+  SkillSortComparator,
+  COMPARATORS,
+  nameSkillComparator
+} from "./skillsUtils";
+import { Error } from "../error/errorUtils";
 
 interface Props {
   loading: boolean;
@@ -13,7 +18,7 @@ interface Props {
 }
 
 interface State {
-  skills: Skill[];
+  sortComparator: SkillSortComparator;
 }
 
 export default class SkillsSection extends React.Component<Props, State> {
@@ -37,21 +42,30 @@ export default class SkillsSection extends React.Component<Props, State> {
     super(props);
 
     this.state = {
-      skills: cloneDeep(props.skills).sort(nameSkillComparator)
+      sortComparator: nameSkillComparator
     };
   }
 
-  handleSort = (event: React.ChangeEvent<HTMLSelectElement>): void => {
-    const { skills } = this.state;
-    const sortType = event.target.value;
-    const comparator = COMPARATORS.get(sortType);
+  getSkillCards(skills: Skill[]): JSX.Element[] {
+    const { loading } = this.props;
 
-    this.setState({ skills: skills.sort(comparator) });
+    return skills.map(skill => (
+      <SkillCard loading={loading} skill={skill} key={skill.name} />
+    ));
+  }
+
+  handleSort = (event: React.ChangeEvent<HTMLSelectElement>): void => {
+    const sortType = event.target.value;
+    const sortComparator = COMPARATORS.get(sortType) as SkillSortComparator;
+
+    this.setState({ sortComparator });
   };
 
   render(): JSX.Element {
-    const { loading } = this.props;
-    const { skills } = this.state;
+    const { loading, skills } = this.props;
+    const { sortComparator } = this.state;
+
+    const sortedSkills = skills.sort(sortComparator);
 
     return (
       <section className={styles.contentSection}>
@@ -61,12 +75,7 @@ export default class SkillsSection extends React.Component<Props, State> {
 
             <SkillSortSelector disabled={loading} onChange={this.handleSort} />
           </header>
-
-          <div className={styles.list}>
-            {skills.map((skill: Skill) => (
-              <SkillCard skill={skill} key={skill.name} />
-            ))}
-          </div>
+          <div className={styles.list}>{this.getSkillCards(sortedSkills)}</div>
         </div>
       </section>
     );
