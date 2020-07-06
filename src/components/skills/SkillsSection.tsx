@@ -72,7 +72,13 @@ export default class SkillsSection extends React.Component<Props, State> {
             <SkillSortSelector disabled={loading} onChange={this.handleSort} />
           </header>
           <div className={styles.list}>
-            {getSkillCards(sortedSkills)}
+            {loading ? (
+              // TODO add a real loading component
+              // eslint-disable-next-line spellcheck/spell-checker
+              <div style={{ fontSize: "20px", color: "white" }}>Loading...</div>
+            ) : (
+              getSkillCards(sortedSkills)
+            )}
           </div>
         </div>
       </section>
