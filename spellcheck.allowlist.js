@@ -70,6 +70,7 @@ module.exports = [
   "nodejs",
   "noop",
   "num",
+  "ok",
   "param",
   "params",
   "pdf",
