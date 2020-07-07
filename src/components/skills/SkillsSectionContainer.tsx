@@ -12,12 +12,19 @@ interface Props {
 
 interface State {
   loading: boolean;
-  error: Error | null;
+  error: Error | undefined;
   skills: Skill[];
 }
 
-export const GITHUB_REPOS_API_URL =
+const GITHUB_REPOS_API_URL =
   "https://api.github.com/users/dargacode/repos?per_page=100";
+const REQUEST_OPTIONS = {
+  headers: {
+    // enable topics beta from github api
+    // eslint-disable-next-line spellcheck/spell-checker
+    Accept: "application/vnd.github.mercy-preview+json"
+  }
+};
 
 function processSkills(rawSkills: RawSkill[], repos: Repo[]): Skill[] {
   const topicStats = aggregateRepoTopicStats(repos);
@@ -54,38 +61,35 @@ export default class SkillsSectionContainer extends React.Component<
 
     this.state = {
       loading: true,
-      error: null,
+      error: undefined,
       skills: []
     };
   }
 
-  componentDidMount(): void {
-    fetch(GITHUB_REPOS_API_URL, {
-      // eslint-disable-next-line spellcheck/spell-checker
-      headers: { Accept: "application/vnd.github.mercy-preview+json" } // enable topics beta from github api
-    })
-      .then(response => response.json())
-      .then(
-        (apiRepos: Repo[]) => {
-          const { rawSkills } = this.props;
+  async componentDidMount(): Promise<void> {
+    await this.fetchRepos();
+  }
 
-          this.setState({
-            loading: false,
-            skills: processSkills(rawSkills, apiRepos)
-          });
-        },
-        (error: Error) => {
-          this.setState({
-            loading: false,
-            error
-          });
-        }
-      );
+  async fetchRepos(): Promise<void> {
+    const response = await fetch(GITHUB_REPOS_API_URL, REQUEST_OPTIONS);
+
+    if (!response.ok) {
+      this.setState({
+        loading: false,
+        error: { message: `ERROR: ${response.status} ${response.statusText}` }
+      });
+    } else {
+      const { rawSkills } = this.props;
+      const apiRepos = await response.json();
+      const skills = processSkills(rawSkills, apiRepos);
+
+      this.setState({ loading: false, skills });
+    }
   }
 
   render(): JSX.Element {
     const { loading, error, skills } = this.state;
 
-    return <SkillsSection loading={loading} skills={skills} />;
+    return <SkillsSection loading={loading} error={error} skills={skills} />;
   }
 }

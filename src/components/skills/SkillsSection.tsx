@@ -14,6 +14,7 @@ import { Error } from "../error/errorUtils";
 
 interface Props {
   loading: boolean;
+  error: Error;
   skills: Skill[];
 }
 
@@ -28,6 +29,9 @@ function getSkillCards(skills: Skill[]): JSX.Element[] {
 export default class SkillsSection extends React.Component<Props, State> {
   static propTypes = {
     loading: PropTypes.bool,
+    error: PropTypes.shape({
+      message: PropTypes.string
+    }),
     skills: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
@@ -40,6 +44,7 @@ export default class SkillsSection extends React.Component<Props, State> {
 
   static defaultProps = {
     loading: false,
+    error: undefined
   };
 
   constructor(props: Props) {
@@ -50,6 +55,29 @@ export default class SkillsSection extends React.Component<Props, State> {
     };
   }
 
+  getContent = (): JSX.Element | JSX.Element[] => {
+    const { loading, error, skills } = this.props;
+    const { sortComparator } = this.state;
+
+    if (loading) {
+      // TODO add a real loading component
+      // eslint-disable-next-line spellcheck/spell-checker
+      return <div style={{ fontSize: "20px", color: "white" }}>Loading...</div>;
+    }
+
+    if (error) {
+      return (
+        // TODO add a real error component
+        // eslint-disable-next-line spellcheck/spell-checker
+        <div style={{ fontSize: "20px", color: "red" }}>{error.message}</div>
+      );
+    }
+
+    const sortedSkills = skills.sort(sortComparator);
+
+    return getSkillCards(sortedSkills);
+  };
+
   handleSort = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     const sortType = event.target.value;
     const sortComparator = COMPARATORS.get(sortType) as SkillSortComparator;
@@ -58,10 +86,7 @@ export default class SkillsSection extends React.Component<Props, State> {
   };
 
   render(): JSX.Element {
-    const { loading, skills } = this.props;
-    const { sortComparator } = this.state;
-
-    const sortedSkills = skills.sort(sortComparator);
+    const { loading } = this.props;
 
     return (
       <section className={styles.contentSection}>
@@ -71,15 +96,7 @@ export default class SkillsSection extends React.Component<Props, State> {
 
             <SkillSortSelector disabled={loading} onChange={this.handleSort} />
           </header>
-          <div className={styles.list}>
-            {loading ? (
-              // TODO add a real loading component
-              // eslint-disable-next-line spellcheck/spell-checker
-              <div style={{ fontSize: "20px", color: "white" }}>Loading...</div>
-            ) : (
-              getSkillCards(sortedSkills)
-            )}
-          </div>
+          <div className={styles.list}>{this.getContent()}</div>
         </div>
       </section>
     );
