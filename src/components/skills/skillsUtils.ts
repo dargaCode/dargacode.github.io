@@ -29,10 +29,6 @@ export const EMPTY_SKILL: Skill = {
   timeSinceCommit: ""
 };
 
-export function repoCountComparator(a: Skill, b: Skill): number {
-  return b.repoCount - a.repoCount;
-}
-
 export function nameSkillComparator(a: Skill, b: Skill): number {
   if (a.name < b.name) {
     return -1;
@@ -41,6 +37,14 @@ export function nameSkillComparator(a: Skill, b: Skill): number {
     return 1;
   }
   return 0;
+}
+
+export function repoCountComparator(a: Skill, b: Skill): number {
+  if (a.repoCount === b.repoCount) {
+    return nameSkillComparator(a, b);
+  }
+
+  return b.repoCount - a.repoCount;
 }
 
 export const COMPARATORS: Map<string, SkillSortComparator> = new Map([

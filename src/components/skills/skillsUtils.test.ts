@@ -1,5 +1,4 @@
 import cloneDeep from "clone-deep";
-import moment from "moment";
 import {
   Skill,
   EMPTY_SKILL,
@@ -7,59 +6,61 @@ import {
   repoCountComparator
 } from "./skillsUtils";
 
+function getSkillNames(skills: Skill[]): string[] {
+  return skills.map(skill => skill.name);
+}
+
 describe("`skillsUtils`", () => {
   describe("comparators", () => {
+    let skills: Skill[];
     let skillA: Skill;
     let skillB: Skill;
+    let skillC: Skill;
 
     beforeEach(() => {
       skillA = cloneDeep(EMPTY_SKILL);
       skillB = cloneDeep(EMPTY_SKILL);
+      skillC = cloneDeep(EMPTY_SKILL);
+      skills = [skillA, skillB, skillC];
     });
 
     describe("nameSkillComparator", () => {
-      it("should return 0 when both skills have equal name", () => {
-        skillA.name = "a";
-        skillB.name = "a";
+      it("should sort by ascending `name`", () => {
+        skillA.name = "React";
+        skillB.name = "Git";
+        skillC.name = "Jest";
 
-        expect(nameSkillComparator(skillA, skillB)).toBe(0);
-      });
+        const sortedSkills = skills.sort(nameSkillComparator);
 
-      it("should return -1 when A's name alphabetizes first", () => {
-        skillA.name = "a";
-        skillB.name = "b";
-
-        expect(nameSkillComparator(skillA, skillB)).toBe(-1);
-      });
-
-      it("should return 1 when B's name alphabetizes first", () => {
-        skillA.name = "b";
-        skillB.name = "a";
-
-        expect(nameSkillComparator(skillA, skillB)).toBe(1);
+        expect(getSkillNames(sortedSkills)).toEqual(["Git", "Jest", "React"]);
       });
     });
 
     describe("repoCountSkillComparator", () => {
-      it("should return 0 when both skills have equal repoCount", () => {
-        skillA.repoCount = 5;
-        skillB.repoCount = 5;
-
-        expect(repoCountComparator(skillA, skillB)).toBe(0);
-      });
-
-      it("should return positive number when A's repoCount is lower", () => {
+      it("should first sort by descending `repoCount`", () => {
+        skillA.name = "Jest";
         skillA.repoCount = 11;
-        skillB.repoCount = 20;
+        skillB.name = "Git";
+        skillB.repoCount = 5;
+        skillC.name = "React";
+        skillC.repoCount = 20;
 
-        expect(repoCountComparator(skillA, skillB)).toBeGreaterThan(0);
+        const sortedSkills = skills.sort(repoCountComparator);
+
+        expect(getSkillNames(sortedSkills)).toEqual(["React", "Jest", "Git"]);
       });
 
-      it("should return negative number when B's repoCount is lower", () => {
-        skillA.repoCount = 22;
-        skillB.repoCount = 1;
+      it("should then sort ties by ascending `name`", () => {
+        skillA.name = "Jest";
+        skillA.repoCount = 20;
+        skillB.name = "React";
+        skillB.repoCount = 11;
+        skillC.name = "Git";
+        skillC.repoCount = 20;
 
-        expect(repoCountComparator(skillA, skillB)).toBeLessThan(0);
+        const sortedSkills = skills.sort(repoCountComparator);
+
+        expect(getSkillNames(sortedSkills)).toEqual(["Git", "Jest", "React"]);
       });
     });
   });
