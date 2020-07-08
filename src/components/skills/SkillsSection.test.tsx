@@ -5,10 +5,11 @@ import cloneDeep from "clone-deep";
 import SkillsSection from "./SkillsSection";
 import { MOCK_SKILLS } from "./mockSkills";
 
-import { Skill, nameSkillComparator, repoCountComparator } from "./skillsUtils";
-
-const SKILLS_BY_NAME = cloneDeep(MOCK_SKILLS).sort(nameSkillComparator);
-const SKILLS_BY_COUNT = cloneDeep(MOCK_SKILLS).sort(repoCountComparator);
+import {
+  SkillSortComparator,
+  nameSkillComparator,
+  repoCountComparator
+} from "./skillsUtils";
 
 function getFakeEventWithValue(
   valueText: string
@@ -38,10 +39,9 @@ describe("`SkillsSection`", () => {
 
     it("should initially sort skills by name", () => {
       const wrapper = shallow(<SkillsSection {...props} />);
+      const comparator: SkillSortComparator = wrapper.state("sortComparator");
 
-      const skills: Skill[] = wrapper.state("skills");
-
-      expect(skills).toEqual(MOCK_SKILLS.sort(nameSkillComparator));
+      expect(comparator).toEqual(nameSkillComparator);
     });
   });
 
@@ -51,7 +51,9 @@ describe("`SkillsSection`", () => {
 
       wrapper.instance().handleSort(getFakeEventWithValue("Repo Count"));
 
-      expect(wrapper.state("skills")).toEqual(SKILLS_BY_COUNT);
+      const comparator: SkillSortComparator = wrapper.state("sortComparator");
+
+      expect(comparator).toEqual(repoCountComparator);
     });
 
     it("can sort skills by name", () => {
@@ -61,7 +63,9 @@ describe("`SkillsSection`", () => {
       wrapper.instance().handleSort(getFakeEventWithValue("Repo Count"));
       wrapper.instance().handleSort(getFakeEventWithValue("Skill Name"));
 
-      expect(wrapper.state("skills")).toEqual(SKILLS_BY_NAME);
+      const comparator: SkillSortComparator = wrapper.state("sortComparator");
+
+      expect(comparator).toEqual(nameSkillComparator);
     });
   });
 });
