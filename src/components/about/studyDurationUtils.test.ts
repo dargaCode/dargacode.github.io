@@ -39,14 +39,14 @@ describe("`yearsMonthsDays`", () => {
       it("should round the days down to the beginning of the month", () => {
         const duration = yearsMonthsDays("2000-01-01", "2000-08-01");
 
-        // Override Moment to round the month
+        // override Moment to round the month
         expect(duration).toEqual({ years: 0, months: 7, days: 0 });
       });
 
       it("should round the days up to the beginning of the next month", () => {
         const duration = yearsMonthsDays("2000-05-01", "2000-09-01");
 
-        // Override Moment to round the month
+        // override Moment to round the month
         expect(duration).toEqual({ years: 0, months: 4, days: 0 });
       });
     });
@@ -55,7 +55,7 @@ describe("`yearsMonthsDays`", () => {
       it("should return 0y, [nonzero]m, [nonzero]d", () => {
         const duration = yearsMonthsDays("2000-01-01", "2000-08-14");
 
-        // Use Moment's calculations
+        // use Moment's calculations
         expect(duration).toEqual({ years: 0, months: 7, days: 11 });
       });
     });
@@ -90,14 +90,14 @@ describe("`yearsMonthsDays`", () => {
       it("should round the days up to the beginning of the next month", () => {
         const duration = yearsMonthsDays("2000-01-01", "2019-11-01");
 
-        // Override Moment to round the month
+        // override Moment to round the month
         expect(duration).toEqual({ years: 19, months: 10, days: 0 });
       });
 
       it("should round the days down to the beginning of the month", () => {
         const duration = yearsMonthsDays("1996-05-01", "2000-09-01");
 
-        // Override Moment to round the month
+        // override Moment to round the month
         expect(duration).toEqual({ years: 4, months: 4, days: 0 });
       });
     });
@@ -106,7 +106,7 @@ describe("`yearsMonthsDays`", () => {
       it("should return [nonzero]y, [nonzero]m, [nonzero]d", () => {
         const duration = yearsMonthsDays("2000-01-01", "2004-06-08");
 
-        // Use Moment's calculations
+        // use Moment's calculations
         expect(duration).toEqual({ years: 4, months: 5, days: 5 });
       });
     });

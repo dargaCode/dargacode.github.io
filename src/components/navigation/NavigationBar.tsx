@@ -7,7 +7,7 @@ export default function NavigationBar(): JSX.Element {
   return (
     <nav className={styles.bar}>
       <div className="nocontent">
-        {/* Ignored by google */}
+        {/* ignored by google */}
         <h2 className={styles.invisibleButOutlineReadable}>Navigation</h2>
       </div>
       <div className={styles.container}>

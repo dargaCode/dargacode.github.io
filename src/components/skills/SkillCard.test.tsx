@@ -2,9 +2,10 @@ import React from "react";
 import { shallow } from "enzyme";
 import cloneDeep from "clone-deep";
 import { classSelector } from "../../utils/jestUtils";
+import { getTimeSinceCommit } from "./repoUtils";
 import SkillCard from "./SkillCard";
-import { SKILLS } from "./skillsData";
-import { Skill } from "./skillsUtils";
+import { MOCK_SKILLS } from "./mockSkills";
+import { Skill, SKILL_URL_PREFIX } from "./skillsUtils";
 // eslint-disable-next-line css-modules/no-unused-class
 import styles from "./SkillCard.module.scss";
 
@@ -12,30 +13,41 @@ let skill: Skill;
 
 describe("SkillCard", () => {
   beforeEach(() => {
-    skill = cloneDeep(SKILLS[0]);
+    skill = cloneDeep(MOCK_SKILLS[0]);
   });
 
   describe("props", () => {
     describe("`skill.url`", () => {
-      it("should link to the skill url", () => {
+      it("should link to the skill's `url`", () => {
         const wrapper = shallow(<SkillCard skill={skill} />);
         const url = wrapper.find("a").props().href;
 
-        expect(url).toEqual(skill.url);
+        expect(url).toEqual(SKILL_URL_PREFIX + skill.name);
+      });
+    });
+
+    describe("`skill.timeSinceCommit`", () => {
+      it("should render the skill's `timeSinceCommit`", () => {
+        const wrapper = shallow(<SkillCard skill={skill} />);
+        const nameText = wrapper
+          .find(classSelector(styles.timeSinceCommit))
+          .text();
+
+        expect(nameText).toEqual(getTimeSinceCommit(skill.lastCommitTime));
       });
     });
 
     describe("`skill.name`", () => {
-      it("should render the skill name", () => {
+      it("should render the skill's `name`", () => {
         const wrapper = shallow(<SkillCard skill={skill} />);
         const nameText = wrapper.find(classSelector(styles.name)).text();
 
-        expect(nameText).toEqual(skill.name);
+        expect(nameText).toEqual(skill.displayName);
       });
     });
 
     describe("`skill.iconClass`", () => {
-      it("should render the skill iconClass", () => {
+      it("should render the skill's `iconClass`", () => {
         const wrapper = shallow(<SkillCard skill={skill} />);
         const { className } = wrapper.find("i").props();
 
@@ -43,37 +55,28 @@ describe("SkillCard", () => {
       });
     });
 
-    describe("`skill.type`", () => {
-      it("should render the skill type", () => {
-        const wrapper = shallow(<SkillCard skill={skill} />);
-        const typeText = wrapper.find(classSelector(styles.type)).text();
-
-        expect(typeText).toEqual(skill.type);
-      });
-    });
-
-    describe("`skill.projectCount`", () => {
-      describe("when `projectCount` is 1", () => {
-        it("should render `n Project` (singular)", () => {
-          skill.projectCount = 1;
+    describe("`skill.repoCount`", () => {
+      describe("when `repoCount` is 1", () => {
+        it("should render `n Repo` (singular)", () => {
+          skill.repoCount = 1;
 
           const wrapper = shallow(<SkillCard skill={skill} />);
-          const projectCountText = wrapper
-            .find(classSelector(styles.projectCount))
+          const repoCountText = wrapper
+            .find(classSelector(styles.repoCount))
             .text();
 
-          expect(projectCountText).toEqual(`${skill.projectCount} Project`);
+          expect(repoCountText).toEqual(`${skill.repoCount} Repo`);
         });
       });
 
-      describe("when `projectCount` is not 1", () => {
-        it("should render `n Projects` (plural)", () => {
+      describe("when `repoCount` is not 1", () => {
+        it("should render `n Repos` (plural)", () => {
           const wrapper = shallow(<SkillCard skill={skill} />);
-          const projectCountText = wrapper
-            .find(classSelector(styles.projectCount))
+          const repoCountText = wrapper
+            .find(classSelector(styles.repoCount))
             .text();
 
-          expect(projectCountText).toEqual(`${skill.projectCount} Projects`);
+          expect(repoCountText).toEqual(`${skill.repoCount} Repos`);
         });
       });
     });

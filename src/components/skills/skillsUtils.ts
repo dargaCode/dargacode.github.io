@@ -1,88 +1,55 @@
+import moment from "moment";
+
+export const SKILL_URL_PREFIX = `https://github.com/dargaCode?tab=repositories&q=topic%3A`;
+
 export interface SkillSortComparator {
   (a: Skill, b: Skill): number;
 }
 
 export interface RawSkill {
   name: string;
+  displayName: string;
   iconClass: string;
-  type: string;
-  projectCount: number;
-  url: string;
 }
 
-// Some extra values are derived before export, but can be ignored by user
+// added keys derived from api data (in container)
 export interface Skill extends RawSkill {
-  typeOrder: number;
-  nameLower: string;
+  repoCount: number;
+  lastCommitTime: moment.Moment;
+  timeSinceCommit: string;
 }
 
-export const SKILL_SORT_OPTIONS = ["Skill Name", "Skill Type", "Project Count"];
-
-export const SKILL_TYPE_ORDER: string[] = [
-  "Language",
-  "Environment",
-  "Framework",
-  "Library",
-  "Database",
-  "Tool"
-];
-
-// Add more attributes to the skills objects to help with sorting.
-// It's more efficient to do it once here instead of inside the comparators.
-export function processRawSkills(skills: RawSkill[]): Skill[] {
-  return skills.map(
-    (skill: RawSkill): Skill => {
-      return {
-        ...skill,
-        // Allow skills to be sorted by type
-        typeOrder: SKILL_TYPE_ORDER.indexOf(skill.type),
-        // Allow lowercase skills like jQuery to sort properly by name
-        nameLower: skill.name.toLowerCase()
-      };
-    }
-  );
-}
-
-export function projectsSkillComparator(a: Skill, b: Skill): number {
-  return b.projectCount - a.projectCount;
-}
+// used for tests, and when waiting for data to load
+export const EMPTY_SKILL: Skill = {
+  name: "",
+  displayName: "",
+  iconClass: "",
+  repoCount: 0,
+  lastCommitTime: moment(),
+  timeSinceCommit: ""
+};
 
 export function nameSkillComparator(a: Skill, b: Skill): number {
-  if (a.nameLower < b.nameLower) {
+  if (a.name < b.name) {
     return -1;
   }
-  if (b.nameLower < a.nameLower) {
+  if (b.name < a.name) {
     return 1;
   }
   return 0;
 }
 
-export function typeSkillComparator(a: Skill, b: Skill): number {
-  switch (true) {
-    // // sort by category order first
-    case a.typeOrder < b.typeOrder: {
-      return -1;
-    }
-    case b.typeOrder < a.typeOrder: {
-      return 1;
-    }
-    // Same category, sort by descending project count second
-    case a.projectCount > b.projectCount: {
-      return -1;
-    }
-    case b.projectCount > a.projectCount: {
-      return 1;
-    }
-    // Same project count, sort by skill name third
-    case a.nameLower < b.nameLower: {
-      return -1;
-    }
-    case b.nameLower < a.nameLower: {
-      return 1;
-    }
-    // Everything matches (duplicate skill name)
-    default: {
-      return 0;
-    }
+export function repoCountComparator(a: Skill, b: Skill): number {
+  if (a.repoCount === b.repoCount) {
+    return nameSkillComparator(a, b);
   }
+
+  return b.repoCount - a.repoCount;
 }
+
+export const COMPARATORS: Map<string, SkillSortComparator> = new Map([
+  ["Skill Name", nameSkillComparator],
+  ["Repo Count", repoCountComparator]
+]);
+
+export const SKILL_SORT_OPTIONS = Array.from(COMPARATORS.keys());

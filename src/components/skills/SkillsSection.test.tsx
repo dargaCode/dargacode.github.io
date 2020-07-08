@@ -1,19 +1,15 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import { shallow } from "enzyme";
 import cloneDeep from "clone-deep";
 import SkillsSection from "./SkillsSection";
-import { SKILLS } from "./skillsData";
+import { MOCK_SKILLS } from "./mockSkills";
 
 import {
-  Skill,
+  SkillSortComparator,
   nameSkillComparator,
-  projectsSkillComparator,
-  typeSkillComparator
+  repoCountComparator
 } from "./skillsUtils";
-
-const SKILLS_BY_NAME = cloneDeep(SKILLS).sort(nameSkillComparator);
-const SKILLS_BY_TYPE = cloneDeep(SKILLS).sort(typeSkillComparator);
-const SKILLS_BY_COUNT = cloneDeep(SKILLS).sort(projectsSkillComparator);
 
 function getFakeEventWithValue(
   valueText: string
@@ -24,53 +20,90 @@ function getFakeEventWithValue(
 }
 
 describe("`SkillsSection`", () => {
+  const props = {
+    skills: cloneDeep(MOCK_SKILLS)
+  };
+
+  describe("'props'", () => {
+    describe("`loading", () => {
+      it("should display a loading message", () => {
+        const wrapper = shallow(<SkillsSection {...props} loading />);
+
+        expect(wrapper.find(".loading")).toHaveLength(1);
+      });
+
+      it("should not display any `SkillCard`s", () => {
+        const wrapper = shallow(<SkillsSection {...props} loading />);
+
+        expect(wrapper.find("SkillCard")).toHaveLength(0);
+      });
+    });
+
+    describe("`error", () => {
+      const error = { message: "" };
+
+      it("should display an error message", () => {
+        const wrapper = shallow(<SkillsSection {...props} error={error} />);
+
+        expect(wrapper.find(".error")).toHaveLength(1);
+      });
+
+      it("should not display any `SkillCard`s", () => {
+        const wrapper = shallow(<SkillsSection {...props} error={error} />);
+
+        expect(wrapper.find("SkillCard")).toHaveLength(0);
+      });
+    });
+
+    describe("`skills`", () => {
+      describe("when `loading` is false and there is no `error`", () => {
+        it("should display a `SkillCard` for every skill", () => {
+          const wrapper = shallow(<SkillsSection {...props} />);
+
+          expect(wrapper.find("SkillCard")).toHaveLength(MOCK_SKILLS.length);
+        });
+
+        it("should initially sort skills by name", () => {
+          const wrapper = shallow(<SkillsSection {...props} />);
+          const comparator: SkillSortComparator = wrapper.state(
+            "sortComparator"
+          );
+
+          expect(comparator).toEqual(nameSkillComparator);
+        });
+      });
+    });
+  });
+
   describe("render", () => {
     it("should display a `SkillSortSelector`", () => {
-      const wrapper = shallow(<SkillsSection />);
+      const wrapper = shallow(<SkillsSection {...props} />);
 
       expect(wrapper.find("SkillSortSelector")).toHaveLength(1);
-    });
-
-    it("should display a `SkillCard` for every skill", () => {
-      const wrapper = shallow(<SkillsSection />);
-
-      expect(wrapper.find("SkillCard")).toHaveLength(SKILLS.length);
-    });
-
-    it("should initially sort skills by name", () => {
-      const wrapper = shallow(<SkillsSection />);
-
-      const skills: Skill[] = wrapper.state("skills");
-
-      expect(skills).toEqual(SKILLS.sort(nameSkillComparator));
     });
   });
 
   describe("events", () => {
-    it("can sort skills by type", () => {
-      const wrapper = shallow<SkillsSection>(<SkillsSection />);
+    it("can sort skills by repo count", () => {
+      const wrapper = shallow<SkillsSection>(<SkillsSection {...props} />);
 
-      wrapper.instance().handleSort(getFakeEventWithValue("Skill Type"));
+      wrapper.instance().handleSort(getFakeEventWithValue("Repo Count"));
 
-      expect(wrapper.state("skills")).toEqual(SKILLS_BY_TYPE);
-    });
+      const comparator: SkillSortComparator = wrapper.state("sortComparator");
 
-    it("can sort skills by project count", () => {
-      const wrapper = shallow<SkillsSection>(<SkillsSection />);
-
-      wrapper.instance().handleSort(getFakeEventWithValue("Project Count"));
-
-      expect(wrapper.state("skills")).toEqual(SKILLS_BY_COUNT);
+      expect(comparator).toEqual(repoCountComparator);
     });
 
     it("can sort skills by name", () => {
-      const wrapper = shallow<SkillsSection>(<SkillsSection />);
+      const wrapper = shallow<SkillsSection>(<SkillsSection {...props} />);
 
-      // Sort away from default Skill Name sort, to sort back again
-      wrapper.instance().handleSort(getFakeEventWithValue("Project Count"));
+      // sort away from default Skill Name sort, to sort back again
+      wrapper.instance().handleSort(getFakeEventWithValue("Repo Count"));
       wrapper.instance().handleSort(getFakeEventWithValue("Skill Name"));
 
-      expect(wrapper.state("skills")).toEqual(SKILLS_BY_NAME);
+      const comparator: SkillSortComparator = wrapper.state("sortComparator");
+
+      expect(comparator).toEqual(nameSkillComparator);
     });
   });
 });

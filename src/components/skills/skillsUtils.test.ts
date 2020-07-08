@@ -1,199 +1,76 @@
 import cloneDeep from "clone-deep";
 import {
-  RawSkill,
   Skill,
-  processRawSkills,
+  EMPTY_SKILL,
   nameSkillComparator,
-  projectsSkillComparator,
-  typeSkillComparator
+  repoCountComparator
 } from "./skillsUtils";
 
+function getSkillNames(skills: Skill[]): string[] {
+  return skills.map(skill => skill.name);
+}
+
 describe("`skillsUtils`", () => {
-  const rawSkills: RawSkill[] = [
-    {
-      name: "A",
-      type: "Language",
-      projectCount: 2,
-      iconClass: "",
-      url: ""
-    },
-    {
-      name: "b",
-      type: "Framework",
-      projectCount: 1,
-      iconClass: "",
-      url: ""
-    }
-  ];
-
-  describe("processRawSkills", () => {
-    it("should add the `nameLower` property", () => {
-      const skills = processRawSkills(rawSkills);
-
-      expect(skills[0].nameLower).toBe("a");
-    });
-
-    it("should add the `typeOrder` property", () => {
-      const skills = processRawSkills(rawSkills);
-
-      expect(skills[1].typeOrder).toBe(2);
-    });
-  });
-
   describe("comparators", () => {
+    let skills: Skill[];
     let skillA: Skill;
     let skillB: Skill;
-
-    const emptySkill: Skill = {
-      projectCount: 0,
-      nameLower: "",
-      typeOrder: 0,
-      name: "",
-      type: "",
-      iconClass: "",
-      url: ""
-    };
+    let skillC: Skill;
 
     beforeEach(() => {
-      skillA = cloneDeep(emptySkill);
-      skillB = cloneDeep(emptySkill);
+      skillA = cloneDeep(EMPTY_SKILL);
+      skillB = cloneDeep(EMPTY_SKILL);
+      skillC = cloneDeep(EMPTY_SKILL);
+      skills = [skillA, skillB, skillC];
     });
 
     describe("nameSkillComparator", () => {
-      it("should return 0 when both skills have equal nameLower", () => {
-        skillA.nameLower = "a";
-        skillB.nameLower = "a";
+      it("should sort by ascending `name`", () => {
+        skillA.name = "React";
+        skillB.name = "Git";
+        skillC.name = "Jest";
 
-        expect(nameSkillComparator(skillA, skillB)).toBe(0);
+        const sortedSkills = skills.sort(nameSkillComparator);
+
+        expect(getSkillNames(sortedSkills)).toEqual(["Git", "Jest", "React"]);
       });
 
-      it("should return -1 when A's nameLower alphabetizes first", () => {
-        skillA.nameLower = "a";
-        skillB.nameLower = "b";
+      it("should preserve order of matching `name`s", () => {
+        skillA.name = "Jest";
+        skillB.name = "Git";
+        skillC.name = "Jest";
 
-        expect(nameSkillComparator(skillA, skillB)).toBe(-1);
-      });
+        const sortedSkills = skills.sort(nameSkillComparator);
 
-      it("should return 1 when B's nameLower alphabetizes first", () => {
-        skillA.nameLower = "b";
-        skillB.nameLower = "a";
-
-        expect(nameSkillComparator(skillA, skillB)).toBe(1);
-      });
-    });
-
-    describe("projectCountSkillComparator", () => {
-      it("should return 0 when both skills have equal projectCount", () => {
-        skillA.projectCount = 5;
-        skillB.projectCount = 5;
-
-        expect(projectsSkillComparator(skillA, skillB)).toBe(0);
-      });
-
-      it("should return positive number when A's projectCount is lower", () => {
-        skillA.projectCount = 11;
-        skillB.projectCount = 20;
-
-        expect(projectsSkillComparator(skillA, skillB)).toBeGreaterThan(0);
-      });
-
-      it("should return negative number when B's projectCount is lower", () => {
-        skillA.projectCount = 22;
-        skillB.projectCount = 1;
-
-        expect(projectsSkillComparator(skillA, skillB)).toBeLessThan(0);
+        expect(getSkillNames(sortedSkills)).toEqual(["Git", "Jest", "Jest"]);
       });
     });
 
-    describe("typeSkillComparator", () => {
-      it("should sort by lowest typeOrder first", () => {
-        skillA.typeOrder = 100;
-        skillB.typeOrder = 99;
+    describe("repoCountSkillComparator", () => {
+      it("should first sort by descending `repoCount`", () => {
+        skillA.name = "Jest";
+        skillA.repoCount = 11;
+        skillB.name = "Git";
+        skillB.repoCount = 5;
+        skillC.name = "React";
+        skillC.repoCount = 20;
 
-        expect(typeSkillComparator(skillA, skillB)).toBe(1);
+        const sortedSkills = skills.sort(repoCountComparator);
+
+        expect(getSkillNames(sortedSkills)).toEqual(["React", "Jest", "Git"]);
       });
 
-      it("should sort by highest projectCount next, if typeOrder is equal", () => {
-        skillA.typeOrder = 3;
-        skillB.typeOrder = 3;
-        skillA.projectCount = 22;
-        skillB.projectCount = 15;
+      it("should then sort ties by ascending `name`", () => {
+        skillA.name = "Jest";
+        skillA.repoCount = 20;
+        skillB.name = "React";
+        skillB.repoCount = 11;
+        skillC.name = "Git";
+        skillC.repoCount = 20;
 
-        expect(typeSkillComparator(skillA, skillB)).toBe(-1);
-      });
+        const sortedSkills = skills.sort(repoCountComparator);
 
-      it("should sort by nameLower next, if typeOrder and projectCount are equal", () => {
-        skillA.typeOrder = 3;
-        skillB.typeOrder = 3;
-        skillA.projectCount = 22;
-        skillB.projectCount = 22;
-        skillA.nameLower = "dog";
-        skillB.nameLower = "Cat";
-
-        expect(typeSkillComparator(skillA, skillB)).toBe(1);
-      });
-
-      it("should return 0 when both skills have equal typeOrder", () => {
-        skillA.typeOrder = 0;
-        skillB.typeOrder = 0;
-
-        expect(typeSkillComparator(skillA, skillB)).toBe(0);
-      });
-
-      it("should return -1 when A's typeOrder is lower", () => {
-        skillA.typeOrder = 3;
-        skillB.typeOrder = 7;
-
-        expect(typeSkillComparator(skillA, skillB)).toBe(-1);
-      });
-
-      it("should return 1 when B's typeOrder is lower", () => {
-        skillA.typeOrder = 11;
-        skillB.typeOrder = 2;
-
-        expect(typeSkillComparator(skillA, skillB)).toBe(1);
-      });
-
-      it("should return 0 when both skills have equal projectCount", () => {
-        skillA.projectCount = 11;
-        skillB.projectCount = 11;
-
-        expect(typeSkillComparator(skillA, skillB)).toBe(0);
-      });
-
-      it("should return positive number when A's projectCount is lower", () => {
-        skillA.projectCount = 3;
-        skillB.projectCount = 30;
-
-        expect(typeSkillComparator(skillA, skillB)).toBeGreaterThan(0);
-      });
-
-      it("should return negative number when B's projectCount is lower", () => {
-        skillA.projectCount = 33;
-        skillB.projectCount = 20;
-
-        expect(typeSkillComparator(skillA, skillB)).toBeLessThan(0);
-      });
-
-      it("should return 0 when both skills have equal nameLower", () => {
-        skillA.nameLower = "j";
-        skillB.nameLower = "j";
-
-        expect(typeSkillComparator(skillA, skillB)).toBe(0);
-      });
-
-      it("should return -1 when A's nameLower alphabetizes first", () => {
-        skillA.nameLower = "b";
-        skillB.nameLower = "t";
-
-        expect(typeSkillComparator(skillA, skillB)).toBe(-1);
-      });
-
-      it("should return 1 when B's nameLower alphabetizes first", () => {
-        skillA.nameLower = "z";
-        skillB.nameLower = "g";
-
-        expect(typeSkillComparator(skillA, skillB)).toBe(1);
+        expect(getSkillNames(sortedSkills)).toEqual(["Git", "Jest", "React"]);
       });
     });
   });

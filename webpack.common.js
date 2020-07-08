@@ -26,7 +26,7 @@ module.exports = {
         test: /\.(ts|tsx|js|jsx)$/,
         loader: "ts-loader",
         options: {
-          // Disable type checker - typecheck will happen via eslint
+          // disable type checker - typecheck will happen via eslint
           transpileOnly: true
         }
       },
@@ -46,7 +46,7 @@ module.exports = {
                 // eslint-disable-next-line spellcheck/spell-checker
                 localIdentName: "[name]__[local]___[hash:base64:5]"
               },
-              // Replace kebab-case css class names with camelCase strings
+              // replace kebab-case css class names with camelCase strings
               // so they can keep their conventions in both css and js
               localsConvention: "dashesOnly"
             }

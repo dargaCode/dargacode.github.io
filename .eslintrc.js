@@ -1,24 +1,24 @@
-const whitelistedWords = require("./spellcheck.whitelist.js");
+const whitelistedWords = require("./spellcheck.allowlist.js");
 
 module.exports = {
   extends: [
     "airbnb",
     "prettier",
     "prettier/react",
-    "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
+    "plugin:react/recommended",
     "plugin:css-modules/recommended",
-    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking", // slower but more powerful
-    "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
-    "plugin:prettier/recommended" // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+    "prettier/@typescript-eslint", // disable eslint rules which conflict with prettier
+    "plugin:prettier/recommended" // enables eslint-plugin-prettier and eslint-config-prettier. this will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
   plugins: ["react", "css-modules", "prettier", "spellcheck"],
-  parser: "@typescript-eslint/parser", // Specifies the ESLint parser
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-    sourceType: "module", // Allows for the use of imports
+    ecmaVersion: 2018,
+    sourceType: "module", // allows for the use of imports
     ecmaFeatures: {
-      jsx: true // Allows for the parsing of JSX
+      jsx: true
     },
     tsconfigRootDir: __dirname,
     project: ["./tsconfig.json"]
@@ -27,6 +27,7 @@ module.exports = {
     "css-modules/no-unused-class": [2, { camelCase: true }],
     "css-modules/no-undef-class": [2, { camelCase: true }],
     "prettier/prettier": "off", // don't complain about style, just silently fix it
+    "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -50,7 +51,8 @@ module.exports = {
     "react/forbid-prop-types": [2],
     "react/require-default-props": [2, { forbidDefaultForRequired: true }],
     "react/default-props-match-prop-types": [2],
-    "capitalized-comments": [2, "always", { ignoreConsecutiveComments: true }],
+    "react/static-property-placement": "off",
+    "capitalized-comments": [1, "never", { ignorePattern: "TODO" }],
     "spellcheck/spell-checker": [
       2,
       {
@@ -70,7 +72,7 @@ module.exports = {
       }
     },
     react: {
-      version: "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+      version: "detect"
     }
   }
 };

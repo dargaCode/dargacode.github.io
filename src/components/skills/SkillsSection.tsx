@@ -1,47 +1,98 @@
 import React from "react";
-import cloneDeep from "clone-deep";
+import PropTypes from "prop-types";
 import SkillCard from "./SkillCard";
 import SkillSortSelector from "./SkillSortSelector";
-import { SKILLS } from "./skillsData";
 import "../../config/_general.scss";
 import styles from "./SkillsSection.module.scss";
 import {
   Skill,
   SkillSortComparator,
-  nameSkillComparator,
-  projectsSkillComparator,
-  typeSkillComparator
+  COMPARATORS,
+  nameSkillComparator
 } from "./skillsUtils";
+import { Error } from "../error/errorUtils";
 
-interface State {
+interface Props {
+  loading: boolean;
+  error: Error;
   skills: Skill[];
 }
 
-const COMPARATORS: Map<string, SkillSortComparator> = new Map([
-  ["Skill Name", nameSkillComparator],
-  ["Skill Type", typeSkillComparator],
-  ["Project Count", projectsSkillComparator]
-]);
+interface State {
+  sortComparator: SkillSortComparator;
+}
 
-export default class SkillsSection extends React.Component<{}, State> {
-  constructor(props: {}) {
+function getSkillCards(skills: Skill[]): JSX.Element[] {
+  return skills.map(skill => <SkillCard skill={skill} key={skill.name} />);
+}
+
+export default class SkillsSection extends React.Component<Props, State> {
+  static propTypes = {
+    loading: PropTypes.bool,
+    error: PropTypes.shape({
+      message: PropTypes.string
+    }),
+    skills: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        displayName: PropTypes.string.isRequired,
+        iconClass: PropTypes.string.isRequired,
+        repoCount: PropTypes.number.isRequired
+      })
+    ).isRequired
+  };
+
+  static defaultProps = {
+    loading: false,
+    error: undefined
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.state = {
-      skills: cloneDeep(SKILLS).sort(nameSkillComparator)
+      sortComparator: nameSkillComparator
     };
   }
 
-  handleSort = (event: React.ChangeEvent<HTMLSelectElement>): void => {
-    const { skills } = this.state;
-    const sortType = event.target.value;
-    const comparator = COMPARATORS.get(sortType);
+  getContent = (): JSX.Element | JSX.Element[] => {
+    const { loading, error, skills } = this.props;
+    const { sortComparator } = this.state;
 
-    this.setState({ skills: skills.sort(comparator) });
+    if (loading) {
+      return (
+        // TODO add a real loading component
+        // eslint-disable-next-line spellcheck/spell-checker
+        <div className="loading" style={{ fontSize: "20px", color: "white" }}>
+          Loading...
+        </div>
+      );
+    }
+
+    if (error) {
+      return (
+        // TODO add a real error component
+        // eslint-disable-next-line spellcheck/spell-checker
+        <div className="error" style={{ fontSize: "20px", color: "red" }}>
+          {error.message}
+        </div>
+      );
+    }
+
+    const sortedSkills = skills.sort(sortComparator);
+
+    return getSkillCards(sortedSkills);
+  };
+
+  handleSort = (event: React.ChangeEvent<HTMLSelectElement>): void => {
+    const sortType = event.target.value;
+    const sortComparator = COMPARATORS.get(sortType) as SkillSortComparator;
+
+    this.setState({ sortComparator });
   };
 
   render(): JSX.Element {
-    const { skills } = this.state;
+    const { loading } = this.props;
 
     return (
       <section className={styles.contentSection}>
@@ -49,14 +100,9 @@ export default class SkillsSection extends React.Component<{}, State> {
           <header>
             <h2>Skills</h2>
 
-            <SkillSortSelector onChange={this.handleSort} />
+            <SkillSortSelector disabled={loading} onChange={this.handleSort} />
           </header>
-
-          <div className={styles.list}>
-            {skills.map((skill: Skill) => (
-              <SkillCard skill={skill} key={skill.name} />
-            ))}
-          </div>
+          <div className={styles.list}>{this.getContent()}</div>
         </div>
       </section>
     );
