@@ -16,9 +16,9 @@ interface State {
   skills: Skill[];
 }
 
-const GITHUB_REPOS_API_URL =
+export const GITHUB_REPOS_API_URL =
   "https://api.github.com/users/dargacode/repos?per_page=100";
-const REQUEST_OPTIONS = {
+export const GITHUB_REPOS_REQUEST_OPTIONS = {
   headers: {
     // enable topics beta from github api
     // eslint-disable-next-line spellcheck/spell-checker
@@ -71,7 +71,10 @@ export default class SkillsSectionContainer extends React.Component<
   }
 
   async fetchRepos(): Promise<void> {
-    const response = await fetch(GITHUB_REPOS_API_URL, REQUEST_OPTIONS);
+    const response = await fetch(
+      GITHUB_REPOS_API_URL,
+      GITHUB_REPOS_REQUEST_OPTIONS
+    );
 
     if (!response.ok) {
       this.setState({
