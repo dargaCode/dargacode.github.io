@@ -60,16 +60,22 @@ export default class SkillsSection extends React.Component<Props, State> {
     const { sortComparator } = this.state;
 
     if (loading) {
-      // TODO add a real loading component
-      // eslint-disable-next-line spellcheck/spell-checker
-      return <div style={{ fontSize: "20px", color: "white" }}>Loading...</div>;
+      return (
+        // TODO add a real loading component
+        // eslint-disable-next-line spellcheck/spell-checker
+        <div className="loading" style={{ fontSize: "20px", color: "white" }}>
+          Loading...
+        </div>
+      );
     }
 
     if (error) {
       return (
         // TODO add a real error component
         // eslint-disable-next-line spellcheck/spell-checker
-        <div style={{ fontSize: "20px", color: "red" }}>{error.message}</div>
+        <div className="error" style={{ fontSize: "20px", color: "red" }}>
+          {error.message}
+        </div>
       );
     }
 

@@ -24,24 +24,62 @@ describe("`SkillsSection`", () => {
     skills: cloneDeep(MOCK_SKILLS)
   };
 
+  describe("'props'", () => {
+    describe("`loading", () => {
+      it("should display a loading message", () => {
+        const wrapper = shallow(<SkillsSection {...props} loading />);
+
+        expect(wrapper.find(".loading")).toHaveLength(1);
+      });
+
+      it("should not display any `SkillCard`s", () => {
+        const wrapper = shallow(<SkillsSection {...props} loading />);
+
+        expect(wrapper.find("SkillCard")).toHaveLength(0);
+      });
+    });
+
+    describe("`error", () => {
+      const error = { message: "" };
+
+      it("should display an error message", () => {
+        const wrapper = shallow(<SkillsSection {...props} error={error} />);
+
+        expect(wrapper.find(".error")).toHaveLength(1);
+      });
+
+      it("should not display any `SkillCard`s", () => {
+        const wrapper = shallow(<SkillsSection {...props} error={error} />);
+
+        expect(wrapper.find("SkillCard")).toHaveLength(0);
+      });
+    });
+
+    describe("`skills`", () => {
+      describe("when `loading` is false and there is no `error`", () => {
+        it("should display a `SkillCard` for every skill", () => {
+          const wrapper = shallow(<SkillsSection {...props} />);
+
+          expect(wrapper.find("SkillCard")).toHaveLength(MOCK_SKILLS.length);
+        });
+
+        it("should initially sort skills by name", () => {
+          const wrapper = shallow(<SkillsSection {...props} />);
+          const comparator: SkillSortComparator = wrapper.state(
+            "sortComparator"
+          );
+
+          expect(comparator).toEqual(nameSkillComparator);
+        });
+      });
+    });
+  });
+
   describe("render", () => {
     it("should display a `SkillSortSelector`", () => {
       const wrapper = shallow(<SkillsSection {...props} />);
 
       expect(wrapper.find("SkillSortSelector")).toHaveLength(1);
-    });
-
-    it("should display a `SkillCard` for every skill", () => {
-      const wrapper = shallow(<SkillsSection {...props} />);
-
-      expect(wrapper.find("SkillCard")).toHaveLength(MOCK_SKILLS.length);
-    });
-
-    it("should initially sort skills by name", () => {
-      const wrapper = shallow(<SkillsSection {...props} />);
-      const comparator: SkillSortComparator = wrapper.state("sortComparator");
-
-      expect(comparator).toEqual(nameSkillComparator);
     });
   });
 
