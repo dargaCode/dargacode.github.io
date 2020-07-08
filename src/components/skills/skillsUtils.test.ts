@@ -34,6 +34,16 @@ describe("`skillsUtils`", () => {
 
         expect(getSkillNames(sortedSkills)).toEqual(["Git", "Jest", "React"]);
       });
+
+      it("should preserve order of matching `name`s", () => {
+        skillA.name = "Jest";
+        skillB.name = "Git";
+        skillC.name = "Jest";
+
+        const sortedSkills = skills.sort(nameSkillComparator);
+
+        expect(getSkillNames(sortedSkills)).toEqual(["Git", "Jest", "Jest"]);
+      });
     });
 
     describe("repoCountSkillComparator", () => {
