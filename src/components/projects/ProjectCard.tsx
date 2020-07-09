@@ -48,12 +48,12 @@ export default function ProjectCard(props: Props): JSX.Element {
       <p>{description}</p>
       <a className={styles.linkContainer} href={githubUrl}>
         GitHub Repository
-        <i className="fa fa-github" />
+        <i className="icon-github" />
       </a>
       {livePageUrl && (
         <a className={styles.linkContainer} href={livePageUrl}>
           Live Webpage
-          <i className="fa fa-globe" />
+          <i className="icon-globe" />
         </a>
       )}
     </article>

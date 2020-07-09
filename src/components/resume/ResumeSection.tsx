@@ -13,7 +13,7 @@ export default function AboutSection(): JSX.Element {
 
           <div className={styles.buttons}>
             <a className={styles.button} href={pdfResume}>
-              <i className="fa fa-file-pdf-o" />
+              <i className="icon-pdf" />
               <span>
                 PDF <br />
                 Resume
@@ -21,7 +21,7 @@ export default function AboutSection(): JSX.Element {
             </a>
 
             <a className={styles.button} href={docxResume}>
-              <i className="fa fa-file-word-o" />
+              <i className="icon-docx" />
               <span>
                 Simple <br />
                 Resume
