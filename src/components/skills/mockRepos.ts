@@ -12,13 +12,13 @@ export const MOCK_REPOS: Repo[] = [
     name: "",
     // eslint-disable-next-line @typescript-eslint/camelcase
     pushed_at: "2020-08-26T21:40:06Z",
-    topics: ["javascript", "storybook", "mongodb"]
+    topics: ["javascript", "storybook", "typescript"]
   },
   {
     name: "",
     // eslint-disable-next-line @typescript-eslint/camelcase
     pushed_at: "2018-08-26T21:40:06Z",
-    topics: ["react", "javascript", "mongodb"]
+    topics: ["react", "javascript", "typescript"]
   }
 ];
 
@@ -33,7 +33,7 @@ export const MOCK_REPO_TOPIC_STATS: AggregatedTopicStats = {
     repoCount: 1,
     lastCommitTime: moment("2020-08-26T21:40:06Z")
   },
-  mongodb: {
+  typescript: {
     repoCount: 2,
     lastCommitTime: moment("2020-08-26T21:40:06Z")
   }

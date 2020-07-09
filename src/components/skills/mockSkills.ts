@@ -14,12 +14,6 @@ export const MOCK_RAW_SKILLS: RawSkill[] = [
     iconClass: "icon-jest"
   },
   {
-    name: "mongodb",
-    displayName: "MongoDB",
-    iconClass: "icon-mongodb"
-  },
-
-  {
     name: "react",
     displayName: "React.js",
     iconClass: "icon-react"
@@ -28,6 +22,11 @@ export const MOCK_RAW_SKILLS: RawSkill[] = [
     name: "storybook",
     displayName: "Storybook",
     iconClass: "icon-storybook"
+  },
+  {
+    name: "typescript",
+    displayName: "TypeScript",
+    iconClass: "icon-typescript"
   }
 ];
 
@@ -48,14 +47,6 @@ export const MOCK_SKILLS: Skill[] = [
     lastCommitTime: moment("2016-08-26T21:40:06Z")
   },
   {
-    name: "mongodb",
-    displayName: "MongoDB",
-    iconClass: "icon-mongodb",
-    repoCount: 2,
-    lastCommitTime: moment("2020-08-26T21:40:06Z")
-  },
-
-  {
     name: "react",
     displayName: "React.js",
     iconClass: "icon-react",
@@ -67,6 +58,13 @@ export const MOCK_SKILLS: Skill[] = [
     displayName: "Storybook",
     iconClass: "icon-storybook",
     repoCount: 1,
+    lastCommitTime: moment("2020-08-26T21:40:06Z")
+  },
+  {
+    name: "typescript",
+    displayName: "TypeScript",
+    iconClass: "icon-typescript",
+    repoCount: 2,
     lastCommitTime: moment("2020-08-26T21:40:06Z")
   }
 ].map(incompleteSkill => {
