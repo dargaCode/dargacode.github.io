@@ -1,19 +1,21 @@
 @font-face {
+  font-display: block;
   font-family: 'custom-icons';
   font-style: normal;
   font-weight: normal;
-  src: url('custom-icons.eot?lxz4qx');
   src:
-    url('custom-icons.eot?lxz4qx#iefix') format('embedded-opentype'),
-    url('custom-icons.ttf?lxz4qx') format('truetype'),
-    url('custom-icons.woff?lxz4qx') format('woff'),
-    url('custom-icons.svg?lxz4qx#custom-icons') format('svg');
+    url('./custom-icons.ttf?jmeqka') format('truetype'),
+    url('./custom-icons.woff?jmeqka') format('woff'),
+    url('./custom-icons.svg?jmeqka#custom-icons') format('svg');
 }
 
 [class^='icon-'],
 [class*=' icon-'] {
-  font-family: 'custom-icons' !important; // Prevent issues with browser extensions that change fonts
-  -webkit-font-smoothing: antialiased; // Better font rendering
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'custom-icons' !important;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-style: normal;
   font-variant: normal;
@@ -23,10 +25,78 @@
   text-transform: none;
 }
 
-.icon-ejs-logo::before {
-  content: '\e1';
+.icon-c::before {
+  content: '\e914';
 }
 
-.icon-express-logo::before {
-  content: '\e2';
+.icon-css::before {
+  content: '\e901';
+}
+
+.icon-docx::before {
+  content: '\e902';
+}
+
+.icon-envelope::before {
+  content: '\e903';
+}
+
+.icon-express::before {
+  content: '\e904';
+}
+
+.icon-git::before {
+  content: '\e905';
+}
+
+.icon-github::before {
+  content: '\e906';
+}
+
+.icon-globe::before {
+  content: '\e907';
+}
+
+.icon-html::before {
+  content: '\e908';
+}
+
+.icon-javascript::before {
+  content: '\e909';
+}
+
+.icon-jest::before {
+  content: '\e90a';
+}
+
+.icon-linkedin::before {
+  content: '\e90b';
+}
+
+.icon-node::before {
+  content: '\e90c';
+}
+
+.icon-pdf::before {
+  content: '\e90d';
+}
+
+.icon-react::before {
+  content: '\e90e';
+}
+
+.icon-rss::before {
+  content: '\e90f';
+}
+
+.icon-scss::before {
+  content: '\e910';
+}
+
+.icon-storybook::before {
+  content: '\e911';
+}
+
+.icon-typescript::before {
+  content: '\e912';
 }
