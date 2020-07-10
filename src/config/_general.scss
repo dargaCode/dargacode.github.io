@@ -1,6 +1,18 @@
 @use 'constants';
 @use '../utils/break';
 
+@font-face {
+  font-display: block;
+  font-family: 'arimo-helvetica';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local('Arimo'),
+    local('Helvetica'),
+    local(sans-serif);
+}
+$common-font-stack: 'arimo-helvetica';
+
 $navigation-bar-height: '54px';
 $navigation-bar-height-stacked: '72px';
 
@@ -18,7 +30,7 @@ body {
 
 body {
   color: constants.$body-text-color;
-  font-family: 'Arimo', 'Helvetica', sans-serif;
+  font-family: $common-font-stack;
   line-height: 1.5;
   margin: 0;
   padding: 0;
@@ -69,7 +81,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Arimo', 'Helvetica', sans-serif;
+  font-family: $common-font-stack;
   text-align: center;
 }
 
