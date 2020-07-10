@@ -15,7 +15,7 @@ export default function SkillCard(props: { skill: Skill }): JSX.Element {
     <a href={SKILL_URL_PREFIX + name}>
       <article className={styles.card}>
         <p className={styles.timeSinceCommit}>{timeSinceCommit}</p>
-        <i className={iconClass} />
+        <i className={icons[iconClass]} />
         <h3 className={styles.name}>{displayName}</h3>
         <p className={styles.repoCount}>
           {repoCount} Repo{repoCount === 1 ? "" : "s"}
