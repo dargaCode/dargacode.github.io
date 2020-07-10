@@ -56,8 +56,7 @@ export default class SkillsSectionContainer extends React.Component<
     rawSkills: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
-        displayName: PropTypes.string.isRequired,
-        iconClass: PropTypes.string.isRequired
+        displayName: PropTypes.string.isRequired
       })
     )
   };

@@ -3,62 +3,50 @@ import { RawSkill } from "./skillsUtils";
 export const RAW_SKILLS: RawSkill[] = [
   {
     name: "c",
-    displayName: "C",
-    iconClass: "iconC"
+    displayName: "C"
   },
   {
     name: "css",
-    displayName: "CSS",
-    iconClass: "iconCss"
+    displayName: "CSS"
   },
   {
     name: "express",
-    displayName: "Express.js",
-    iconClass: "iconExpress"
+    displayName: "Express.js"
   },
   {
     name: "git",
-    displayName: "Git",
-    iconClass: "iconGit"
+    displayName: "Git"
   },
   {
     name: "html",
-    displayName: "HTML",
-    iconClass: "iconHtml"
+    displayName: "HTML"
   },
   {
     name: "javascript",
-    displayName: "JavaScript",
-    iconClass: "iconJavascript"
+    displayName: "JavaScript"
   },
   {
     name: "jest",
-    displayName: "Jest",
-    iconClass: "iconJest"
+    displayName: "Jest"
   },
   {
     name: "nodejs",
-    displayName: "Node.js",
-    iconClass: "iconNode"
+    displayName: "Node.js"
   },
   {
     name: "react",
-    displayName: "React.js",
-    iconClass: "iconReact"
+    displayName: "React.js"
   },
   {
     name: "scss",
-    displayName: "SCSS",
-    iconClass: "iconScss"
+    displayName: "SCSS"
   },
   {
     name: "storybook",
-    displayName: "Storybook",
-    iconClass: "iconStorybook"
+    displayName: "Storybook"
   },
   {
     name: "typescript",
-    displayName: "TypeScript",
-    iconClass: "iconTypescript"
+    displayName: "TypeScript"
   }
 ];

@@ -31,7 +31,6 @@ SkillCard.propTypes = {
   skill: PropTypes.shape({
     name: PropTypes.string.isRequired,
     displayName: PropTypes.string.isRequired,
-    iconClass: PropTypes.string.isRequired,
     repoCount: PropTypes.number.isRequired,
     lastCommitTime: reactMomentPropTypes.momentObject,
     timeSinceCommit: PropTypes.string

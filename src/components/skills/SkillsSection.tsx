@@ -36,7 +36,6 @@ export default class SkillsSection extends React.Component<Props, State> {
       PropTypes.shape({
         name: PropTypes.string.isRequired,
         displayName: PropTypes.string.isRequired,
-        iconClass: PropTypes.string.isRequired,
         repoCount: PropTypes.number.isRequired
       })
     ).isRequired

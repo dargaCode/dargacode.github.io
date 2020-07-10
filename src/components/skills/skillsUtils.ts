@@ -9,7 +9,6 @@ export interface SkillSortComparator {
 export interface RawSkill {
   name: string;
   displayName: string;
-  iconClass: string;
 }
 
 // added keys derived from api data (in container)
@@ -23,7 +22,6 @@ export interface Skill extends RawSkill {
 export const EMPTY_SKILL: Skill = {
   name: "",
   displayName: "",
-  iconClass: "",
   repoCount: 0,
   lastCommitTime: moment(),
   timeSinceCommit: ""
