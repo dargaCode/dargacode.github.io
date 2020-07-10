@@ -1,3 +1,4 @@
+// `breakpoint-sizes` not included - only used by `break` mixin
+// `colors` not included - only used by `constants`
 @forward 'constants';
 @forward 'general';
-// breakpoints are not included, since they're only used by one file currently
