@@ -12,7 +12,7 @@ export const RAW_SKILLS: RawSkill[] = [
     iconClass: "iconCss"
   },
   {
-    name: "express-js",
+    name: "express",
     displayName: "Express.js",
     iconClass: "iconExpress"
   },
