@@ -4,61 +4,61 @@ export const RAW_SKILLS: RawSkill[] = [
   {
     name: "c",
     displayName: "C",
-    iconClass: "icon-c"
+    iconClass: "iconC"
   },
   {
     name: "css",
     displayName: "CSS",
-    iconClass: "icon-css"
+    iconClass: "iconCss"
   },
   {
     name: "express-js",
     displayName: "Express.js",
-    iconClass: "icon-express"
+    iconClass: "iconExpress"
   },
   {
     name: "git",
     displayName: "Git",
-    iconClass: "icon-git"
+    iconClass: "iconGit"
   },
   {
     name: "html",
     displayName: "HTML",
-    iconClass: "icon-html"
+    iconClass: "iconHtml"
   },
   {
     name: "javascript",
     displayName: "JavaScript",
-    iconClass: "icon-javascript"
+    iconClass: "iconJavascript"
   },
   {
     name: "jest",
     displayName: "Jest",
-    iconClass: "icon-jest"
+    iconClass: "iconJest"
   },
   {
     name: "nodejs",
     displayName: "Node.js",
-    iconClass: "icon-node"
+    iconClass: "iconNode"
   },
   {
     name: "react",
     displayName: "React.js",
-    iconClass: "icon-react"
+    iconClass: "iconReact"
   },
   {
     name: "scss",
     displayName: "SCSS",
-    iconClass: "icon-scss"
+    iconClass: "iconScss"
   },
   {
     name: "storybook",
     displayName: "Storybook",
-    iconClass: "icon-storybook"
+    iconClass: "iconStorybook"
   },
   {
     name: "typescript",
     displayName: "TypeScript",
-    iconClass: "icon-typescript"
+    iconClass: "iconTypescript"
   }
 ];
