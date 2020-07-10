@@ -33,7 +33,7 @@ export default function AboutSection(): JSX.Element {
             className={styles.button}
             href="https://blog.dargacode.com/tagged/highlights"
           >
-            <i className={icons.iconCss} />
+            <i className={icons.iconRss} />
             <span>Blog</span>
           </a>
         </div>
