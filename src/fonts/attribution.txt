@@ -1,0 +1,26 @@
+Custom font compiled by IcoMoon - https://icomoon.io/
+
+Simple Icons - https://simpleicons.org/
+- css3
+- git
+- github
+- html5
+- javascript
+- jest
+- linkedin
+- nodejs
+- react
+- rss
+- sass
+- storybook
+- typescript
+
+Font Awesome by Dave Gandy - https://fontawesome.io
+- envelope
+- file-pdf
+- file-word
+- globe-africa
+
+DevIcon - https://konpa.github.io/devicon/
+- c
+- express
