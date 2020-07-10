@@ -1,6 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import cloneDeep from "clone-deep";
+import { startCase } from "lodash";
 import { classSelector } from "../../utils/jestUtils";
 import { getTimeSinceCommit } from "./repoUtils";
 import SkillCard from "./SkillCard";
@@ -44,14 +45,13 @@ describe("SkillCard", () => {
 
         expect(nameText).toEqual(skill.displayName);
       });
-    });
 
-    describe("`skill.iconClass`", () => {
-      it("should render the skill's `iconClass`", () => {
+      it("should derive and render the correct icon class`", () => {
         const wrapper = shallow(<SkillCard skill={skill} />);
         const { className } = wrapper.find("i").props();
+        const iconClass = `icon${startCase(skill.name)}`;
 
-        expect(className).toBe(skill.iconClass);
+        expect(className).toBe(iconClass);
       });
     });
 
