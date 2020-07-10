@@ -1,18 +1,18 @@
 @font-face {
   font-display: block;
-  font-family: 'custom-icons';
+  font-family: 'icons';
   font-style: normal;
   font-weight: normal;
   src:
-    url('./custom-icons.ttf?jmeqka') format('truetype'),
-    url('./custom-icons.woff?jmeqka') format('woff'),
-    url('./custom-icons.svg?jmeqka#custom-icons') format('svg');
+    url('icons.ttf?4brbpa') format('truetype'),
+    url('icons.woff?4brbpa') format('woff'),
+    url('icons.svg?4brbpa#icons') format('svg');
 }
 
 [class^='icon-'],
 [class*=' icon-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'custom-icons' !important;
+  font-family: 'icons' !important;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
