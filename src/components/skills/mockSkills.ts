@@ -5,29 +5,23 @@ import { getTimeSinceCommit } from "./repoUtils";
 export const MOCK_RAW_SKILLS: RawSkill[] = [
   {
     name: "javascript",
-    displayName: "JavaScript",
-    iconClass: "devicon-javascript-plain"
+    displayName: "JavaScript"
   },
   {
     name: "jest",
-    displayName: "Jest",
-    iconClass: "devicon-jest-plain"
+    displayName: "Jest"
   },
-  {
-    name: "mongodb",
-    displayName: "MongoDB",
-    iconClass: "devicon-mongodb-plain"
-  },
-
   {
     name: "react",
-    displayName: "React.js",
-    iconClass: "devicon-react-plain"
+    displayName: "React.js"
   },
   {
     name: "storybook",
-    displayName: "Storybook",
-    iconClass: "devicon-storybook-plain"
+    displayName: "Storybook"
+  },
+  {
+    name: "typescript",
+    displayName: "TypeScript"
   }
 ];
 
@@ -36,37 +30,31 @@ export const MOCK_SKILLS: Skill[] = [
   {
     name: "javascript",
     displayName: "JavaScript",
-    iconClass: "devicon-javascript-plain",
     repoCount: 3,
     lastCommitTime: moment("2020-08-26T21:40:06Z")
   },
   {
     name: "jest",
     displayName: "Jest",
-    iconClass: "devicon-jest-plain",
     repoCount: 1,
     lastCommitTime: moment("2016-08-26T21:40:06Z")
   },
   {
-    name: "mongodb",
-    displayName: "MongoDB",
-    iconClass: "devicon-mongodb-plain",
-    repoCount: 2,
-    lastCommitTime: moment("2020-08-26T21:40:06Z")
-  },
-
-  {
     name: "react",
     displayName: "React.js",
-    iconClass: "devicon-react-plain",
     repoCount: 2,
     lastCommitTime: moment("2018-08-26T21:40:06Z")
   },
   {
     name: "storybook",
     displayName: "Storybook",
-    iconClass: "devicon-storybook-plain",
     repoCount: 1,
+    lastCommitTime: moment("2020-08-26T21:40:06Z")
+  },
+  {
+    name: "typescript",
+    displayName: "TypeScript",
+    repoCount: 2,
     lastCommitTime: moment("2020-08-26T21:40:06Z")
   }
 ].map(incompleteSkill => {

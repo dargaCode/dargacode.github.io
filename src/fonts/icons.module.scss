@@ -1,0 +1,101 @@
+@font-face {
+  font-display: block;
+  font-family: 'icons';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('icons.ttf?4brbpa') format('truetype'),
+    url('icons.woff?4brbpa') format('woff'),
+    url('icons.svg?4brbpa#icons') format('svg');
+}
+
+[class*='icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+.icon-c::before {
+  content: '\e914';
+}
+
+.icon-css::before {
+  content: '\e901';
+}
+
+.icon-docx::before {
+  content: '\e902';
+}
+
+.icon-envelope::before {
+  content: '\e903';
+}
+
+.icon-express::before {
+  content: '\e904';
+}
+
+.icon-git::before {
+  content: '\e905';
+}
+
+.icon-github::before {
+  content: '\e906';
+}
+
+.icon-globe::before {
+  content: '\e907';
+}
+
+.icon-html::before {
+  content: '\e908';
+}
+
+.icon-javascript::before {
+  content: '\e909';
+}
+
+.icon-jest::before {
+  content: '\e90a';
+}
+
+.icon-linkedin::before {
+  content: '\e90b';
+}
+
+.icon-nodejs::before {
+  content: '\e90c';
+}
+
+.icon-pdf::before {
+  content: '\e90d';
+}
+
+.icon-react::before {
+  content: '\e90e';
+}
+
+.icon-rss::before {
+  content: '\e90f';
+}
+
+.icon-scss::before {
+  content: '\e910';
+}
+
+.icon-storybook::before {
+  content: '\e911';
+}
+
+.icon-typescript::before {
+  content: '\e912';
+}

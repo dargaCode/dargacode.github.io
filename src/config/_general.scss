@@ -1,6 +1,7 @@
 @use 'constants';
 @use '../utils/break';
 
+$common-font-stack: 'Arimo', 'Helvetica', sans-serif;
 $navigation-bar-height: '54px';
 $navigation-bar-height-stacked: '72px';
 
@@ -13,12 +14,12 @@ $navigation-bar-height-stacked: '72px';
 
 html,
 body {
-  overflow: hidden; // Never scroll at this top level of the page
+  overflow: hidden; // never scroll at this top level of the page
 }
 
 body {
   color: constants.$body-text-color;
-  font-family: 'Arimo', 'Helvetica', sans-serif;
+  font-family: $common-font-stack;
   line-height: 1.5;
   margin: 0;
   padding: 0;
@@ -26,18 +27,18 @@ body {
 
 .content-section {
   background: constants.$content-section-background-color;
-  height: calc(100vh - #{$navigation-bar-height}); // Must have an explicit height to allow scrolling;
-  overflow: auto; // Allow scrollbar within content sections
+  height: calc(100vh - #{$navigation-bar-height}); // must have an explicit height to allow scrolling;
+  overflow: auto; // allow scrollbar within content sections
 
   @include break.under(small) {
-    height: calc(100vh - #{$navigation-bar-height-stacked}); // Make sure the scrollbar doesn't clip at the bottom
+    height: calc(100vh - #{$navigation-bar-height-stacked}); // make sure the scrollbar doesn't clip at the bottom
   }
 }
 
 .container {
   margin: 0 auto;
   max-width: 720px;
-  overflow: hidden;  // No margin collapse w/children
+  overflow: hidden;  // no margin collapse w/children
   padding: 88px 0;
 
   @include break.under(large) {
@@ -54,7 +55,7 @@ a {
   text-decoration: none;
 }
 
-// Used by headings that are needed for HTML5 document outline but not for visually browsing the site
+// used by headings that are needed for HTML5 document outline but not for visually browsing the site
 .invisible-but-outline-readable {
   height: 0;
   margin: 0;
@@ -69,7 +70,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Arimo', 'Helvetica', sans-serif;
+  font-family: $common-font-stack;
   text-align: center;
 }
 

@@ -11,6 +11,6 @@ module.exports = {
     "color-no-hex": true,
     "color-no-invalid-hex": true,
     "color-named": "never",
-    "function-whitelist": ["calc", "url", "format", "map-get"] // no rgb colors
+    "function-whitelist": ["calc", "url", "format", "map-get", "local"] // no rgb colors
   }
 };

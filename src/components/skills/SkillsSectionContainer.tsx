@@ -28,14 +28,24 @@ export const GITHUB_REPOS_REQUEST_OPTIONS = {
 
 function processSkills(rawSkills: RawSkill[], repos: Repo[]): Skill[] {
   const topicStats = aggregateRepoTopicStats(repos);
+  const processedSkills: Skill[] = [];
 
-  return rawSkills.map(rawSkill => {
+  // in the case that `rawSkills` includes a `skill` which doesn't exist
+  // in `repos`, it needs to gracefully skip it in the output.
+  // this `reduce` takes the place of a `filter`/`map` combo.
+  return rawSkills.reduce((skills, rawSkill) => {
     const topic = topicStats[rawSkill.name];
 
-    return Object.assign(rawSkill, topic, {
-      timeSinceCommit: getTimeSinceCommit(topic.lastCommitTime)
-    });
-  });
+    if (topic) {
+      const processedSkill = Object.assign(rawSkill, topic, {
+        timeSinceCommit: getTimeSinceCommit(topic.lastCommitTime)
+      });
+
+      skills.push(processedSkill);
+    }
+
+    return skills;
+  }, processedSkills);
 }
 
 export default class SkillsSectionContainer extends React.Component<
@@ -46,8 +56,7 @@ export default class SkillsSectionContainer extends React.Component<
     rawSkills: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
-        displayName: PropTypes.string.isRequired,
-        iconClass: PropTypes.string.isRequired
+        displayName: PropTypes.string.isRequired
       })
     )
   };

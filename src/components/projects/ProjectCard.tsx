@@ -4,6 +4,8 @@ import moment from "moment";
 import SiteOrGithubLink from "./SiteOrGithubLink";
 import "../../config/_general.scss";
 import styles from "./ProjectCard.module.scss";
+// eslint-disable-next-line css-modules/no-unused-class
+import icons from "../../fonts/icons.module.scss";
 
 interface Props {
   project: {
@@ -48,12 +50,12 @@ export default function ProjectCard(props: Props): JSX.Element {
       <p>{description}</p>
       <a className={styles.linkContainer} href={githubUrl}>
         GitHub Repository
-        <i className="fa fa-github" />
+        <i className={icons.iconGithub} />
       </a>
       {livePageUrl && (
         <a className={styles.linkContainer} href={livePageUrl}>
           Live Webpage
-          <i className="fa fa-globe" />
+          <i className={icons.iconGlobe} />
         </a>
       )}
     </article>

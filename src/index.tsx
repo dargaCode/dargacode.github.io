@@ -6,8 +6,6 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-import "./fonts/custom-icons.scss";
-import "../vendor/font-awesome.min.scss";
 import NavigationBar from "./components/navigation/NavigationBar";
 import AboutSection from "./components/about/AboutSection";
 import SkillsSectionContainer from "./components/skills/SkillsSectionContainer";

@@ -3,62 +3,50 @@ import { RawSkill } from "./skillsUtils";
 export const RAW_SKILLS: RawSkill[] = [
   {
     name: "c",
-    displayName: "C",
-    iconClass: "devicon-c-plain"
+    displayName: "C"
   },
   {
     name: "css",
-    displayName: "CSS",
-    iconClass: "devicon-css3-plain"
+    displayName: "CSS"
   },
   {
-    name: "express-js",
-    displayName: "Express.js",
-    iconClass: "icon-express-logo"
+    name: "express",
+    displayName: "Express.js"
   },
   {
     name: "git",
-    displayName: "Git",
-    iconClass: "devicon-git-plain"
+    displayName: "Git"
   },
   {
     name: "html",
-    displayName: "HTML",
-    iconClass: "devicon-html5-plain"
+    displayName: "HTML"
   },
   {
     name: "javascript",
-    displayName: "JavaScript",
-    iconClass: "devicon-javascript-plain"
+    displayName: "JavaScript"
   },
   {
     name: "jest",
-    displayName: "Jest",
-    iconClass: "devicon-jest-plain"
+    displayName: "Jest"
   },
   {
     name: "nodejs",
-    displayName: "Node.js",
-    iconClass: "devicon-nodejs-plain"
+    displayName: "Node.js"
   },
   {
     name: "react",
-    displayName: "React.js",
-    iconClass: "devicon-react-plain"
+    displayName: "React.js"
   },
   {
     name: "scss",
-    displayName: "SCSS",
-    iconClass: "devicon-sass-plain"
+    displayName: "SCSS"
   },
   {
     name: "storybook",
-    displayName: "Storybook",
-    iconClass: "devicon-storybook-plain"
+    displayName: "Storybook"
   },
   {
     name: "typescript",
-    displayName: "TypeScript",
-    iconClass: "devicon-typescript-plain"
+    displayName: "TypeScript"
   }
 ];

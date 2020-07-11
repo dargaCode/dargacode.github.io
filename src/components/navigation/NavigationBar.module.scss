@@ -12,7 +12,7 @@
   }
 
   ul {
-    font-size: 0; // Remove spaces between inline-block children
+    font-size: 0; // remove spaces between inline-block children
     list-style: none;
     padding: 0;
 
@@ -23,7 +23,7 @@
 
   li {
     display: inline-block;
-    font-size: 1rem; // Override 0-size text in ul
+    font-size: 1rem; // override 0-size text in ul
   }
 }
 
