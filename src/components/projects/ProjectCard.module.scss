@@ -47,15 +47,18 @@
 }
 
 .link-container {
-  display: inline-block;
+  display: inline-grid;
   font-size: 0; // hide link text (to replace with icon)
   height: 50px;
+  place-items: center;
   width: 50px;
 
   i {
+    display: inherit;
     font-size: 32px;
-    line-height: 50px;
-    vertical-align: top;
+    height: inherit;
+    place-items: inherit;
+    width: inherit;
   }
 
   &:hover i {
