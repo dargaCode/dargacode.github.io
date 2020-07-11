@@ -1,18 +1,7 @@
 @use 'constants';
 @use '../utils/break';
 
-@font-face {
-  font-display: block;
-  font-family: 'arimo-helvetica';
-  font-style: normal;
-  font-weight: normal;
-  src:
-    local('Arimo'),
-    local('Helvetica'),
-    local(sans-serif);
-}
-$common-font-stack: 'arimo-helvetica';
-
+$common-font-stack: 'Arimo', 'Helvetica', sans-serif;
 $navigation-bar-height: '54px';
 $navigation-bar-height-stacked: '72px';
 
