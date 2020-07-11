@@ -6,6 +6,26 @@ import { SKILL_SORT_OPTIONS } from "./skillsUtils";
 const onChange = jest.fn();
 
 describe("`SkillSortSelector`", () => {
+  describe("props", () => {
+    it("should pass `disabled` to `select`", () => {
+      const wrapper = shallow(
+        <SkillSortSelector onChange={onChange} disabled />
+      );
+      const { disabled } = wrapper.find("select").props();
+
+      expect(disabled).toBe(true);
+    });
+
+    it("should pass `onChange` to `select`", () => {
+      const wrapper = shallow(
+        <SkillSortSelector onChange={onChange} disabled />
+      );
+      const { onChange: handler } = wrapper.find("select").props();
+
+      expect(handler).toBe(onChange);
+    });
+  });
+
   describe("render", () => {
     it("should render the selector", () => {
       const wrapper = shallow(<SkillSortSelector onChange={onChange} />);

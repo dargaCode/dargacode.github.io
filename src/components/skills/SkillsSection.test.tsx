@@ -37,6 +37,13 @@ describe("`SkillsSection`", () => {
 
         expect(wrapper.find("SkillCard")).toHaveLength(0);
       });
+
+      it("should pass `disabled` to `SkillSortSelector`", () => {
+        const wrapper = shallow(<SkillsSection {...props} loading />);
+        const { disabled } = wrapper.find("SkillSortSelector").props();
+
+        expect(disabled).toBe(true);
+      });
     });
 
     describe("`error", () => {
