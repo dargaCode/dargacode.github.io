@@ -6,7 +6,8 @@ import {
   EMPTY_SKILL,
   nameSkillComparator,
   repoCountComparator,
-  commitRecencySkillComparator
+  commitRecencySkillComparator,
+  DEFAULT_COMPARATOR
 } from "./skillsUtils";
 
 function getSkillNames(skills: Skill[]): string[] {
@@ -125,6 +126,12 @@ describe("`skillsUtils`", () => {
 
         expect(getSkillNames(sortedSkills)).toEqual(["Jest", "Git", "React"]);
       });
+    });
+  });
+
+  describe("`DEFAULT_COMPARATOR`", () => {
+    it("should be `nameSkillComparator`", () => {
+      expect(DEFAULT_COMPARATOR).toBe(nameSkillComparator);
     });
   });
 });

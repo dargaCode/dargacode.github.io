@@ -8,7 +8,8 @@ import { MOCK_SKILLS } from "./mockSkills";
 import {
   SkillSortComparator,
   nameSkillComparator,
-  repoCountComparator
+  repoCountComparator,
+  DEFAULT_COMPARATOR
 } from "./skillsUtils";
 
 function getFakeEventWithValue(
@@ -70,13 +71,13 @@ describe("`SkillsSection`", () => {
           expect(wrapper.find("SkillCard")).toHaveLength(MOCK_SKILLS.length);
         });
 
-        it("should initially sort skills by name", () => {
+        it("should initially sort skills by `DEFAULT_COMPARATOR`", () => {
           const wrapper = shallow(<SkillsSection {...props} />);
           const comparator: SkillSortComparator = wrapper.state(
             "sortComparator"
           );
 
-          expect(comparator).toEqual(nameSkillComparator);
+          expect(comparator).toEqual(DEFAULT_COMPARATOR);
         });
       });
     });

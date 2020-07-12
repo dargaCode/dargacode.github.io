@@ -73,3 +73,6 @@ export const COMPARATORS: Map<string, SkillSortComparator> = new Map([
 ]);
 
 export const SKILL_SORT_OPTIONS = Array.from(COMPARATORS.keys());
+// the default value is always the first in the list
+export const DEFAULT_COMPARATOR: SkillSortComparator = COMPARATORS.values().next()
+  .value;
