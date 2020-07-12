@@ -1,6 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
+import {
+  DATE_FORMAT,
+  DATE_FORMAT_PROJECT_DISPLAY
+} from "../../utils/dateConstants";
 import SiteOrGithubLink from "./SiteOrGithubLink";
 import "../../config/_general.scss";
 import styles from "./ProjectCard.module.scss";
@@ -20,9 +24,6 @@ interface Props {
   };
 }
 
-const DATETIME_FORMAT = "YYYY-MM-DD";
-const MONTH_YEAR_FORMAT = "MMM YYYY";
-
 export default function ProjectCard(props: Props): JSX.Element {
   const { project } = props;
   const { name, type, description, imageSrc, githubUrl, livePageUrl } = project;
@@ -35,9 +36,9 @@ export default function ProjectCard(props: Props): JSX.Element {
         <h3>{name}</h3>
       </SiteOrGithubLink>
       <span className={styles.type}>{type}</span>
-      <time dateTime={date.format(DATETIME_FORMAT)}>
+      <time dateTime={date.format(DATE_FORMAT)}>
         {" "}
-        - {date.format(MONTH_YEAR_FORMAT)}
+        - {date.format(DATE_FORMAT_PROJECT_DISPLAY)}
       </time>
       <SiteOrGithubLink preferredUrl={livePageUrl} defaultUrl={githubUrl}>
         <img
