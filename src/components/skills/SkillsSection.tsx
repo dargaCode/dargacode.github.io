@@ -8,7 +8,7 @@ import {
   Skill,
   SkillSortComparator,
   COMPARATORS,
-  nameSkillComparator
+  DEFAULT_COMPARATOR
 } from "./skillsUtils";
 import { Error } from "../error/errorUtils";
 
@@ -50,7 +50,7 @@ export default class SkillsSection extends React.Component<Props, State> {
     super(props);
 
     this.state = {
-      sortComparator: nameSkillComparator
+      sortComparator: DEFAULT_COMPARATOR
     };
   }
 

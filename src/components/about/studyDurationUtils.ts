@@ -1,6 +1,6 @@
 import moment from "moment";
+import { DATE_FORMAT } from "../../utils/dateConstants";
 
-const DATE_FORMAT = "YYYY-MM-DD";
 export const STUDY_START_DATE = "2015-05-10";
 export const DATE_TODAY = moment().format(DATE_FORMAT);
 

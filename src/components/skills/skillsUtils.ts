@@ -28,12 +28,15 @@ export const EMPTY_SKILL: Skill = {
 };
 
 export function nameSkillComparator(a: Skill, b: Skill): number {
+  // ascending
   if (a.name < b.name) {
     return -1;
   }
+
   if (b.name < a.name) {
     return 1;
   }
+
   return 0;
 }
 
@@ -42,12 +45,35 @@ export function repoCountComparator(a: Skill, b: Skill): number {
     return nameSkillComparator(a, b);
   }
 
+  // descending
   return b.repoCount - a.repoCount;
 }
 
+export function commitRecencySkillComparator(a: Skill, b: Skill): number {
+  // descending
+  if (a.lastCommitTime.isBefore(b.lastCommitTime)) {
+    return 1;
+  }
+
+  if (a.lastCommitTime.isAfter(b.lastCommitTime)) {
+    return -1;
+  }
+
+  if (a.repoCount !== b.repoCount) {
+    // ascending
+    return a.repoCount - b.repoCount;
+  }
+
+  return nameSkillComparator(a, b);
+}
+
 export const COMPARATORS: Map<string, SkillSortComparator> = new Map([
+  ["Recency", commitRecencySkillComparator],
   ["Skill Name", nameSkillComparator],
   ["Repo Count", repoCountComparator]
 ]);
 
 export const SKILL_SORT_OPTIONS = Array.from(COMPARATORS.keys());
+// the default value is always the first in the list
+export const DEFAULT_COMPARATOR: SkillSortComparator = COMPARATORS.values().next()
+  .value;
