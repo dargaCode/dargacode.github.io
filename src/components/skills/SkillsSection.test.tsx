@@ -106,8 +106,6 @@ describe("`SkillsSection`", () => {
     it("can sort skills by `name`", () => {
       const wrapper = shallow<SkillsSection>(<SkillsSection {...props} />);
 
-      // sort away from default Skill Name sort, to sort back again
-      wrapper.instance().handleSort(getFakeEventWithValue("Repo Count"));
       wrapper.instance().handleSort(getFakeEventWithValue("Skill Name"));
 
       const comparator: SkillSortComparator = wrapper.state("sortComparator");
@@ -118,6 +116,8 @@ describe("`SkillsSection`", () => {
     it("can sort skills by `lastCommitTime`", () => {
       const wrapper = shallow<SkillsSection>(<SkillsSection {...props} />);
 
+      // sort away from initial sort, to sort back again
+      wrapper.instance().handleSort(getFakeEventWithValue("Name"));
       wrapper.instance().handleSort(getFakeEventWithValue("Recency"));
 
       const comparator: SkillSortComparator = wrapper.state("sortComparator");

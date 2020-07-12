@@ -131,7 +131,7 @@ describe("`skillsUtils`", () => {
 
   describe("`DEFAULT_COMPARATOR`", () => {
     it("should be `nameSkillComparator`", () => {
-      expect(DEFAULT_COMPARATOR).toBe(nameSkillComparator);
+      expect(DEFAULT_COMPARATOR).toBe(commitRecencySkillComparator);
     });
   });
 });

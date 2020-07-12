@@ -68,9 +68,9 @@ export function commitRecencySkillComparator(a: Skill, b: Skill): number {
 }
 
 export const COMPARATORS: Map<string, SkillSortComparator> = new Map([
+  ["Recency", commitRecencySkillComparator],
   ["Skill Name", nameSkillComparator],
-  ["Repo Count", repoCountComparator],
-  ["Recency", commitRecencySkillComparator]
+  ["Repo Count", repoCountComparator]
 ]);
 
 export const SKILL_SORT_OPTIONS = Array.from(COMPARATORS.keys());
