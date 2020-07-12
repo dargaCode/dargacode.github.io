@@ -9,6 +9,7 @@ import {
   SkillSortComparator,
   nameSkillComparator,
   repoCountComparator,
+  commitRecencySkillComparator,
   DEFAULT_COMPARATOR
 } from "./skillsUtils";
 
@@ -92,7 +93,7 @@ describe("`SkillsSection`", () => {
   });
 
   describe("events", () => {
-    it("can sort skills by repo count", () => {
+    it("can sort skills by `repoCount`", () => {
       const wrapper = shallow<SkillsSection>(<SkillsSection {...props} />);
 
       wrapper.instance().handleSort(getFakeEventWithValue("Repo Count"));
@@ -102,7 +103,7 @@ describe("`SkillsSection`", () => {
       expect(comparator).toEqual(repoCountComparator);
     });
 
-    it("can sort skills by name", () => {
+    it("can sort skills by `name`", () => {
       const wrapper = shallow<SkillsSection>(<SkillsSection {...props} />);
 
       // sort away from default Skill Name sort, to sort back again
@@ -112,6 +113,16 @@ describe("`SkillsSection`", () => {
       const comparator: SkillSortComparator = wrapper.state("sortComparator");
 
       expect(comparator).toEqual(nameSkillComparator);
+    });
+
+    it("can sort skills by `lastCommitTime`", () => {
+      const wrapper = shallow<SkillsSection>(<SkillsSection {...props} />);
+
+      wrapper.instance().handleSort(getFakeEventWithValue("Recency"));
+
+      const comparator: SkillSortComparator = wrapper.state("sortComparator");
+
+      expect(comparator).toEqual(commitRecencySkillComparator);
     });
   });
 });
