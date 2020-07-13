@@ -55,7 +55,7 @@ body {
 
   @include break.under(large) {
     max-width: layout.$container-max-width--break-large;
-    padding: 42px 0;
+    padding: 40px 0;
   }
 
   @include break.under(medium) {
