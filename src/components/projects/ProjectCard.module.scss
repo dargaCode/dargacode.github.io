@@ -6,7 +6,8 @@
   border: 2px solid config.$projects-section-background-color;
   display: inline-block;
   font-size: 1rem; // override 0-size text in container
-  max-width: 480px;
+  max-width: config.$project-card-max-width;
+  min-width: config.$project-card-min-width;
   padding: 0 40px 20px;
   text-align: center;
 
