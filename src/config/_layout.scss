@@ -1,10 +1,10 @@
-$width-unit: 120px;
+$base-width-unit: 120px;
 
-$container-max-width: calc(#{$width-unit} * 6);
-$container-max-width--break-large: calc(#{$width-unit} * 4);
-$container-max-width--break-medium: calc(#{$width-unit} * 3);
-$container-max-width--break-small: calc(#{$width-unit} * 2);
-$container-max-width--break-tiny: calc(#{$width-unit} * 1);
+$container-max-width: calc(#{$base-width-unit} * 6);
+$container-max-width--break-large: calc(#{$base-width-unit} * 4);
+$container-max-width--break-medium: calc(#{$base-width-unit} * 3);
+$container-max-width--break-small: calc(#{$base-width-unit} * 2);
+$container-max-width--break-tiny: calc(#{$base-width-unit} * 1);
 
 // navbar height + content section height must always equal 100%
 $navigation-bar-height: 54px;
@@ -21,11 +21,11 @@ $content-section-height--break-medium: calc(100vh - #{$navigation-bar-height--do
 $content-section-height--break-small: calc(100vh - #{$navigation-bar-height--triple-stacked});
 $content-section-height--break-tiny: calc(100vh - #{$navigation-bar-height--fully-stacked});
 
-$skill-card-width: $width-unit;
+$skill-card-width: $base-width-unit;
 $skill-card-height: 172px;
 
-$projects-section-container-max-width: calc(#{$width-unit} * 9);
+$projects-section-container-max-width: calc(#{$base-width-unit} * 9);
 // decrease to 1 per line before the breakpoint, so as not to add a new `huge` size
-$projects-section-container-h-padding: calc(#{$width-unit} * 0.25);
-$project-card-max-width: calc(#{$width-unit} * 4);
-$project-card-min-width: calc(#{$width-unit} * 2);
+$projects-section-container-h-padding: calc(#{$base-width-unit} * 0.25);
+$project-card-max-width: calc(#{$base-width-unit} * 4);
+$project-card-min-width: calc(#{$base-width-unit} * 2);

@@ -1,8 +1,8 @@
 @use 'layout';
 
 $max-widths: (
-  'large': calc(#{layout.$width-unit} * 7.5),
-  'medium': calc(#{layout.$width-unit} * 5.5),
-  'small': calc(#{layout.$width-unit} * 4),
-  'tiny': calc(#{layout.$width-unit} * 2.66)
+  'large': calc(#{layout.$base-width-unit} * 7.5),
+  'medium': calc(#{layout.$base-width-unit} * 5.5),
+  'small': calc(#{layout.$base-width-unit} * 4),
+  'tiny': calc(#{layout.$base-width-unit} * 2.66)
 );
