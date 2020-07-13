@@ -7,17 +7,18 @@
   font-family: 'Roboto', sans-serif;
   width: 100%;
 
-  @include break.under(small) {
+  @include break.under(medium) {
     text-align: center;
   }
 
   ul {
     font-size: 0; // remove spaces between inline-block children
     list-style: none;
+    margin: 0 auto;
     padding: 0;
 
     @include break.under(small) {
-      width: 100%;
+      max-width: 180px;
     }
   }
 
@@ -32,7 +33,7 @@
   justify-content: space-between;
   padding: 0;
 
-  @include break.under(small) {
+  @include break.under(medium) {
     flex-direction: column;
   }
 }
@@ -42,7 +43,7 @@
   font-weight: 700;
   padding: 15px 0;
 
-  @include break.under(small) {
+  @include break.under(medium) {
     padding: 8px 0 0;
   }
 
@@ -57,8 +58,9 @@
     display: inline-block;
     padding: 15px 11.2px;
 
-    @include break.under(small) {
-      padding: 8px 10px;
+    @include break.under(medium) {
+      padding: 6px 10px;
+      width: 80px;
     }
 
     &:hover {
