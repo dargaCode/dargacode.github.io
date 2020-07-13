@@ -5,10 +5,10 @@
   border: 2px solid config.$content-section-background-color;
   display: inline-block;
   font-size: 16px; // override 0-size text in ul
-  height: 172px;
+  height: config.$skill-card-height;
   padding: 15px 0;
   text-align: center;
-  width: 120px;
+  width: config.$skill-card-width;
 
   &:hover {
     background: config.$skill-card-hover-background-color;
