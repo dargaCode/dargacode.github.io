@@ -1,4 +1,10 @@
 $width-unit: 120px;
 
+$container-max-width: calc(#{$width-unit} * 6);
+$container-max-width--break-large: calc(#{$width-unit} * 4);
+$container-max-width--break-medium: calc(#{$width-unit} * 3);
+$container-max-width--break-small: calc(#{$width-unit} * 2);
+$container-max-width--break-tiny: calc(#{$width-unit} * 1);
+
 $navigation-bar-height: 54px;
 $navigation-bar-height-stacked: 72px;
