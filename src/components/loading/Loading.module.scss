@@ -1,0 +1,14 @@
+@use '../../config';
+
+.loading-overlay {
+  background: config.$loading-background-color;
+  display: grid;
+  min-height: inherit;
+  place-items: center;
+}
+
+.loading-message {
+  color: config.$loading-text-color;
+  font-size: 28px;
+  margin: 0;
+}
