@@ -6,8 +6,20 @@ $container-max-width--break-medium: calc(#{$width-unit} * 3);
 $container-max-width--break-small: calc(#{$width-unit} * 2);
 $container-max-width--break-tiny: calc(#{$width-unit} * 1);
 
+// navbar height + content section height must always equal 100%
 $navigation-bar-height: 54px;
-$navigation-bar-height-stacked: 72px;
+$navigation-bar-height--double-stacked: 68px;
+$navigation-bar-height--triple-stacked: 104px;
+$navigation-bar-height--fully-stacked: 176px;
+
+// must have an explicit height to allow scrolling;
+$content-section-height: calc(100vh - #{$navigation-bar-height});
+
+// make sure the scrollbar doesn't clip at the bottom
+$content-section-height--break-large: calc(100vh - #{$navigation-bar-height});
+$content-section-height--break-medium: calc(100vh - #{$navigation-bar-height--double-stacked});
+$content-section-height--break-small: calc(100vh - #{$navigation-bar-height--triple-stacked});
+$content-section-height--break-tiny: calc(100vh - #{$navigation-bar-height--fully-stacked});
 
 $skill-card-width: $width-unit;
 $skill-card-height: 172px;

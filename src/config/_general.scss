@@ -29,8 +29,21 @@ body {
   height: calc(100vh - #{layout.$navigation-bar-height}); // must have an explicit height to allow scrolling;
   overflow: auto; // allow scrollbar within content sections
 
+  // make sure the scrollbar doesn't clip at the bottom
+  @include break.under(large) {
+    height: layout.$content-section-height--break-large;
+  }
+
+  @include break.under(medium) {
+    height: layout.$content-section-height--break-medium;
+  }
+
   @include break.under(small) {
-    height: calc(100vh - #{layout.$navigation-bar-height-stacked}); // make sure the scrollbar doesn't clip at the bottom
+    height: layout.$content-section-height--break-small;
+  }
+
+  @include break.under(tiny) {
+    height: layout.$content-section-height--break-tiny;
   }
 }
 
