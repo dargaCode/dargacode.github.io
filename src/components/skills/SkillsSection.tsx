@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Loading from "../loading/Loading";
 import SkillCard from "./SkillCard";
 import SkillSortSelector from "./SkillSortSelector";
 import "../../config/_general.scss";
@@ -59,13 +60,7 @@ export default class SkillsSection extends React.Component<Props, State> {
     const { sortComparator } = this.state;
 
     if (loading) {
-      return (
-        // TODO add a real loading component
-        // eslint-disable-next-line spellcheck/spell-checker
-        <div className="loading" style={{ fontSize: "20px", color: "white" }}>
-          Loading...
-        </div>
-      );
+      return <Loading />;
     }
 
     if (error) {
