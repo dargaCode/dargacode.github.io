@@ -23,6 +23,7 @@ $content-section-height--break-tiny: calc(100vh - #{$navigation-bar-height--full
 
 $skill-card-width: $base-width-unit;
 $skill-card-height: 172px;
+$skill-list-min-height: calc(#{$skill-card-height} * 2);
 
 $projects-section-container-max-width: calc(#{$base-width-unit} * 9);
 // decrease to 1 per line before the breakpoint, so as not to add a new `huge` size
