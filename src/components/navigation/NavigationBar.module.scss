@@ -32,14 +32,8 @@
   justify-content: space-between;
   padding: 0;
 
-  @include break.under(large) {
-    max-width: 550px;
-    padding: 0 20px;
-  }
-
   @include break.under(small) {
     flex-direction: column;
-    padding: 0;
   }
 }
 
