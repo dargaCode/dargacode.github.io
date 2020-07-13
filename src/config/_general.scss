@@ -1,9 +1,8 @@
 @use 'constants';
+@use 'layout';
 @use '../utils/break';
 
 $common-font-stack: 'Arimo', 'Helvetica', sans-serif;
-$navigation-bar-height: '54px';
-$navigation-bar-height-stacked: '72px';
 
 *,
 *::before,
@@ -27,26 +26,49 @@ body {
 
 .content-section {
   background: constants.$content-section-background-color;
-  height: calc(100vh - #{$navigation-bar-height}); // must have an explicit height to allow scrolling;
+  height: calc(100vh - #{layout.$navigation-bar-height}); // must have an explicit height to allow scrolling;
   overflow: auto; // allow scrollbar within content sections
 
+  // make sure the scrollbar doesn't clip at the bottom
+  @include break.under(large) {
+    height: layout.$content-section-height--break-large;
+  }
+
+  @include break.under(medium) {
+    height: layout.$content-section-height--break-medium;
+  }
+
   @include break.under(small) {
-    height: calc(100vh - #{$navigation-bar-height-stacked}); // make sure the scrollbar doesn't clip at the bottom
+    height: layout.$content-section-height--break-small;
+  }
+
+  @include break.under(tiny) {
+    height: layout.$content-section-height--break-tiny;
   }
 }
 
 .container {
   margin: 0 auto;
-  max-width: 720px;
+  max-width: layout.$container-max-width;
   overflow: hidden;  // no margin collapse w/children
   padding: 88px 0;
 
   @include break.under(large) {
-    padding: 42px 0;
+    max-width: layout.$container-max-width--break-large;
+    padding: 40px 0;
+  }
+
+  @include break.under(medium) {
+    max-width: layout.$container-max-width--break-medium;
   }
 
   @include break.under(small) {
+    max-width: layout.$container-max-width--break-small;
     padding: 18px 0;
+  }
+
+  @include break.under(tiny) {
+    max-width: layout.$container-max-width--break-tiny;
   }
 }
 

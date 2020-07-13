@@ -7,7 +7,14 @@
 
 .container {
   font-size: 0; // remove spaces between inline-block children
-  max-width: 960px;
+  max-width: config.$projects-section-container-max-width;
+  padding-left: config.$projects-section-container-h-padding;
+  padding-right: config.$projects-section-container-h-padding;
+
+  @include break.under(small) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .list {

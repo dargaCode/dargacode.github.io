@@ -31,19 +31,6 @@
   }
 }
 
-.container {
-  @include break.under(large) {
-    max-width: 600px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  @include break.under(small) {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
 .list {
   font-size: 0; // remove spaces between inline-block children
   text-align: center;
