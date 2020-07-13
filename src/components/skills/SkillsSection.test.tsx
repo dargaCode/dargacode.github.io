@@ -30,7 +30,7 @@ describe("`SkillsSection`", () => {
       it("should display a loading message", () => {
         const wrapper = shallow(<SkillsSection {...props} loading />);
 
-        expect(wrapper.find(".loading")).toHaveLength(1);
+        expect(wrapper.find("Loading")).toHaveLength(1);
       });
 
       it("should not display any `SkillCard`s", () => {
