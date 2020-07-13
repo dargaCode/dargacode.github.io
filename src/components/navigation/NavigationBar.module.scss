@@ -14,10 +14,15 @@
   ul {
     font-size: 0; // remove spaces between inline-block children
     list-style: none;
-    margin: 0 auto;
     padding: 0;
 
+    @include break.under(medium) {
+      text-align: center;
+      width: 100%;
+    }
+
     @include break.under(small) {
+      margin: 0 auto;
       max-width: 180px;
     }
   }
