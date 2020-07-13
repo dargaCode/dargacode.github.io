@@ -1,4 +1,5 @@
 @use 'constants';
+@use 'layout';
 @use '../utils/break';
 
 $common-font-stack: 'Arimo', 'Helvetica', sans-serif;
@@ -25,11 +26,11 @@ body {
 
 .content-section {
   background: constants.$content-section-background-color;
-  height: calc(100vh - #{constants.$navigation-bar-height}); // must have an explicit height to allow scrolling;
+  height: calc(100vh - #{layout.$navigation-bar-height}); // must have an explicit height to allow scrolling;
   overflow: auto; // allow scrollbar within content sections
 
   @include break.under(small) {
-    height: calc(100vh - #{constants.$navigation-bar-height-stacked}); // make sure the scrollbar doesn't clip at the bottom
+    height: calc(100vh - #{layout.$navigation-bar-height-stacked}); // make sure the scrollbar doesn't clip at the bottom
   }
 }
 
