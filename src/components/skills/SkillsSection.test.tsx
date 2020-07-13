@@ -4,7 +4,6 @@ import { shallow } from "enzyme";
 import cloneDeep from "clone-deep";
 import SkillsSection from "./SkillsSection";
 import { MOCK_SKILLS } from "./mockSkills";
-
 import {
   SkillSortComparator,
   nameSkillComparator,
