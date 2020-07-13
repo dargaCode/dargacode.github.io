@@ -33,5 +33,6 @@
 
 .list {
   font-size: 0; // remove spaces between inline-block children
+  min-height: config.$skill-list-min-height;
   text-align: center;
 }
