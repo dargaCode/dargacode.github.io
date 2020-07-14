@@ -2,7 +2,7 @@ import { Resource } from "./ResourcesUtils";
 
 export const MOCK_RESOURCES: Resource[] = [
   {
-    displayName: "Google",
+    displayName: "Google Dotcom",
     href: "https://google.com",
     iconClass: "iconGlobe"
   }
