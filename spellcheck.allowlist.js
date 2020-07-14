@@ -102,6 +102,7 @@ module.exports = [
   "unhandled",
   "unshift",
   "unwatch",
+  "uri",
   "util",
   "utils",
   "webpack",
