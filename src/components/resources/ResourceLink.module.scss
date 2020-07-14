@@ -9,7 +9,7 @@
   justify-content: left;
   margin: 0 14px 28px;
   padding: 10px 21px;
-  width: 164px;
+  width: config.$resource-link-width;
 
   @include break.under(small) {
     margin-bottom: 20px;
