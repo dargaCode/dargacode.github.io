@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ResourceLink from "./ResourceLink";
 import { Resource } from "./ResourcesUtils";
 import styles from "./ResourcesList.module.scss";
@@ -18,3 +19,13 @@ export default function ResourcesList(props: Props): JSX.Element {
     </div>
   );
 }
+
+ResourcesList.propTypes = {
+  resources: PropTypes.arrayOf(
+    PropTypes.shape({
+      displayName: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+      iconClass: PropTypes.string.isRequired
+    })
+  ).isRequired
+};
