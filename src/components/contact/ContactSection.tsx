@@ -1,8 +1,8 @@
 import React from "react";
 import "../../config/_general.scss";
 import styles from "./ContactSection.module.scss";
-// eslint-disable-next-line css-modules/no-unused-class
-import icons from "../../fonts/icons.module.scss";
+import ResourcesList from "../resources/ResourcesList";
+import { CONTACT_RESOURCES } from "../resources/ResourcesData";
 
 export default function AboutSection(): JSX.Element {
   return (
@@ -10,33 +10,7 @@ export default function AboutSection(): JSX.Element {
       <div className={styles.container}>
         <h2>Contact</h2>
 
-        <div className={styles.buttons}>
-          <a className={styles.button} href="https://github.com/dargaCode">
-            <i className={icons.iconGithub} />
-            <span>GitHub</span>
-          </a>
-
-          <a
-            className={styles.button}
-            href="https://www.linkedin.com/in/dargaCode"
-          >
-            <i className={icons.iconLinkedin} />
-            <span>LinkedIn</span>
-          </a>
-
-          <a className={styles.button} href="mailto:resume@dargaCode.com">
-            <i className={icons.iconEnvelope} />
-            <span>Email</span>
-          </a>
-
-          <a
-            className={styles.button}
-            href="https://blog.dargacode.com/tagged/highlights"
-          >
-            <i className={icons.iconRss} />
-            <span>Blog</span>
-          </a>
-        </div>
+        <ResourcesList resources={CONTACT_RESOURCES} />
       </div>
     </section>
   );

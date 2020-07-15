@@ -1,51 +1,9 @@
 @use '../../config';
-@use '../../utils/break';
 
 .content-section {
   background: config.$contact-background-color;
-
-  i {
-    font-size: 42px;
-  }
-
-  span {
-    font-size: 1.1rem;
-    margin-left: 18px;
-    text-align: left;
-  }
 }
 
 .container {
   font-size: 0;
-  text-align: center;
-
-  @include break.under(small) {
-    font-size: 0;
-    max-width: 200px;
-  }
-}
-
-.buttons {
-  margin: 0 auto;
-  max-width: 400px;
-}
-
-.button {
-  align-items: center;
-  background: config.$contact-button-background-color;
-  color: config.$contact-button-text-color;
-  display: inline-flex;
-  justify-content: left;
-  margin: 0 14px 28px;
-  padding: 10px 21px;
-  width: 164px;
-
-  @include break.under(small) {
-    margin-bottom: 20px;
-  }
-
-  &:hover {
-    background: config.$contact-button-hover-background-color;
-    color: config.$contact-button-hover-text-color;
-  }
 }
