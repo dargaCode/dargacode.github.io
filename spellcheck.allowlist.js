@@ -105,6 +105,7 @@ module.exports = [
   "uri",
   "util",
   "utils",
+  "validator",
   "webpack",
   "whitelist",
   "woff",
