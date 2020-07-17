@@ -8,8 +8,16 @@ const emailUri = "mailto:resume@dargaCode.com";
 const blogUri = "https://blog.dargacode.com/tagged/highlights";
 
 export const RESUME_RESOURCES: Resource[] = [
-  { href: pdfResume, displayName: "PDF Resume", iconClass: "iconPdf" },
-  { href: docxResume, displayName: "Simple Resume", iconClass: "iconDocx" }
+  {
+    href: pdfResume.toString(),
+    displayName: "PDF Resume",
+    iconClass: "iconPdf"
+  },
+  {
+    href: docxResume.toString(),
+    displayName: "Simple Resume",
+    iconClass: "iconDocx"
+  }
 ];
 
 export const CONTACT_RESOURCES: Resource[] = [
