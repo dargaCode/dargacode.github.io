@@ -1,5 +1,4 @@
 @use '../../config';
-@use '../../utils/break';
 
 .content-section {
   background-attachment: scroll;
@@ -7,50 +6,9 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
-  i {
-    font-size: 47px;
-  }
-
-  span {
-    font-size: 1.1rem;
-    font-weight: 500;
-    line-height: 1.4em;
-    text-align: left;
-  }
 }
 
 .overlay {
   background: rgba(2, 63, 75, 0.8);
   height: inherit;
-}
-
-.container {
-  @include break.under(small) {
-    max-width: 200px;
-  }
-}
-
-.buttons {
-  font-size: 0;
-  text-align: center;
-}
-
-.button {
-  background: config.$resume-button-background-color;
-  color: config.$resume-button-text-color;
-  display: inline-flex;
-  justify-content: space-between;
-  margin: 0 14px;
-  padding: 10px 21px;
-  width: 164px;
-
-  @include break.under(small) {
-    margin-bottom: 20px;
-  }
-
-  &:hover {
-    background: config.$resume-button-hover-background-color;
-    color: config.$resume-button-hover-text-color;
-  }
 }
