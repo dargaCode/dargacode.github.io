@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { Resource } from "./ResourcesUtils";
 import styles from "./ResourceLink.module.scss";
 // eslint-disable-next-line css-modules/no-unused-class
@@ -19,3 +21,11 @@ export default function ResourceLink(props: Props): JSX.Element {
     </a>
   );
 }
+
+ResourceLink.propTypes = {
+  resource: PropTypes.shape({
+    displayName: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired,
+    iconClass: PropTypes.string.isRequired
+  }).isRequired
+};
