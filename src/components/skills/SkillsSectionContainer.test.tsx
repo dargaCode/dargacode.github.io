@@ -5,7 +5,7 @@ import { MOCK_RAW_SKILLS, MOCK_SKILLS } from "./mockSkills";
 import { MOCK_REPOS } from "./mockRepos";
 import SkillsSectionContainer, {
   GITHUB_REPOS_API_URL,
-  GITHUB_REPOS_REQUEST_OPTIONS
+  GITHUB_REPOS_REQUEST_HEADERS
 } from "./SkillsSectionContainer";
 
 describe("`SkillsSectionContainer`", () => {
@@ -20,10 +20,9 @@ describe("`SkillsSectionContainer`", () => {
 
     shallow(<SkillsSectionContainer rawSkills={MOCK_RAW_SKILLS} />);
 
-    expect(fetchMock).toHaveBeenCalledWith(
-      GITHUB_REPOS_API_URL,
-      GITHUB_REPOS_REQUEST_OPTIONS
-    );
+    expect(fetchMock).toHaveBeenCalledWith(GITHUB_REPOS_API_URL, {
+      headers: GITHUB_REPOS_REQUEST_HEADERS
+    });
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 

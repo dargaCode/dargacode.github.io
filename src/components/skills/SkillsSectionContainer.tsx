@@ -18,12 +18,10 @@ interface State {
 
 export const GITHUB_REPOS_API_URL =
   "https://api.github.com/users/dargacode/repos?per_page=100";
-export const GITHUB_REPOS_REQUEST_OPTIONS = {
-  headers: {
-    // enable topics beta from github api
-    // eslint-disable-next-line spellcheck/spell-checker
-    Accept: "application/vnd.github.mercy-preview+json"
-  }
+export const GITHUB_REPOS_REQUEST_HEADERS = {
+  // enable topics beta from github api
+  // eslint-disable-next-line spellcheck/spell-checker
+  Accept: "application/vnd.github.mercy-preview+json"
 };
 
 function processSkills(rawSkills: RawSkill[], repos: Repo[]): Skill[] {
@@ -80,10 +78,9 @@ export default class SkillsSectionContainer extends React.Component<
   }
 
   async fetchRepos(): Promise<void> {
-    const response = await fetch(
-      GITHUB_REPOS_API_URL,
-      GITHUB_REPOS_REQUEST_OPTIONS
-    );
+    const response = await fetch(GITHUB_REPOS_API_URL, {
+      headers: GITHUB_REPOS_REQUEST_HEADERS
+    });
 
     if (!response.ok) {
       this.setState({
