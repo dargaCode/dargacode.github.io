@@ -100,6 +100,7 @@ module.exports = [
   "typecheck",
   "ui",
   "unhandled",
+  "unmount",
   "unshift",
   "unwatch",
   "uri",
