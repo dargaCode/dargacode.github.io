@@ -16,12 +16,17 @@ interface State {
   skills: Skill[];
 }
 
+const GITHUB_REPOS_REQUEST_ABORT_CONTROLLER = new AbortController();
+
 export const GITHUB_REPOS_API_URL =
   "https://api.github.com/users/dargacode/repos?per_page=100";
-export const GITHUB_REPOS_REQUEST_HEADERS = {
-  // enable topics beta from github api
-  // eslint-disable-next-line spellcheck/spell-checker
-  Accept: "application/vnd.github.mercy-preview+json"
+export const GITHUB_REPOS_FETCH_OPTIONS = {
+  headers: {
+    // enable topics beta from github api
+    // eslint-disable-next-line spellcheck/spell-checker
+    Accept: "application/vnd.github.mercy-preview+json"
+  },
+  signal: GITHUB_REPOS_REQUEST_ABORT_CONTROLLER.signal
 };
 
 function processSkills(rawSkills: RawSkill[], repos: Repo[]): Skill[] {
@@ -50,6 +55,8 @@ export default class SkillsSectionContainer extends React.Component<
   Props,
   State
 > {
+  private abortController: AbortController;
+
   static propTypes = {
     rawSkills: PropTypes.arrayOf(
       PropTypes.shape({
@@ -71,16 +78,23 @@ export default class SkillsSectionContainer extends React.Component<
       error: undefined,
       skills: []
     };
+
+    this.abortController = GITHUB_REPOS_REQUEST_ABORT_CONTROLLER;
   }
 
   async componentDidMount(): Promise<void> {
     await this.fetchRepos();
   }
 
+  componentWillUnmount(): void {
+    this.abortController.abort();
+  }
+
   async fetchRepos(): Promise<void> {
-    const response = await fetch(GITHUB_REPOS_API_URL, {
-      headers: GITHUB_REPOS_REQUEST_HEADERS
-    });
+    const response = await fetch(
+      GITHUB_REPOS_API_URL,
+      GITHUB_REPOS_FETCH_OPTIONS
+    );
 
     if (!response.ok) {
       this.setState({
