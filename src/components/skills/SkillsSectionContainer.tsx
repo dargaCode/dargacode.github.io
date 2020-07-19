@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Repo, aggregateRepoTopicStats, getTimeSinceCommit } from "./repoUtils";
+import { aggregateRepoTopicStats, getTimeSinceCommit, Repo } from "./repoUtils";
 import { RawSkill, Skill } from "./skillsUtils";
 import { Error } from "../error/errorUtils";
 import { RAW_SKILLS } from "./dataRawSkills";
