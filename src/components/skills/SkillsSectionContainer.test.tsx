@@ -1,36 +1,34 @@
 import React from "react";
 import { shallow } from "enzyme";
-import fetchMock from "jest-fetch-mock";
-import Axios from "axios";
+import { mocked } from "ts-jest";
+import axios from "axios";
 import { MOCK_RAW_SKILLS, MOCK_SKILLS } from "./mockSkills";
 import { MOCK_REPOS } from "./mockRepos";
 import SkillsSectionContainer, {
   GITHUB_REPOS_REQUEST_CONFIG
 } from "./SkillsSectionContainer";
 
+const mockedAxios = mocked(axios, true);
+
 describe("`SkillsSectionContainer`", () => {
-  beforeEach(() => {
-    fetchMock.resetMocks();
-  });
-
   it("should call fetch for github repos", () => {
-    fetchMock.once(JSON.stringify(MOCK_REPOS));
+    mockedAxios.get.mockReturnValueOnce(MOCK_REPOS));
 
-    expect(fetchMock).toHaveBeenCalledTimes(0);
+    expect(mockedAxios.get).toHaveBeenCalledTimes(0);
 
     shallow(<SkillsSectionContainer rawSkills={MOCK_RAW_SKILLS} />);
 
     const config = {
       ...GITHUB_REPOS_REQUEST_CONFIG,
-      cancelToken: Axios.CancelToken.source()
+      cancelToken: axios.CancelToken.source()
     };
 
-    expect(fetchMock).toHaveBeenCalledWith(config);
-    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(mockedAxios.get).toHaveBeenCalledWith(config);
+    expect(mockedAxios.get).toHaveBeenCalledTimes(1);
   });
 
   it("should combine api repos with local json skills ", done => {
-    fetchMock.once(JSON.stringify(MOCK_REPOS));
+    mockedAxios.get.mockReturnValueOnce(MOCK_REPOS);
 
     const wrapper = shallow(
       <SkillsSectionContainer rawSkills={MOCK_RAW_SKILLS} />
