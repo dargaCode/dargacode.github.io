@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { aggregateRepoTopicStats, getTimeSinceCommit, Repo } from "./repoUtils";
 import { RawSkill, Skill } from "./skillsUtils";
 import { Error } from "../error/errorUtils";
@@ -20,13 +21,18 @@ const GITHUB_REPOS_REQUEST_ABORT_CONTROLLER = new AbortController();
 
 export const GITHUB_REPOS_API_URL =
   "https://api.github.com/users/dargacode/repos?per_page=100";
-export const GITHUB_REPOS_FETCH_OPTIONS = {
-  headers: {
-    // enable topics beta from github api
-    // eslint-disable-next-line spellcheck/spell-checker
-    Accept: "application/vnd.github.mercy-preview+json"
-  },
-  signal: GITHUB_REPOS_REQUEST_ABORT_CONTROLLER.signal
+export const GITHUB_REPOS_FETCH_HEADERS = {
+  // enable topics beta from github api
+  // eslint-disable-next-line spellcheck/spell-checker
+  Accept: "application/vnd.github.mercy-preview+json"
+};
+export const GITHUB_REPOS_FETCH_SIGNAL =
+  GITHUB_REPOS_REQUEST_ABORT_CONTROLLER.signal;
+
+const GITHUB_REPOS_REQUEST_CONFIG: AxiosRequestConfig = {
+  method: "get",
+  url: GITHUB_REPOS_API_URL,
+  headers: GITHUB_REPOS_FETCH_HEADERS
 };
 
 function processSkills(rawSkills: RawSkill[], repos: Repo[]): Skill[] {
@@ -91,22 +97,20 @@ export default class SkillsSectionContainer extends React.Component<
   }
 
   async fetchRepos(): Promise<void> {
-    const response = await fetch(
-      GITHUB_REPOS_API_URL,
-      GITHUB_REPOS_FETCH_OPTIONS
-    );
-
-    if (!response.ok) {
-      this.setState({
-        loading: false,
-        error: { message: `ERROR: ${response.status} ${response.statusText}` }
-      });
-    } else {
+    try {
+      const response = await Axios(GITHUB_REPOS_REQUEST_CONFIG);
+      const { data } = response;
       const { rawSkills } = this.props;
-      const apiRepos = await response.json();
-      const skills = processSkills(rawSkills, apiRepos);
+      const skills = processSkills(rawSkills, data);
 
       this.setState({ loading: false, skills });
+    } catch (err) {
+      const { status, statusText } = err.response;
+
+      this.setState({
+        loading: false,
+        error: { message: `ERROR: ${status} ${statusText}` }
+      });
     }
   }
 
