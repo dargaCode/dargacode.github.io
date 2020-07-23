@@ -17,8 +17,6 @@ interface State {
   skills: Skill[];
 }
 
-const GITHUB_REPOS_REQUEST_ABORT_CONTROLLER = new AbortController();
-
 export const GITHUB_REPOS_API_URL =
   "https://api.github.com/users/dargacode/repos?per_page=100";
 export const GITHUB_REPOS_FETCH_HEADERS = {
@@ -26,8 +24,6 @@ export const GITHUB_REPOS_FETCH_HEADERS = {
   // eslint-disable-next-line spellcheck/spell-checker
   Accept: "application/vnd.github.mercy-preview+json"
 };
-export const GITHUB_REPOS_FETCH_SIGNAL =
-  GITHUB_REPOS_REQUEST_ABORT_CONTROLLER.signal;
 
 const GITHUB_REPOS_REQUEST_CONFIG: AxiosRequestConfig = {
   method: "get",
@@ -61,8 +57,6 @@ export default class SkillsSectionContainer extends React.Component<
   Props,
   State
 > {
-  private abortController: AbortController;
-
   static propTypes = {
     rawSkills: PropTypes.arrayOf(
       PropTypes.shape({
@@ -84,8 +78,6 @@ export default class SkillsSectionContainer extends React.Component<
       error: undefined,
       skills: []
     };
-
-    this.abortController = GITHUB_REPOS_REQUEST_ABORT_CONTROLLER;
   }
 
   async componentDidMount(): Promise<void> {
@@ -93,7 +85,6 @@ export default class SkillsSectionContainer extends React.Component<
   }
 
   componentWillUnmount(): void {
-    this.abortController.abort();
   }
 
   async fetchRepos(): Promise<void> {
