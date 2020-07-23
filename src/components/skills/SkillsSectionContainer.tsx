@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import Axios, { AxiosRequestConfig, CancelTokenSource } from "axios";
 import { aggregateRepoTopicStats, getTimeSinceCommit, Repo } from "./repoUtils";
 import { RawSkill, Skill } from "./skillsUtils";
 import { Error } from "../error/errorUtils";
@@ -70,6 +70,8 @@ export default class SkillsSectionContainer extends React.Component<
     rawSkills: RAW_SKILLS
   };
 
+  private axiosCancelSource: CancelTokenSource;
+
   constructor(props: Props) {
     super(props);
 
@@ -78,6 +80,8 @@ export default class SkillsSectionContainer extends React.Component<
       error: undefined,
       skills: []
     };
+
+    this.axiosCancelSource = Axios.CancelToken.source();
   }
 
   async componentDidMount(): Promise<void> {
@@ -85,23 +89,29 @@ export default class SkillsSectionContainer extends React.Component<
   }
 
   componentWillUnmount(): void {
+    this.axiosCancelSource.cancel("Operation canceled by the user.");
   }
 
   async fetchRepos(): Promise<void> {
     try {
-      const response = await Axios(GITHUB_REPOS_REQUEST_CONFIG);
+      const response = await Axios({
+        ...GITHUB_REPOS_REQUEST_CONFIG,
+        cancelToken: this.axiosCancelSource.token
+      });
       const { data } = response;
       const { rawSkills } = this.props;
       const skills = processSkills(rawSkills, data);
 
       this.setState({ loading: false, skills });
     } catch (err) {
-      const { status, statusText } = err.response;
+      if (err.response) {
+        const { status, statusText } = err.response;
 
-      this.setState({
-        loading: false,
-        error: { message: `ERROR: ${status} ${statusText}` }
-      });
+        this.setState({
+          loading: false,
+          error: { message: `ERROR: ${status} ${statusText}` }
+        });
+      }
     }
   }
 
