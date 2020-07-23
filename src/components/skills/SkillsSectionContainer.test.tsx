@@ -1,11 +1,11 @@
 import React from "react";
 import { shallow } from "enzyme";
 import fetchMock from "jest-fetch-mock";
+import Axios from "axios";
 import { MOCK_RAW_SKILLS, MOCK_SKILLS } from "./mockSkills";
 import { MOCK_REPOS } from "./mockRepos";
 import SkillsSectionContainer, {
-  GITHUB_REPOS_API_URL,
-  GITHUB_REPOS_FETCH_OPTIONS
+  GITHUB_REPOS_REQUEST_CONFIG
 } from "./SkillsSectionContainer";
 
 describe("`SkillsSectionContainer`", () => {
@@ -20,10 +20,12 @@ describe("`SkillsSectionContainer`", () => {
 
     shallow(<SkillsSectionContainer rawSkills={MOCK_RAW_SKILLS} />);
 
-    expect(fetchMock).toHaveBeenCalledWith(
-      GITHUB_REPOS_API_URL,
-      GITHUB_REPOS_FETCH_OPTIONS
-    );
+    const config = {
+      ...GITHUB_REPOS_REQUEST_CONFIG,
+      cancelToken: Axios.CancelToken.source()
+    };
+
+    expect(fetchMock).toHaveBeenCalledWith(config);
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
