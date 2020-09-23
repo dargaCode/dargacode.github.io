@@ -6,6 +6,7 @@ module.exports = [
   "asc",
   "async",
   "attrs",
+  "axios",
   "backend",
   "bool",
   "camelcase",
