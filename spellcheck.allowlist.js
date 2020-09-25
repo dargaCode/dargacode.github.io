@@ -38,6 +38,7 @@ module.exports = [
   "eslint",
   "ev",
   "falsy",
+  "favicons",
   "filename",
   "fn",
   "func",
