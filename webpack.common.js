@@ -70,7 +70,10 @@ module.exports = {
   },
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: "src/img/favicons", to: "img/favicons" }]
+      patterns: [
+        { from: "src/img/favicons", to: "img/favicons" },
+        { from: "src/img/social", to: "img/social" }
+      ]
     }),
     new CleanWebpackPlugin(),
     new ForkTsCheckerWebpackPlugin({
