@@ -17,7 +17,6 @@ module.exports = merge(common, {
       eslint: false
     }),
     new HtmlWebpackPlugin({
-      title: "Webpack/React Template",
       template: "src/template.html",
       filename: "404.html" // hack to allow navigation to routes, since GitHub doesn't support 200.html
     }),
