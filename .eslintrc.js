@@ -1,4 +1,4 @@
-const whitelistedWords = require("./spellcheck.allowlist.js");
+const allowedWords = require("./spellcheck.allowlist.js");
 
 module.exports = {
   extends: [
@@ -56,7 +56,7 @@ module.exports = {
     "spellcheck/spell-checker": [
       2,
       {
-        skipWords: whitelistedWords,
+        skipWords: allowedWords,
         skipIfMatch: ["^http"]
       }
     ]

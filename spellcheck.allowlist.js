@@ -1,4 +1,4 @@
-// words to whitelist in eslint
+// words to allow in eslint spellcheck
 module.exports = [
   "api",
   "arg",
@@ -111,7 +111,6 @@ module.exports = [
   "utils",
   "validator",
   "webpack",
-  "whitelist",
   "woff",
   "woff2",
   "www",
