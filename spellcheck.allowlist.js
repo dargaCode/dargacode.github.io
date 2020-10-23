@@ -50,6 +50,7 @@ module.exports = [
   "http",
   "https",
   "href",
+  "ident",
   "img",
   "javascript",
   "jpg",
