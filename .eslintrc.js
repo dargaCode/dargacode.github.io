@@ -7,6 +7,8 @@ module.exports = {
     "prettier/react",
     "plugin:react/recommended",
     "plugin:css-modules/recommended",
+    "plugin:jest/style",
+    "plugin:jest/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking", // slower but more powerful
     "prettier/@typescript-eslint", // disable eslint rules which conflict with prettier
