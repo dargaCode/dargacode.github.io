@@ -41,7 +41,7 @@ describe.skip("`SkillsSectionContainer`", () => {
       });
   });
 
-  it.skip("should combine api repos with local json skills ", done => {
+  it.skip("should combine api repos with local json skills", done => {
     const wrapper = shallow(
       <SkillsSectionContainer rawSkills={MOCK_RAW_SKILLS} />
     );
