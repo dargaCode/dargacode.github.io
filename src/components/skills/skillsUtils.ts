@@ -40,7 +40,7 @@ export function nameSkillComparator(a: Skill, b: Skill): number {
   return 0;
 }
 
-export function repoCountComparator(a: Skill, b: Skill): number {
+export function countSkillComparator(a: Skill, b: Skill): number {
   if (a.repoCount === b.repoCount) {
     return nameSkillComparator(a, b);
   }
@@ -49,7 +49,7 @@ export function repoCountComparator(a: Skill, b: Skill): number {
   return b.repoCount - a.repoCount;
 }
 
-export function commitRecencySkillComparator(a: Skill, b: Skill): number {
+export function dateSkillComparator(a: Skill, b: Skill): number {
   // descending
   if (a.lastCommitTime.isBefore(b.lastCommitTime)) {
     return 1;
@@ -67,13 +67,16 @@ export function commitRecencySkillComparator(a: Skill, b: Skill): number {
   return nameSkillComparator(a, b);
 }
 
-export const COMPARATORS: Map<string, SkillSortComparator> = new Map([
-  ["Recency", commitRecencySkillComparator],
-  ["Skill Name", nameSkillComparator],
-  ["Repo Count", repoCountComparator]
+export enum SkillComparatorDisplayNames {
+  DATE = "Recency",
+  NAME = "Skill Name",
+  COUNT = "Repo Count"
+}
+
+export const COMPARATORS_MAP: Map<string, SkillSortComparator> = new Map([
+  [SkillComparatorDisplayNames.DATE, dateSkillComparator],
+  [SkillComparatorDisplayNames.NAME, nameSkillComparator],
+  [SkillComparatorDisplayNames.COUNT, countSkillComparator]
 ]);
 
-export const SKILL_SORT_OPTIONS = Array.from(COMPARATORS.keys());
-// the default value is always the first in the list
-export const DEFAULT_COMPARATOR: SkillSortComparator = COMPARATORS.values().next()
-  .value;
+export const SKILL_SORT_OPTIONS = Object.values(SkillComparatorDisplayNames);

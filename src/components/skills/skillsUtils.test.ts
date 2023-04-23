@@ -5,9 +5,8 @@ import {
   Skill,
   EMPTY_SKILL,
   nameSkillComparator,
-  repoCountComparator,
-  commitRecencySkillComparator,
-  DEFAULT_COMPARATOR
+  countSkillComparator,
+  dateSkillComparator
 } from "./skillsUtils";
 
 function getSkillNames(skills: Skill[]): string[] {
@@ -59,7 +58,7 @@ describe("`skillsUtils`", () => {
         skillC.name = "React";
         skillC.repoCount = 20;
 
-        const sortedSkills = skills.sort(repoCountComparator);
+        const sortedSkills = skills.sort(countSkillComparator);
 
         expect(getSkillNames(sortedSkills)).toEqual(["React", "Jest", "Git"]);
       });
@@ -72,7 +71,7 @@ describe("`skillsUtils`", () => {
         skillC.name = "Git";
         skillC.repoCount = 20;
 
-        const sortedSkills = skills.sort(repoCountComparator);
+        const sortedSkills = skills.sort(countSkillComparator);
 
         expect(getSkillNames(sortedSkills)).toEqual(["Git", "Jest", "React"]);
       });
@@ -90,7 +89,7 @@ describe("`skillsUtils`", () => {
         skillC.repoCount = 13;
         skillC.lastCommitTime = moment("2011-11-11", DATE_FORMAT);
 
-        const sortedSkills = skills.sort(commitRecencySkillComparator);
+        const sortedSkills = skills.sort(dateSkillComparator);
 
         expect(getSkillNames(sortedSkills)).toEqual(["React", "Git", "Jest"]);
       });
@@ -106,7 +105,7 @@ describe("`skillsUtils`", () => {
         skillC.repoCount = 13;
         skillC.lastCommitTime = moment("2012-12-12", DATE_FORMAT);
 
-        const sortedSkills = skills.sort(commitRecencySkillComparator);
+        const sortedSkills = skills.sort(dateSkillComparator);
 
         expect(getSkillNames(sortedSkills)).toEqual(["Git", "Jest", "React"]);
       });
@@ -122,16 +121,10 @@ describe("`skillsUtils`", () => {
         skillC.repoCount = 22;
         skillC.lastCommitTime = moment("2012-12-12", DATE_FORMAT);
 
-        const sortedSkills = skills.sort(commitRecencySkillComparator);
+        const sortedSkills = skills.sort(dateSkillComparator);
 
         expect(getSkillNames(sortedSkills)).toEqual(["Jest", "Git", "React"]);
       });
-    });
-  });
-
-  describe("`DEFAULT_COMPARATOR`", () => {
-    it("should be `nameSkillComparator`", () => {
-      expect(DEFAULT_COMPARATOR).toBe(commitRecencySkillComparator);
     });
   });
 });
