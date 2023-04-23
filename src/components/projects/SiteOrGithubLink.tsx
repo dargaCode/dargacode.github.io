@@ -27,5 +27,6 @@ SiteOrGithubLink.propTypes = {
 
 SiteOrGithubLink.defaultProps = {
   preferredUrl: undefined,
-  className: undefined
+  className: undefined,
+  children: undefined
 };

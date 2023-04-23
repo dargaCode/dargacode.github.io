@@ -17,6 +17,7 @@ describe.skip("`SkillsSectionContainer`", () => {
   });
 
   it("should call fetch for github repos", done => {
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     expect(mockedAxios.get).toHaveBeenCalledTimes(0);
 
     const config = {
@@ -34,12 +35,13 @@ describe.skip("`SkillsSectionContainer`", () => {
       .componentDidMount()
       .then(() => {
         // expect(axios.get).toHaveBeenCalledTimes(1);
+        // eslint-disable-next-line @typescript-eslint/unbound-method
         expect(mockedAxios.get).toHaveBeenCalledWith(config);
         done();
       });
   });
 
-  it.skip("should combine api repos with local json skills ", done => {
+  it.skip("should combine api repos with local json skills", done => {
     const wrapper = shallow(
       <SkillsSectionContainer rawSkills={MOCK_RAW_SKILLS} />
     );

@@ -4,7 +4,7 @@
 .bar {
   background: config.$nav-bar-background-color;
   color: config.$nav-bar-text-color;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   width: 100%;
 
   @include break.under(medium) {

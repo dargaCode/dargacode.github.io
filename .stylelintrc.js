@@ -1,5 +1,9 @@
 module.exports = {
-  extends: ["stylelint-config-standard", "stylelint-config-sass-guidelines"],
+  extends: [
+    "stylelint-config-standard",
+    "stylelint-config-sass-guidelines",
+    "stylelint-config-prettier"
+  ],
   rules: {
     "max-nesting-depth": [
       1,
@@ -11,6 +15,6 @@ module.exports = {
     "color-no-hex": true,
     "color-no-invalid-hex": true,
     "color-named": "never",
-    "function-whitelist": ["calc", "url", "format", "map-get", "local"] // no rgb colors
+    "function-allowed-list": ["calc", "url", "format", "map-get", "local"] // no rgb colors
   }
 };

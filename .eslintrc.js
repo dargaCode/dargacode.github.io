@@ -1,4 +1,4 @@
-const whitelistedWords = require("./spellcheck.allowlist.js");
+const allowedWords = require("./spellcheck.allowlist.js");
 
 module.exports = {
   extends: [
@@ -7,6 +7,8 @@ module.exports = {
     "prettier/react",
     "plugin:react/recommended",
     "plugin:css-modules/recommended",
+    "plugin:jest/style",
+    "plugin:jest/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking", // slower but more powerful
     "prettier/@typescript-eslint", // disable eslint rules which conflict with prettier
@@ -45,18 +47,19 @@ module.exports = {
         tsx: "never"
       }
     ],
-    "react/jsx-filename-extension": [2, { extensions: [".jsx", ".tsx"] }], // disallow jsx in js or ts files
+    "react/jsx-filename-extension": [2, { extensions: [".jsx", ".tsx"] }], // disallow jsx in .js or .ts files
     "react/prop-types": [2, { skipUndeclared: false }],
     "react/no-unused-prop-types": [2],
     "react/forbid-prop-types": [2],
     "react/require-default-props": [2, { forbidDefaultForRequired: true }],
     "react/default-props-match-prop-types": [2],
     "react/static-property-placement": "off",
+    "no-plusplus": [2, { allowForLoopAfterthoughts: true }],
     "capitalized-comments": [1, "never", { ignorePattern: "TODO" }],
     "spellcheck/spell-checker": [
       2,
       {
-        skipWords: whitelistedWords,
+        skipWords: allowedWords,
         skipIfMatch: ["^http"]
       }
     ]
