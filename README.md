@@ -11,6 +11,5 @@ Bringing my old website forward to reflect my current stack and development prac
 * Webpack
 
 TODO:
-* React Hooks
 * SEO
 * CI/CD
